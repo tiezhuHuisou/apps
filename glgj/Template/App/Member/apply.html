@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/member_apply.css" />
+</head>
+<body>
+    <!-- 头部 -->
+    <include file="Common/header"/>
+    <!-- 无底部区域 -->
+    <section class="no_footer">
+        
+        <volist name="list" id="li">
+            <div class="apply_wrap">
+                <!-- 一条申请 开始 -->
+                <div class="apply_list">
+                    <p class="list_time"><eq name="li.is_deal" value="1">{$li.update_time|date="Y-m-d H:i",###}<else/>{$li.create_time|date="Y-m-d H:i",###}</eq></p>
+                    <div class="list_info">
+                        <p class="list_title">系统通知</p>
+                        <p class="list_con">{$li.info}</p>
+                        <if condition="$li.mb  eq  UID">
+                            <p class="list_opt" id='p_{$li.id}'>
+                                <a href="javascript:ajaxStatus({$li.id},1);">同意</a>
+                                <a href="javascript:ajaxStatus({$li.id},-1);">拒绝</a>
+                            </p>
+                        </if>
+                    </div>
+                </div>
+                <!-- 一条申请 结束 -->
+            </div>
+        </volist>
+        
+        <!-- <div class="loading">
+            <img src="__STATIC__/images/loading.gif" width="20" height="20" />
+        </div> -->
+        <!-- 数据为空时 -->
+        <empty name="list">
+        <div class="common_empty">
+            <img src="__IMG__/common_empty.png" width="120" height="120">
+            <p>暂无记录</p>
+            <a href="javascript:history.go(-1);">返回</a>
+        </div>
+        </empty>
+    </section>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__JS__/member_apply.js"></script>
+</body>
+</html>

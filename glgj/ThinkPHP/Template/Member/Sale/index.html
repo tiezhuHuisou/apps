@@ -1,0 +1,212 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/product_add.css" />
+<link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css" />
+<script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript">
+	var imgUrl = "__IMG__";
+</script>
+<script type="text/javascript" src="__JS__/product_add.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a class="hover" href="?g=member&m=sale">发布产品信息</a>
+				<a href="?g=member&m=sale&a=product">产品管理</a>
+				<!--<a href="?g=member&m=sale&a=order">订单管理</a>-->
+				<a href="?g=member&m=sale&a=release">发布求购</a>
+				<a href="?g=member&m=sale&a=need">求购管理</a>
+				<!-- <a href="?g=member&m=sale&a=template">添加运费模版</a>
+				<a href="?g=member&m=sale&a=freight">运费管理</a> -->
+				<!-- <a href="?g=member&m=sale&a=refund">返现申请</a>
+				<a href="?g=member&m=sale&a=result">返现申请结果</a> -->
+			</div>
+			<!-- 发布产品信息表单 开始 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<input name="id" type="hidden" value="{$Think.get.id}"/>
+				<div class="add_form">
+					<!-- 商品名称 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">商品名称：</div>
+							<input class="t400" type="text" name="title" value="{$detail.title}" placeholder="请输入商品名称" datatype="title" nullmsg="请输入商品名称" errormsg="请输入2到50位字符" />
+							<span class="add_star">*</span>
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入商品名称</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 短标题 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">短标题：</div>
+							<input class="t400" type="text" name="short_title" value="{$detail.short_title}" placeholder="请输入短标题" datatype="title" nullmsg="请输入短标题" errormsg="请输入2到50位字符" />
+							<span class="add_star">*</span>
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入短标题</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 商品货号 -->
+					 <div class="add_row">
+						<div class="add_name">商品货号：</div>
+						<input class="t400" type="text" name="goods_sn" value="{$detail.goods_sn}" placeholder="请输入商品货号" />
+					</div> 
+					<!-- 属性 -->
+					<div class="add_row">
+						<div class="add_name">属性：</div>
+						<volist name="flags" id="fl">
+							<label class="mgr4">
+                                 <input  name="flags[]" type="radio" value="{$fl.att}"   <in name="fl.att" value="$detail.flags">checked="checked"</in> />{$fl.attname}[{$fl.att}]
+                            </label>
+						</volist>
+					</div>
+					<!-- 商品分类 -->
+					<div class="add_row">
+						<div class="add_name">商品分类：</div>
+							<select  name="sale_category_id">
+                                <option value="0">请选择</option>
+                                <volist name="classify" id="cl">
+                                <option value="{$cl.id}" <eq name="cl.id" value="$detail.sale_category_id">selected="selected"</eq> > {$cl.name}</option>
+                                </volist>
+                            </select>
+						<span class="add_star">*</span>
+					</div>
+					<!-- 商品视频 -->
+					<!-- <div class="add_row">
+						<div>
+							<div class="add_name">商品视频：</div>
+							<input class="t400" type="text" name="video" value="{$detail.video}" placeholder="请输入视频链接"  />
+							<span class="add_desc">输入优酷视频链接,例：http://www.youku.com/</span>
+						</div>
+					</div> -->
+					<!-- 价格 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">价格：</div>
+							<input class="t200" type="text" name="price" value="{$detail.price}" placeholder="请输入价格" datatype="price" nullmsg="请输入价格" errormsg="请输入数字（保留两位小数即可）" />
+							<span class="add_desc">元</span>
+							<span class="add_star">*</span>
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入价格</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 库存 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">库存：</div>
+							<input class="t200" type="text" name="num" value="{$detail.num}" placeholder="请输入库存" datatype="n" nullmsg="请输入库存" errormsg="请输入数字" />
+							<select  name="unit">
+                                <option value="1" <eq name="detail.unit" value="1">selected = "selected"</eq>>件</option>
+                                <option value="2" <eq name="detail.unit" value="2">selected = "selected"</eq>>批</option>
+                                <option value="3" <eq name="detail.unit" value="3">selected = "selected"</eq>>千克</option>
+                                <option value="4" <eq name="detail.unit" value="4">selected = "selected"</eq>>块</option>
+                                <option value="5" <eq name="detail.unit" value="5">selected = "selected"</eq>>台</option>
+                                <option value="6" <eq name="detail.unit" value="6">selected = "selected"</eq>>吨</option>
+                            </select>
+							<span class="add_star">*</span>
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入库存</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 商品主图 -->
+					<div  class="add_row">
+						<div class="add_name">商品主图：</div>
+						<a id="main_upload" class="add_upload" href="javascript:void(0);">上传图片</a>
+						<input id="main_url" type="hidden" name="img" value="{$detail.img}" />
+						<span class="add_star">*</span>
+						<span class="add_desc">建议尺寸：260*260</span>
+					</div>
+					<!-- 商品主图预览 -->
+					<div class="add_row <empty name="detail.img">no</empty>">
+						<div class="add_name vat">商品主图预览：</div>
+						<img id="main_preview" src="{$detail.img}" width="80" height="80" />
+					</div>
+					<!-- 推荐/特荐图 -->
+					<div class="add_row">
+						<div class="add_name">推荐/特荐图：</div>
+						<a id="recommended_upload" class="add_upload" href="javascript:void(0);">上传图片</a>
+						<input id="recommended_url" type="hidden" name="recommend_img" value="" />
+						<span class="add_desc">特荐图建议尺寸 640*400；推荐图建议尺寸：640*580</span>
+					</div>
+					<!-- 推荐/特荐图预览 -->
+					<div class="add_row <empty name="detail.img">no</empty>">
+						<div class="add_name vat">推荐/特荐图预览：</div>
+						<img id="recommended_preview" src="{$detail.recommend_img}" width="80" height="80" />
+					</div>
+					<!-- 商品轮播图 -->
+					<div class="add_row">
+						<div class="add_name">商品轮播图：</div>
+						<a id="carousel_upload" class="add_upload" href="javascript:void(0);">上传图片</a>
+						<span class="add_desc">建议尺寸：1024*640</span>
+					</div>
+					<!-- 商品轮播图预览 -->
+					<div class="add_row <empty name="detail.img">no</empty>">
+						<div class="add_name vat">商品轮播图预览：</div>
+						<div id="carousel_preview">
+							<volist name="allpic" id="pic">
+							<img class="default_img" src="{$pic.pic_url}" width="160" height="100" />
+							<input value="{$pic.pic_url}"  name="allpic[]" type="hidden" />
+							</volist>
+						</div>
+					</div>
+					<!-- 商品详情 -->
+					<div class="add_row">
+						<div class="add_name vat">商品详情：</div>
+						<textarea id="product_content" name="summary" >{$detail.summary}</textarea>
+					</div>
+					<!-- 发布按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="发 布" />
+					</div>
+				</div>
+			</form>
+			<!-- 发布产品信息表单 结束 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

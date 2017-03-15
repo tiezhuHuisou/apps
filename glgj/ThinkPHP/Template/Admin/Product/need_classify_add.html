@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>求购分类管理中心</h2>
+				<a href="?g=admin&m=product&a=need_classify">分类列表</a>
+				<a class="hover" href="?g=admin&m=product&a=need_classify_add">添加分类</a>
+			</div>
+			<h3>添加分类</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="id" value="{$detail.id}"/>
+                <table class="add_table">
+                    <!-- 所属分类下拉框 -->
+                    <tr>
+                        <td class="w120">所属分类：</td>
+                        <td>
+                            <select class="pl3" name="parent_id">
+                                <option value="0">顶级栏目</option>
+                                <volist name="list" id="li">
+                                <option value="{$li.id}" <eq name="li.id" value="$detail.parent_id">selected="selected"</eq>>{$li.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 分类名字输入框 -->
+                    <tr>
+                        <td class="w120">分类名字：</td>
+                        <td>
+                            <input class="i400" type="text" name="name" value="{$detail.name}" datatype="title" nullmsg="请填写分类名字" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写分类名字</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 关键词 -->
+                    <!-- <tr>
+                        <td class="w120">关键词：</td>
+                        <td>
+                            <input class="i400" type="text" name="seo_keywords" value="{$detail.seo_keywords}"/>
+                        </td>
+                    </tr> -->
+                    <!-- 描述 -->
+                    <!-- <tr>
+                        <td class="w120">描述：</td>
+                        <td>
+                            <textarea class="t400" name="seo_description">{$detail.seo_description}</textarea>
+                        </td>
+                    </tr> -->
+                    <!-- 排序 -->
+                    <tr>
+                        <td class="w120">排序：</td>
+                        <td>
+                            <input class="i50" type="text" name="sort" value="{$detail.sort|default='50'}" datatype="n" nullmsg="请填写数字" errormsg="请填写数字" />
+                            <span class="pl3">数字越大越靠前</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写数字</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 是否显示 -->
+                    <tr>
+                        <td class="w120">是否显示：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="status" value="1" checked="checked"<eq name="detail.status" value="1"> checked="checked" </eq> />
+                                <span>显示</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="status" value="0" <eq name="detail.status" value="0"> checked="checked" </eq> />
+                                <span>不显示</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

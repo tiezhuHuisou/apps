@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/product.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/classify.css" />
+</head>
+<body>
+	<!-- 顶部 -->
+	<include file="Common/header_classify"/>
+	<!-- 可是区域 -->
+	<section class="viewport">
+		<empty name="title">
+		<if condition="($recommend_left neq '') or ($recommend_right neq '') or ($recommend_right_1 neq '') or ($recommend_right_2 neq '')">
+			<!-- 推荐 -->
+			<div class="groom_wrap">
+				<div class="groom_text">为你推荐</div>
+				<!-- 推荐商品 -->
+				<div class="groom">
+					<!-- 推荐商品左 -->
+					<notempty name="recommend_left">
+						<a class="groom_left" href="?g=app&m=product&a=detail&id={$recommend_left.id}">
+							<div class="left_info">
+								<p class="left_text_one">{$recommend_left.title}</p>
+								<p class="left_text_two">{$recommend_left.short_title}</p>
+								<p class="left_price">￥{$recommend_left.price}</p>
+							</div>
+							<img class="delay groom_left_img" src="{$recommend_left.recommend_img}" data-echo="{$recommend_left.recommend_img}" width="100%" height="auto" />
+						</a>
+					</notempty>
+					<if condition="($recommend_right neq '') or ($recommend_right_1 neq '') or ($recommend_right_2 neq '')">
+						<!-- 推荐商品右 -->
+						<div class="groom_right">
+							<notempty name="recommend_right">
+								<a class="right_top" href="?g=app&m=product&a=detail&id={$recommend_right.id}">
+									<div class="right_top_img">
+										<img class="delay" src="{$recommend_right.recommend_img}" data-echo="{$recommend_right.recommend_img}" width="100%" height="auto" />
+									</div>
+									<div class="right_top_info">
+										<p class="right_top_title">{$recommend_right.title}</p>
+										<p class="right_top_text">{$recommend_right.short_title}</p>
+										<p class="groom_right_price">￥{$recommend_right.price}</p>
+									</div>
+								</a>
+							</notempty>
+							<if condition="($recommend_right_1 neq '') or ($recommend_right_2 neq '')">
+								<div class="right_bottom">
+									<notempty name="recommend_right_1">
+										<a class="right_bottom_left" href="?g=app&m=product&a=detail&id={$recommend_right_1.id}">
+											<div class="right_bottom_left_info">
+												<p class="bottom_left_text">{$recommend_right_1.title}</p>
+												<p class="bottom_left_price">￥{$recommend_right_1.price}</p>
+											</div>
+											<div class="right_bottom_left_img">
+												<img class="delay" src="{$recommend_right_1.recommend_img}" data-echo="{$recommend_right_1.recommend_img}" width="100%" height="auto" >
+											</div>
+										</a>
+									</notempty>
+									<notempty name="recommend_right_2">
+										<a class="right_bottom_right" href="?g=app&m=product&a=detail&id={$recommend_right_2.id}">
+											<div class="right_bottom_right_info">
+												<p class="bottom_right_text">{$recommend_right_2.title}</p>
+												<p class="bottom_right_price">￥{$recommend_right_2.price}</p>
+											</div>
+											<div class="right_bottom_right_img">
+												<img class="delay" src="{$recommend_right_2.recommend_img}" data-echo="{$recommend_right_2.recommend_img}" width="100%" height="auto" />
+											</div>
+										</a>
+									</notempty>
+									<div class="clear"></div>
+								</div>
+							</if>
+						</div>
+					</if>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</if>
+		</empty>
+		<!-- 商品列表 -->
+		<notempty name="list">
+		<div class="product_list_wrap">
+			<volist name="list" id="li">
+					<div class="product_list">
+						<a href="?g=app&m=product&a=detail&id={$li.id}"><img class="delay" src="{$li.img}" data-echo="{$li.img}" width="130" height="130" /></a>
+						<div class="product_list_info">
+							<a href="?g=app&m=product&a=detail&id={$li.id}">
+								<p class="product_info_title">{$li.title}</p>
+							</a>
+							<p class="product_info_text">{$li.short_title}</p>
+							<p class="product_price">
+								<span class="product_price_p">￥{$li.price}</span>
+							</p>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</volist>
+		</div>
+		<!-- 滑屏至底部提示信息 -->
+			<div class="loading">
+				<img src="__STATIC__/images/loading.gif" width="20" height="20" />
+			</div>
+			<else />
+			<!-- 数据为空时 -->
+			<div class="common_empty">
+				<img src="__IMG__/common_empty.png" width="120" height="120">
+				<p>暂无产品</p>
+				<a href="?g=app&m=index">返回首页</a>
+			</div>
+		</notempty>
+		<input type="hidden" class="tmpsign" value="{$login_sign|default=0}">
+	</section>
+	<!-- 商品底部 -->
+	<include file="Common/footer"/>
+	<!-- 导航栏 -->
+	<div class="classify_nav">
+		<div class="classify_one">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<foreach name="category_list[0]" item="val">
+				<notempty name="category_list[$val['cid']]">
+					<a class="classify_item" href="javascript:void(0);" data-cid="{$val['cid']}" data-flag="1">{$val['cname']}</a>
+					<else />
+					<a class="classify_item" href="?g=app&m=product&categoryid={$val['cid']}" data-cid="{$val['cid']}" data-flag="0">{$val['cname']}</a>
+				</notempty>
+			</foreach>
+		</div>
+		<div class="classify_two no">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<a class="back_one" href="javascript:void(0);">返回上级分类</a>
+		</div>
+		<div class="classify_three no">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<a class="back_two" href="javascript:void(0);">返回上级分类</a>
+		</div>
+	</div>
+	<!-- 遮罩层 -->
+	<div class="mask"></div>
+	<script type="text/javascript">
+		var data 		= {$category_arr};
+		var categoryid  = "{$categoryid}";
+		var ajaxFlag 	= false;
+		var imgUrl 		= "__IMG__";
+	</script>
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__JS__/product.js"></script>
+	<script type="text/javascript" src="__JS__/classify.js"></script>
+	<script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

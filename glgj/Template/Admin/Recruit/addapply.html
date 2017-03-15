@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript">
+        var imgUrl = "__IMG__";
+    </script>
+    <script type="text/javascript" src="__JS__/product_add.js"></script>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <div class="wrapper">
+        <!-- 主体头部 -->
+        <div class="header">
+            <h2>求职管理</h2>
+            <a href="?g=admin&m=recruit&a=apply">求职信息列表</a>
+            <a class="hover" href="?g=admin&m=recruit&a=addApply">添加求职</a>
+        </div>
+        <h3>添加求职</h3>
+        <!-- 主体数据 -->
+        <form class="form-horizontal chkform" name="" action="" method="post">
+            <input type="hidden" name="id" value="{$detail.id}"/>
+            <table class="add_table">
+                <!-- 长标题输入框 -->
+                <tr>
+                    <td class="w120">姓名：</td>
+                    <td>
+                        <input class="i400" type="text" name="post" value="{$detail.post}" datatype="title" nullmsg="请填写姓名" errormsg="请填写2-10位字符" />
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写姓名</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- 短标题输入框 -->
+
+                <tr>
+                    <td class="w120">求职岗位：</td>
+                    <td>
+                        <input class="i400" type="text" name="contact" value="{$detail.contact}" datatype="title" nullmsg="请填写联系人" errormsg="请填写2-10位字符" />
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">联系人</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="w120">联系方式：</td>
+                    <td>
+                        <input class="i400" type="text" name="phone" value="{$detail.phone}" datatype="title" nullmsg="请填写联系方式" errormsg="请填写2-10位字符" />
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">联系方式</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="w120">企业名称：</td>
+                    <td>
+                        <input class="i400" type="text" name="company_name" value="{$detail.company_name}" datatype="title" nullmsg="请填写企业名称" errormsg="请填写2-10位字符" />
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">企业名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">招聘人数：</td>
+                    <td>
+                        <input class="i200" type="text" name="num" value="{$detail.num}" datatype="title" nullmsg="请填写招聘人数" errormsg="请填写2-8位字符" />
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写招聘人数</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">工资：</td>
+                    <td>
+                        <input class="i200" type="text" name="short_title" value="{$detail.wages}" datatype="title" nullmsg="请填写工资" errormsg="请填写2-8位字符" />
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写工资</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="w120">地址：</td>
+                    <td>
+                        <input class="i200" type="text" name="short_title" value="{$detail.wages}" datatype="title" nullmsg="请填写地址" errormsg="请填写10-50位字符" />
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写地址</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="w120">岗位描述：</td>
+                    <td>
+                        <textarea id="supply_content" name="desc" datatype="*" nullmsg="请填写岗位描述">{$detail.desc}</textarea>
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写岗位描述</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- 属性复选框 -->
+                <tr>
+                    <td class="w120">属性：</td>
+                    <td class="lh22">
+                        <volist name="flags" id="fl">
+                            <label class="mgr4">
+                                <input class="pt3" name="flags[]" type="radio" value="{$fl.att}"   <in name="fl.att" value="$detail.flags">checked="checked"</in> />{$fl.attname}[{$fl.att}]
+                            </label>
+                        </volist>
+                    </td>
+                </tr>
+                <!-- 分类下拉框 -->
+                <!--<tr>-->
+                <!--<td class="w120">分类：</td>-->
+                <!--<td>-->
+                <!--<select class="pl3" name="sale_category_id">-->
+                <!--<option value="0">请选择</option>-->
+                <!--<volist name="classify" id="cl">-->
+                <!--<option value="{$cl.id}" <eq name="cl.id" value="$detail.sale_category_id">selected="selected"</eq> > {$cl.name}</option>-->
+                <!--</volist>-->
+                <!--</select>-->
+                <!--</td>-->
+                <!--</tr>-->
+                <tr class="add_opt">
+                    <td></td>
+                    <td>
+                        <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                        <input class="opt_btn" type="reset" value="重置表单" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- 主体 结束 -->
+</body>
+</html>

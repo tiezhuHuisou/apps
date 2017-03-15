@@ -1,0 +1,10 @@
+/* 改写base */
+.header_right{font-size:12px;-webkit-box-pack:center;}
+/* 招聘列表 */
+.recruit_list{padding:0 10px;}
+.recruit_list .recruit_item{width:100%;margin:5px 0;border:1px solid #dcdcdc;display:block;background:#fff;overflow:hidden;}
+.recruit_list .recruit_item .recruit_header{margin:5px;display:-webkit-box;}
+.recruit_list .recruit_item .recruit_header .recruit_logo{display:block;margin-right:10px;}
+.recruit_list .recruit_item .recruit_header .recruit_info{-webkit-box-flex:1;overflow:hidden;}
+.recruit_list .recruit_item .recruit_header .recruit_info p{margin:4px 0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.recruit_list .recruit_item .recruit_num{height:30px;line-height:30px;margin:0 5px;border-top:1px solid #dcdcdc;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}

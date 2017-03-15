@@ -1,0 +1,71 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/order.css" />
+<script type="text/javascript" src="__JS__/order.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=sale&a=order&state=0" <empty name="Think.get.state">class="hover"</empty>>全部</a>
+				<foreach name="statusList" item="vo">
+					<a <eq name="Think.get.state" value="$key+1">class="hover"</eq> href="?g=member&m=sale&a=order&state={$key+1}">{$vo}</a>
+				</foreach>
+			</div>
+			<!-- 订单表格 -->
+			<table class="order">
+				<thead>
+					<tr class="bgray">
+						<td class="ti25">产品信息</td>
+						<td>商品图片</td>
+						<td>商品单价</td>
+						<td>购买数量</td>
+						<td>订单总价</td>
+						<td align="center">操作</td>
+					</tr>
+				</thead>
+				<volist name="list" id="li">
+					<!-- 一条订单 开始 -->
+					<tbody>
+						<tr class="order_info bgray">
+							<td colspan="6">
+								<span>订单号：{$li.id}</span>
+								<span class="mgl20">下单时间：{$li.ctime|date="Y-m-d H:i",###}</span>
+								<span>&nbsp;&nbsp;&nbsp;</span>
+								<span>总金：{$li.pay_price}(元)</span>
+								<span> &nbsp;&nbsp;&nbsp;状态：{$statusList[$li['state']]}</span>
+							</td>
+						</tr>
+						<volist name="li.productList" id="vo">
+							<tr>
+								<td class="ti25">{$vo.goodname} <notempty name="vo['spec_info']">【{$vo.spec_info}】</notempty></td>
+								<td><img src="{$vo.gpic}" width="50" height="50" /></td>
+								<td>￥{$vo.unitprice}</td>
+								<td>{$vo.nums}</td>
+								<td>￥{$vo.totalprice}</td>
+								<td class="opt" align="center">
+									<a class="cyan" href="?g=member&m=sale&a=detail&id={$li.id}">订单详情</a>
+								</td>
+							</tr>
+						</volist>
+					</tbody>
+					<!-- 一条订单 结束 -->
+				</volist>
+			</table>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

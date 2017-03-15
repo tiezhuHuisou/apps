@@ -1,0 +1,83 @@
+/* init start */
+a{text-decoration:none;}
+.courier_area ul{list-style:none;}
+.courier_area a{color:#07d;text-decoration:none;}
+.calc_method{position:relative;}
+.calc_method input{margin-top:-2px;}
+.calc_method_package,.calc_method_weight{width:57px;height:14px;position:absolute;top:2px;left:4px;z-index:2;}
+.calc_method_weight{left:61px;}
+/* init end */
+
+/* 消息弹窗 开始 */
+.calc_method_confirm{width:560px;height:200px;position:absolute;top:50%;left:50%;margin-top:-100px;margin-left:-280px;z-index:3;border:1px solid #dcdcdc;background:#fff;display:none;overflow:hidden;}
+.calc_method_confirm .calc_method_confirm_prompt{width:560px;height:140px;overflow:hidden;position:relative;}
+.calc_method_confirm .calc_method_confirm_prompt p{width:500px;height:40px;font-size:20px;position:absolute;top:24px;left:30px;}
+.calc_method_confirm .calc_method_confirm_opt{width:560px;height:60px;line-height:60px;text-align:right;background:#f5f5f5;}
+.calc_method_confirm .calc_method_confirm_opt a{padding:5px 10px;border-radius:4px;border:1px solid #dcdcdc;background:#f3f3f3;color:#000;font-size:14px;text-decoration:none;margin-right:10px;}
+.calc_method_confirm .calc_method_confirm_opt a:hover{background:#f5f5f5;border-color:#c6c6c6;}
+/* 消息弹窗 结束 */
+
+/* courier_area start */
+.courier_area{position:relative;}
+.courier_area .courierTitle{vertical-align:top;}
+
+.courier_area .courier{width:752px;}
+
+.courier_area .courier .c_header{width:750px;height:34px;background:#f2f2f2;border:1px solid #dcdcdc;}
+.courier_area .courier .c_header p{width:334px;height:34px;line-height:34px;padding-left:16px;float:left;}
+.courier_area .courier .c_header ul{width:400px;height:34px;float:right;}
+.courier_area .courier .c_header ul li{width:100px;height:34px;line-height:34px;text-align:center;float:left;}
+
+.courier_area .courier .c_add{width:750px;min-height:70px;height:auto;border:1px solid #dcdcdc;overflow:hidden;}
+.courier_area .courier .c_add .add_area{width:328px;min-height:70px;float:left;border-right:2px solid #dcdcdc;display:table-cell;vertical-align:middle;}
+.courier_area .courier .c_add .add_area .add_area_w{margin:20px;}
+.courier_area .courier .c_add .add_area a{float:right;padding-left:10px;}
+.courier_area .courier .c_add ul{width:400px;min-height:70px;float:right;}
+.courier_area .courier .c_add ul li{width:100px;min-height:70px;text-align:center;float:left;}
+.courier_area .courier .c_add input{width:70px;height:26px;border:2px solid #ccc;border-radius:4px;text-align:center;}
+
+.courier_area .courier .add_default{width:750px;min-height:70px;height:auto;border:1px solid #dcdcdc;overflow:hidden;}
+.courier_area .courier .add_default .add_area{width:328px;min-height:70px;float:left;border-right:2px solid #dcdcdc;display:table-cell;vertical-align:middle;}
+.courier_area .courier .add_default .add_area .add_area_w{margin:20px;}
+.courier_area .courier .add_default .add_area a{float:right;padding-left:10px;}
+.courier_area .courier .add_default ul{width:400px;min-height:70px;float:right;}
+.courier_area .courier .add_default ul li{width:100px;min-height:70px;text-align:center;float:left;}
+.courier_area .courier .add_default input{width:70px;height:26px;border:2px solid #ccc;border-radius:4px;text-align:center;}
+
+
+.courier_area .courier .c_default{width:750px;height:34px;border:1px solid #dcdcdc;}
+.courier_area .courier .c_default a{width:734px;height:34px;line-height:34px;padding-left:16px;}
+/** select_area_add start */
+#select_area_add{width:690px;height:540px;position:fixed;top:50%;left:50%;margin-top:-270px;margin-left:-345px;z-index:4;border:1px solid #e5e5e5;background:#fff;display:none;}
+#select_area_add .a_header{width:680px;height:39px;line-height:39px;background:#f6f6f6;font-size:14px;padding-left:10px;border-bottom:1px solid #e5e5e5;}
+
+#select_area_add .a_region{width:690px;height:440px;overflow:hidden;}
+#select_area_add .a_region_w{width:560px;height:380px;margin:30px auto;position:relative;}
+#select_area_add .a_region .place_delect{width:8px;height:14px;line-height:14px;padding:0 3px;background:#d7d7d7;color:#fff;border-radius:8px;position:absolute;top:10px;left:160px;}
+/*** 左边地区选择模块 start */
+#select_area_add .a_region .region_left{width:200px;height:378px;border:1px solid #e5e5e5;float:left;}
+#select_area_add .a_region .r_l_title{width:200px;height:39px;line-height:39px;background:#f2f2f2;border-bottom:1px solid #e5e5e5;text-align:center;font-size:14px;}
+#select_area_add .a_region .r_l_province{width:200px;height:318px;margin-top:10px;overflow-x:hidden;overflow-y:auto;cursor:pointer;}
+#select_area_add .a_region .r_l_province .province_left{width:200px;line-height:34px;overflow:hidden;position:relative;}
+#select_area_add .a_region .r_l_province .province_left .province_icon{width:8px;height:14px;line-height:14px;display:inline-block;padding:0 3px;background:#d7d7d7;color:#fff;margin-left:10px;border-radius:8px;}
+#select_area_add .a_region .r_l_province .province_left .province_name{width:160px;height:34px;display:inline-block;margin-left:2px;}
+#select_area_add .a_region .r_l_province .province_left .city_left{width:200px;min-height:34px;line-height:34px;overflow:hidden;display:none;}
+#select_area_add .a_region .r_l_province .province_left .city_left .municipal_left{position:relative;}
+#select_area_add .a_region .r_l_province .province_left .city_left .city_icon{width:8px;height:14px;line-height:14px;display:inline-block;padding:0 3px;background:#d7d7d7;color:#fff;margin-left:26px;border-radius:8px;}
+#select_area_add .a_region .r_l_province .province_left .city_left .city_name{width:150px;height:34px;line-height:34px;display:inline-block;margin-left:2px;}
+#select_area_add .a_region .r_l_province .province_left .city_left .area_left{width:200px;min-height:34px;line-height:34px;overflow:hidden;display:none;}
+#select_area_add .a_region .r_l_province .province_left .city_left .area_left .area_name{width:156px;height:34px;line-height:34px;padding-left:44px;position:relative;}
+
+#select_area_add  .place_select_left{background:#d7d7d7;}
+#select_area_add .a_region .r_l_province .province_left .icon_change{color:#d7d7d7;background:#fff;}
+#select_area_add .a_region .r_l_province .province_left .city_left .icon_change{color:#d7d7d7;background:#fff;}
+/*** 左边地区选择模块 end */
+#select_area_add .a_region .region_add{width:50px;height:30px;line-height:30px;text-align:center;font-size:16px;background:#f6f6f6;position:absolute;top:175px;left:255px;display:block;border:1px solid #e5e5e5;color:#000;border-radius:4px;text-decoration:none;}
+/*** 右边地区选择模块 start */
+#select_area_add .a_region .region_right{width:200px;height:378px;border:1px solid #e5e5e5;float:right;}
+/*** 右边地区选择模块 end */
+#select_area_add .a_option{width:690px;height:60px;background:#f2f2f2;}
+#select_area_add .a_option .option_confirm{width:50px;height:30px;line-height:30px;background:#07d;border:1px solid #006cc9;color:#fff;font-size:14px;text-align:center;display:block;border-radius:4px;float:left;margin:15px 0 0 280px;}
+#select_area_add .a_option .option_cancel{width:50px;height:30px;line-height:30px;background:#f8f8f8;border:1px solid #e5e5e5;color:#000;font-size:14px;text-align:center;display:block;border-radius:4px;float:right;margin:15px 280px 0 0;}
+/** select_area_add end */
+/* courier_area end */

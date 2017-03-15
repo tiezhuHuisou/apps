@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/depotList.css"/>
+</head>
+<body>
+<!-- 头部 -->
+<header>
+    <a class="header_left" href="javascript:history.go(-1);">
+        <div class="lt">
+            <div></div>
+        </div>
+    </a>
+    <p class="header_title">{$site_title}</p>
+    <a class="header_right f15252" href="javascript:void(0);">编辑</a>
+</header>
+<!-- 无底部区域 -->
+<section class="no_footer">
+    <notempty name="list['ordered']">
+        <!-- 列表页 -->
+        <div class="news_list">
+            <input id="classify" type="hidden" value="1"/>
+            <ul>
+                <volist name="list['ordered']" id="vo">
+                    <li>
+                        <div class="unselected_icon" data-id="{$li.id}"></div>
+                        <div class="weui-cell__bd">
+                            <div class="weui-panel__bd">
+                                <div href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                                    <!--<div class="weui-media-box__hd">-->
+                                    <!--<img class="weui-media-box__thumb" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1487755060639&di=d98a0789aa9467f900a1364a63624a18&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fadaf2edda3cc7cd960628dc03901213fb80e9158.jpg">-->
+                                    <!--</div>-->
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">{$vo['location']}</h4>
+                                        <p class="weui-media-box__desc">{$vo['address']}</p>
+                                    </div>
+                                    <!--<div class="tele">-->
+                                    <!--<img src="__IMG__/dh.png">-->
+                                    <!--<span>联系TA</span>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                            <div class="weui-panel__bd">
+                                <div href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__bd">
+                                        <p class="weui-media-box__desc">仓库信息：{$vo['area']} 平方米</p>
+                                        <p class="weui-media-box__desc">仓库类型：{$vo['standard']}</p>
+                                    </div>
+                                    <span class="weui-cell__ft"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </notempty>
+    <empty name="list['ordered']">
+        <!-- 收藏为空时 -->
+        <div class="collect_empty_wrap ">
+            <div class="common_empty" style="display: none;">
+                <img src="__IMG__/collect_empty.png" width="120" height="120"/>
+                <p>您的{$site_title}还是空的哦</p>
+                <a href="?g=app&m=news">去收藏</a>
+            </div>
+        </div>
+    </empty>
+</section>
+<footer>
+    <div class="unselected_icon allselected"></div>
+    <span>全选</span>
+    <button class="news_delete" href="javascript:void(0);">删除</button>
+</footer>
+
+<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+<script type="text/javascript" src="__JS__/depotList.js"></script>
+</body>
+</html>

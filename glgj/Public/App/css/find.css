@@ -1,0 +1,17 @@
+header{background:#38d163;}
+header .header_left .lt div{border-color:#fff;}
+header .header_title{color:#fff;}
+header .top_nav{width:50px;height:100%;background:url('../../App/images/topsearch_img.png') no-repeat;background-size:18px 18px;background-position:15px 16px;}
+/* 发现弹出层 */
+.find_pop{border-radius:4px;background:#fff;position:fixed;top:57px;right:7px;z-index:3;border:1px solid #dcdcdc;}
+.find_pop ul{width:110px;padding:10px;position:relative;}
+.find_pop ul li{width:100%;line-height:30px;text-align:center;}
+.find_pop ul li + li{border-top:1px solid #dcdcdc;}
+.find_pop ul li a{display:block;text-align:center;}
+.find_pop .up_arrow{width:16px;height:16px;overflow:hidden;position:absolute;top:-16px;right:10px;;}
+.find_pop .up_arrow div{width:8px;height:8px;background:#fff;-webkit-transform:rotate(45deg);border:1px solid #dcdcdc;position:relative;bottom:-11px;left:3px;}
+/*删除弹框*/
+.show{
+	display: inline-block !important;
+}
+.no{display: none !important;}

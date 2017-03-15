@@ -1,0 +1,61 @@
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/sale_orderlog.css"/>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <include file="Sale/ordernav"/>
+            <notempty name="payLog">
+                <!-- 支付记录 开始 -->
+                <table class="list_table">
+                    <tr class="list_header">
+                        <td colspan="4">支付记录</td>
+                    </tr>
+                    <tr class="list_items">
+                        <td>操作</td>
+                        <td>支付金额</td>
+                        <td>支付方式</td>
+                        <td>支付时间</td>
+                    </tr>
+                    <!-- 头部 结束 -->
+                    <volist name="payLog" id="pll">
+                        <!-- 一条数据 开始 -->
+                        <tr class="list_items">
+                            <td><empty name="pll['trade_no']">商家退款<else />买家支付【交易流水号：{$pll['trade_no']}】</empty></td>
+                            <td>￥{$pll['pay_price']}</td>
+                            <td>{$paymentList[$pll['payment_id']]}</td>
+                            <td>{$pll['add_time']|date='Y-m-d H:i:s', ###}</td>
+                        </tr>
+                        <!-- 一条数据 结束 -->
+                    </volist>
+                </table>
+                <!-- 支付记录 结束 -->
+            </notempty>
+            <!-- 操作日志 开始 -->
+            <table class="list_table">
+                <tr class="list_header">
+                    <td>操作日志</td>
+                </tr>
+                <volist name="list" id="vo">
+                    <tr class="list_items">
+                        <td>{$vo['remark']}<span class="items_space"></span>{$vo['addtime']|date='Y-m-d H:i:s', ###}</td>
+                    </tr>
+                </volist>
+            </table>
+            <!-- 操作日志 结束 -->
+        </div>
+        <!-- 主体 结束 -->
+    </div>
+</body>
+</html>

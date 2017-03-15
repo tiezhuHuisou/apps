@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/company_detail.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/share.css" />
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <include file="Common/header"/>
+	<!-- 头部 结束 -->
+	<!-- 主体内容 -->
+	<section class="company_detail_wrapper no_footer">
+        <!-- 顶部 -->
+		<div class="company_detail_top">
+            <!-- 顶部图片 开始 -->
+            <img class="delay" src="__IMG__/pixel.gif" data-echo="__IMG__/company_top_bg.jpg" width="100%" height="auto" />
+            <!-- 顶部图片 结束 -->
+            <div class="company_detail_top_pn">
+                <!-- 顶部头像 开始 -->
+                <a class="company_detail_top_sculpture" href="javascript:void(0);">
+                    <img class="delay" src="__IMG__/pixel.gif" data-echo="{$company_info['logo']}" width="70" height="70" />
+                <!-- 顶部头像 结束 -->
+                </a>
+                <!-- 顶部昵称 开始 -->
+                <p class="company_detail_top_nickname">{$company_info['name']}</p>
+                <!-- 顶部昵称 结束 -->
+                <input id="nid" value="{$company_info.id}" type="hidden">
+				<input id="uid" value="{$_SESSION.app.user_auth.user_id}" type="hidden">
+				<input id="sign" value="{$sign}" type="hidden">
+                <div class=<if condition = "$sign eq 1">"collect collected"<else />"collect"</if>></div>
+            </div>
+        </div>
+        <!-- 顶部 -->
+        <!-- 公司信息、联系方式 -->
+        <div class="company_detail_ic">
+            <a class="company_detail_info company_detail_link" href="?g=app&m=company&a=info&id={$company_info['id']}">
+                <p class="company_detail_info_title company_detail_link_title">公司信息</p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+            <div class="company_detail_contact company_detail_link" >
+                <p class="company_detail_contact_title company_detail_link_title">联系人</p>
+               <!-- <a class="company_detail_contact_showphone" href="?g=app&m=login">登录后可见</a>-->
+                {$company_info['contact_user']|default='暂无联系人'}
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </div>
+            <div class="company_detail_contact company_detail_link" >
+                <p class="company_detail_contact_title company_detail_link_title">联系方式</p>
+               <!-- <a class="company_detail_contact_showphone" href="?g=app&m=login">登录后可见</a>-->
+                <a class="company_detail_contact_phone" href="tel:{$company_info['subphone']|default=''}">{$company_info['subphone']|default='暂无联系方式'}</a>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </div>
+        </div>
+        <!-- 公司信息、联系方式 -->
+        <notempty name="product_list">
+        <!-- 推荐产品 -->
+        <div class="company_detail_recommend company_detail_link" href="javascript:void(0);">
+            <p class="company_detail_recommend_title company_detail_link_title">推荐产品</p>
+            <a class="company_detail_recommend_more" href="?g=app&m=product">查看更多</a>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </div>
+        <!-- 推荐产品 -->
+        <!-- 商品列表 -->
+        <div class="company_detail_list_wrap">
+           <foreach name="product_list" item="val">
+            <div class="company_detail_list">
+                <a href="?g=app&m=product&a=detail&id={$val['id']}"><img class="delay" src="__IMG__/pixel.gif" data-echo="{$val['img']}" width="130" height="130" /></a>
+                <div class="company_detail_list_info">
+					<a href="?g=app&m=product&a=detail&id={$val['id']}">
+                        <p class="company_detail_title">{$val['title']}</p>
+                    </a>
+                    <p class="company_detail_info_text">{$val['short_title']}</p>
+                    <p class="company_detail_info_price">
+                        <span class="price">￥{$val['price']|default=0.00}</span>
+                        <a class="shopping_car" href="javascript:void(0)" data-id="103">
+                            <img class="delay" src="__IMG__/pixel.gif" data-echo="__IMG__/pro_car.png" width="100%" height="auto" />
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </foreach>  
+        </div>
+        </notempty>
+	</section>
+    <!-- 遮罩层 开始 -->
+    <div class="mask no"></div>
+    <!-- 遮罩层 结束 -->
+    <!-- 分享弹框 开始 -->
+   
+    <!-- 分享弹框 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__JS__/company_detail.js"></script>
+    <script type="text/javascript" src="__JS__/share.js"></script>
+</body>
+</html>

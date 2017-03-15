@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/near.css" />
+</head>
+<body class="company_body">
+	<!-- 顶部 -->
+	 <include file="Common/header_classify" />
+    <!-- 主体内容 开始 -->
+	<section class="no_footer">
+        <!-- 公司列表 -->
+		<div class="company_list_wrap">
+            <!-- 一项公司列表 -->
+           <foreach name="list" item="val">
+            <a class="company_list" href="?g=app&m=company&a=detail&id={$val['id']}">               
+                <!-- 公司图标 -->
+                <div class="company_list_icon">
+                    <img class="delay" src="{$val['logo']}" data-echo="{$val['logo']}" width="60" height="60" />
+                </div>
+                <!-- 公司图标 -->
+                <!-- 公司简述 -->
+                <div class="company_list_info">
+                    <p class="company_list_info_title">{$val['name']}</p>
+                    <p class="company_list_info_bussiness">主营：{$val['business']}</p>
+                    <!-- <p class="company_list_info_distance">距离：{$val['meters']}</p> -->
+                </div>
+                <!-- 公司简述 -->
+            </a>
+            </foreach>
+            <!-- 一项公司列表 -->
+            <!-- 一项公司列表 -->
+        </div>
+        <!-- 公司列表 -->
+	</section>
+    <!-- 主体内容 结束 -->
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

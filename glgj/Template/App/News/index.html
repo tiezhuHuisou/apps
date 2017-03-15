@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/news.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/classify.css"/>
+</head>
+<body>
+<!-- 头部 -->
+<include file="Common/header"/>
+<!-- 可视区域 -->
+<div class="viewport">
+    <div class="weui-navbar">
+        <volist name="list['category']" id="vo">
+            <div class="weui-navbar__item <eq name='Think.get.cid' value='$vo.cid'>active</eq>">
+                <a href="?g=app&m=news&a=index&cid={$vo.cid}">{$vo.cname}</a>
+            </div>
+
+        </volist>
+    </div>
+    <notempty name="list['banner']">
+        <!-- 轮播 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <foreach name="list['banner']" item="liv">
+                    <div class="swiper-slide">
+                        <a href="{$liv['url']|default='javascript:void(0);'}"><img src="{$liv['thumbnail']}"
+                                                                                   width="100%" height="auto"/></a>
+                    </div>
+                </foreach>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!-- <div class="swiper-mask">
+                <p></p>
+                <div class="swiper-pagination"></div>
+            </div> -->
+        </div>
+    </notempty>
+    <notempty name="list['article']">
+        <!-- 资讯1 -->
+        <div class="news_wrap">
+            <!-- 资讯列表 -->
+            <div class="news_list">
+                <ul>
+                    <volist name="list['article']" id="vo">
+                        <li>
+                            <a href="?g=app&m=news&a=detail&id={$vo['id']}">
+                                <notempty name="vo.image">
+                                    <img class="fl mgl16 delay" src="{$vo['image']}" data-echo="{$vo['image']}"
+                                         width="90" height="70"/>
+                                </notempty>
+                                <div class="new_title">
+                                    <p class="new_title_main">{$vo['title']}</p>
+                                    <p class="new_title_sub">{$vo['short_title']}</p>
+                                    <div class="opts">
+                                        <a href="javascript:void(0)">
+                                            <span class="comment">16</span>
+                                        </a>
+                                        <span class="collect">3</span>
+                                        <span class="time">{$vo['addtime']}</span>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+        <!-- 滑屏至底部提示信息 -->
+        <div class="loading">
+            <img src="__STATIC__/images/loading.gif" width="20" height="20"/>
+        </div>
+        <else/>
+        <!-- 数据为空时 -->
+        <div class="common_empty">
+            <img src="__IMG__/common_empty.png" width="120" height="120">
+            <p>暂无资讯</p>
+            <a href="?g=app&m=index">返回首页</a>
+        </div>
+    </notempty>
+</div>
+<!-- 底部 -->
+<include file="Common/footer"/>
+<!-- 分类列表 开始 -->
+<div class="classify_nav">
+    <div class="classify_one">
+        <a class="classify_close" href="javascript:void(0);">取消</a>
+        <a class="classify_item" href="?g=app&m=news">全部</a>
+        <notempty name="category_list[0]">
+            <foreach name="category_list[0]" item="val">
+                <notempty name="category_list[$val['cid']]">
+                    <a class="classify_item" href="javascript:void(0);" data-cid="{$val['cid']}" data-flag="1">{$val['cname']}</a>
+                    <else/>
+                    <a class="classify_item" href="?g=app&m=news&categoryid={$val['cid']}" data-cid="{$val['cid']}"
+                       data-flag="0">{$val['cname']}</a>
+                </notempty>
+            </foreach>
+            <else/>
+            <a href="javascript:void(0);">暂无分类</a>
+        </notempty>
+    </div>
+    <div class="classify_two no">
+        <a class="classify_close" href="javascript:void(0);">取消</a>
+        <a class="back_one" href="javascript:void(0);">返回上级分类</a>
+    </div>
+    <div class="classify_three no">
+        <a class="classify_close" href="javascript:void(0);">取消</a>
+        <a class="back_two" href="javascript:void(0);">返回上级分类</a>
+    </div>
+</div>
+<!-- 遮罩层 -->
+<div class="mask"></div>
+<!-- 分类列表 结束 -->
+<script type="text/javascript">
+    var title = "{$Think.get.title}";
+    //var data 		= {$category_arr};
+    var cid = "{$Think.get.cid}";
+    var ajaxFlag = false;
+</script>
+<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+<script type="text/javascript" src="__JS__/news.js"></script>
+<script type="text/javascript" src="__JS__/classify.js"></script>
+<script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

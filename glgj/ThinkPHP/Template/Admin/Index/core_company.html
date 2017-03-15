@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>核心设置</h2>
+				<a href="?g=admin&m=index&a=core">基本信息</a>
+				<a class="hover" href="?g=admin&m=index&a=core_company">企业信息</a>
+				<a href="?g=admin&m=index&a=core_linkman">联系人信息</a>
+				<!-- <a href="?g=admin&m=index&a=core_alipay">支付宝账号设置</a> -->
+			</div>
+            <h3>企业信息</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <table class="add_table">
+                    <!-- 企业信息输入框 -->
+                    <tr>
+                        <td class="w120">企业名称：</td>
+                        <td>
+                            <input class="i400" name="company" type="text" value="{$info_arr['company']|default=''}" datatype="title" nullmsg="请填写企业名称" errormsg="请填写正确的企业全称" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写企业名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 企业电话输入框 -->
+                    <tr>
+                        <td class="w120">企业电话：</td>
+                        <td>
+                            <input class="i400" name="companphone" type="text" value="{$info_arr['companphone']|default=''}" datatype="mobile" nullmsg="请填写企业电话" errormsg="请填写正确的企业电话" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写企业电话</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 企业传真输入框 -->
+                    <tr>
+                        <td class="w120">企业传真：</td>
+                        <td>
+                            <input class="i400" name="companyfax" type="text" value="{$info_arr['companyfax']|default=''}" datatype="fax" nullmsg="请填写企业传真" errormsg="请填写正确的企业传真" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写企业传真</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 网站地址输入框 -->
+                    <tr>
+                        <td class="w120">网站地址：</td>
+                        <td>
+                            <input class="i400" name="companyurl" type="text" value="{$info_arr['companyurl']|default=''}" datatype="patrn" nullmsg="请填写网站地址" errormsg="请填写正确的网站地址" />
+                            <span class="pl3">（开头请勿添加"http://",结尾请勿添加"/"）</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写网站地址</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 企业邮箱输入框 -->
+                    <tr>
+                        <td class="w120">企业邮箱：</td>
+                        <td>
+                            <input class="i400" name="companymail" type="text" value="{$info_arr['companymail']|default=''}" datatype="email" nullmsg="请填写企业邮箱" errormsg="请填写正确的企业邮箱" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写企业邮箱</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 企业地址输入框 -->
+                    <tr>
+                        <td class="w120">企业地址：</td>
+                        <td>
+                            <input class="i400" name="companyaddress" type="text" value="{$info_arr['companyaddress']|default=''}" datatype="*" nullmsg="请填写企业地址" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写企业地址</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 ajax-post chksubmit" type="submit" target-form="form-horizontal" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

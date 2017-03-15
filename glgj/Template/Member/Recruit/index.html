@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/recruit.css" />
+</head>
+<body>
+	<!-- 头部 开始 -->
+	<header>
+	    <a class="header_left" href="javascript:history.go(-1);">
+	        <div class="lt"><div></div></div>
+	    </a>
+	    <a class="search_img" href="javascript:void(0);">
+	        <img src="__IMG__/search.png" width="25" height="18" />
+	    </a>
+	    <input id="search" class="top_search_input" type="text"placeholder="请输入搜索关键词" value="{$title}"/>
+	    <a class="header_right" href="?g=app&m=recruit&a=addapply">填简历</a>
+	</header>
+	<!-- 头部 结束 -->
+	<!-- 可视区域 开始 -->
+	<div class="viewport">
+		<notempty name="list">
+			<!-- 招聘 开始 -->
+			<div class="recruit_wrap">
+				<!-- 招聘列表 开始 -->
+				<div class="recruit_list">
+					<volist name="list" id="vo">
+						<!-- 一条招聘信息 开始 -->
+						<a class="recruit_item" href="?g=app&m=recruit&a=detail&id={$vo['id']}">
+							<div class="recruit_header">
+								<!-- 公司logo -->
+								<img class="recruit_logo" src="{$vo['logo']|default='__IMG__/default.png'}" width="80" height="80" />
+								<!-- 公司信息 -->
+								<div class="recruit_info">
+									<!-- 职位名称 -->
+									<p>{$vo['title']}</p>
+									<!-- 薪资、工作地区 -->
+									<p>{$vo['wages']}/月 {$vo['address']}</p>
+									<!-- 公司名称 -->
+									<p>{$vo['company_name']}</p>
+								</div>
+							</div>
+							<!-- 招聘人数 -->
+							<div class="recruit_num">{$vo['desc']}</div>
+						</a>
+					</volist>
+					<!-- 一条招聘信息 结束 -->
+				</div>
+				<!-- 招聘列表 结束 -->
+			</div>
+			<!-- 招聘 结束 -->
+			<!-- 滑屏至底部提示信息 开始 -->
+			<div class="loading">
+				<img src="__STATIC__/images/loading.gif" width="20" height="20" />
+			</div>
+			<!-- 滑屏至底部提示信息 结束 -->
+			<else />
+			<!-- 数据为空时 开始 -->
+			<div class="common_empty">
+				<img src="__IMG__/common_empty.png" width="120" height="120" />
+				<p>暂无招聘</p>
+				<a href="?g=app&m=index">返回首页</a>
+			</div>
+			<!-- 数据为空时 结束 -->
+		</notempty>
+	</div>
+	<!-- 可视区域 结束 -->
+	<!-- 底部 开始 -->
+	<include file="Common/footer"/>
+	<!-- 底部 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__JS__/recruit.js"></script>
+	<script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

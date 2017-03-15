@@ -1,0 +1,24 @@
+.activity_list{margin-bottom:6px;}
+.opt_btn.no{display: none;}
+/* 商品规格 */
+.spec_table{width:916px;overflow: hidden;border: 1px solid #dcdcdc;}
+.spec_table ul{overflow: hidden;border: 1px solid #dcdcdc;text-align:center;padding: 10px 0;}
+.spec_table ul li{width:60px;height:50px;line-height:50px;float: left;text-align: center;}
+.spec_table ul li.img_wrap{width:130px;display:-webkit-box;-webkit-box-align:center;border:0;}
+.spec_table ul li.w80{width:80px;}
+.spec_table ul li:nth-child(1){width: 100px;}
+.spec_table ul li:nth-child(2){width: 100px;}
+.spec_table ul li:last-child{width: 130px;}
+.spec_table ul li a{color: #1450a0;}
+.spec_table ul li a.spec_up{margin-right:10px;}
+.spec_table ul li a.spec_copy{margin-right:10px;}
+.spec_table ul li a:hover{text-decoration: underline;}
+.spec_table ul li.img_wrap img{display:block;margin:0 auto;}
+.spec_table ul li.img_wrap span{-webkit-box-flex:1;color:#999;font-size:12px;display:block;line-height:20px;border:0;}
+
+.category_area{position:relative;}
+.category_area .category_btn{width:246px;padding:6px 0;text-decoration:none;color:#000;text-indent:4px;display:block;border:1px solid #9a9a9a;position:relative;}
+.category_area .category_btn .btn_down{width:0;height:0;border-left:3px solid transparent;border-right:3px solid transparent;border-top:6px solid #000;position:absolute;right:6px;display:block;top:10px;}
+.category_area .category_wrap{width:246px;max-height:297px;border:1px solid #9a9a9a;background:#fff;display:none;overflow-y:scroll;position:absolute;top:27px;z-index:3;}
+.category_area .category_wrap .category_list .one_list{width:100%;padding:6px 0;display:block;font-weight:bold;}
+.category_area .category_wrap .category_list .one_list input{width:16px;height:16px;margin-left:10px;margin-right:4px;position:relative;top:3px;}

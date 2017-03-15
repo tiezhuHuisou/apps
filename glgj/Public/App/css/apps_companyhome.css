@@ -1,0 +1,30 @@
+﻿body{background:#f5f5f5;}
+.cblue{color:#069fed;}
+.list_img{display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;}
+.list_img img{max-width:100%;max-height:100%;}
+/* 顶部 */
+.header{position:relative;margin-bottom:10px;}
+.header .header_info{width:80%;position:absolute;top:50%;left:50%;margin-top:-51px;margin-left:-40%;}
+.header .header_info .info_headpic{margin:0 auto;border:2px solid #fff;border-radius:50%;}
+.header .header_info .info_name{width:100%;margin-top:8px;color:#fff;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.header .header_info .info_name img{display:inline-block;}
+/* 公共头部 */
+.common_top{padding:10px;display:-webkit-box;border-bottom:1px solid #e5e5e5;}
+.common_top span{display:block;}
+.common_top i{width:20px;height:20px;display:block;margin-right:6px;background:url('../../static/images/companyhome_icons.png') no-repeat center;background-size:20px 60px;}
+.common_top i.iproduct{background-position:0 3px;}
+.common_top i.icompany{background-position:0 -20px;}
+.common_top i.icontact{background-position:0 -43px;}
+.common_top .top_title{-webkit-box-flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+/* 产品信息 */
+.product_area{margin-bottom:10px;background:#fff;}
+.product_wrap{padding-bottom:10px;}
+.product_wrap .product_list{width:100%;}
+.product_wrap .product_list .list_title{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+/* 公司简介 */
+.company_area{margin-bottom:10px;padding-bottom:10px;background:#fff;}
+.company_desc{margin:10px 10px 0 10px;background:#fff;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
+/* 联系我们 */
+.contact_area{background:#fff;}
+.contact_area .contact_list{padding:10px;border-bottom:1px solid #e5e5e5;display:block;}
+.contact_area .contact_list:last-child{border-bottom:none;}

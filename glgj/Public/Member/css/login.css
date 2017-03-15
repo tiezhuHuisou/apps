@@ -1,0 +1,20 @@
+body{background:url('../images/login_bg.png') no-repeat left top;background-size:cover;}
+/* logo */
+.logo{position:absolute;left:50px;top:34px;}
+/* 登录信息 */
+.login{width:246px;height:280px;padding:30px;background:rgba(255,255,255,.8);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c8ffffff,endColorstr=#c8ffffff);position:absolute;top:50%;left:50%;margin-top:-200px;margin-left:-153px;}
+.login .login_title{font-size:16px;font-weight:bold;}
+.login .login_account,.login .login_password{position:relative;}
+.login div i{width:20px;height:26px;position:absolute;left:10px;top:6px;background:url('../images/lry_icons.png') no-repeat left center;}
+.login .login_account{margin-top:30px;}
+.login .login_account .icon{background-position:0 4px;}
+.login .login_account .account_input{font-size:14px;width:204px;padding:11px 0 11px 40px;border:1px solid #dcdcdc;}
+.login .login_password{margin-top:20px;}
+.login .login_password .icon{background-position:0 -25px;}
+.login .login_password .password_input{font-size:14px;width:204px;padding:11px 0 11px 40px;border:1px solid #dcdcdc;}
+.login .login_btn{width:100%;height:40px;line-height:40px;font-size:16px;margin-top:20px;text-align:center;background:#08bdb7;color:#fff;border:none;}
+.login .login_opt{margin-top:20px;}
+.login .login_opt label{color:#8a8a8a;}
+.login .login_opt label input{position:relative;top:2px;}
+.login .login_opt a{color:#08bdb7;float:right;}
+.login .login_opt .register_btn{border-left:1px solid #08bdb7;padding-left:8px;margin-left:8px;}

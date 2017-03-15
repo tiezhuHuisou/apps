@@ -1,0 +1,52 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/reply.css" />
+<script type="text/javascript" src="__JS__/reply.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=buy&a=comment">我的评价</a>
+				<!-- <a class="hover" href="?g=member&m=buy&a=reply">卖家的回复</a> -->
+			</div>
+			<!-- 评价数据 开始 -->
+			<table class="data mgt20">
+				<!-- 标题 开始 -->
+				<tr class="data_title">
+					<td class="ti25">评价内容</td>
+					<td>谁回复了我</td>
+					<!-- <td>操作</td> -->
+				</tr>
+				<!-- 标题 结束 -->
+				<volist name="list" id="li">
+				<!-- 一条数据 开始 -->
+				<tr>
+					<td class="ti25">
+						<p>{$li.content}</p>
+						<p class="gray">{$li.addtime|date="Y-m-d H:i",###}</p>
+					</td>
+					<td class="cyan">{$li.name}</td>
+					<!-- <td class="data_opt" align="center">
+						<a href="javascript:void(0);">删除</a>
+					</td> -->
+				</tr>
+				<!-- 一条数据 结束 -->
+				</volist>
+			</table>
+			<!-- 评价数据 结束 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

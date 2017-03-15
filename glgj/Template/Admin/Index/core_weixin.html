@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>核心设置</h2>
+                <include file="Index/corenav" />
+			</div>
+            <h3>微信账号设置</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <table class="add_table">
+                    <!-- 收款方名称输入框 -->
+                    <tr>
+                        <td class="w120">收款方名称：</td>
+                        <td>
+                            <input class="i400" name="weixin_name" type="text" value="{$info_arr['weixin_name']|default=''}" datatype="*" nullmsg="请填写收款方名称" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写收款方名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 支付宝收款帐号输入框 -->
+                    <tr>
+                        <td class="w120">微信收款帐号：</td>
+                        <td>
+                            <input class="i400" name="weixin_mchid" type="text" value="{$info_arr['weixin_mchid']|default=''}" datatype="*" nullmsg="请填写微信收款帐号"  />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写微信收款帐号</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 微信APPSECRET输入框 -->
+                    <tr>
+                        <td class="w120">微信APPSECRET：</td>
+                        <td>
+                            <input class="i400" name="weixin_appsecret" type="text" value="{$info_arr['weixin_appsecret']|default=''}" datatype="*" nullmsg="请填写交易安全校验码" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写微信APPSECRET</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- APPID输入框 -->
+                    <tr>
+                        <td class="w120">APPID：</td>
+                        <td>
+                            <input class="i400" name="weixin_appid" type="text" value="{$info_arr['weixin_appid']|default=''}" datatype="*" nullmsg="请填写合作者身份ID" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写APPID</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- 商户唯一KEY：输入框 -->
+                    <tr>
+                        <td class="w120">商户唯一KEY：</td>
+                        <td>
+                            <input class="i400" name="weixin_key" type="text" value="{$info_arr['weixin_key']|default=''}" datatype="*" nullmsg="请填写商户唯一KEY" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写商户唯一KEY</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 ajax-post chksubmit" type="submit" target-form="form-horizontal" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

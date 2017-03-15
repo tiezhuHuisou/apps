@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/company_profile.css" />
+</head>
+<body>
+    <!-- 头部 -->
+    <include file="Common/header"/>
+    <!-- 无底部区域 -->
+    <section class="company_profile_wrapper <neq name='appsign' value='1'>viewport</neq>">
+        <img class="delay" src="__IMG__/pixel.gif" data-echo="__IMG__/member_top_bg.png" width="100%" height="auto" />
+        <div class="company_profile_business">
+            <p>主营行业：</p>
+            <p class="fz12">{$company_info['business']}</p>
+        </div>
+        <div class="company_profile_introduce">
+            <p>公司介绍：</p>
+            <article>{$company_info['summary']}</article>
+        </div>
+        
+        <p class="company_profile_contact">联系电话：<span class="fz12">{$company_info['subphone']|default='暂无联系方式'}</span></p>
+        
+    </section>
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xA4XirsaKbnL1fnErmlvfk4I"></script>
+    <script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+    <script type="text/javascript">
+    var lng="{$company_info['lng']}";
+    var lat="{$company_info['lat']}";
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(120.269251, 30.312204), 16);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    // map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    var new_point = new BMap.Point(lng,lat);
+            var marker = new BMap.Marker(new_point);  // 创建标注
+            map.addOverlay(marker);              // 将标注添加到地图中
+            map.panTo(new_point);
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/news_collect.css" />
+<script type="text/javascript" src="__JS__/news_collect.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 资讯收藏数据 开始 -->
+			<table class="data">
+				<!-- 标题 开始 -->
+				<tr class="data_title">
+					<td class="ti25">岗位名称</td>
+					<td>薪资</td>
+					<td>招聘人数</td>
+					<td>学历</td>
+					<td>工作地点</td>
+					<td align="center">操作</td>
+				</tr>
+				<!-- 标题 结束 -->
+				<volist name="list" id="li">
+				<!-- 一条数据 开始 -->
+				<tr>
+					<td class="ti25">
+						<p>{$li.title}</p>
+						<p class="gray">[{$li.ctime|date="Y-m-d H:i",###}]</p>
+					</td>
+					<td><gt name="li.wages" value="0">{$li.wages}<else />面议</gt></td>
+					<td>
+						<p>{$li.num}</p>
+					</td>
+					<td>
+						<p>{$li.degree}</p>
+					</td>
+					<td><p>{$li.address}</p></td>
+					<td class="data_opt" align="center">
+						<a class="" href="?g=member&m=recruit&a=addPost&id={$li.id}">编辑</a>
+						<a class="confirm ajax-get" href="?g=member&m=recruit&a=post_del&id={$li.id}">删除</a>
+					</td>
+				</tr>
+				<!-- 一条数据 结束 -->
+				</volist>
+			</table>
+			<!-- 资讯收藏数据 结束 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/*------- 我的企业 -------*/
+/*顶部导航图标隐藏*/
+.top_nav{opacity: 0;}
+/* 顶部 */
+.company_detail_top{width:100%;position:relative;text-align:center;}
+.company_detail_top .company_detail_top_pn{width:260px;height:140px;display:block;overflow:hidden;position:absolute;top:50%;left:50%;margin:-70px 0 0 -130px;}
+.company_detail_top .company_detail_top_pn .company_detail_top_sculpture{width:70px;display:block;margin:0 auto;overflow:hidden;border:3px solid #fff;border-radius:50%;}
+.company_detail_top .company_detail_top_pn .company_detail_top_nickname{text-align:center;color:#fff;margin:6px 0;}
+.company_detail_top .company_detail_top_pn .collect{width:75px;height:25px;margin:0 auto;background:url('../images/news_collect.png') no-repeat center;background-size:100%;}
+.company_detail_top .company_detail_top_pn .collected{background:url('../images/news_collected.png') no-repeat center;background-size:100%;}
+/* 链接公共样式 */
+.company_detail_link {width: 100%;background: #fff;display: -webkit-box;border-bottom: 1px solid #dcdcdc;height: 44px;line-height: 44px;margin-top: 5px;padding-left: 10px;}
+/*------- 我的企业 -------*/
+.company_detail {background:#fff;word-break:break-all;padding:10px;}

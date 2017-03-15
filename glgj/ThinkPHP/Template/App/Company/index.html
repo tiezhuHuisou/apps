@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/company.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/classify.css" />
+</head>
+<body class="company_body">
+	<!-- 头部 -->
+	<include file="Common/header_classify"/>
+    <!-- 顶部 -->
+    <!-- 主体内容 -->
+	<section class="viewport">
+        <notempty name="list">
+        <!-- 企业列表 -->
+		<div class="company_list_wrap">
+            <foreach name="list" item="val">
+            <a class="company_list" href="?g=app&m=company&a=detail&id={$val['id']}">               
+                <!-- 企业图标 -->
+                <div class="company_list_icon">
+                    <img class="delay" src="{$val['logo']}" data-echo="{$val['logo']}" width="60" height="60" />
+                </div>
+                <!-- 企业信息 -->
+                <div class="company_list_info">
+                    <!-- 企业名称 -->
+                    <p class="company_list_info_title">{$val['name']}</p>
+                    <!-- 企业主营 -->
+                    <p class="company_list_info_bussiness">主营：{$val['business']}</p>
+                </div>
+            </a>
+            </foreach>
+        </div>
+        <!-- 滑屏至底部提示信息 -->
+        <div class="loading">
+            <img src="__STATIC__/images/loading.gif" width="20" height="20" />
+        </div>
+        <else />
+        <!-- 数据为空时 -->
+        <div class="common_empty">
+            <img src="__IMG__/common_empty.png" width="120" height="120">
+            <p>暂无企业</p>
+            <a href="?g=app&m=index">返回首页</a>
+        </div>
+        </notempty>
+	</section>
+    <!-- 主体内容 -->
+    <!-- 分类列表 开始 -->
+    <div class="classify_nav">
+        <div class="classify_one">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <foreach name="category_list[0]" item="val">
+                <notempty name="category_list[$val['cid']]">
+                    <a class="classify_item" href="javascript:void(0);" data-cid="{$val['cid']}" data-flag="1">{$val['cname']}</a>
+                <else />
+                    <a class="classify_item" href="?g=app&m=company&categoryid={$val['cid']}" data-cid="{$val['cid']}" data-flag="0">{$val['cname']}</a>
+                </notempty>
+            </foreach>
+        </div>
+        <div class="classify_two no">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <a class="back_one" href="javascript:void(0);">返回上级分类</a>
+        </div>
+        <div class="classify_three no">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <a class="back_two" href="javascript:void(0);">返回上级分类</a>
+        </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <!-- 分类列表 结束 -->
+	<include file="Common/footer"/>
+    <script type="text/javascript">
+        var data        = {$category_arr};
+        var categoryid  = "{$categoryid}";
+        var ajaxFlag    = false;
+    </script>
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__JS__/company.js"></script>
+    <script type="text/javascript" src="__JS__/classify.js"></script>
+	<script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

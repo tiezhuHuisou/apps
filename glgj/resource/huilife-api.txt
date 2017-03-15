@@ -1,0 +1,634 @@
+[toc]
+
+#徽生活APP接口文档
+
+##返回码说明
+```
+{
+    code://返回代号：0成功
+         //101 密码错误,102 用户名或邮箱不存在,103 用户名或邮箱重复,104 图片上传错误,105 邮件发送失败
+    message://提示信息
+    data://接口需求的具体数据
+}
+```
+
+##首页接口
+###1.获取轮播新闻列表（GET）
+
+**接口地址:** 
+`GET`   `/position/list`
+> eg.     http://localhost:8080/huilife-api/position/list
+
+**请求参数:**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+cateAlias|string||栏目分类
+start|int||查询开始项，如不填默认为0
+size|int||查询条数，如不填默认为10
+
+**响应结果:**
+```javascript
+data: 
+[
+   {
+     "id": 264,
+      "title": "国考报名人数竞争比双下降 为近年“最容易”国考 ",
+      "thumb": "http://admin.hfwb.com.cn:81/upload/user/chenying/thumb/3a236488-846d-4ea9-ad2c-e42d68ebac53/2.jpg",
+      "description": "2015年国考报名昨天下午正式结束。统计数据显示，截至昨天，审核通过总人数约129万人，较去年同期减少7万人；竞争比约为58：1，为近年来最低的一次。",
+      "module": "news"
+   },
+   ...
+]
+```
+
+### 2.获取普通新闻列表（GET）
+
+**接口地址:** 
+`GET`   `/news/list`
+> eg.      http://localhost:8080/huilife-api/news/list
+
+**请求参数:**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+cateAlias|string||栏目分类
+start|int||查询开始项，如不填默认为0
+size|int||查询条数，如不填默认为10
+
+
+**响应结果:**
+```javascript
+data":
+[
+  {
+    "newsId": 264,
+    "title": "抗战少校军医",
+    "thumb": "http://admin.hfwb.com.cn:81/upload/user/chenying/thumb/3a236488-846d-4ea9-ad2c-e42d68ebac53/2.jpg",
+    "description": "2015年国考报名昨天下午正式结束。统计数据显示，截至昨天，审核通过总人数约129万人，较去年同期减少7万人；竞争比约为58：1，为近年来最低的一次。 \r\n",
+    "commentnum": 0,
+    "hitnum": null,
+    "addtimeStr": "2014-10-25 09:28"
+   },
+   ...
+]
+```
+
+### 3.获取图片新闻列表（GET）
+
+**接口地址:** 
+`GET`   `/pic/list`
+> eg.      http://localhost:8080/huilife-api/pic/list
+
+**请求参数:**   
+参数|数据类型|必填|参数说明
+---|-------|----|-----
+cateAlias|string||栏目分类
+start|int||查询开始项，如不填默认为0
+size|int||查询条数，如不填默认为10
+
+
+**响应结果:**
+```javascript
+data": 
+[
+   {
+     "picNewsId": 1,
+     "title": "中国探月工程三期再入返回飞行试验器发射成功",
+     "thumb": "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+     "description": "北京时间2014年10月24日2时00分，中国自行研制的探月工程三期再入返回飞行试验器，在西昌卫星发射中心用长征三号丙运载火箭发射升空。图为火箭发射过程。",
+     "hitnum": null,
+     "newsFrom": null,
+     "commentnum": 12,
+     "picArray": [
+         "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+         "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+         "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg"
+     ],
+     "addtimeStr": "2014-10-24 15:26"
+    },
+    ...
+]
+```
+
+##新闻详情页接口
+
+### 1.获取单条普通新闻信息（GET）
+**URL:** /news/{id} 
+> eg.    http://localhost:8080/huilife-api/news/259
+
+**请求参数:**  
+|参数|数据类型|参数说明|   
+----|------|--------
+路径参数id|int|新闻id
+
+**返回:**  
+```
+新闻详情html页面
+```
+
+### 2.获取单条图片新闻信息（GET）
+**URL:** /pic/{id} 
+> eg.    http://localhost:8080/huilife-api/pic/1
+
+**请求参数:**  
+|参数|数据类型|参数说明|   
+----|------|--------
+路径参数id|int|新闻id
+
+**返回参数data:**  
+```
+{
+  "code": 0,
+   "message": null,
+   "data": {
+       "picNewsId": 1,
+       "title": "中国探月工程三期再入返回飞行试验器发射成功",
+       "thumb": "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+       "description": "北京时间2014年10月24日2时00分，中国自行研制的探月工程三期再入返回飞行试验器，在西昌卫星发射中心用长征三号丙运载火箭发射升空。图为火箭发射过程。",
+       "commentnum": 12,
+       "picArray": [
+           "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+           "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+           "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg"
+       ],
+       "addtimeStr": "2014-10-24 15:26"       
+    }
+}
+```
+
+### 3.获取某条新闻评论列表（GET）
+**URL:** /comment/list 
+> eg.    http://localhost:8080/huilife-api/comment/list?moudle=news&newsId=259;
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+moudle|String|<i class="icon-ok"></i>|pic/news
+newsId|int|<i class="icon-ok"></i>|新闻id
+start|int||查询开始项，如不填默认为0
+size|int||查询条数，如不填默认为10
+
+**返回参数data:**  
+```
+data": 
+[
+  {
+      "id": 2,
+      "newsId": 0,
+      "title": null,
+      "moudle": null,
+      "content": "评论内容",
+      "nickname": "昵称",
+      "headpic": "http://www.zhg3.com/201408295.jpg", //头像
+      "forknum": 8, //点赞次数
+      "addtimeStr": "2014-10-22 09:19" // 评论时间
+  },
+  ...
+]
+```
+
+### 4.获取某条新闻参与评论人数（GET）
+**URL:**  comment/userCount
+> eg.    http://localhost:8080/huilife-api/comment/userCount?moudle=news&newsId=259;
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+moudle|String|<i class="icon-ok"></i>|pic/news
+newsId|int|<i class="icon-ok"></i>|新闻id
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": null,
+    "data": 2  // 评论人数
+}
+```
+
+### 5.评论点赞（POST）
+**URL:**  comment/fork
+> eg.    http://localhost:8080/huilife-api/comment/fork
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+id|int|<i class="icon-ok"></i>|评论信息id
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "点赞成功",
+    "data": null
+}
+```
+
+### 6.新闻收藏（POST）
+**URL:**  store/add
+> eg.    http://localhost:8080/huilife-api/store/add
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|收藏人id
+moudle|String|<i class="icon-ok"></i>|pic/news
+newsid|int|<i class="icon-ok"></i>|新闻id
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "收藏成功",
+    "data": null
+}
+```
+
+### 7.新闻评论（POST）
+**URL:**  comment/add
+> eg.    http://localhost:8080/huilife-api/comment/add
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+moudle|String|<i class="icon-ok"></i>|pic/news
+newsId|int|<i class="icon-ok"></i>|新闻id
+userid|int|<i class="icon-ok"></i>|评论人id
+content|String|<i class="icon-ok"></i>|评论内容
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "评论成功",
+    "data": null
+}
+```
+
+##个人中心
+
+### 1.登陆（POST）
+**URL:**  user/login
+> eg.    http://localhost:8080/huilife-api/user/login
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+emailOrName|String|<i class="icon-ok"></i>|用户名或邮箱
+password|String|<i class="icon-ok"></i>|密码
+
+**返回参数:**  
+```
+{
+    "code": 101,
+    "message": "密码错误",
+    "data": null
+}
+
+{
+    "code": 102,
+    "message": "该用户名或邮箱不存在",
+    "data": null
+}
+
+{
+    "code": 0,
+    "message": "登陆成功",
+    "data": {
+        "id": 1,
+        "username": "chenying",
+        "password": "e10adc3949ba59abbe56e057f20f883e",
+        "email": "123456@qq.com",
+        "nickname": "陈颖",
+        "sign": "么么哒",
+        "headpic": "http://www.zhg3.com/picture/ad/20140829112315.jpg",
+        "gender": 0
+    }
+}
+```
+
+### 2.注册
+#### 2.1实时验证用户名是否已被注册（POST）
+**URL:**  valid/username
+> eg.    http://localhost:8080/huilife-api/valid/username
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+username|String|<i class="icon-ok"></i>|用户名
+
+**返回参数:**  
+```
+{
+    "code": 103,
+    "message": "该用户名已存在",
+    "data": null
+}
+```
+#### 2.2实时验证邮箱是否已被注册（POST）
+**URL:** valid/email
+> eg.    http://localhost:8080/huilife-api/valid/email
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+email|String|<i class="icon-ok"></i>|邮箱
+
+**返回参数:**  
+```
+{
+    "code": 103,
+    "message": "该邮箱已存在",
+    "data": null
+}
+```
+#### 2.3注册（POST）
+**URL:** user/register
+> eg.    http://localhost:8080/huilife-api/user/register
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+username|String|<i class="icon-ok"></i>|用户名
+email|String|<i class="icon-ok"></i>|邮箱
+password|String|<i class="icon-ok"></i>|密码
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "注册成功",
+    "data": null
+}
+```
+
+### 3.修改密码（POST）
+**URL:** user/update/psw
+> eg.    http://localhost:8080/huilife-api/user/update/psw
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|用户id
+password|String|<i class="icon-ok"></i>|新密码
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "密码修改成功",
+    "data": null
+}
+```
+
+### 4.找回密码（POST）
+**URL:** user/pswBack
+> eg.    http://localhost:8080/huilife-api/user/pswBack
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+email|String|<i class="icon-ok"></i>|邮箱
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "邮件发送成功",
+    "data": null
+}
+
+{
+    "code": 105,
+    "message": "邮件发送失败",
+    "data": null
+}
+```
+
+### 5.个人信息修改（POST）
+**URL:** user/update
+> eg.    http://localhost:8080/huilife-api/user/update
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|用户id
+username|String|<i class="icon-ok"></i>|用户名
+nickname|String||昵称
+sign|String||个性签名
+gender|int||性别
+headpic|String||原头像地址
+img|MultipartFile||新上传头像信息
+
+**返回参数:**  
+```
+{
+    "code": 104,
+    "message": "头像上传错误",
+    "data": null
+}
+
+{
+    "code": 0,
+    "message": "更新成功",
+    "data": null
+}
+```
+
+### 6.我的评论总数（GET）
+**URL:** comment/count/my
+> eg.    http://localhost:8080/huilife-api/comment/count/my?userid=1
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|用户id
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": null,
+    "data": 2 // 我的评论总数
+}
+```
+
+### 7.我的评论列表（GET）
+**URL:** comment/list/my
+> eg.    http://localhost:8080/huilife-api/comment/list/my?userid=1&start=0&size=10
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|用户id
+start|int||查询开始项，如不填默认为0
+size|int||查询条数，如不填默认为10
+
+**返回参数data:**  
+```
+data":
+ [
+    {
+        "id": 27,
+        "newsId": 260,
+        "title": "抗战少校军医",
+        "moudle": "news",
+        "content": "评论内容",
+        "nickname": null,
+        "headpic": null,
+        "forknum": 5, //评论点赞数
+        "addtimeStr": "2014-10-22 09:19"
+    },
+    ...
+ ]
+```
+
+### 8.删除评论（POST）
+**URL:** comment/delete
+> eg.    http://localhost:8080/huilife-api/comment/delete
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+id|int|<i class="icon-ok"></i>|评论实体id
+newsId|int|<i class="icon-ok"></i>|新闻id
+moudle|String|<i class="icon-ok"></i>|pic/news
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "删除成功",
+    "data": null
+}
+```
+
+### 9.我的收藏总数（GET）
+**URL:** store/count
+> eg.    http://localhost:8080/huilife-api/store/count?userid=1
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|用户id
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": null,
+    "data": 1 // 我的收藏总数
+}
+```
+
+### 10.我的收藏-新闻列表（GET）
+**URL:** store/list/news
+> eg.    http://localhost:8080/huilife-api/store/list/news?userid=1
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|用户id
+start|int||查询开始项，如不填默认为0
+size|int||查询条数，如不填默认为10
+
+**返回参数data:**  
+```
+data":
+[
+    {
+      "id": 5,
+       "userid": 0,
+       "newsid": 259,
+       "title": "国考报名人数竞争比双下降 为近年“最容易”国考 ",
+       "thumb": null,
+       "description": "2015年国考报名昨天下午正式结束。统计数据显示，截至昨天，审核通过总人数约129万人，较去年同期减少7万人；竞争比约为58：1，为近年来最低的一次。",
+       "commentnum": "0",
+       "pictures": null,
+       "moudle": "news",
+       "picArray": [ ]
+    },
+    ...
+]
+```
+
+### 11.我的收藏-图片列表（GET）
+**URL:** store/list/pic
+> eg.    http://localhost:8080/huilife-api/store/list/pic?userid=1
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+userid|int|<i class="icon-ok"></i>|用户id
+start|int||查询开始项，如不填默认为0
+size|int||查询条数，如不填默认为10
+
+**返回参数data:**  
+```
+data": 
+[
+    {
+        "id": 7,
+        "userid": 0,
+        "newsid": 1,
+        "title": "中国探月工程三期再入返回飞行试验器发射成功",
+        "thumb": "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+        "description": null,
+        "commentnum": null,
+        "moudle": "pic",
+        "picArray": [
+            "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+            "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg",
+            "http://www.zhg3.com/picture/ad/www-01-01-01/20140829112315.jpg"
+        ]
+    },
+    ...
+]
+```
+
+### 12.取消收藏（POST）
+**URL:** store/cancle
+> eg.    http://localhost:8080/huilife-api/store/cancle?id=5
+
+**请求参数:**  
+|参数|数据类型|必填|参数说明|   
+----|------|--------
+id|int|<i class="icon-ok"></i>|收藏实体id
+
+**返回参数:**  
+```
+{
+    "code": 0,
+    "message": "取消收藏成功",
+    "data": null
+}
+```
+
+## 系统接口
+### 1.意见反馈(POST)
+**URL:**http://localhost:8080/huilife-api/system/feedback
+**请求参数:**  
+|参数|数据类型|参数说明|   
+|-|-|-|
+|content|String|建议内容|
+|userid|int|用户ID|
+**响应参数data**:参考code返回码
+
+### 2.版本更新(GET)
+**URL:**http://localhost:8080/huilife-api/system/version
+**请求参数:**  
+|参数|数据类型|参数说明|   
+|-|-|-|
+|code|int|版本号|
+**响应参数data**:
+```
+{   
+    version:"10.0.0.3"                                                                  //版本号
+    log:"更新日志：....（略）"                                                             //更新日志
+    downloadurl:"http://gdown.baidu.com/data/wisegame/bf076742152b3b8e/baiduditu_546.apk"//下载地址
+    
+}
+```
+### 3.系统支持(GET)
+**URL:**http://localhost:8080/huilife-api/system/support
+**请求参数:** 无
+**响应参数data**:返回系统支持信息

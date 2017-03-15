@@ -1,0 +1,61 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/login.css" />
+<script type="text/javascript" src="__JS__/login.js"></script>
+</head>
+<body>
+	<!-- logo -->
+	<img class="logo" src="./Public/Member/images/logo.png" />
+	<!-- 登录信息 -->
+    <form class="form-horizontal chkform" name="" action="" method="post">
+		<div class="login">
+			<p class="login_title">账号登陆</p>
+			<!-- 账号 -->
+			<div class="login_account">
+				<div>
+					<i class="icon"></i>
+					<input class="account_input" type="text" name="mphone" placeholder="请输入账号" datatype="mobile" nullmsg="请输入账号" errormsg="账号输入有误" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请输入账号</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 密码 -->
+			<div class="login_password">
+				<div>
+					<i class="icon"></i>
+					<input class="password_input" type="password" name="password" placeholder="请输入密码" datatype="*" nullmsg="请输入密码" errormsg="密码输入有误" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请输入密码</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 登陆按钮 -->
+			<input class="login_btn ajax-post chksubmit" target-form="form-horizontal" type="submit" value="登&nbsp;录" />
+			<!-- 操作按钮 -->
+			<p class="login_opt">
+				<label>
+					<input type="checkbox" name="remember" value="1"/>
+					<span>记住我</span>
+				</label>
+				<a class="register_btn" href="?g=member&m=register">新用户注册</a>
+				<a class="repassword_btn" href="?g=member&m=register&a=forget">忘记密码</a>
+				<div class="clear"></div>
+			</p>
+		</div>
+	</form>
+</body>
+</html>

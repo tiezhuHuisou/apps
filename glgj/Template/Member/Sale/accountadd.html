@@ -1,0 +1,119 @@
+    <include file="Common/head"/>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <include file="Sale/nav"/>
+            <!-- 发布求购表单 开始 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="id" value="{$detail.id}"/>
+                <input type="hidden" name="company_id" value="{:UID}"/>
+                <div class="add_form">
+                    <!-- 标题 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">标题：</div>
+                            <input class="t200" type="text" name="title" value="{$detail.title}" placeholder="请输入标题" datatype="title" nullmsg="请输入标题" errormsg="标题长度应为2-50位" />
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>                  
+                    <!-- 副标题 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">副标题：</div>
+                            <input class="t400" type="text" name="short_title" value="{$detail.short_title}" placeholder="请输入副标题" datatype="title" nullmsg="请输入标题" errormsg="标题长度应为2-50位" />
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>  
+                    <!-- 求购分类 -->
+                    <div class="add_row">
+                        <div class="add_name">求购分类：</div>
+                            <select name="buy_category_id">
+                                <option value="0">请选择</option>
+                                <volist name="classify" id="cl">
+                                <option value="{$cl.id}" <eq name="cl.id" value="$detail.buy_category_id">selected</eq>>{$cl.name}</option>
+                                </volist>
+                            </select>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 数量 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">数量：</div>
+                            <input class="t200" type="text" name="num" value="{$detail.num}" placeholder="请输入库存" datatype="n" nullmsg="请输入库存数量" errormsg="请输入库存数量" />
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入数量</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 单价 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">单价：</div>
+                            <input class="t200" type="text" name="price" value="{$detail.price}" placeholder="请输入单价" datatype="*" nullmsg="请输入单价" />
+                            <span class="add_desc">填写价格区间或单价，例如：50 或者 50,80</span>
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入单价</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 保存按钮 -->
+                    <div class="add_row">
+                        <div class="add_name"></div>
+                        <input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="提 交" />
+                    </div>
+                </div>
+            </form>
+            <!-- 发布求购表单 结束 -->
+        </div>
+        <!-- 主体 结束 -->
+    </div>
+</body>
+</html>

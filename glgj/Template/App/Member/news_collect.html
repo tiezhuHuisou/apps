@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/news_collect.css" />
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+        <a class="header_left" href="javascript:history.go(-1);">
+            <div class="lt"><div></div></div>
+        </a>
+        <p class="header_title">{$site_title}</p>
+        <a class="header_right f15252" href="javascript:void(0);">编辑</a>
+    </header>
+	<!-- 无底部区域 -->
+	<section class="no_footer">
+        <!-- 资讯列表 -->
+        <div class="news_list">
+        	<input id="classify" type="hidden" value="1"/>
+            <ul>
+                <notempty name="list['ordered']">
+                    <div class="news_list">
+                        <input id="classify" type="hidden" value="1"/>
+                        <ul>
+                            <volist name="list['ordered']" id="vo">
+                                <li>
+                                    <div class="unselected_icon"></div>
+                                    <div class="list_detail">
+                                        <img src="{$vo['iamge']}" height="60" width="60"/>
+                                        <div class="desc">
+                                            <span>{$vo['title']}</span>
+                                            <p>{$vo['addtime']}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </volist>
+                        </ul>
+                    </div>
+                </notempty>
+            </ul>
+        </div>
+
+        <empty name="list">
+        <!-- 收藏为空时 -->
+        <div class="collect_empty_wrap ">
+            <div class="common_empty"  style="display: none;">
+                <img src="__IMG__/collect_empty.png" width="120" height="120" />
+                <p>您的{$site_title}还是空的哦</p>
+                <a href="?g=app&m=news">去收藏</a>
+            </div>
+        </div>
+        </empty>
+	</section>
+    <footer>
+        <div class="unselected_icon allselected"></div>
+        <span>全选</span>
+        <button class="news_delete" href="javascript:void(0);">删除</button>
+    </footer>
+
+    <script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/news_collect.js"></script>
+</body>
+</html>

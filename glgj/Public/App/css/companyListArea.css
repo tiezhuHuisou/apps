@@ -1,0 +1,17 @@
+/*分类*/
+.weui-navbar__item:after {border:none;}
+.weui-grids{margin-top:10px;background:#fff;}
+.active{color:#38d163;}
+.active span{position:relative;}
+.active span:after{content: " ";position: absolute;right: 0;bottom: -10px;color: #d9d9d9;left: 0;height: 1px;border-bottom: 3px solid #38d163;transform: scaleY(.5);transform-origin: 0 100%;}
+.weui-navbar{border-bottom:1px solid #e5e5e5;}
+/*分类列表*/
+.area{display:flex;}
+.area .left_area ul:after{display:table;content:'';clear:both;}
+.area .left_area ul li{float:left;width:100%;text-align:center;padding: 10px 0px;}
+.area .left_area{width:100px;}
+.area .left_area li.active{color:#38d163;border-bottom:1px solid #38d163;}
+.area .right_area{flex:1;-webkit-flex:1;-moz-flex:1;background:#fff;}
+.weui-flex__item {-webkit-box-flex: 1;-webkit-flex: 1;flex: 1;display: flex;justify-content: center;}
+.weui-flex__item a{border: 1px solid #ddd;padding: 3px 10px;border-radius: 5px;font-size: 12px;min-width: 40px;text-align: center;font-size:12px;}
+.weui-flex {display: -webkit-box;display: -webkit-flex;display: flex;padding: 10px 0;}

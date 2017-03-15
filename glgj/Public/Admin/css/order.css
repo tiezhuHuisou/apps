@@ -1,0 +1,31 @@
+.wrapper .search .search_input{width:150px;height:18px;line-height:18px;}
+.wrapper .order_wrap{width:100%;border:1px solid #dcdcdc;font-size:12px;}
+/* 主体内容头部 */
+.wrapper .order_wrap .order_header{background:#f2f2f2;font-size:12px;border-bottom:1px solid #dcdcdc;}
+.wrapper .order_wrap .order_header p{float:left;height:40px;line-height:40px;text-align:center;}
+.wrapper .order_wrap .order_header .order_header_name{width:30%;}
+.wrapper .order_wrap .order_header .order_header_phone{width:10%;}
+.wrapper .order_wrap .order_header .order_header_address{width:30%;}
+.wrapper .order_wrap .order_header .order_header_totalprice{width:15%;}
+.wrapper .order_wrap .order_header .order_header_status{width:5%;}
+.wrapper .order_wrap .order_header .order_header_opt{width:10%;}
+/* 订单编号、下单时间 */
+.wrapper .order_wrap .order_list .order_list_top{height:30px;line-height:30px;background-color:#e8f2ff;font-weight:normal;color:#000;margin-top:7px;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.wrapper .order_wrap .order_list .order_list_top strong{margin-left:10px;}
+.wrapper .order_wrap .order_list .order_list_top span{margin:0 30px 0 10px;color:#8a8a8a;}
+/* 订单信息 */
+.wrapper .order_wrap .order_list .order_list_info{border-bottom:1px solid #dcdcdc;text-align:center;}
+.wrapper .order_wrap .order_list .order_list_info p{float:left;height:78px;line-height:78px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-right:1px solid #dcdcdc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.wrapper .order_wrap .order_list .order_list_info .order_name{width:30%;}
+.wrapper .order_wrap .order_list .order_list_info .order_phone{width:10%;}
+.wrapper .order_wrap .order_list .order_list_info .order_address{width:30%;}
+.wrapper .order_wrap .order_list .order_list_info .order_totalprice{width:15%;height:78px;}
+.wrapper .order_wrap .order_list .order_list_info .order_totalprice span{display:block;line-height:normal;}
+.wrapper .order_wrap .order_list .order_list_info .order_totalprice .totalprice{margin:20px 0 10px;font-weight:bold;}
+.wrapper .order_wrap .order_list .order_list_info .order_status{width:5%;}
+.wrapper .order_wrap .order_list .order_list_info .order_opt{width:10%;border-right:none;}
+.wrapper .order_wrap .order_list .order_list_info .order_opt .order_detail_btn{color:#36c;text-decoration:underline;}
+/* 订单底部 */
+.wrapper .order_wrap .order_footer{height:40px;background:#f2f2f2;}
+/* 底部 */
+.wrapper .footer{height:30px;margin-top:30px;background:#f2f2f2;}

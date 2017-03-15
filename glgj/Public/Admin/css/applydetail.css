@@ -1,0 +1,7 @@
+.list_table .max{max-width:300px;}
+.list_table{width:100%;margin-top:10px;border:1px solid #dcdcdc;}
+.list_table .list_header{font-size:20px;font-weight:bold;height:40px;line-height:40px;background:#ebebeb;}
+.list_table .list_items{height:40px;line-height:40px;border-top:1px solid #dcdcdc;}
+.list_table .list_items:hover{background:#ebebeb;}
+.list_table tr td{text-align:center;}
+.list_table tr td.tl{text-align:left;}

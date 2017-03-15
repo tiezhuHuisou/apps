@@ -1,0 +1,48 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/forget.css" />
+<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+<script type="text/javascript" src="__JS__/forget.js"></script>
+</head>
+<body>
+	<!-- logo 开始 -->
+	<img class="logo" src="__IMG__/logo.png" />
+	<!-- logo 结束 -->
+	<!-- 找回密码 开始 -->
+	<form class="chkform">
+		<div class="forget">
+			<p class="forget_title">找回密码</p>
+			<div class="forget_info">
+				<p>请输入您的用户名或电子邮件地址。</p>
+				<p>您将通过电子邮件收到一个创建新密码的链接</p>
+			</div>
+			<!-- 用户名输入框 -->
+			<div class="forget_con">
+				<!-- 图标、输入框 -->
+				<div>
+					<i class="icon"></i>
+					<input class="forget_input" type="text" name="name" placeholder="请填写账号或邮箱地址" datatype="*" nullmsg="请填写账号或邮箱地址" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请填写账号或邮箱地址</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 找回按钮 -->
+			<input class="forget_btn chksubmit"  type="submit" value="找&nbsp;&nbsp;回" />
+			<!-- 登陆、注册链接 -->
+			<p class="forget_opt">
+				<a class="login_btn" href="?g=member&m=login">登陆</a>
+				<a class="register_btn" href="?g=member&m=register">注册</a>
+				<div class="clear"></div>
+			</p>
+		</div>
+	</form>
+	<!-- 找回密码 结束 -->
+</body>
+</html>

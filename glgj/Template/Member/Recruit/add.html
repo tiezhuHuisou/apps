@@ -1,0 +1,91 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/info.css" />
+<link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css" />
+<script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="__STATIC__/layer/laydate.js"></script>
+<script type="text/javascript" src="__JS__/info.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<h2 class="add_title">发布招聘信息</h2>
+			<!-- 修改个人资料表单 开始 -->
+			<form class="chkform form-horizontal" name="" action="" method="post">
+			<input type="hidden" name="uid" value="{$detail.uid}"/>
+				<div class="add_form">
+					<!-- 姓名 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">公司名称：</div>
+							<input class="t400" type="text" name="company_name" value="{$detail['company_name']|default=''}" placeholder="请输入姓名" datatype="title" nullmsg="请输入公司名称：" errormsg="公司名称长度应为2-50位" />
+							<span class="add_star">*</span>
+						</div>
+						<!-- 表单验证提示信息 -->
+						<div>
+						    <div class="info">
+						        <span class="Validform_checktip">公司名称</span>
+						        <span class="dec">
+						            <s class="dec1">&#9670;</s>
+						            <s class="dec2">&#9670;</s>
+						        </span>
+						    </div>
+						</div>
+					</div>
+
+					<!-- 推荐人 -->
+<!-- 					<div class="add_row">
+						<div class="add_name">联系方式:</div>
+						<input class="t400" type="text" name="phone" value="{$detail['phone']|default=''}" placeholder="请输入手机号" />
+					</div> -->
+					<!-- 手机号 -->
+					<div class="add_row">
+						<div class="add_name">联系方式:</div>
+						<input class="t400" type="text" name="phone" value="{$detail['phone']|default=''}" placeholder="请输入手机号" />
+					</div>
+
+					<div class="add_row">
+						<div class="add_name">联系人:</div>
+						<input class="t400" type="text" name="contact" value="{$detail['contact']|default=''}" placeholder="请输入联系人" />
+					</div>
+					<!-- 头像 -->
+					<div class="add_row">
+						<div class="add_name">企业logo：</div>
+						<a id="portrait_upload" class="add_upload" href="javascript:void(0);">上传图片</a>
+						<input id="portrait_url" type="hidden" name="logo" value="{$detail['logo']|default=''}" />
+						<span class="add_star">*</span>
+						<span class="add_desc">建议尺寸：320*320</span>
+					</div>
+					<!-- 头像预览 -->
+					<div class="add_row">
+						<div class="add_name vat">企业logo预览：</div>
+						<img id="portrait_preview" src="{$detail['logo']|default='__IMG__/default_img.png'}" width="80" height="80" />
+					</div>
+					<!--地址-->
+					<div class="add_row">
+						<div class="add_name">企业地址:</div>
+						<input class="t400" type="text" name="address" value="{$detail['address']|default=''}" placeholder="请输入企业地址" />
+					</div>
+					<!-- 提交信息按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit ajax-post" type="submit" target-form="form-horizontal" value="提交信息" />
+					</div>
+				</div>
+			</form>
+			<!-- 修改个人资料表单 开始 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

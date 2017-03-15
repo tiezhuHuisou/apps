@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/location.css" />
+</head>
+    <body>
+        <!-- 头部 开始 -->
+        <header>
+            <a class="header_left" href="javascript:history.go(-1);">取消</a>
+            <p class="header_title mgr50">选择地址</p>
+        </header>
+        <!-- 头部 结束 -->
+        <!-- 主体内容 开始 -->
+        <section class="location_wrapper no_footer">
+            <p class="location_message">选择您的当前地址,服务更周到哦</p>
+            <div class="location_address">
+                 <!-- 当前地址 -->
+                <p class="now_address_title">当前地址</p>
+                <p class="now_address">
+                    <span class="now_address_text">{$province_name}{$city_name}</span>
+                    <span class="select_icon"></span>
+                </p>
+                <!-- 选择省 -->
+                <div class="select_province">
+                    <foreach name="province_arr" key="k" item="liv">
+                        <p class="search_char">{$k}</p>
+                        <div class="province">
+                            <foreach name="liv" item="val">
+                                <p class="province_name" data-id="{$val['id']}">{$val['name']}</p>
+                            </foreach>
+                            
+                        </div>
+                    </foreach>
+                </div>
+                <!-- 选择市 -->
+                <div class="select_city">
+                    <!-- 选择市 -->
+                    <p class="city_title">选择市</p>
+                    <div class="city"></div>
+                </div>
+                <!-- 选择区/县 -->
+                <div class="select_area">
+                    <!-- 选择区/县 -->
+                    <p class="area_title">选择区/县</p>
+                    <div class="area"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 主体内容 结束 -->
+        <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            var data={$city_arr};
+            var data_area={$area_arr};
+        </script>
+        <script type="text/javascript" src="__JS__/location.js"></script>
+    </body>
+</html>

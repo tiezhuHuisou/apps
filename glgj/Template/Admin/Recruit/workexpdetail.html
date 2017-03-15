@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/word_exp.css" />
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <include file="Common/header"/>
+    <!-- 头部 结束 -->
+    <!-- 可视区域 开始 -->
+    <section class="no_footer">
+        <form action="" method="post">
+            <!-- 工作经历 开始 -->
+            <div class="experience">
+                <!-- 标题 -->
+                <p class="title">工作经历</p>
+                <!-- 所在公司 -->
+                <div class="row">
+                    <p class="name">所在公司</p>
+                    <p class="content">{$detail['company_name']}</p>
+                </div>
+                <!-- 职位名称 -->
+                <div class="row">
+                    <p class="name">职位名称</p>
+                    <p class="content">{$detail['post']}</p>
+                </div>
+                <!-- 在职时间 -->
+                <div class="row">
+                    <p class="name">在职时间</p>
+                    <p class="content">{$detail['begin_time']|date='Y-m',###} 至 {$detail['end_time']|date='Y-m',###}</p>
+                </div>
+                <!-- 工作描述 -->
+                <div class="row">
+                    <p class="name">工作描述</p>
+                    <p class="content">{$detail['exp']}</p>
+                </div>
+            </div>
+            <!-- 工作经历 结束 -->
+        </form>
+    </section>
+    <!-- 可视区域 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+</body>
+</html>

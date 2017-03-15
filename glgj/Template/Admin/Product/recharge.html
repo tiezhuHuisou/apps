@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/order.css" />
+    <script type="text/javascript" src="__STATIC__/layer/laydate.js"></script>
+    <script type="text/javascript" src="__JS__/order.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>订单管理</h2>
+				<a <eq name="state" value="">class="hover"</eq> href="?g=admin&m=product&a=order">所有订单</a>
+				<a <eq name="state" value="1">class="hover"</eq>href="?g=admin&m=product&a=order&state=1">待付款</a>
+				<a <eq name="state" value="2">class="hover"</eq>href="?g=admin&m=product&a=order&state=2">待发货</a>
+				<a <eq name="state" value="3">class="hover"</eq>href="?g=admin&m=product&a=order&state=3">已发货</a>
+				<a <eq name="state" value="4">class="hover"</eq>href="?g=admin&m=product&a=order&state=4">已完成</a>
+				<a <eq name="state" value="5">class="hover"</eq>href="?g=admin&m=product&a=order&state=5">已取消</a>
+                <a <eq name="state" value="6">class="hover"</eq>href="?g=admin&m=product&a=recharge">充值订单</a>
+            </div>
+            <!-- 主体搜索 -->
+            <div class="search">
+                <form class="form-horizontal" name="" action="" method="post">
+                   <p>订单号：</p>
+                   <input class="search_input" type="text" name="orderid" value="{$orderid}"/>
+                   <p>下单时间：</p>
+                   <input id ="time_start" class="laydate-icon search_input" type="text" name="time_start" value="{$time_start}"/>
+                   <span>-</span>
+                   <input id ="time_end" class="laydate-icon search_input" type="text" name="time_end" value="{$time_end}"/>
+                   <input class="search_btn" type="submit" value="检索" />
+               </form>
+           </div>
+           <!-- 主体数据 -->
+           <div class="order_wrap">
+            <!-- 订单头部 -->
+            <div class="order_header">
+                <p class="order_header_name">姓名</p>
+                <p class="order_header_totalprice">充值金额</p>
+                <p class="order_header_address">充值时间</p>
+                <p class="order_header_status">状态</p>
+                <div class="clear"></div>
+            </div>
+            <!-- 订单列表 -->
+            <volist name="list" id="li">
+                <div class="order_list">
+                    <!-- 订单编号、下单时间 -->
+                    <div class="order_list_top">
+                        <strong>订单号：</strong>
+                        <span class="order_code">{$li.orderid}</span>
+                        <strong>下单时间：</strong>
+                        <span class="order_time">{$li.addtime|date="Y-m-d h:i",###}</span>
+                    </div>
+                    <!-- 订单信息 -->
+                    <div class="order_list_info">
+                        <p class="order_name">姓名</p>
+                        <p class="order_totalprice">￥{$li['price']}</p>
+                        <p class="order_address"><if condition="is_null($li['pay_time'])">无<else />{$li.pay_time|date="Y-m-d h:i",###|}</if></p>
+                        <p class="order_status">
+                            <switch name="li['state']">
+                                <case value="0">待付款</case>
+                                <case value="1">已完成</case>
+                                <case value="-1">已删除</case>
+                                <case value="2">已取消</case>
+                            </switch>
+                        </p>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </volist>
+            <!-- 订单底部 -->
+            <div class="order_footer"></div>
+        </div>
+        <div class="footer"></div>
+        <!-- 分页 -->
+        <div class="page">{$_page}</div>
+    </div>
+</div>
+<!-- 主体 结束 -->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/template.css" />
+<script type="text/javascript" src="__JS__/template.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=sale">发布产品信息</a>
+				<a href="?g=member&m=sale&a=product">产品管理</a>
+				<a href="?g=member&m=sale&a=order">订单管理</a>
+				<a href="?g=member&m=sale&a=release">发布求购</a>
+				<a href="?g=member&m=sale&a=need">求购管理</a>
+				<a class="hover" href="?g=member&m=sale&a=template">添加运费模版</a>
+				<a href="?g=member&m=sale&a=freight">运费管理</a>
+				<!-- <a href="?g=member&m=sale&a=refund">返现申请</a>
+				<a href="?g=member&m=sale&a=result">返现申请结果</a> -->
+			</div>
+			<!-- 添加运费模版表单 开始 -->
+			<form class="chkform form-horizontal" name="" action="" method="post">
+				<div class="add_form">
+					<!-- 名称 -->
+					<div class="add_row">
+						<div class="add_name">名称：</div>
+						<select name="delivery_id">
+							<option value="">请选择快递</option>
+							<foreach name="delivery" item="val">
+								<option value="{$val['id']}">{$val['title']}</option>
+							</foreach>							
+						</select>
+						<span class="add_star">*</span>
+					</div>
+					<!-- 首件运费 -->
+					<div class="add_row">
+						<div class="add_name">首件运费：</div>
+						<input class="t200" type="text" name="first_price" value="" placeholder="请输入首件运费" />
+						<span class="add_desc">元</span>
+					</div>
+					<!-- 附加邮费 -->
+					<div class="add_row">
+						<div class="add_name">附加邮费：</div>
+						<input class="t200" type="text" name="step_price" value="" placeholder="请输入附加邮费" />
+						<span class="add_desc">元</span>
+					</div>
+					<!-- 是否启用 -->
+					<div class="add_row">
+						<div class="add_name">启用：</div>
+						<label><input type="radio" name="enabled" value="1">是</label>
+						<label><input type="radio" name="enabled" value="0" checked="checked">否</label>
+					</div>
+					<!-- 添加按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit ajax-post" type="submit" target-form="form-horizontal" value="添 加" />
+					</div>
+				</div>
+			</form>
+			<!-- 添加运费模版表单 结束 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

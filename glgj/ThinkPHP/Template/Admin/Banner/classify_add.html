@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>焦点图分类管理中心</h2>
+				<a href="?g=admin&m=banner&a=classify">焦点图分类列表</a>
+				<a class="hover" href="?g=admin&m=banner&a=classify_add">添加焦点图分类</a>
+			</div>
+			<h3>焦点图分类添加</h3>
+			<!-- 添加焦点图分类表单 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<input  type="hidden" name="id" value="{$detail.id}"/>
+				<table class="add_table">
+					<tr>
+						<td class="w120">分类名称：</td>
+						<td>
+							<input class="i400" type="text" name="name" value="{$detail.name}" datatype="title" nullmsg="请填写分类名称" errormsg="请填写分类名称" />
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写分类名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">简介：</td>
+						<td>
+							<textarea class="t400" name="desc">{$detail.desc}</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">排序：</td>
+						<td>
+							<input class="i50" type="text" name="listorder" value="{$detail.listorder|default='50'}" datatype="n" nullmsg="请填写排序数字" errormsg="请正确填写排序数字" />
+							<span class="pl3">数字越大越靠前</span>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写排序数字</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<!-- 提交按钮 -->
+					<tr class="add_opt">
+						<td></td>
+						<td>
+							<input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" type="submit" value="确定提交" />
+							<input class="opt_btn" type="reset" value="重置表单" />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

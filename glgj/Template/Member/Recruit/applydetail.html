@@ -1,0 +1,127 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/info.css" />
+<link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/recruit_applydetail.css" />
+<script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="__STATIC__/layer/laydate.js"></script>
+<script type="text/javascript" src="__JS__/info.js"></script>
+<script type="text/javascript">
+	$(function() {
+		KindEditor.ready(function(K) {
+			K.create('#apply_content',{
+        	readonlyMode : true   ,                 // 产品详情
+        	width        : '670px',
+        	height       : '300px',
+        	items       : [],
+        	afterBlur    : function(){this.sync();},
+        	resizeType   : 0
+        });
+
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<h2 class="add_title">求职人详情</h2>
+			<!-- 修改岗位信息 开始 -->
+			<form class="chkform form-horizontal" name="" action="" method="post">
+				<div class="add_form">
+					<!-- 姓名 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">姓名：</div>
+							<input class="t400" type="text" name="title" value="{$detail['name']|default=''}" readonly="readonly"/>
+							<span class="add_star">*</span>
+						</div>
+					</div>
+					<!--推荐人-->
+					<!-- <div class="add_row">
+						<div>
+							<div class="add_name">推荐人手机：</div>
+							<input class="t400" type="text" name="mphone" value="{$detail['mphone']|default=''}" readonly="readonly"/>
+							<span class="add_star">*</span>
+						</div>
+					</div> -->
+					<div class="add_row">
+						<div class="add_name">期望薪资:</div>
+						<input class="t400" type="text" value="{$detail['expect_wages']|default=''}" readonly="readonly" />
+					</div>
+					
+					<div class="add_row">
+						<div class="add_name">年龄:</div>
+						<input class="t400" type="text" value="{$detail['age']|default=''}" readonly="readonly"/>
+					</div>
+
+<!-- 					<div class="add_row">
+						<div class="add_name">学历:</div>
+						<input class="t400" type="text" name="degree" value="{$detail['degree']|default=''}" placeholder="学历" />
+					</div> -->
+					<div class="add_row">
+						<div class="add_name">学历</div>
+						<input class="t400" type="text" value="{$detail['degree']|default=''}" readonly="readonly"/>
+					</div>
+
+					<div class="add_row">
+						<div class="add_name">邮箱:</div>
+						<input class="t400" type="text" value="{$detail['email']|default=''}" readonly="readonly"/>
+					</div>
+
+					<div class="add_row">
+						<div class="add_name">联系电话:</div>
+						<input class="t400" type="text" value="{$detail['phone']|default=''}" readonly="readonly"/>
+					</div>
+
+					<div class="add_row">
+						<div class="add_name">家庭地址</div>
+						<input class="t400" type="text" value="{$detail['address']|default=''}" readonly="readonly"/>
+					</div>
+					<!-- 岗位描述 -->
+					<table class="list_table">
+						<tr class="list_header">
+							<td colspan="4" align="center">工作经历</td>
+						</tr>
+						<tr class="list_items">
+							<th>公司名称</th>
+							<th>职位名称</th>
+							<th>任职时间</th>
+							<th class="tl">工作描述</th>
+						</tr>
+						<notempty name="detail.work_exp">
+							<!-- 一条数据 开始 -->
+							<volist name="detail.work_exp" id="li">
+								<tr class="list_items">
+									<td>{$li['company_name']}</td>
+									<td>{$li['post']}</td>
+									<td>{$li['begin_time']|date="Y年m月",###} - {$li['end_time']|date="Y年m月",###}</td>
+									<td class="max tl">{$li['exp']}</td>
+								</tr>
+							</volist>
+							<!-- 一条数据 结束 -->
+							<else />
+							<tr class="list_items">
+								<td colspan="4">该用户未填写工作经历</td>
+							</tr>
+						</notempty>
+					</table>
+					<!-- 提交信息按钮 -->
+				</div>
+			</form>
+			<!-- 修改个人资料表单 开始 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

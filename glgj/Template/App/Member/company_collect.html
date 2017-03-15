@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/company_collect.css"/>
+</head>
+<body>
+<!-- 头部 开始-->
+<header>
+    <a class="header_left" href="javascript:history.go(-1);">
+        <div class="lt">
+            <div></div>
+        </div>
+    </a>
+    <p class="header_title">{$site_title}</p>
+    <a class="header_right" href="javascript:void(0);">编辑</a>
+</header>
+<!-- 头部 结束-->
+<!-- 可视区域 开始 -->
+<section class="company_collect_wrapper no_footer">
+    <!-- 收藏公司列表 -->
+    <!-- 列表页 -->
+    <notempty name="list['ordered']">
+        <volist name="list['ordered']" id="vo">
+            <input id="classify" type="hidden" value="{$vo['id']}"/>
+            <div class="company_collect_list">
+                <!-- 筛选图标 -->
+                <div class="unselected_icon"></div>
+                <!--收藏列表-->
+                <div class="list_detail">
+                    <h4>{$vo['name']}</h4>
+                    <p class="weui-media-box__desc">联系人：<span>{$vo['contact_user']}</span></p>
+                    <p class="weui-media-box__desc">
+                        <span class="phone">电话：{$vo['telephone']}<a href="tel:{$vo['telephone']}"><img
+                                src="__IMG__/dh.png"></a></span>
+                        <span class="phone">手机：{$vo['subphone']}<a href="tel:{$vo['subphone']}"><img
+                                src="__IMG__/dh.png"></a></span>
+                    </p>
+                    <p class="weui-media-box__desc">{$vo['address']}</p>
+                </div>
+                <!--收藏列表结束-->
+            </div>
+        </volist>
+        </div>
+    </notempty>
+    <!-- 公司列表 -->
+    <empty name="list['ordered']">
+        <!-- 收藏为空时 -->
+        <div class="collect_empty_wrap" style="display: none;">
+            <div class="common_empty">
+                <img src="__IMG__/collect_empty.png" width="120" height="120"/>
+                <p>您的{$site_title}还是空的哦</p>
+                <a href="?g=app&m=company">去收藏</a>
+            </div>
+        </div>
+    </empty>
+</section>
+<!-- 可视区域 结束 -->
+<!-- 底部 开始 -->
+<footer>
+    <div class="unselected_icon allselected"></div>
+    <span>全选</span>
+    <button class="news_delete" href="javascript:void(0);">删除</button>
+</footer>
+<!-- 底部 结束-->
+<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+<script type="text/javascript" src="__JS__/company_collect.js"></script>
+</body>
+</html>

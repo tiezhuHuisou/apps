@@ -1,0 +1,5 @@
+.list_table{border:1px solid #dcdcdc;margin-top:20px;text-align:center;}
+.list_table .list_header{height:30px;line-height:30px;background:#ebebeb;}
+.list_table .list_items{border-top:1px solid #dcdcdc;}
+.list_table .list_items td{padding:16px 0;border:1px solid #dcdcdc;}
+.list_table .list_items .items_space{width:30px;display:inline-block;}

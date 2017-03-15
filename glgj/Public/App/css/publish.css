@@ -1,0 +1,24 @@
+/* 公共部分 */
+.pubs_wrap .pubs_list{padding:10px;background:#fff;margin-top:10px;border:1px solid #dcdcdc;}
+.pubs_wrap .pubs_list .list_title{font-weight:bold;margin-bottom:3px;}
+/* 标题 */
+.pubs_wrap .pubs_list .list_items .list_input_long{width:100%;padding:4px 0;border:none;}
+.pubs_wrap .pubs_list .list_oneline{display:-webkit-box;}
+.pubs_wrap .pubs_list .list_oneline .oneline_title{width:60px;display:block;font-weight:bold;}
+.pubs_wrap .pubs_list .list_oneline .oneline_input{-webkit-box-flex:1;display:block;}
+.pubs_wrap .pubs_list .list_oneline .oneline_input input{width:100%;heihgt:21px;line-height:21px;border:none;font-size:14px;}
+.pubs_wrap .pubs_list .list_oneline .oneline_input .oneline_input_short{text-align:center;}
+.pubs_wrap .pubs_list .list_oneline .oneline_select{width:92px;border:none;font-size:14px;}
+.pubs_wrap .pubs_list .list_oneline .oneline_tips{display:block;}
+.pubs_wrap .pubs_list .list_oneline .w92{width:92px;padding-left:5px;font-size:14px;}
+/* 类型 */
+.pubs_wrap .pubs_list .list_oneline .list_type{border:none;}
+/* 封面图片 */
+.pubs_wrap .pubs_list .covers_btn .covers_detail{border:1px dashed #dcdcdc;border-radius:5px;display:inline-block;}
+.pubs_wrap .pubs_list .covers_btn .covers_detail img{margin:5px;}
+/* 内容 */
+.pubs_wrap .pubs_list .list_desc{width:100%;height:100px;border:none;}
+/* 发布按钮 */
+.pubs_wrap .pubs_opt{padding:10px;}
+.pubs_wrap .pubs_opt .btn_publish{width:100%;height:36px;line-height:36px;text-align:center;color:#fff;background:#f15252;border:none;border-radius:3px;font-size:16px;}
+

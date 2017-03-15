@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<script type="text/javascript" src="__JS__/alldel.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<input id="url" type="hidden" value="?g=admin&m=news&a=delall">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>资讯管理中心</h2>
+				<a class="hover" href="?g=admin&m=news">资讯列表</a>
+				<a href="?g=admin&m=news&a=add">添加资讯</a>
+			</div>
+			<!-- 主体搜索 -->
+			<div class="search">
+				<form class="form-horizontal" name="" action="?g=admin&m=news" method="post">
+					<p>筛选：</p>
+					<select name="flags">
+						<option value="">全部</option>
+						<volist name="flags" id="fl">
+							<option value="{$fl.flags}" <eq name="f" value="$fl.flags">selected</eq>>{$fl.title}</option>
+						</volist>
+					</select>
+					<p>搜索：</p>
+					<input class="search_input" type="text" name="search" value="{$search}"/>
+					<input class="search_btn" type="submit" value="搜索" />
+				</form>
+			</div>
+			<!-- 主体数据 -->
+			<table class="data">
+				<!-- 数据头部 -->
+				<tr class="data_header">
+					<th><input id="check_all" type="checkbox" name="" value="" /></th>
+					<th id="classify">ID</th>
+					<th class="tl">文章标题</th>
+					<th class="tl">显示</th>
+					<th>更新日期</th>
+					<th>操作</th>
+				</tr>
+				<volist name="list" id="li">
+					<!-- 一条数据开始 -->
+					<tr>
+						<td><input class="check_box" type="checkbox" name="items" value="{$li.id}" /></td>
+						<td>{$li.id}</td>
+						<td class="tl">
+							<span>[{$li.classify}]</span>
+							<span>{$li.title}</span>
+							<notempty name="li.image"><span class="green">(图)</span></notempty>
+						</td>
+						<td class="tl">{$li['is_display']?"显示":"不显示"}<notempty name="li.flags">&nbsp<span class="red">({$li.flags})</notempty></span></td>
+						<td>{$li.uptime|date="Y-m-d H:i:s",###}</td>
+						<td class="data_opt">
+							<a href="?g=admin&m=news&a=add&id={$li.id}">修改</a>
+							<a class="confirm ajax-get" href="index.php?g=admin&m=news&a=del&id={$li.id}">删除</a>
+						</td>
+					</tr>
+				</volist>
+			</table>
+			<!-- 操作 -->
+			<div class="opt">
+				<a class="opt_btn" href="?g=admin&m=news&a=add">添加</a>
+				<a class="opt_btn" attr="BatchDel" href="javascript:void(0);">删除所选</a>
+			</div>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

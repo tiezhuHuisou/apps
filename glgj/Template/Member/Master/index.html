@@ -1,0 +1,133 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/news_collect.css"/>
+<script type="text/javascript" src="__JS__/news_collect.js"></script>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <!-- 主体头部 -->
+    <include file="Common/header"/>
+    <!-- 主体内容 -->
+    <div class="wrapper">
+        <!-- 资讯收藏数据 开始 -->
+        <table class="data">
+
+            <a href="{$list['url']}"><h1>{$list['info']}</h1></a>
+            <!--仓储-->
+            <if condition="$think.get.type eq 1">
+            <!-- 标题 开始 -->
+            <tr class="data_title">
+                <td class="ti25">面积</td>
+                <td class="ti25">地址</td>
+                <td class="ti25">发布时间</td>
+                <td align="center">操作</td>
+            </tr>
+            <!-- 标题 结束 -->
+            <volist name="list['list']" id="li">
+                <!-- 一条数据 开始 -->
+                <tr>
+                    <td class="ti25">
+                        <p>{$li.area}平方米</p>
+                    </td>
+                    <td>
+                        <p>{$list['regions'][$li['province_id']]} {$list['regions'][$li['city_id']]}
+                            {$list['regions'][$li['country_id']]} {$li.address}</p>
+                    </td>
+                    <td>
+                        <p>{$li.create_time|date="Y-m-d H:i",###}</p>
+                    </td>
+                    <td class="data_opt" align="center">
+                        <a href="?g=member&m=master&a=add&type={$Think.get.type}&id={$li.id}">修改</a>
+                        <a class="confirm ajax-get" href="?g=member&m=master&a=del&id={$li.id}&type={$Think.get.type}">删除</a>
+                    </td>
+                </tr>
+                <!-- 一条数据 结束 -->
+            </volist>
+            <elseif condition="($Think.get.type eq 2) OR ($Think.get.type eq 3)"/>
+                <!--货主-->
+                <!-- 标题 开始 -->
+                <tr class="data_title">
+                    <td class="ti25">始发地</td>
+                    <td class="ti25">目的地</td>
+                    <td class="ti25">货物名称</td>
+                    <td class="ti25">时间</td>
+                    <td align="center">操作</td>
+                </tr>
+                <!-- 标题 结束 -->
+                <volist name="list['list']" id="li">
+                    <!-- 一条数据 开始 -->
+                    <tr>
+                        <td class="ti25">
+                            <p>{$list['regions'][$li['provincen']]} {$list['regions'][$li['cityn']]}
+                                {$list['regions'][$li['countryn']]}</p>
+
+                        </td>
+                        <td class="ti25">
+                            <p>{$list['regions'][$li['provincen2']]} {$list['regions'][$li['cityn2']]}
+                                {$list['regions'][$li['countryn2']]}</p>
+                        </td>
+                        <td>
+                            <p>{$li.name}</p>
+                        </td>
+                        <td>
+                            <p>{$li.create_time|date="Y-m-d H:i",###}</p>
+                        </td>
+                        <td class="data_opt" align="center">
+                            <a href="?g=member&m=master&a=add&type={$Think.get.type}&id={$li.id}">修改</a>
+                            <a class="confirm ajax-get"
+                               href="?g=member&m=master&a=del&id={$li.id}&type={$Think.get.type}">删除</a>
+                        </td>
+                    </tr>
+                    <!-- 一条数据 结束 -->
+                </volist>
+                <else />
+                <!--车主-->
+                <!-- 标题 开始 -->
+                <tr class="data_title">
+                    <td class="ti25">始发地</td>
+                    <td class="ti25">目的地</td>
+                    <td class="ti25">车样类型</td>
+                    <td class="ti25">时间</td>
+                    <td align="center">操作</td>
+                </tr>
+                <!-- 标题 结束 -->
+                <volist name="list['list']" id="li">
+                    <!-- 一条数据 开始 -->
+                    <tr>
+                        <td class="ti25">
+                            <p>{$list['regions'][$li['provincen']]} {$list['regions'][$li['cityn']]}
+                                {$list['regions'][$li['countryn']]}</p>
+
+                        </td>
+                        <td class="ti25">
+                            <p>{$list['regions'][$li['provincen2']]} {$list['regions'][$li['cityn2']]}
+                                {$list['regions'][$li['countryn2']]}</p>
+                        </td>
+                        <td>
+                            <p>{$li.truck_type}</p>
+                        </td>
+                        <td>
+                            <p>{$li.create_time|date="Y-m-d H:i",###}</p>
+                        </td>
+                        <td class="data_opt" align="center">
+                            <a href="?g=member&m=master&a=add&type={$Think.get.type}&id={$li.id}">修改</a>
+                            <a class="confirm ajax-get"
+                               href="?g=member&m=master&a=del&id={$li.id}&type={$Think.get.type}">删除</a>
+                        </td>
+                    </tr>
+                    <!-- 一条数据 结束 -->
+                </volist>
+                </if>
+        </table>
+        <!-- 资讯收藏数据 结束 -->
+    </div>
+    <!-- 主体 结束 -->
+</div>
+</body>
+</html>

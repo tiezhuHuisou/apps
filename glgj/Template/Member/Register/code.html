@@ -1,0 +1,38 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/code.css" />
+<script type="text/javascript" src="__JS__/code.js"></script>
+</head>
+<body>
+	<!-- logo -->
+	<img class="logo" src="./Public/Member/images/logo.png" />
+    <!-- 验证码 -->
+    <form class="form-horizontal chkform" name="" action="" method="post">
+		<div class="code">
+			<p class="code_title">填写验证码</p>
+			<div class="code_info">
+				<p>请输入您的用户名或电子邮件地址。</p>
+				<p>您将通过电子邮件收到一个创建新密码的链接</p>
+			</div>
+			<!-- 验证码 -->
+			<div class="code_con">
+				<div>
+					<i class="icon"></i>
+					<input class="code_input" type="text" placeholder="请输入验证码" datatype="*" nullmsg="请填写验证码" errormsg="请填写正确的验证码" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请填写验证码</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 确认按钮 -->
+			<input class="code_btn ajax-post chksubmit" target-form="form-horizontal" type="submit" value="确&nbsp;认" />
+		</div>
+	</form>
+</body>
+</html>

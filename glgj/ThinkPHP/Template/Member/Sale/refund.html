@@ -1,0 +1,72 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/refund.css" />
+<script type="text/javascript" src="__JS__/refund.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=sale">发布产品信息</a>
+				<a href="?g=member&m=sale&a=product">产品管理</a>
+				<a href="?g=member&m=sale&a=order">订单管理</a>
+				<a href="?g=member&m=sale&a=release">发布求购</a>
+				<a href="?g=member&m=sale&a=need">求购管理</a>
+				<a href="?g=member&m=sale&a=template">添加运费模版</a>
+				<a href="?g=member&m=sale&a=freight">运费管理</a>
+				<!-- <a class="hover" href="?g=member&m=sale&a=refund">返现申请</a>
+				<a href="?g=member&m=sale&a=result">返现申请结果</a> -->
+			</div>
+			<!-- 返现申请表单 开始 -->
+			<form class="chkform" name="" action="" method="post">
+				<div class="add_form">
+					<!-- 返现金额 -->
+					<div class="add_row">
+						<div class="add_name">返现金额：</div>
+						<input class="t400" type="text" name="" value="" placeholder="请输入返现金额" />
+						<span class="add_star">*</span>
+					</div>
+					<!-- 返款帐号 -->
+					<div class="add_row">
+						<div class="add_name">返款帐号：</div>
+						<input class="t400" type="text" name="" value="" placeholder="请输入返款帐号" />
+						<span class="add_star">*</span>
+					</div>
+					<!-- 收款人姓名 -->
+					<div class="add_row">
+						<div class="add_name">收款人姓名：</div>
+						<input class="t400" type="text" name="" value="" placeholder="请输入收款人姓名" />
+						<span class="add_star">*</span>
+					</div>
+					<!-- 返款方式 -->
+					<div class="add_row">
+						<div class="add_name">返款方式：</div>
+						<select name="">
+							<option value="">支付宝</option>
+							<option value="">银联转账</option>
+						</select>
+						<span class="add_star">*</span>
+					</div>
+					<!-- 申请按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit" type="submit" value="申 请" />
+					</div>
+				</div>
+			</form>
+			<!-- 返现申请表单 结束 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/recruit_apply.css" />
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <include file="Common/header"/>
+    <!-- 头部 结束 -->
+    <!-- 可视区域 开始 -->
+    <section <neq name="appsign" value="1">class="no_footer"</neq>>
+        <form action="" method="post">
+            <input type="hidden" name="uid" value="{$detail['uid']}" />
+            <input type="hidden" name="user_id" value="{$user_id}" />
+            <!-- 基本信息 开始 -->
+            <div class="base_info">
+                <!-- 标题 -->
+                <p class="title">基本信息</p>
+                <!-- 姓名 -->
+                <div class="row">
+                    <p class="name">姓名</p>
+                    <p class="content"><input class="username" type="text" name="name" value="{$detail['name']}" placeholder="请填写姓名" /></p>
+                </div>
+                <!-- 推荐人 -->
+               <!--  <div class="row">
+                    <p class="name">推荐人</p>
+                    <p class="content"><input class="mphone" type="text" name="recommond_mobile" value="{$detail['recommond_mobile']}" placeholder="请填写推荐人手机号" /></p>
+                </div> -->
+                <!-- 年龄 -->
+                <div class="row">
+                    <p class="name">年龄</p>
+                    <p class="content"><input class="age" type="text" name="age" value="{$detail['age']}" placeholder="请填写年龄" /></p>
+                </div>
+                <!-- 性别 -->
+                <div class="row">
+                    <p class="name">性别</p>
+                    <p class="content">
+                        <select name="sex" data-value="<empty name='detail.sex'>1<else/>{$detail['sex']}</empty>">
+                            <option value="1" selected>男</option>
+                            <option value="2" <eq name="detail['sex']" value="2">selected</eq>>女</option>
+                        </select>
+                    </p>
+                </div>
+                <!-- 学历 -->
+                <div class="row">
+                    <p class="name">学历</p>
+                    <p class="content">
+                        <select name="degree" data-value="<empty name='detail.degree'>4<else/>{$detail['degree']}</empty>">
+                            <option value="6">硕士</option>
+                            <option value="5">本科</option>
+                            <option value="4">专科</option>
+                            <option value="3">高中</option>
+                            <option value="2">初中</option>
+                            <option value="1">小学</option>
+                        </select>
+                    </p>
+                </div>
+                <!-- 期望薪资 -->
+                <div class="row">
+                    <p class="name">期望薪资</p>
+                    <p class="content">
+                        <input class="money" type="text" name="expect_wages" value="{$detail['expect_wages']}" placeholder="请填写期望薪资" />
+                    </p>
+                </div>
+            </div>
+            <!-- 基本信息 结束 -->
+            <!-- 工作经历 开始 -->
+            <div class="experience">
+                <!-- 标题 -->
+                <p class="title">工作经历</p>
+                <!-- 遮住第一条记录的上半部分线条 -->
+                <div class="experience_mask"></div>
+                <!-- 添加工作经历 开始 -->
+                <div class="experience_row">
+                    <div class="experience_icon">
+                        <i></i>
+                        <span></span>
+                    </div>
+                    <a class="experience_info" href="?g=app&m=recruit&a=addworkexp<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">
+                        <p class="experience_date">添加工作经历</p>
+                    </a>
+                </div>
+                <!-- 添加工作经历 结束 -->
+                <notempty name="detail['work_exp']">
+                    <volist name="detail['work_exp']" id="vo">
+                        <!-- 一个工作经历 开始 -->
+                        <div class="experience_row">
+                            <div class="experience_icon">
+                                <i></i>
+                                <span></span>
+                            </div>
+                            <a class="experience_info" href="?g=app&m=recruit&a=addworkexp&id={$vo['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">
+                                <p class="experience_date">{$vo['begin_time']|date='Y-m',###} - {$vo['end_time']|date='Y-m',###}</p>
+                                <p class="experience_desc">{$vo['company_name']} - {$vo['post']}</p>
+                            </a>
+                        </div>
+                        <!-- 一个工作经历 结束 -->
+                    </volist>
+                    <else />
+                    <!-- 未添加工作经历 开始 -->
+                    <div class="experience_row">
+                        <div class="experience_icon">
+                            <i></i>
+                            <span></span>
+                        </div>
+                        <div class="experience_info">
+                            <p class="experience_date">未添加工作经历</p>
+                        </div>
+                    </div>
+                    <!-- 未添加工作经历 结束 -->
+                </notempty>
+            </div>
+            <!-- 工作经历 结束 -->
+            <!-- 联系方式 开始 -->
+            <div class="contact">
+                <!-- 标题 -->
+                <p class="title">联系方式</p>
+                <!-- 联系电话 -->
+                <div class="row">
+                    <p class="name">联系电话</p>
+                    <p class="content"><input class="phone" type="text" name="phone" value="{$detail['phone']}" placeholder="请填写联系电话" /></p>
+                </div>
+                <!-- 常用邮箱 -->
+                <div class="row">
+                    <p class="name">常用邮箱</p>
+                    <p class="content"><input class="email" type="text" name="email" value="{$detail['email']}" placeholder="请填写常用邮箱" /></p>
+                </div>
+                <!-- 家庭住址 -->
+                <div class="row">
+                    <p class="name">家庭住址</p>
+                    <p class="content"><input class="address" type="text" name="address" value="{$detail['address']}" placeholder="请填写家庭住址" /></p>
+                </div>
+            </div>
+            <!-- 联系方式 结束 -->
+            <input class="submit" type="button" value="保存" />
+        </form>
+    </section>
+    <!-- 可视区域 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/recruit_apply.js"></script>
+    <script type="text/javascript" src="__JS__/search.js"></script>
+    <script type="text/javascript">
+        var _degree = $("select[name='degree']")
+        var _sex = $("select[name=sex]");
+        _degree.val(_degree.attr('data-value'));
+        _sex.val(_sex.attr('data-value'));
+    </script>
+</body>
+</html>

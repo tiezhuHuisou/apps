@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/carousel.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/index.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <div class="header">
+        <div class="weui-flex header_wrap">
+            <!-- 定位 -->
+            <div class="gps"></div>
+            <!-- 标题 -->
+            <div class="weui-flex__item">首页</div>
+            <!-- 占位 -->
+            <div class="space"></div>
+        </div>
+        <div class="weui-search-bar" id="searchBar">
+            <form class="weui-search-bar__form">
+                <div class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                    <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="weui-search-bar__label" id="searchText">
+                    <i class="weui-icon-search"></i>
+                    <span>搜索</span>
+                </label>
+            </form>
+            <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+    </div>
+    <!-- 顶部 结束 -->
+    <!-- 可视区域 开始 -->
+    <section class="viewport">
+        <!-- 导航 -->
+        <div class="weui-grids nav_wrap">
+            <a href="?g=app&m=member&a=publishGoods" class="js_release weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n1.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">发布货源</p>
+            </a>
+            <a href="?g=app&m=member&a=publishTruck" class="js_release weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n2.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">发布车源</p>
+            </a>
+            <a href="?g=app&m=member&a=depot" class="js_release weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n3.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">发布仓储</p>
+            </a>
+            <a href="?g=app&m=member&a=identity" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n4.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">身份验证</p>
+            </a>
+            <a href="javascript:void(0);" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n5.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">查询货物</p>
+            </a>
+            <a href="javascript:void(0);" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n6.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">查询货车</p>
+            </a>
+            <a href="javascript:void(0);" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n7.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">查询仓储</p>
+            </a>
+            <a href="?g=app&m=more&a=cooperation" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/n8.png" width="60" height="60" />
+                </div>
+                <p class="weui-grid__label">商务合作</p>
+            </a>
+        </div>
+        <!-- 轮播 开始 -->
+        <div class="swiper_auto">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                    <volist name="list['banner']" id="vo">
+                    <div class="swiper-slide">
+                        <a href="{$vo['url']}">
+                            <img src="{$vo['thumbnail']}" width="100%" />
+                        </a>
+                    </div>
+                    </volist>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- 轮播 结束 -->
+        <!-- 快讯 开始 -->
+        <div class="report_wrap">
+            <img src="__IMG__/report_img.png" width="50" height="16" />
+            <span class="report_line"></span>
+            <div class="report_title">
+                <ul class="list">
+                    <notempty name="list['articleToday']">
+                        <volist name="list['articleToday']" id="vo">
+                            <li><a href="?g=app&m=news&a=detail&id={$vo.id}"><span>最新</span>{$vo.title}</a></li>
+                        </volist>
+                        <else />
+                        <li><a href="javascript:void(0);">暂无快报</a></li>
+                    </notempty>
+                </ul>
+            </div>
+            <span class="larger"></span>
+        </div>
+        <!-- 快讯 结束 -->
+        <!-- 热门公司 -->
+        <a class="weui-cells mgt10" href="?g=app&m=company">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>推荐物流</p>
+                </div>
+                <div class="weui-cell__ft">更多</div>
+            </div>
+        </a>
+        <div class="swiper_company">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <volist name="list['flags_company']" id="vo">
+                    <div class="swiper-slide">
+                        <a href="?g=app&m=company&a=detail&id={$vo.id}">
+                            <div class="img_wrap">
+                                <img src="{$vo.logo}" width="100%" />
+                            </div>
+                            <p class="items_title">{$vo.name}</p>
+                        </a>
+                    </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <!-- 资讯 -->
+        <div class="weui-panel weui-panel_access">
+            <a class="weui-cells" href="?g=app&m=news">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <p>推荐资讯</p>
+                    </div>
+                    <div class="weui-cell__ft">更多</div>
+                </div>
+            </a>
+            <div class="weui-panel__bd">
+                <volist name="list['article']" id="vo">
+                <a href="?g=app&m=news&a=detail&id={$vo.id}" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="{$vo.image}" />
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__desc">{$vo.title}</p>
+                        <p class="weui-media-box__title">{$vo.addtime}</p>
+                    </div>
+                </a>
+                </volist>
+            </div>
+        </div>
+        <!-- 最新加入 -->
+        <a class="weui-cells mgt10" href="?g=app&m=company&调到公司分类">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>最新加入</p>
+                </div>
+                <div class="weui-cell__ft">更多</div>
+            </div>
+        </a>
+        <div class="swiper_newJoin">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                    <volist name="list['company']" id="vo">
+                    <div class="swiper-slide">
+                        <a href="?g=app&m=company&a=detail&id={$vo.id}">
+                            <div class="img_wrap">
+                                <img src="{$vo.logo}" width="100%" />
+                            </div>
+                            <p class="items_title">{$vo.name}</p>
+                        </a>
+                    </div>
+                    </volist>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <script type="text/javascript">
+        var city_name  = "{$city_name}";
+        var defaultImg = '__STATIC__/images/default_icon.jpg';
+        var imgUrl     = '__IMG__';
+    </script>
+    <!-- <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script> -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xA4XirsaKbnL1fnErmlvfk4I"></script>
+    <script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+    <script type="text/javascript" src="__JS__/index.js"></script>
+</body>
+</html>

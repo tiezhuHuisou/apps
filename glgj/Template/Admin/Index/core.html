@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>核心设置</h2>
+                <!-- <include file="Index/corenav" /> -->
+            </div>
+            <!-- <h3>基本信息</h3> -->
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <table class="add_table">
+                    <!-- 应用全称输入框 -->
+                    <tr>
+                        <td class="w120">应用全称：</td>
+                        <td>
+                            <input class="i400" name="webname" type="text" value="{$info_arr['webname']|default=''}" datatype="title" nullmsg="请填写应用全称" errormsg="请填写正确的应用全称" />
+                            <span class="pl3">可用于关于我们页面</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写应用全称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 应用简称输入框 -->
+                    <tr>
+                        <td class="w120">应用简称：</td>
+                        <td>
+                            <input class="i400" name="simplename" type="text" value="{$info_arr['simplename']|default=''}" value="{$info_arr['webname']|default=''}" datatype="title" nullmsg="请填写应用简称" errormsg="请填写正确的应用简称" />
+                            <span class="pl3">可用于关于我们页面</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写应用简称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 域名输入框 -->
+                    <tr>
+                        <td class="w120">域名：</td>
+                        <td>
+                            <input class="i400" name="url" type="text" value="{$info_arr['url']|default=''}" value="{$info_arr['webname']|default=''}" datatype="patrn" nullmsg="请填写域名" errormsg="请填写正确的域名" />
+                            <span class="pl3">可用于关于我们页面（开头请勿添加"http://",结尾请勿添加"/"）</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写域名</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 网站底部其他说明输入框 -->
+                    <tr>
+                        <td class="w120">网站底部其他说明：</td>
+                        <td>
+                            <input class="i400" name="other" type="text" value="{$info_arr['other']|default=''}" value="{$info_arr['webname']|default=''}" datatype="*" nullmsg="请填写网站底部其他说明" />
+                            <span class="pl3">用于关于APP页面底部</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写网站底部其他说明</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 网站备案号（ICP）输入框 -->
+                    <!-- <tr>
+                        <td class="w120">网站备案号（ICP）：</td>
+                        <td>
+                            <input class="i400" name="icp" type="text" value="{$info_arr['icp']|default=''}" value="{$info_arr['webname']|default=''}" datatype="*" nullmsg="请填写网站备案号（ICP）" />
+                        </td> -->
+                        <!-- 表单验证提示信息 -->
+                        <!-- <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写网站备案号（ICP）</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr> -->
+                    <!-- 行业分类输入框 -->
+                    <tr>
+                        <td class="w120">行业分类：</td>
+                        <td>
+                            <input class="i400" name="industry" type="text" value="{$info_arr['industry']|default=''}" value="{$info_arr['webname']|default=''}" datatype="title" nullmsg="请填写行业分类" />
+                            <span class="pl3">可用于关于我们页面</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写分类名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 平台官方客服电话输入框 -->
+                    <tr>
+                        <td class="w120">平台官方客服电话：</td>
+                        <td>
+                            <input class="i400" name="companphone" type="text" value="{$info_arr['companphone']|default=''}" />
+                            <span class="pl3">用于关于APP页面和右上角三个点里的客服</span>
+                        </td>
+                    </tr>
+                    <eq name="Think.config.FLASHFLAG" value="1">
+                        <!-- 满包邮输入框 -->
+                        <tr>
+                            <td class="w120">满包邮：</td>
+                            <td>
+                                <input class="i400" name="freight_free" type="text" value="{$info_arr['freight_free']|default=''}" />
+                                <span class="pl3">订单金额满多少可免掉邮费，填0或不填代表订单满多少都不包邮</span>
+                            </td>
+                        </tr>
+                    </eq>
+                    <!-- <tr>
+                        <td class="w120">开启会员机制：</td>
+                        <td>
+                            <input type="checkbox" name="member_type" <eq name="info_arr['member_type']" value="1">checked</eq> value="1">
+                        </td>
+                        表单验证提示信息
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip"></span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td class="w120">开启企业审核：</td>
+                        <td>
+                            <input type="checkbox" name="company_type" <eq name="info_arr['company_type']" value="1">checked</eq> value="1">
+                        </td>
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip"></span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">开启启动广告图：</td>
+                        <td>
+                            <input type="checkbox" name="start_flag" <eq name="info_arr['start_flag']" value="1">checked</eq> value="1">
+                        </td>
+                    </tr> 
+                    <!-- 广告图按钮 -->
+                    <tr>
+                        <td class="w120">启动广告图：</td>
+                        <td>
+                            <a id="logobtn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <input id="logourl" name="start_img" type="hidden" value="{$info_arr.start_img}">
+                            <span class="pl3">建议尺寸：750*1334</span>
+                        </td>
+                    </tr>
+                    <!-- 广告图预览 -->
+                    <tr <empty name="info_arr.start_img">class="no"</empty>>
+                        <td class="w120">启动广告图预览：</td>
+                        <td>
+                            <img id="logoId" src="{$info_arr.start_img}" width="112" height="200" />
+                        </td>
+                    </tr>
+                    <!-- 广告图时间输入框 -->
+                    <tr>
+                        <td class="w120">广告图自动跳过时间：</td>
+                        <td>
+                            <input class="i400" name="start_time" type="text" value="{$info_arr['start_time']}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">链接类型：</td>
+                        <td>
+                            <label class="mgr">
+                                <input id="outside" class="pt3" type="radio" name="href_type" value="1" checked />
+                                <span>外链</span>
+                            </label>
+                            <label>
+                                <input id="inside" class="pt3" type="radio" name="href_type" value="2" <eq name="info_arr.href_type" value="2">checked</eq> />
+                                <span>内链</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr <neq name="info_arr.href_type" value="2">class="no"</neq>>
+                        <td class="w120">关联模块：</td>
+                        <td>
+                            <select id="href_model" name="href_model">
+                                <option class="pl3" value="product_detail" selected>产品</option>
+                                <option class="pl3" value="news_detail" <eq name="info_arr.href_model" value="news_detail">selected</eq>>资讯</option>
+                                <option class="pl3" value="need_detail" <eq name="info_arr.href_model" value="need_detail">selected</eq>>求购</option>
+                                <option class="pl3" value="company_home" <eq name="info_arr.href_model" value="company_home">selected</eq>>企业</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr <neq name="info_arr.href_type" value="2">class="no"</neq>>
+                        <td class="w120">关联页面：</td>
+                        <td>
+                            <select id="data_id" name="data_id">
+                                <volist name="dataList" id="li">
+                                    <option class="pl3" value="{$li.id}" <eq name="li.id" value="$info_arr.data_id">selected</eq>>{$li.title}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="url" <eq name="info_arr.href_type" value="2">class="no"</eq>>
+                        <td class="w120">链接地址url：</td>
+                        <td>
+                            <input class="i400" type="text" name="start_url" value="<eq name='info_arr.href_type' value='1'>{$info_arr.start_url}</eq>" />
+                            <span class="pl3">例如：http://www.huisou.com</span>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 ajax-post chksubmit" type="submit" target-form="form-horizontal" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__JS__/core.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/*分类*/
+.weui-navbar__item:after {border:none;}
+.weui-grids{margin-top:10px;background:#fff;}
+.active{color:#38d163;}
+.active span{position:relative;}
+.active span:after{content: " ";position: absolute;right: 0;bottom: -10px;color: #d9d9d9;left: 0;height: 1px;border-bottom: 3px solid #38d163;transform: scaleY(.5);transform-origin: 0 100%;}
+/*分类列表*/
+.weui-grid{width:50%;}
+/*.js_grid{padding-left:25px;}*/
+.js_grid .grid_title{padding-left:10px; flex:1; width: calc(100% - 50px);overflow: hidden;}
+.js_grid{display:flex;align-items:center;}
+.js_grid .grid_image img{width:45px;}
+.js_grid .grid_title .els_title{font-size:12px;color:#999;white-space: nowrap;}

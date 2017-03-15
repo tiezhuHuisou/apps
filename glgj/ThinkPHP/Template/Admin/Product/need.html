@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<script type="text/javascript" src="__JS__/alldel.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+	<input id="url" type="hidden" value="?g=admin&m=product&a=need_classify_delall">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>求购管理中心</h2>
+				<a class="hover" href="?g=admin&m=product&a=need">求购列表</a>
+				<a href="?g=admin&m=product&a=need_add">添加求购</a>
+			</div>
+			<!-- 主体搜索 -->
+			<div class="search">
+				<form class="form-horizontal" name="" action="" method="post">
+					<p>搜索：</p>
+					<input class="search_input" type="text" value="{$title}" name="title" />
+					<input class="search_btn" type="submit" value="搜索" />
+				</form>
+			</div>
+			<!-- 主体数据 -->
+			<table class="data">
+				<!-- 数据头部 -->
+				<tr class="data_header">
+					<th><input id="check_all" type="checkbox" name="" value="" /></th>
+					<th>ID</th>
+					<th class="tl">求购标题</th>
+					<th class="tl">求购价格</th>
+					<th class="tl">求购数量</th>
+					<th>发布时间</th>
+					<th>操作</th>
+				</tr>
+				<!-- 一条数据开始 -->
+				<volist name="list" id="li">
+				<tr>
+					<td><input class="check_box" type="checkbox" name="items" value="{$li.id}" /></td>
+					<td>{$li.id}</td>
+					<td class="tl">
+						<span>[<span class="blue">{$li.classify}</span>]</span>
+						<span>{$li.title}</span>
+					</td>
+					<td class="tl">￥<span>{$li.price}</span></td>
+					<td class="tl">{$li.num}(<span>
+						<eq name="li.unit" value="1">
+							件
+						</eq>
+						<eq name="li.unit" value="2">
+							批
+						</eq>
+						<eq name="li.unit" value="3">
+							千克
+						</eq>
+						<eq name="li.unit" value="4">
+							块
+						</eq>
+						<eq name="li.unit" value="5">
+							台
+						</eq>
+						<eq name="li.unit" value="6">
+							吨
+						</eq>
+					</span>)</td>
+					<td>{$li.issue_time|date="Y-m-d H:i",###}</td>
+					<td class="data_opt">
+						<a href="?g=admin&m=product&a=need_add&id={$li.id}">修改</a>
+						<a href="?g=admin&m=product&a=comment&id={$li.id}&type=2">评价管理</a>
+						<a class="confirm ajax-get"  href="index.php?g=admin&m=product&a=need_del&id={$li.id}">删除</a>
+					</td>
+					</tr>
+				</volist>
+			</table>
+			<!-- 操作 -->
+			<div class="opt">
+				<a class="opt_btn" href="?g=admin&m=product&a=need_add">添加</a>
+				<a class="opt_btn" attr="BatchDel" href="javascript:void(0);">删除所选</a>
+			</div>
+			<!-- 分页 -->
+			<div class="page"></div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

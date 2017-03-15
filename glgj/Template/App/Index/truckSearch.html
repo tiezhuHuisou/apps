@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/truckSearch.css" />
+</head>
+<body>
+	<!-- 头部 开始 -->
+    <include file="Common/header_se"/>
+    <!-- 头部 结束 -->
+    <section>
+    	<form>
+    		<div class="address">
+                <div class="start">
+                    <span class="start_text">起始地</span>
+                    <input id='start_address' class="op0" type="text" name="start_address" />
+                </div>
+				<span class="cut"></span>
+                <div class="end">
+                    <span class="end_text">目的地</span>
+                    <input id='end_address' class="op0" type="text" name="end_address" />
+                </div>
+    		</div>
+    		<div class="search_type">
+    			<div class="type_item">
+    				<label class="type">车长</label>
+    				<div class="type_choose">
+    					<span class="active">全部</span>
+    					<span>2m-3m</span>
+    					<span>4m-5m</span>
+    					<span>6m-7m</span>
+    				</div>
+    			</div>
+    			<div class="type_item">
+    				<label class="type">载重</label>
+    				<div class="type_choose">
+    					<span class="active">全部</span>
+    					<span>2T-3T</span>
+    					<span>4T-5T</span>
+    				</div>
+    			</div>
+    			<div class="type_item">
+    				<label class="type">车型</label>
+    				<div class="type_choose">
+    					<span class="active">全部</span>
+    					<span>小型车</span>
+    					<span>自卸车</span>
+    					<span>皮卡车</span>
+    					<span>漏斗车</span>
+    					<span>轻型半挂车</span>
+    				</div>
+    			</div>
+    		</div>
+            <div class="btn_group">
+                <a href="javascript:;" class="weui-btn weui-btn_primary">查询</a>
+            </div>
+    	</form>
+        <!-- <div class="history_search">
+            <div class="history_search_info">
+                <p>历史查询</p>
+            </div>
+            <ul class="history_search_list">
+                <li>杭州 - 上海</li>
+                <li>杭州九堡 - 江苏南通</li>
+            </ul>
+        </div> -->
+    </section>
+</body>
+<script type="text/javascript" src="__JS__/city-picker.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/jquery-weui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/truckSearch.js" charset="utf-8"></script>
+</html>

@@ -1,0 +1,41 @@
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/sale_orderrefund.css"/>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <include file="Sale/ordernav"/>
+            <!-- 主体 -->
+            <div class="content">
+                <p class="content_tips">使用余额支付的订单会直接将钱退回用户钱包中，其他支付方式请自行完成退款流程再进行【打款完成】的操作</p>
+                <p class="content_list">买家退款理由：{$order_info['reason']}</p>
+                <div class="content_opt">
+                    <eq name="order_info['state']" value="6">
+                        <a class="opt_btn refund_agree" href="javascript:void(0);">同意退款</a>
+                        <a class="opt_btn refund_refuse" href="javascript:void(0);">拒绝退款</a>
+                    </eq>
+                    <eq name="order_info['state']" value="4">
+                        <a class="opt_btn refund_confirm" href="javascript:void(0);">打款完成</a>
+                    </eq>
+                    <input id="refund_id" type="hidden" value="{$order_info['id']}" />
+                    <input id="refund_money" type="hidden" value="{$order_info['pay_price']}" />
+                </div>
+            </div>
+        </div>
+        <!-- 主体 结束 -->
+    </div>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+    <script type="text/javascript" src="__JS__/sale_orderrefund.js"></script>
+</body>
+</html>

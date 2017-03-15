@@ -1,0 +1,13 @@
+body{background: #ffffff;}
+/*头部*/
+.header{width:100%;background:#fff;display:-webkit-box;-webkit-box-align:center;padding:4px 8px;top:0;left:0;box-sizing:border-box;position:fixed;z-index:3;border-bottom:1px solid #dcdcdc;}
+.header .header_left{width:40px;height:40px;display:block;position:relative;}
+.header .header_left:after{content:"";display:block;width:10px;height:10px;border-top:1px solid #000;border-left:1px solid #000;-webkit-transform:rotate(-45deg);top:50%;left:50%;margin-top:-5px;margin-left:-11px;position:absolute;}
+.header .header_title{-webkit-box-flex:1;text-align:center;}
+.header .header_right{width:40px;padding:10px 0;display:block;text-align:center;color:#000;font-size:14px;}
+/*记录*/
+.code_items{background:#fff;}
+.code_items li{padding:10px;border-bottom:1px solid #dcdcdc;}
+.code_items li a{display:-webkit-box;-webkit-box-align:center;}
+.code_items li a .items_content{-webkit-box-flex:1;margin-left:10px;}
+.code_items li a .itmes_title{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}

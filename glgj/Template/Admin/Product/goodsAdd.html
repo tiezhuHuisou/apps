@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/product_add.css"/>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <div class="wrapper">
+        <!-- 主体头部 -->
+        <div class="header">
+            <h2>产品管理中心</h2>
+            <a href="?g=admin&m=product&a=goods">货物管理</a>
+            <a class="hover" href="?g=admin&m=product&a=goodsAdd">添加货物</a>
+        </div>
+        <h3>添加货物</h3>
+        <!-- 主体数据 -->
+        <form class="form-horizontal chkform" name="" action="" method="post">
+            <input type="hidden" name="id" value="{$detail.id}"/>
+            <table class="add_table">
+
+                <!--始发地-->
+                <tr>
+                    <td class="w120">始发地：</td>
+                    <td>
+                        <select class="province" name="provincen">
+                            <option value="">请选择所在省</option>
+                            <foreach name="region_arr[0]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['provincen']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>
+
+                        <select class="city" name="cityn">
+                            <option value="">请选择所在市</option>
+                            <foreach name="region_arr[$detail['provincen']]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['cityn']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>
+                        <select class="towns" name="countryn">
+                            <option value="">请选择所在区/县</option>
+                            <foreach name="region_arr[$detail['cityn']]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['countryn']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>&nbsp;&nbsp;*
+                    </td>
+                </tr>
+                <!--目的地-->
+                <tr>
+                    <td class="w120">目的地：</td>
+                    <td>
+                        <select class="province2" name="provincen2">
+                            <option value="">请选择所在省</option>
+                            <foreach name="region_arr[0]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['provincen2']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>
+
+                        <select class="city2" name="cityn2">
+                            <option value="">请选择所在市</option>
+                            <foreach name="region_arr[$detail['provincen2']]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['cityn2']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>
+
+                        <select class="towns2" name="countryn2">
+                            <option value="">请选择所在区/县</option>
+                            <foreach name="region_arr[$detail['cityn2']]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['countryn2']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>&nbsp;&nbsp;*
+                    </td>
+                </tr>
+                <!-- 会员名称* -->
+                <tr>
+                    <td class="w120">发布者帐号：</td>
+                    <td>
+                        <input class="i200" type="text" name="mphone" value="{$detail.mphone}" datatype="mphone"
+                               nullmsg="请填写发布者帐号" errormsg="请填写2-50位字符"/>&nbsp;&nbsp;*
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写发布者帐号</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <!--货物名称 *-->
+                <tr>
+                    <td class="w120">货物名称：</td>
+                    <td>
+                        <input class="i200" type="text" name="name" value="{$detail.name}" datatype="name"
+                               nullmsg="请填写货物名称" errormsg="请填写2-50位字符"/>&nbsp;&nbsp;*
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写货物名称</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <!--运输方式-->
+                <tr>
+                    <td class="w120">运输方式：</td>
+                    <td class="lh22">
+                        <select class="" name="transport_id">
+                            <option value="">请选择车辆类型</option>
+                            <foreach name="list['goodsTransport']" item="val">
+                                <option value="{$key}"
+                                <eq name="detail['transport_id']" value="$key">selected</eq>
+                                >{$val}</option>
+                            </foreach>
+                        </select>&nbsp;&nbsp;*
+                    </td>
+                </tr>
+                <!--货物类型 *-->
+                <tr>
+                    <td class="w120">货物类型：</td>
+                    <td class="lh22">
+                        <select class="" name="category_id">
+                            <option value="">请选择车辆类型</option>
+                            <foreach name="list['goodsType']" item="val">
+                                <option value="{$key}"
+                                <eq name="detail['category_id']" value="$key">selected</eq>
+                                >{$val}</option>
+                            </foreach>
+                        </select>&nbsp;&nbsp;*
+                    </td>
+                </tr>
+                <!--发货日期 *-->
+                <tr>
+                    <td class="w120">发货日期：</td>
+                    <td>
+                        <input class="i200" type="text" name="deliver_time" value="{$detail.deliver_time}"/>&nbsp;&nbsp;*
+                    </td>
+
+                </tr>
+                <!--截止日期 *-->
+                <tr>
+                    <td class="w120">截止日期：</td>
+                    <td>
+                        <input class="i200" type="text" name="end_time" value="{$detail.end_time}"/>&nbsp;&nbsp;*(不选代表长期有效)
+                    </td>
+                </tr>
+
+                <!--要求车长-->
+                <tr>
+                    <td class="w120">车辆长度：</td>
+                    <td class="lh22">
+                        <select class="" name="truck_length">
+                            <option value="">请选择车辆长度</option>
+                            <foreach name="list['truck_length']" item="val">
+                                <option value="{$val}"
+                                <eq name="detail['truck_length']" value="$val">selected</eq>
+                                >{$val}</option>
+                            </foreach>
+                        </select>&nbsp;&nbsp;*
+                    </td>
+                </tr>
+                <!--要求车型-->
+                <tr>
+                    <td class="w120">要求车型：</td>
+                    <td class="lh22">
+                        <select class="" name="truck_type">
+                            <option value="">请选择车辆类型</option>
+                            <foreach name="list['truck_type']" item="val">
+                                <option value="{$val}"
+                                <eq name="detail['truck_type']" value="$val">selected</eq>
+                                >{$val}</option>
+                            </foreach>
+                        </select>
+                    </td>
+                </tr>
+                <!--车辆需求-->
+                <tr>
+                    <td class="w120">车辆需求：</td>
+                    <td class="lh22">
+                        <select class="" name="truck_num">
+                            <option value="">请选择车辆数量</option>
+                            <foreach name="list['truck_num']" item="val">
+                                <option value="{$val}"
+                                <eq name="detail['truck_num']" value="$val">selected</eq>
+                                >{$val}</option>
+                            </foreach>
+                        </select>
+                    </td>
+                </tr>
+                <!--运费意向-->
+                <tr>
+                    <td class="w120">运费意向：</td>
+                    <td>
+                        <input class="i200" type="text" name="freight_price" value="{$detail.freight_price}"/>
+                    </td>
+                </tr>
+                <!--运费意向单位-->
+                <tr>
+                    <td class="w120">运费意向单位：</td>
+                    <td class="lh22">
+                        <select class="" name="freight">
+                            <option value="">运费意向</option>
+                            <foreach name="list['freight']" item="val">
+                                <option value="{$val}"
+                                <eq name="detail['freight']" value="$val">selected</eq>
+                                >{$val}</option>
+                            </foreach>
+                        </select>
+                    </td>
+                </tr>
+                <!--收货人-->
+                <tr>
+                    <td class="w120">收货人姓名：</td>
+                    <td>
+                        <input class="i200" type="text" name="receive_name" value="{$detail.receive_name}"/>
+                    </td>
+                </tr>
+                <!--收货电话-->
+                <tr>
+                    <td class="w120">收货人联系方式：</td>
+                    <td>
+                        <input class="i200" type="text" name="receive_phone" value="{$detail.receive_phone}"/>
+                    </td>
+                </tr>
+                <!--货物重量-->
+                <tr>
+                    <td class="w120">货物重量：</td>
+                    <td>
+                        <input class="i200" type="text" name="weight" value="{$detail.weight}"/>
+                    </td>
+                </tr>
+                <!--重量单位-->
+                <tr>
+                    <td class="w120">重量单位：</td>
+                    <td>
+                        <label class="mgr">
+                            <input class="pt3" type="radio" name="weight_unit" value="吨" checked/>
+                            <span>吨</span>
+                        </label>
+                        <label>
+                            <input class="pt3" type="radio" name="weight_unit" value="公斤"
+                            <eq name="detail.weight_unit" value="公斤">checked</eq>
+                            />
+                            <span>公斤</span>
+                        </label>
+                    </td>
+                </tr>
+                <!--货物体积-->
+                <tr>
+                    <td class="w120">货物体积：</td>
+                    <td>
+                        <input class="i200" type="text" name="volume" value="{$detail.volume}"/>
+                    </td>
+                </tr>
+                <!--体积单位-->
+                <tr>
+                    <td class="w120">体积单位：</td>
+                    <td>
+                        方<input class="i200" type="hidden" name="volume_unit" value="方"/>
+                    </td>
+                </tr>
+                <!--货物图片-->
+                <tr>
+                    <td class="w120">货物图片：</td>
+                    <td>
+                        <input class="i200" type="hidden" name="img" value="img"/>
+                    </td>
+                </tr>
+                <!--货物说明-->
+                <tr>
+                    <td class="w120">货物说明：</td>
+                    <td>
+                        <textarea name="remark" cols=40 rows=4> {$detail.remark} </textarea>
+                    </td>
+                </tr>
+                <!-- 操作 -->
+                <tr class="add_opt">
+                    <td></td>
+                    <td>
+                        <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit"
+                               value="确认提交"/>
+                        <input class="opt_btn" type="reset" value="重置表单"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- 主体 结束 -->
+<script type="text/javascript">
+    var data = {$region_arr_json};
+</script>
+<script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript">
+    var imgUrl = "__IMG__";
+    var staticPath = "__STATIC__";
+    var flashFlag = "{$flashFlag|default=0}";
+</script>
+<script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+<script type="text/javascript" src="__JS__/goods_add.js"></script>
+</body>
+</html>

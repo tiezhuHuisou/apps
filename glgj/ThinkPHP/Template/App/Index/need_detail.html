@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/need_detail.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/share.css" />
+</head>
+<body>
+	<!-- 顶部 -->
+	<include file="Common/header"/>
+	<!-- 求购页面 主体 -->
+	<section class="viewport">
+		<input id="nid" value="{$detail.id}" type="hidden">
+		<input id="uid" value="{$_SESSION.app.user_auth.user_id}" type="hidden">
+		<input id="sign" value="{$sign}" type="hidden">
+		<div class="goods_info">
+			<p class="title">{$detail.title}</p>
+			<p class="need_time">{$detail.issue_time|date="Y-m-d H:i",###}</p>
+			<p class="need_num">求购数量:<span>{$detail.num}</span></p>
+			<p class="need_price">求购价钱:<span>{$detail.price}</span></p>
+		</div>
+		<div class="goods_img">
+			<img class="img1" src="__IMG__/goods_picture.jpg" width="100%" height="auto" />
+			<img class="img2" src="__IMG__/goods_picture.jpg" width="100%" height="auto" />
+			<img class="img3" src="__IMG__/goods_picture.jpg" width="100%" height="auto" />
+		</div>
+		<div class="goods_dis_detail">
+			{$detail.summary}
+		</div>
+	</section>
+	<!-- 求购页面 底部 -->
+	<footer>
+		<a class="collect_wrap lc" href="javascript:void(0)">
+			<div class="collect">
+				<img src="__IMG__/star.png" width="20" height="20" />
+			</div>
+			<div class="collect_text fc"><if condition="$sign eq 1">删除收藏<else />收藏</if></div>
+		</a>
+		<!-- <a class="leave_word_wrap lc" href="?g=app&m=more&a=comment&id={$detail.id}">
+			<div class="leave_word">
+				<img src="__IMG__/info.png" width="20" height="20" />
+			</div>
+			<div class="leave_word_text fc">评价</div>
+		</a> -->
+	</footer>
+    <!-- 遮罩层 开始 -->
+    <div class="mask no"></div>
+    <!-- 遮罩层 结束 -->
+    <!-- 分享弹框 开始 -->
+    <div class="share_bomb_box no">
+        <p class="share_bomb_box_title">选择分享方式</p>
+        <div class="share_bomb_box_line">
+            <a class="line" href="javascript:void(0);">
+                <i class="line_weixin_friend"></i>
+                <p>微信好友</p>
+            </a>
+            <a class="line" href="javascript:void(0);">
+                <i class="line_friend_circle"></i>
+                <p>朋友圈</p>
+            </a>
+            <a class="line" href="javascript:void(0);">
+                <i class="line_sina"></i>
+                <p>新浪</p>
+            </a>
+            <a class="line" href="javascript:void(0);">
+                <i class="line_qq"></i>
+                <p>QQ</p>
+            </a>
+            <div class="clear"></div>
+        </div>
+        <div class="share_bomb_box_line">
+            <a class="line" href="javascript:void(0);">
+                <i class="line_qzone"></i>
+                <p>QQ空间</p>
+            </a>
+            <a class="line" href="javascript:void(0);">
+                <i class="line_tencent_blog"></i>
+                <p>腾讯微博</p>
+            </a>
+            <div class="clear"></div>
+        </div>
+        <a class="share_bomb_box_cancel" href="javascript:void(0);">取消</a>
+    </div>
+    <!-- 分享弹框 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__JS__/need_detail.js"></script>
+	<script type="text/javascript" src="__JS__/share.js"></script>
+</body>
+</html>

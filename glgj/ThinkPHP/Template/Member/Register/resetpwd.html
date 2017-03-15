@@ -1,0 +1,51 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/resetpwd.css" />
+<script type="text/javascript" src="__JS__/resetpwd.js"></script>
+</head>
+<body>
+	<!-- logo -->
+	<img class="logo" src="./Public/Member/images/logo.png" />
+    <!-- 重置密码 -->
+    <form class="form-horizontal chkform" name="" action="" method="post">
+		<div class="resetpwd">
+			<p class="resetpwd_title">重置密码</p>
+			<!-- 输入密码 -->
+			<div class="resetpwd_con">
+				<div>
+					<i class="icon"></i>
+					<input class="resetpwd_input" type="password" name="password" placeholder="请填写新密码" datatype="*" nullmsg="请填写新密码" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请填写新密码</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 再次输入密码 -->
+			<div class="resetpwd_con">
+				<div>
+					<i class="icon"></i>
+					<input class="resetpwd_input" type="password" name="password1" recheck="password" placeholder="请填写确认密码" datatype="*" nullmsg="请填写确认密码" errormsg="您两次输入密码不一致" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请再次填写新密码</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 确认按钮 -->
+			<input class="resetpwd_btn ajax-post chksubmit" target-form="form-horizontal" type="submit" value="确&nbsp;认" />
+		</div>
+	</form>
+</body>
+</html>

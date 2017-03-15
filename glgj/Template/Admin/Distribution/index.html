@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>分销设置中心</h2>
+            </div>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <table class="add_table">
+                    <!-- 分销功能 -->
+                    <!-- <tr>
+                        <td class="w120">分销功能：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="is_proprietary" value="1" checked />
+                                <span>开启</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="is_proprietary" value="0" <eq name="detail.is_proprietary" value="0">checked</eq> />
+                                <span>关闭</span>
+                            </label>
+                        </td>
+                    </tr>
+ -->                    <!-- 本级佣金 -->
+                    <tr>
+                        <td class="w120">本级佣金：</td>
+                        <td>
+                            <input class="i100" type="text" name="commission1" value="{$detail.commission1}" />
+                            <span class="pl3">元，即买家所获佣金金额</span>
+                        </td>
+                    </tr>
+                    <!-- 上级佣金 -->
+                    <tr>
+                        <td class="w120">上级佣金：</td>
+                        <td>
+                            <input class="i100" type="text" name="commission2" value="{$detail.commission2}" />
+                            <span class="pl3">元，即买家上级所获佣金金额</span>
+                        </td>
+                    </tr>
+                    <!-- 上上级佣金 -->
+                    <tr>
+                        <td class="w120">上上级佣金：</td>
+                        <td>
+                            <input class="i100" type="text" name="commission3" value="{$detail.commission3}" />
+                            <span class="pl3">元，即买家上上级所获佣金金额</span>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__JS__/classify_add.js"></script>
+</body>
+</html>

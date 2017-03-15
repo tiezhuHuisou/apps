@@ -1,0 +1,6 @@
+.weui-cell__ft{}
+.weui-cell__ft:after{content:"";display:block;clear: both;}
+.weui-cell__ft span{float:left;}
+.gt_btn{width:10px;height:10px;border-top:1px solid #999;border-right:1px solid #999;-webkit-transform:rotate(45deg);float:left;top:7px;position:relative;}
+.gray_999{color:#999;}
+.blue_38f{color:#38f;}

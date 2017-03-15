@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>分销商【{$user_name}】 - 佣金详情</h2>
+                <a <eq name="Think.get.status" value="0">class="hover"</eq><empty name="Think.get.status">class="hover"</empty> href="?g=admin&m=distribution&a=financialdetail">全部</a>
+                <a <eq name="Think.get.status" value="2">class="hover"</eq>href="?g=admin&m=distribution&a=financialdetail&status=2">未打款</a>
+                <a <eq name="Think.get.status" value="3">class="hover"</eq>href="?g=admin&m=distribution&a=financialdetail&status=3">待确认</a>
+                <a <eq name="Think.get.status" value="4">class="hover"</eq>href="?g=admin&m=distribution&a=financialdetail&status=4">成功</a>
+                <a <eq name="Think.get.status" value="5">class="hover"</eq>href="?g=admin&m=distribution&a=financialdetail&status=5">失败</a>
+            </div>
+            <!-- 主体搜索 -->
+            <div class="search">
+                <form class="form-horizontal" name="" action="" method="get">
+                    <input type="hidden" name="g" value="admin" />
+                    <input type="hidden" name="m" value="distribution" />
+                    <input type="hidden" name="a" value="financialdetail" />
+                    <input type="hidden" name="status" value="{$Think.get.status}" />
+                    <input class="search_input" type="text" name="key-value" value="{$Think.get.key-value}" />
+                    <input class="search_btn" type="submit" value="检索" />
+                </form>
+            </div>
+            <div class="data_count">
+                <p>用户佣金总额：{$amount['amount_all']}</p>
+                <p>用户可提现：{$amount['amount_rest']}</p>
+                <p>用户申请提现和已打款：{$amount['amount_transfer']}</p>
+                <p>用户已提现（用户确认收款）：{$amount['amount_withdraw']}</p>
+            </div>
+            <!-- 主体数据 -->
+            <table class="data">
+                <!-- 数据头部 -->
+                <tr class="data_header">
+                    <th>提现编号</th>
+                    <th>提现分销商</th>
+                    <th>提现账号（支付方式|收款人）</th>
+                    <th>申请时间</th>
+                    <th>提现金额</th>
+                    <th>状态</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                <!-- 一条数据开始 -->
+                <volist name="list" id="li">
+                    <tr>
+                        <td>{$li.id}</td>
+                        <td><a href="index.php?g=admin&m=distribution&a=financialdetail&id={$li.user_id}">{$li.shopname}</a></td>
+                        <td>{$li.withdraw_account}（支付宝|{$li.truename}）</td>
+                        <td>{$li.ctime|date="Y年m月d日 h:i:s",###}</td>
+                        <td>{$li.amount|number_format=2}</td>
+                        <td>
+                            <eq name="li.status" value="2">待打款</eq>
+                            <eq name="li.status" value="3">已打款</eq>
+                            <eq name="li.status" value="4">已完成</eq>
+                            <eq name="li.status" value="5">待打款</eq>
+                        </td>
+                        <td>{$li.desc}</td>
+                        <td class="data_opt">
+                            <eq name="li.status" value="2"><a class="confirm ajax-get" href="index.php?g=admin&m=distribution&a=payAgentCommission&id={$li.id}">打款</a></eq>
+                            <eq name="li.status" value="3"><a href="javascript:void(0);">待确认</a></eq>
+                            <eq name="li.status" value="4"><a class="red" href="javascript:void(0);">已完成</a></eq>
+                            <eq name="li.status" value="5"><a class="confirm ajax-get" href="index.php?g=admin&m=distribution&a=payAgentCommission&id={$li.id}">重新打款</a></eq>   
+                        </td>
+                    </tr>
+                </volist>
+            </table>
+            <!-- 分页 -->
+            <div class="page"></div>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+</body>
+</html>

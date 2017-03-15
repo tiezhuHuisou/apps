@@ -1,0 +1,66 @@
+[ 2017-03-15T08:50:59+08:00 ] 127.0.0.1 /glgj/?g=apps&m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `lp_jdpic` [ RunTime:0.0040s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hscom_glgj.lp_product_sale' doesn't exist
+
+[ 2017-03-15T09:09:37+08:00 ] ::1 /glgj/?g=apps&m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_jdpic` [ RunTime:0.0010s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hscom_glgj.lp_product_sale' doesn't exist
+
+[ 2017-03-15T09:09:38+08:00 ] ::1 /glgj/?g=apps&m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_jdpic` [ RunTime:0.0010s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hscom_glgj.lp_product_sale' doesn't exist
+
+[ 2017-03-15T09:09:39+08:00 ] ::1 /glgj/?g=apps&m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_jdpic` [ RunTime:0.0005s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hscom_glgj.lp_product_sale' doesn't exist
+
+[ 2017-03-15T09:09:39+08:00 ] ::1 /glgj/?g=apps&m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_jdpic` [ RunTime:0.0010s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hscom_glgj.lp_product_sale' doesn't exist
+
+[ 2017-03-15T09:09:39+08:00 ] ::1 /glgj/?g=apps&m=index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_jdpic` [ RunTime:0.0005s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hscom_glgj.lp_product_sale' doesn't exist
+

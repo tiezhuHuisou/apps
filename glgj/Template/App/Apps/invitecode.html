@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/apps_invitecode.css" />
+</head>
+<body>
+    <neq name="Think.get.appsign" value="1">
+        <!-- 顶部 开始 -->
+        <div class="header">
+            <a class="header_left" href="javascript:history.go(-1);"></a>
+            <p class="header_title">邀请码，送不停</p>
+            <a class="header_right" href="javascript:void(0);"></a>
+        </div>
+        <!-- 顶部 结束 -->
+    </neq>
+    <!-- 可视区域 开始 -->
+    <section <neq name="Think.get.appsign" value="1">class="no_footer"</neq>>
+        <!-- 邀请码 开始 -->
+        <div class="invite_items">
+            <img class="invite_bg" src="__IMG__/invite_bg.png" width="100%" height="auto" />
+            <div class="invite_content">
+                <div class="invite_wrap">
+                    <div class="invite_border">
+                        <p class="colfd5622 items_title"><eq name="Think.get.share" value="1">好友<else />我的</eq>邀请码</p>
+                        <p class="colfd5622 items_title">{$inviteCode}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 邀请码 结束 -->
+        <neq name="Think.get.share" value="1">
+            <!-- 邀请记录 开始 -->
+            <p class="code_des items_title">您已经邀请{$inviteCount}名用户，成为您的下级分销商</p>
+            <a class="code_btn colffa11b items_title" href="?g=app&m=apps&a=inviterecord<eq name='Think.get.appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">查看邀请记录</a>
+            <!-- 邀请记录 结束 -->
+        </neq>
+        <!-- 规则 开始 -->
+        <div class="rule_items">
+            <!-- 规则标题  -->
+            <div class="rule_title img_wrap">
+                <eq name="Think.get.share" value="1">
+                    <img src="__IMG__/rule_title2.png" />
+                    <else />
+                    <img src="__IMG__/rule_title.png" />
+                </eq>
+            </div>
+            <div class="itmes_des">{$rule}</div>
+            <neq name="Think.get.share" value="1">
+                <!-- 去邀请按钮 -->
+                <a class="invite_btn img_wrap" href="?g=app&m=apps&a=invitefriend<eq name='Think.get.appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">
+                    <img src="__IMG__/invite_btn.png" />
+                </a>
+            </neq>
+        </div>
+        
+        <!-- 规则 结束 -->
+    </section>
+    <!-- 可视区域 结束 -->
+</body>
+</html>

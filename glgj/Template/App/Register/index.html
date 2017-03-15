@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/register.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="__STATIC__/check/check.css" /> -->
+</head>
+    <body>
+        <!-- 头部 开始 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 开始 -->
+        <section class="register_wrapper no_footer">
+            <form class="chkform">
+                <input type="hidden" name="uid" value="" />
+                <!-- 账号、验证码、密码输入框 -->
+                <div class="register_content">
+                    <!-- 账号 -->
+                    <p class="register_item register_content_phone">
+                        <i class="register_content_phone_icon"></i>
+                        <input class="register_content_phone_input" type="tel" name="mphone" placeholder="请输入手机号码" datatype="mobile" nullmsg="请输入手机号码" errormsg="请输入正确的手机号码" />
+                        <span class="register_content_valid_btn">发送验证码</span>
+                        <span class="sent"></span>
+                    </p>
+                    <!-- 表单验证提示信息 -->
+                    <!-- <div>
+                        <div class="info">
+                            <span class="Validform_checktip">请输入手机号码</span>
+                            <span class="dec">
+                                <s class="dec1">&#9670;</s>
+                                <s class="dec2">&#9670;</s>
+                            </span>
+                        </div>
+                    </div> -->
+                    <!-- 验证码 -->
+                    <p class="register_item register_content_valid">
+                        <i class="register_content_valid_icon"></i>
+                        <input class="register_content_valid_input" type="text" name="captcha" placeholder="请输入验证码" />
+                    </p>
+                    <!-- 密码 -->
+                    <p class="register_item register_content_password">
+                        <i class="register_content_password_icon"></i>
+                        <input class="register_content_password_input" type="password" name="password" placeholder="请输入密码" />
+                        <span class="register_content_password_see nosee"></span>
+                    </p>
+                </div>
+                <!-- 注册按钮 -->
+                <div class="register_btn_wrap">
+                    <a class="register_btn chksubmit" href="javascript:void(0);">注册</a>
+                </div>
+            </form>
+        </section>
+        <!-- 主体内容 结束 -->
+    <!-- <script type="text/javascript" src="__STATIC__/check/check.js"></script> -->
+	<script type="text/javascript" src="__JS__/register.js"></script>
+    </body>
+</html>

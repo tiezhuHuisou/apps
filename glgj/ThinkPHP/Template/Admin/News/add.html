@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+	<script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+	<script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+	<script type="text/javascript" src="__JS__/news_add.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>资讯管理中心</h2>
+				<a href="?g=admin&m=news">资讯列表</a>
+                <a class="hover" href="?g=admin&m=news&a=add">添加资讯</a>
+			</div>
+            <h3>添加资讯</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+                <table class="add_table">
+                    <input  type="hidden" name="id" value="{$detail.id}"/>
+                    <!-- 标题 -->
+                    <tr>
+                        <td class="w120">标题：</td>
+                        <td>
+                            <input class="i400" name="title" type="text" value="{$detail.title}" datatype="*" nullmsg="请填写标题"  />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 短标题 -->
+                    <tr>
+                        <td class="w120">主要内容：</td>
+                        <td>
+                            <input class="i400" name="short_title" type="text" value="{$detail.short_title}" datatype="*" nullmsg="请填写主要内容" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写主要内容</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 属性 -->
+                    <tr>
+                        <td class="w120">属性：</td>
+                        <td class="lh22">
+                            <volist name="flags" id="fl">
+                                <label class="mgr4">
+                                    <input class="pt3" name="flags[]" type="radio" value="{$fl.att}"   <in name="fl.att" value="$detail.flags">checked="checked"</in> />{$fl.attname}[{$fl.att}]
+                                </label>
+                            </volist>
+                        </td>
+                    </tr>
+                    <!-- 分类 -->
+                    <tr>
+                        <td class="w120">分类：</td>
+                        <td>
+                            <select name="categoryid" class="pl3">
+                                <option value="0">请选择</option>
+                                <volist name="classify" id="cl">
+                                <option value="{$cl.cid}" <eq name="cl.cid" value="$detail.categoryid">selected="selected"</eq> > {$cl.cname}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 缩略图 -->
+                    <tr>
+                        <td class="w120">缩略图：</td>
+                        <td>
+                            <a id="news_thumbnail" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <input id="imgurl" name="image" type="hidden" value="{$detail.image}" />
+                            <span class="pl3"> 推荐尺寸：180*140</span>
+                        </td>
+                    </tr>
+                    <!-- 缩略图预览 -->
+                    <tr <empty name="detail.image">style="display:none;"</empty>>
+                        <td class="w120">缩略图预览：</td>
+                        <td>
+                            <img id="imgId" src="{$detail.image}" name="imgae" width="100" height="100" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写收款方名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 关键词 -->
+                    <!-- <tr>
+                        <td class="w120">关键词：</td>
+                        <td>
+                            <input class="i400" name="" type="text" value="" />
+                        </td>
+                    </tr> -->
+                    <!-- 描述 -->
+                    <!-- <tr>
+                        <td class="w120">描述：</td>
+                        <td>
+                            <textarea class="t400" name=""></textarea>
+                        </td>
+                    </tr> -->
+                    <!-- 简介 -->
+                    <tr>
+                        <td class="w120">简介：</td>
+                        <td>
+                            <textarea class="t400" name="desc">{$detail.desc}</textarea>
+                        </td>
+                    </tr>
+                    <!-- 内容 -->
+                    <tr>
+                        <td class="w120">资讯内容：</td>
+                        <td>
+                            <textarea id="news_content" name="content" datatype="*">{$detail.content}</textarea>
+                        </td>
+                    </tr>
+                    <!-- 是否显示 -->
+                    <tr>
+                        <td class="w120">是否显示：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="is_display" value="1" checked="checked"<eq name="detail.is_display" value="1"> checked="checked" </eq> />
+                                <span>显示</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="is_display" value="0" <eq name="detail.is_display" value="0"> checked="checked" </eq> />
+                                <span>不显示</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 ajax-post" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+	<script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+	<script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+	<script type="text/javascript" src="__JS__/more_add.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>更多管理中心</h2>
+				<a href="?g=admin&m=more">单页列表</a>
+				<a class="hover" href="?g=admin&m=more&a=add">添加单页</a>
+				<!-- <a href="?g=admin&m=more&a=custom">自定义单页</a> -->
+			</div>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{$detail.id}"/>
+                <table class="add_table">
+                    <!-- 标题输入框 -->
+                    <tr>
+                        <td class="w120">标题：</td>
+                        <td>
+                            <input class="i400" type="text" name="title" value="{$detail.title}" datatype="title" nullmsg="请填写标题" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 链接输入框 -->
+                    <tr>
+                        <td class="w120">链接：</td>
+                        <td>
+                            <input class="i400" type="text" name="url" value="{$detail.url}" datatype="url" nullmsg="请填写链接" errormsg="请填写正确的链接" />
+                            <span class="pl3">例：http://www.baidu.com</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写链接</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 简介 -->
+                    <tr>
+                        <td class="w120">简介：</td>
+                        <td>
+                            <textarea class="t400" name="description">{$detail.description}</textarea>
+                        </td>
+                    </tr>
+                    <!-- 关键词 -->
+                    <!-- <tr>
+                        <td class="w120">关键词：</td>
+                        <td>
+                            <input class="i400" type="text" name="seo_keywords" value="{$detail.seo_keywords}"/>
+                        </td>
+                    </tr> -->
+                    <!-- 简介 -->
+                    <!-- <tr>
+                        <td class="w120">描述：</td>
+                        <td>
+                            <textarea class="t400" name="seo_description" >{$detail.description}</textarea>
+                        </td>
+                    </tr> -->
+                    <!-- 标示符输入框 -->
+                    <tr>
+                        <td class="w120">标示符：</td>
+                        <td>
+                            <input class="i400" type="text" name="linkid" value="{$detail.linkid}" datatype="*" nullmsg="请填写标示符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写链接</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 链接按钮 -->
+                     <tr>
+                        <td class="w120"></td>
+                        <td>
+                            <div instr="{#webname#}" class="sellabel">应用全称</div>
+					        <div instr="{#simplename#}" class="sellabel">应用简称</div>
+					        <div instr="{#url#}" class="sellabel">域名</div>
+					        <div instr="{#icp#}" class="sellabel">网站备案号(ICP)</div>
+					        <div instr="{#company#}" class="sellabel">公司名称</div>
+					        <div instr="{#companphone#}" class="sellabel">公司电话</div>
+					        <div instr="{#companyfax#}" class="sellabel">公司传真</div>
+					        <div instr="{#companyurl#}" class="sellabel">网站地址</div>
+					        <div instr="{#companymail#}" class="sellabel">公司邮箱</div><br /><br />
+					        <div instr="{#companyaddress#}" class="sellabel">公司地址</div>
+					        <div instr="{#linkman#}" class="sellabel">联系人</div>
+					        <div instr="{#position#}" class="sellabel">职位</div>
+					        <div instr="{#linktel#}" class="sellabel">联系电话</div>
+					        <div instr="{#linkemail#}" class="sellabel">联系邮箱</div>      
+					        <div instr="{#industry#}" class="sellabel">行业分类</div>
+                        </td>
+                    </tr> 
+                    <!-- 内容 -->
+                    <tr>
+                        <td class="w120">内容：</td>
+                        <td>
+                            <textarea id="more_content" name="content" datatype="*" nullmsg="请填写内容">{$detail.content}</textarea>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写内容</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 ajax-post chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

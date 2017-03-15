@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/station_message.css" />
+</head>
+<body>
+    <!-- 头部 -->
+    <include file="Common/header"/>
+    <!-- 无底部区域 -->
+    <section class="no_footer">
+        <notempty name="list">
+            <div class="message_wrap">
+                <volist name="list" id="li">
+                    <!-- 一条站内消息 -->
+                    <div class="station_message_list">
+                        <p class="station_message_list_time">{$li.addtime|date="Y-m-d H:i",###}</p>
+                        <div class="station_message_list_info">
+                            <p class="station_message_list_title">系统消息</p>
+                            <p class="station_message_list_con">{$li.message}</p>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+            <div class="loading">
+                <img src="__STATIC__/images/loading.gif" width="20" height="20" />
+            </div>
+            <else />
+            <!-- 数据为空时 -->
+            <div class="common_empty">
+                <img src="__IMG__/common_empty.png" width="120" height="120">
+                <p>暂无消息</p>
+                <neq name="appsign" value="1">
+                    <a href="javascript:history.go(-1);">返回</a>
+                </neq>
+            </div>
+        </notempty>
+    </section>
+    <script type="text/javascript">
+        var ajaxFlag    = false;
+    </script>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__JS__/message.js"></script>
+</body>
+</html>

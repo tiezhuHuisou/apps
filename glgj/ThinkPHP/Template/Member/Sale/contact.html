@@ -1,0 +1,300 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/contact.css" />
+<script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+<script type="text/javascript" src="__JS__/contact.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=sale&a=company">企业简介</a>
+				<a class="hover" href="?g=member&m=sale&a=contact">联系方式</a>
+			</div>
+			<!-- 企业联系方式表单 开始 -->
+			<form class="chkform form-horizontal" name="" action="" method="post">
+				<input type="hidden" name="id" value="{$link_info.id}">
+				<input type="hidden" id="lng" name="lng" value="{$link_info.lng}">
+				<input type="hidden" id="lat" name="lat" value="{$link_info.lat}">
+				<div class="add_form">
+					<!-- 企业负责人 -->
+					<div class="add_row">
+						<div class="add_name bold">企业负责人</div>
+					</div>
+					<!-- 姓名 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">姓名：</div>
+							<input class="t400" type="text" name="contact_user" value="{$link_info['contact_user']|default=''}" placeholder="请输入姓名" datatype="title" nullmsg="请输入姓名" errormsg="姓名为2-50个字符" />
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入姓名</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 手机号 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">手机号：</div>
+							<input class="t400" type="text" name="subphone" value="{$link_info['subphone']|default=''}" placeholder="请输入手机号" datatype="mobile" nullmsg="请输入手机号" errormsg="请输入正确的手机号" />
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入手机号</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 性别 -->
+					<div class="add_row">
+						<div class="add_name">性别：</div>
+						<eq name="link_info['sex']" value="1">
+							<label><input type="radio" name="sex" value="1" checked="checked">男</label>
+							<label><input type="radio" name="sex" value="2">女</label>
+						<else />
+							<label><input type="radio" name="sex" value="1">男</label>
+							<label><input type="radio" name="sex" value="2" checked="checked">女</label>
+						</eq>
+					</div>
+					<!-- 企业联系信息 -->
+					<div class="add_row">
+						<div class="add_name bold">企业联系信息</div>
+					</div>
+					<!-- 电话 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">电话：</div>
+							<input class="t400" type="text" name="telephone" value="{$link_info['telephone']|default=''}" placeholder="请输入电话" datatype="fax" nullmsg="请输入电话" errormsg="电话格式不正确" />
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入电话</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 传真 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">传真：</div>
+							<input class="t400" type="text" name="fax" value="{$link_info['fax']|default=''}" placeholder="请输入传真" datatype="fax" nullmsg="请输入传真" errormsg="传真格式不正确" />
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入传真</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 网址 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">网址：</div>
+							<input class="t400" type="text" name="site" value="{$link_info['site']|default=''}" placeholder="请输入网址" datatype="url" nullmsg="请输入网址" errormsg="请输入正确的网址" />
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入网址</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 邮箱 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">邮箱：</div>
+							<input class="t400" type="text" name="email" value="{$link_info['email']|default=''}" placeholder="请输入邮箱" datatype="email" nullmsg="请输入邮箱" errormsg="请输入正确的邮箱" />
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入邮箱</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 地址 -->
+					<div class="add_row">
+						<div class="add_name">地址：</div>
+						<select class="province" name="province_id">
+							<option value="">请选择所在省</option>
+							<foreach name="region_arr[0]" item="val">
+								<option value="{$val['id']}" <eq name="link_info['province_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+							</foreach>
+							
+						</select>
+						<select class="city" name="city_id">
+							<option value="">请选择所在市</option>
+								<foreach name="region_arr[$link_info['province_id']]" item="val">
+									<option value="{$val['id']}" <eq name="link_info['city_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+								</foreach>
+						</select>
+						<select class="towns" name="countyN">
+							<option value="">请选择所在区/县</option>
+								<foreach name="region_arr[$link_info['city_id']]" item="val">
+									<option value="{$val['id']}" <eq name="link_info['countyn']" value="$val['id']">selected</eq>>{$val['name']}</option>
+								</foreach>
+						</select>
+					</div> 
+					<!-- 详细地址 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">详细地址：</div>
+							<input class="t400" type="text" name="address" value="{$link_info['address']|default=''}" placeholder="请输入详细地址" datatype="title" nullmsg="请输入详细地址" />
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入详细地址</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 企业地图导航 -->
+					<div class="add_row">
+						<div class="add_name bold">企业地图导航</div>
+					</div>
+					<!-- 企业地图 -->
+					<div class="add_row">
+						<div class="add_name vat">企业地图：</div>
+						<div id="container" style="width:400px;height:400px;border:1px solid gray;display:inline-block;"></div>
+					</div>
+					<!-- 地址搜索 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">地址搜索：</div>
+							<input id="suggestId" class="t400" type="text" value="输入地址搜素" onclick="if(this.value==this.defaultValue){this.value=''};"/>
+						</div>
+			            <!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入详细地址</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 标注参数 -->
+					<div class="add_row">
+						<div class="add_name">标注参数：</div>
+						<input id="area" class="t400" name="p_area" type="text" />
+						<a class="add_upload" href="javascript:;" onclick="document.getElementById('area').value='120.265094,30.315726';">初始化</a> 
+					</div>
+					<!-- 保存按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit ajax-post" type="submit" target-form="form-horizontal" value="保 存" />
+					</div>
+				</div>
+			</form>
+			<!-- 企业联系方式表单 开始 -->
+		</div>
+		<!-- 主体 结束 -->
+		<script type="text/javascript">
+		var data={$region_arr_json};
+	</script>
+	</div>
+	<script type="text/javascript">
+// 百度地图API功能
+function G(id) {
+    return document.getElementById(id);
+}
+var map = new BMap.Map("container");
+map.centerAndZoom("北京",12);                   // 初始化地图,设置城市和地图级别。
+var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+    {"input" : "suggestId"
+    ,"location" : map
+});
+ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+	var str = "";
+	G("searchResultPanel").innerHTML = str;
+});
+var myValue;
+ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+var _value = e.item.value;
+    myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+    G("searchResultPanel").innerHTML = myValue;
+    setPlace();
+});
+function setPlace(){
+    map.clearOverlays();    //清除地图上所有覆盖物
+    function myFun(){
+        var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+        map.centerAndZoom(pp, 18);
+        map.addOverlay(new BMap.Marker(pp));    //添加标注
+    }
+    var local = new BMap.LocalSearch(map, { //智能搜索
+      onSearchComplete: myFun
+    });
+    local.search(myValue);
+}
+
+</script>                    
+<script type="text/javascript">
+	lng = $("#lng").val();
+	lat = $("#lat").val();
+	if(lng != ""){
+		var point = new BMap.Point(lng,lat);  // 创建点坐标
+	}else{
+		var point = new BMap.Point(120.265094,30.315726);  // 创建点坐标
+	}
+	var map = new BMap.Map("container");
+	map.centerAndZoom(point, 16);
+	map.enableScrollWheelZoom();
+	var marker = new BMap.Marker(point);
+	map.addOverlay(marker);
+	map.addEventListener("click", function(e){
+	  document.getElementById("area").value=e.point.lng + "," + e.point.lat;
+	  $("#lng").val(e.point.lng);
+		$("#lat").val(e.point.lat);
+	  var newpoint=new BMap.Point(e.point.lng,e.point.lat);
+	  map.clearOverlays(marker);
+	  marker = new BMap.Marker(newpoint);
+	  map.addOverlay(marker);
+	});
+
+</script>
+</body>
+</html>

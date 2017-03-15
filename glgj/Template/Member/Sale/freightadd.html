@@ -1,0 +1,219 @@
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/freightadd.css" />
+    <link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <include file="Sale/nav"/>
+            <!-- 表单 开始 -->
+
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input name="id" type="hidden" value="{$Think.get.id}"/>
+                <div class="add_form">
+                    <!-- 配送方式名称 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">配送方式名称：</div>
+                            <input class="t200" type="text" name="title" value="{$info.title}" placeholder="请输入配送方式名称" datatype="title" nullmsg="请输入配送方式名称" errormsg="请输入2到50位字符" />
+
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入配送方式名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 排序 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">排序：</div>
+                            <input class="t200" type="text" name="sort" value="{$info.sort|default='50'}" placeholder="请输入排序" datatype="n" nullmsg="请输入排序" errormsg="请输入数字" />
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入排序</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 默认物流公司 -->
+                    <div class="add_row">
+                        <div class="add_name">默认物流公司：</div>
+                        <select class="t200" name="delivery_id">
+                            <option value="">请选择</option>
+                            <volist name="delivery" id="de">
+                                <option value="{$de.id}" <eq name="info.delivery_id" value='$de.id'>selected</eq>>{$de.title}</option>
+                            </volist>
+
+                        </select>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 计价方式 -->
+                    <div class="add_row">
+                        <div class="add_name">计价方式：</div>
+                        <td class="calc_method">
+                            <div class="calc_method_package"></div>
+                            <div class="calc_method_weight"></div>
+                            <eq name="info['piece']" value="2">
+                                <label id="package_box" class="mgr" for="package"><input id="package" class="pt3" name="piece" type="radio" value="1" style="top:0;" />按件数</label>
+                                <label id="weight_box" for="weight"><input id="weight" class="pt3" name="piece" type="radio" value="2" checked style="top:0;" />按重量</label>
+                                <else />
+                                <label id="package_box" class="mgr" for="package"><input id="package" class="pt3" name="piece" type="radio" value="1" checked />按件数</label>
+                                <label id="weight_box" for="weight"><input id="weight" class="pt3" name="piece" type="radio" value="2"/>按重量</label>
+                            </eq>
+                            <!-- 确认消息框 开始 -->
+                            <div class="calc_method_confirm">
+                                <div class="calc_method_confirm_prompt">
+                                    <p>确认转换计价方式吗？一旦确认转换计价方式，配送区域内容将会被清空!!!</p>
+                                </div>
+                                <div class="calc_method_confirm_opt">
+                                    <a id="calc_method_confirm_yes" href="javascript:void(0);">确定</a>
+                                    <a id="calc_method_confirm_no" href="javascript:void(0);">取消</a>
+                                </div>
+                            </div>
+                            <!-- 确认消息框 结束 -->
+                        </td>
+                    </div>
+                    <div class="add_row courier_area">
+                        <div class="add_name courierTitle">配送区域：</div>
+                        <div class="add_right">
+                            <!-- courier start -->
+                            <div class="courier">
+                                <div class="c_header">
+                                    <p>可配送区域</p>
+                                    <eq name="info['piece']" value="2">
+                                        <ul>
+                                            <li>首重（千克）</li>
+                                            <li>运费（元）</li>
+                                            <li>续重（千克）</li>
+                                            <li>续费（元）</li>
+                                        </ul>
+                                        <else />
+                                        <ul>
+                                            <li>首件（个）</li>
+                                            <li>运费（元）</li>
+                                            <li>续件（个）</li>
+                                            <li>续费（元）</li>
+                                        </ul>
+                                    </eq>
+                                </div>
+                                <empty name="info['id']">
+                                    <div class="add_default">
+                                        <div class="add_area">
+                                            <div class="add_area_w">
+                                                默认                                                
+                                            </div>
+                                        </div>
+                                        <ul class="select_price">
+                                            <li><input name="package_first[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['package_first']}"/></li>
+                                            <li><input name="freight_first[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['freight_first']}"/></li>
+                                            <li><input name="package_other[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['package_other']}"/></li>
+                                            <li><input name="freight_other[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['freight_other']}"/></li>
+                                        </ul>    
+                                        <input name="placeId" type="hidden" value="" />
+                                        <input id="placeCatId" class="placeValue" name="placeAllId[]" type="hidden" value="moren" />
+                                    </div>
+                                </empty>
+                                <foreach name="info['postage']" item="val">
+                                    <if condition="$val['placeallid'] neq 'moren'">
+                                        <div class="c_add">
+                                        <else />
+                                        <div class="add_default">
+                                    </if>
+                                        <div class="add_area">
+                                            <div class="add_area_w">{$val['placename']}
+                                                <if condition="$val['placeallid'] neq 'moren'">
+                                                    <a class="add_area_delect" href="javascript:void(0);">删除</a>
+                                                    <a class="add_area_edit" href="javascript:void(0);">编辑</a>
+                                                </if>
+                                            </div>
+                                        </div>
+                                        <ul class="select_price">
+                                            <li><input name="package_first[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['package_first']}"/></li>
+                                            <li><input name="freight_first[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['freight_first']}"/></li>
+                                            <li><input name="package_other[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['package_other']}"/></li>
+                                            <li><input name="freight_other[]" type="text" datatype="n" nullmsg="请输入数字" errormsg="请输入数字" value="{$val['freight_other']}"/></li>
+                                        </ul>
+                                        <input name="placeId" type="hidden" value="" />
+                                        <input id="placeCatId" class="placeValue" name="placeAllId[]" type="hidden" value="{$val['placeallid']}" />
+                                    </div>
+                                </foreach>
+                                <div class="c_default">
+                                    <a id="new_add" href="javascript:void(0);">指定可配送区域和运费</a>
+                                </div>
+
+                            </div>
+                            <!-- courier end -->
+                        </div>
+                    </div>
+                    <!-- 发布按钮 -->
+                    <div class="add_row">
+                        <div class="add_name"></div>
+                        <input id="needHideC" type="hidden" value="{$use_city_id}">
+                        <input id="needHideP" type="hidden" value="{$use_sheng_id}">
+                        <input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="发 布" />
+                    </div>
+                </div>
+            </form>
+            <!-- 表单 结束 -->
+        </div>
+        <!-- 主体 结束 -->
+    </div>
+    <!-- 隐藏弹出层 开始 -->
+    <div id="select_area_add" class="select_area">
+        <div class="a_header">选择可配送区域</div>
+        <div class="a_region">
+            <div class="a_region_w">
+                <!-- 左边方框 开始 -->
+                <div class="region_left">
+                    <p class="r_l_title">可选省、市、区</p>
+                    <ul class="r_l_province" id="all_place">
+                        {$areastr}
+                    </ul>
+                </div>
+                <!-- 左边方框 结束 -->
+                <a class="region_add" href="javascript:void(0);">添加</a>
+                <!-- 右边方框 开始 -->
+                <div class="region_right">
+                    <p class="r_l_title">已选省、市、区</p>
+                    <ul class="r_l_province" id="all_place_right">
+                        {$right}
+                    </ul>
+                </div>
+                <!-- 右边方框 结束 -->
+            </div>
+        </div>
+        <div class="a_option">
+            <a class="option_confirm" href="javascript:void(0);">确定</a>
+            <a class="option_cancel" href="javascript:void(0);">取消</a>
+        </div>
+    </div>
+    <!-- 隐藏弹出层 结束 -->
+    <script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__JS__/freightadd.js"></script>
+</body>
+</html>

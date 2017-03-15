@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/identitySuccess.css" />
+</head>
+<body>
+    <include file="Common/header"/>
+    <!-- 可视区域 开始 -->
+    <section class="viewport">
+        <div class="weui-msg">
+            <div class="weui-msg__text-area">
+                <div class="img_wrap">
+                    <img src="__IMG__/sub_success.png" />
+                </div>
+                <p class="weui-msg__title">申请成功请耐心等待！</p>
+            </div>
+            <div class="weui-msg__opr-area">
+                <p class="weui-btn-area">
+                    <a href="?g=app&m=member&a=identity" class="weui-btn weui-btn_primary">我知道了</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <script type="text/javascript">
+        var city_name  = "{$city_name}";
+        var defaultImg = '__STATIC__/images/default_icon.jpg';
+        var imgUrl     = '__IMG__';
+    </script>
+</body>
+</html>

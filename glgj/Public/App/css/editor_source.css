@@ -1,0 +1,10 @@
+.mgt10{margin-top:10px;}
+.weui-form-preview__hd{line-height:30px;}
+.weui-form-preview__hd .weui-form-preview__value{font-size:16px;font-weight:bold;}
+.weui-form-preview__value{text-align:left;}
+.loadding_wrap{display:none;}
+.save_footer{width:100%;background:#fff;left:0;bottom:0;position:fixed;z-index:99;font-size:14px;text-align:center;color:#38d163;border-top:1px solid #dcdcdc;}
+.save_footer .weui-cell{padding:0 0;}
+.save_footer .weui-icon-checked{margin-left:15px;}
+.save_footer .weui-cells{margin-top:0;}
+.save_footer .weui-btn{border-radius:0;padding:7px 45px;font-size:14px;}

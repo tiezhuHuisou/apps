@@ -1,0 +1,31 @@
+/*------- 登录页面 开始 -------*/
+header{z-index: 1;}
+/* 主体内容 */
+.register_wrapper .register_content{margin:15px 0 36px;}
+.register_wrapper .register_item{display:-webkit-box;border-bottom:1px solid #e5e5e5;}
+.register_wrapper .register_item:last-child{border-bottom:0;}
+/* 图标 */
+.register_wrapper .register_content p i{width:32px;display:block;}
+.register_wrapper .register_content_phone .register_content_phone_icon{background:url("../images/new_phone.png") no-repeat center #fff;background-size:70%;}
+.register_wrapper .register_content_password .register_content_password_icon{background:url("../images/suo.png") no-repeat center #fff;background-size:70%;}
+.register_wrapper .register_content_valid .register_content_valid_icon{background:url("../images/suo.png") no-repeat center #fff;background-size:70%;}
+.register_wrapper .register_content_valid .nosee{background:url("../images/eye.png") no-repeat center #fff;background-size:70%;}
+/* 输入框 */
+.register_wrapper .register_content p .register_content_phone_input{-webkit-box-flex:1;height:20px;display:block;padding:10px;border:none;}
+.register_wrapper .register_content p .register_content_password_input{-webkit-box-flex:1;height:20px;display:block;padding:10px;border:none;}
+.register_wrapper .register_content p .register_content_valid_input{-webkit-box-flex:1;height:20px;display:block;padding:10px;border:none;}
+/* 发送验证码、密码是否可见 */
+.register_wrapper .register_content p .register_content_valid_btn{width:100px;line-height:40px;display:block;background:#fff;text-align:center;color: #38d163;font-size: 14px;}
+.register_wrapper .register_content p .sent{width:100px;font-size:12px;line-height:40px;display:block;background:#fff;color:#38d163;text-align:center;display:none;}
+.register_wrapper .register_content p .register_content_password_see{width:50px;display:block;background:url("../images/eye.png") no-repeat center #fff;background-size:40%;}
+.register_wrapper .register_content p .nosee{background:url("../images/eyes.png") no-repeat center #fff;background-size:40%;}
+.register_wrapper .register_content p.valid_hide{display:none;}
+/* 注册按钮 */
+.register_wrapper .register_btn_wrap{display:-webkit-box;}
+.register_wrapper .register_btn_wrap .register_btn{border-radius:5px;margin:0 12px 15px;display:block;height:40px;line-height:40px;font-size:16px;-webkit-box-flex:1;background:#38d163;color:#fff;text-align:center;}
+/* 服务协议 */
+.register_wrapper .allow_protocol_wrap{color:#8a8a8a;text-align:center;}
+.register_wrapper .allow_protocol_wrap .protocol_link{text-decoration:underline;color:#4069ab;}
+/*------- 登录页面 结束 -------*/
+
+

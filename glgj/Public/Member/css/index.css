@@ -1,0 +1,31 @@
+/* 改写base */
+.wrapper{padding:0;background:none;border:none;}
+/* 头部 */
+.index_header{width:100%;height:250px;background:url('../images/index_header.png') no-repeat center;padding:0;overflow:hidden;}
+.index_header .user_info{width:60%;height:150px;background:rgba(255,255,255,.75);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c8ffffff,endColorstr=#c8ffffff);border:1px solid #dcdcdc;margin:50px auto;position:relative;}
+.index_header .user_info .user_portrait{width:158px;height:158px;border:3px solid #fff;border-radius:50%;overflow:hidden;position:absolute;top:-6px;left:-48px;background:rgba(255,255,255,.75);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c8ffffff,endColorstr=#c8ffffff);}
+.index_header .user_info .user_left{margin-left:130px;padding:30px 0;}
+.index_header .user_info .user_left p{padding:5px 0;}
+.index_header .user_info .user_left .user_name{font-size:20px;}
+.index_header .user_info .user_right{margin-right:30px;padding:35px 0;}
+.index_header .user_info .user_right p{padding:5px 0;}
+/* 站内信箱 */
+.msg{border:1px solid #dcdcdc;padding:15px;background:#fff;}
+.msg .msg_header{width:100%;position:relative;border-bottom:1px solid #ccc;padding-bottom:15px;}
+.msg .msg_header .msg_icon{width:18px;height:18px;background:url('../images/index_icon.png');background-position:-44px -73px;display:block;position:absolute;top:1px;left:0;}
+.msg .msg_header .msg_title{margin-left:25px;}
+.msg .msg_content{padding:50px 0 35px;}
+.msg .msg_content .msg_col{border-right:1px dashed #dcdcdc;float:left;overflow:hidden;display:block;}
+.msg .msg_content .msg_col:hover{background:#f7f7f7;}
+.msg .msg_content .msg_col .msg_name{font-size:16px;text-align:center;padding-top:30px;}
+.msg .msg_content .msg_col .msg_num{font-size:60px;text-align:center;padding:90px 0 110px;color:#08bdb7;}
+/*我的收藏*/
+.collect{border:1px solid #dcdcdc;padding:15px;background:#fff;}
+.collect .collect_header{width:100%;position:relative;border-bottom:1px solid #ccc;padding-bottom:15px;}
+.collect .collect_header .collect_icon{width:18px;height:18px;background:url('../images/index_icon.png');background-position:-102px -74px;display:block;position:absolute;top:1px;left:0;}
+.collect .collect_header .collect_title{margin-left:25px;}
+.collect .collect_content{padding:50px 0 35px;}
+.collect .collect_content .collect_col{border-right:1px dashed #dcdcdc;float:left;overflow:hidden;display:block;}
+.collect .collect_content .collect_col:hover{background:#f7f7f7;}
+.collect .collect_content .collect_col .collect_name{font-size:16px;text-align:center;padding-top:30px;}
+.collect .collect_content .collect_col .collect_num{font-size:60px;text-align:center;padding:90px 0 110px;color:#08bdb7;}

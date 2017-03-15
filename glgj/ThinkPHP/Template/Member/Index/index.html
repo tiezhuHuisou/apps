@@ -1,0 +1,87 @@
+<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/index.css" />
+	<script type="text/javascript" src="__JS__/index.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<div class="index_header">
+			<div class="user_info">
+				<!-- 用户头像 -->
+				<div class="user_portrait">
+					<img src="{$user_info['head_pic']|default='__IMG__/member_default.png'}" width="158" height="158" />
+				</div>
+				<div class="user_left fl">
+					<p class="user_name">{$info.nickname}</p>
+					<p class="gray">下午好！</p>
+					<p>
+						<a class="gray" href="?g=member&m=sale&a=company">我的企业</a>
+						<a class="cyan mgl20" href="?g=member&m=sale&a=company"><notempty name="company">已开通<else />未开通</notempty></a>
+					</p>
+				</div>
+				<div class="user_right fr">
+					<p>欢迎登入您的个人中心</p>
+					<p>中国APP行业应用注册中心</p>
+					<p>竭诚为您提供服务！</p>
+				</div>
+			</div>
+		</div>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 站内信箱 -->
+			<div class="msg fl">
+				<div class="msg_header">
+					<i class="msg_icon"></i>
+					<span class="msg_title fl">站内信箱</span>
+					<a class="msg_more fr" href="?g=member&m=msg">更多 ></a>
+					<div class="clear"></div>
+				</div>
+				<div class="msg_content">
+					<a class="msg_col" href="javascript:void(0);">
+						<div class="msg_name">客户询盘（条）</div>
+						<div class="msg_num">0</div>
+					</a>
+					<a class="msg_col" href="?g=member&m=msg">
+						<div class="msg_name">系统消息（条）</div>
+						<div class="msg_num">{$system_num}</div>
+					</a>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!-- 我的收藏 -->
+			<div class="collect fr">
+				<div class="collect_header">
+					<i class="collect_icon"></i>
+					<span class="collect_title fl">我的收藏</span>
+					<a class="collect_more fr" href="?g=member&m=collect">更多 ></a>
+					<div class="clear"></div>
+				</div>
+				<div class="collect_content">
+					<a class="collect_col" href="?g=member&m=collect">
+						<div class="collect_name">资讯收藏</div>
+						<div class="collect_num">{$news_num}</div>
+					</a>
+					<a class="collect_col" href="?g=member&m=collect&a=product">
+						<div class="collect_name">产品收藏</div>
+						<div class="collect_num">{$product_num}</div>
+					</a>
+					<a class="collect_col" href="?g=member&m=collect&a=company">
+						<div class="collect_name">企业收藏</div>
+						<div class="collect_num">{$company_num}</div>
+					</a>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

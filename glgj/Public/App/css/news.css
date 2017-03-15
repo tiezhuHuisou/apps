@@ -1,0 +1,20 @@
+/* 资讯 */
+.viewport{position: relative;padding-top: 50px;}
+.weui-navbar{overflow-x: auto;}
+.weui-navbar .weui-navbar__item{min-width: 80px;}
+.weui-navbar .weui-navbar__item a{display: block;width: 100%;height: 100%;}
+.news_wrap{width:100%;background:#fff;}
+.news_wrap .news_header{height:40px;line-height:40px;border-bottom:1px solid #dcdcdc;}
+.news_wrap .news_list ul li{width:100%;padding:16px 0;border-bottom:1px solid #dcdcdc;overflow:hidden;}
+.news_wrap .news_list ul li .new_title{display:block;padding:0 16px 0 10px;overflow:hidden;}
+.news_wrap .news_list ul li .new_title .new_title_main{line-height:1.8em;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.news_wrap .news_list ul li .new_title .new_title_sub{line-height:1.3em;margin-top:2px;font-size:12px;color:#8a8a8a;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;}
+/*操作样式*/
+.opts span{display: inline-block;height: 30px;margin-right: 20px;line-height: 30px;color: #999;}
+.opts span:last-child{margin-right:0;}
+.opts a:last-child{margin-right: 15px;}
+.opts .comment{padding-left: 30px;box-sizing: border-box; background:url("../images/pinglun.png") center left no-repeat;background-size: 25px;}
+.opts .collect{padding-left: 30px;box-sizing: border-box; background:url("../images/souchang.png") center left no-repeat;background-size: 25px;}
+.opts .active{ background:url("../images/sou_choose.png") center left no-repeat;background-size: 25px;}
+/*nav列表*/
+.weui-navbar .active{background: #ddd;}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/find.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/company.css">
+</head>
+<body>
+<include file="Common/header_more"/>
+<!-- 可视区域 开始 -->
+<section class="viewport">
+    <div class="weui-tab classify_nav" type="hidden">
+        <div class="weui-navbar">
+            <div class="weui-navbar">
+                <volist name="list['category']" id="vo">
+                    <div class="weui-navbar__item <eq name='Think.get.cid' value='$vo.id'>active</eq>">
+                        <a href="?g=app&m=company&a=index&cid={$vo.id}">{$vo.name}</a>
+                    </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+    <!-- 列表页 -->
+    <notempty name="list['list']">
+        <div class="list_wrap">
+            <volist name="list['list']" id="vo">
+                <a href="?g=app&m=company&a=detail&id={$vo.id}">
+                    <div class="weui-panel weui-panel_access">
+                        <h2 class="weui-panel__hd">{$vo.name}</h2>
+                        <div class="weui-panel__bd">
+                            <div class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__bd">
+                                    <p class="weui-media-box__desc">联系人：<span>{$vo.contact_user}</span></p>
+                                    <p class="weui-media-box__desc">
+                                    <span class="phone">电话：{$vo.telephone}<a href="tel:{$vo.telephone}"><img
+                                            src="__IMG__/dh.png"></a></span>
+                                        <span class="phone">手机：{$vo.subphone}<a href="tel:{$vo.subphone}"><img
+                                                src="__IMG__/dh.png"></a></span>
+                                    </p>
+                                    <p class="weui-media-box__desc">{$vo.address}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </volist>
+        </div>
+        <!-- 滑屏至底部提示信息 -->
+        <div class="loading">
+            <img src="__STATIC__/images/loading.gif" width="20" height="20"/>
+        </div>
+        <else/>
+        <!-- 数据为空时 -->
+        <div class="common_empty">
+            <img src="__IMG__/common_empty.png" width="120" height="120">
+            <p>暂无暂无企业</p>
+            <a href="?g=app&m=index">返回首页</a>
+        </div>
+    </notempty>
+    <input type="hidden" class="classify_nav" value="{'没有了'|default=0}">
+</section>
+
+<include file="Common/footer"/>
+<script type="text/javascript">
+    var title = "{$Think.get.title}";
+    var cid = "{$Think.get.cid}";
+    var ajaxFlag = false;
+
+</script>
+<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+<script type="text/javascript" src="__JS__/company.js"></script>
+
+</body>
+</html>

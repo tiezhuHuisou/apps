@@ -1,0 +1,84 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/order.css" />
+<script type="text/javascript" src="__JS__/order.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+            <include file="Sale/nav"/>
+			<!-- 订单表格 -->
+			<table class="order">
+				<thead>
+					<tr class="bgray">
+						<td class="ti25">产品信息</td>
+						<td></td>
+						<td>单价</td>
+						<td>数量</td>
+						<td>总价</td>
+					
+						<td align="center">交易操作</td>
+					</tr>
+				</thead>
+				<volist name="list" id="li">
+				<!-- 一条订单 开始 -->
+				<tbody>
+					<tr class="empty">
+						<td colspan="6"></td>
+					</tr>
+					<tr class="order_info bgray">
+						<td colspan="6">
+							<span>订单号：{$li.id}</span>
+							<span class="mgl20">下单时间：{$li.ctime|date="Y-m-d H:i",###}</span>
+							<span>&nbsp;&nbsp;&nbsp;</span>
+							<span>总金：{$li.pay_price}(元)</span>
+							<span> &nbsp;&nbsp;&nbsp;状态：
+						<eq name="li.state" value="0">待付款</eq>
+                        <eq name="li.state" value="1">待发货</eq>
+                        <eq name="li.state" value="2">待收货</eq>
+                        <eq name="li.state" value="3">待评价</eq>
+                        <eq name="li.state" value="4">退款中</eq>
+                        <eq name="li.state" value="5">交易关闭</eq>
+                        <eq name="li.state" value="6">申请退款</eq>
+                        <eq name="li.state" value="7">退款被拒</eq>
+                        <eq name="li.state" value="8">完成交易</eq>
+                        <eq name="li.state" value="9">已退款</eq>
+                        <eq name="li.state" value="10">交易完成</eq>
+						</span>
+					</tr>
+					
+					<volist name="li.productList" id="vo">
+					<tr>
+						<td class="ti25">{$vo.goodname}</td>
+						<td><img src="{$vo.gpic}" width="50" height="50" /></td>
+						<td>￥{$vo.unitprice}</td>
+						<td>{$vo.nums}</td>
+						<td>￥{$vo.totalprice}</td>
+					
+						<td class="opt" align="center">
+							<a class="cyan" href="?g=member&m=sale&a=detail&id={$li.id}">订单详情</a>
+						</td>
+					</tr>
+					</volist>
+
+				</tbody>
+				<!-- 一条订单 结束 -->
+				</volist>
+			</table>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/rechargerule.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>充值规则管理中心</h2>
+            </div>
+            <h3>充值规则设置</h3>
+            <!-- 表单 -->
+            <form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{$detail.id}" />
+                <table class="add_table">
+                    <tr>
+                        <td class="w120">规则：</td>
+                        <td>
+                            <a id="addline" class="opt_btn mgl0">添加规则</a>
+                            <table class="list_table">
+                                <tr class="list_header">
+                                    <th>充（元）</th>
+                                    <th>送（元）</th>
+                                    <th>排序</th>
+                                    <th>操作</th>
+                                </tr>
+                                <empty name="list">
+                                    <tr class="list_items">
+                                        <td>
+                                            <input class="list_full" type="text" name="reach[]" value="" />
+                                        </td>
+                                        <td>
+                                            <input class="list_reduce" type="text" name="give[]" value="" />
+                                        </td>
+                                        <td>
+                                            <input class="list_sort" type="text" name="sort[]" value="50" />
+                                        </td>
+                                        <td>
+                                            <a class="list_del" href="javascript:void(0);">删除</a>
+                                        </td>
+                                    </tr>
+                                    <else />
+                                    <volist name="list" id="vo">
+                                        <tr class="list_items">
+                                            <td>
+                                                <input class="list_full" type="text" name="reach[]" value="{$vo['reach']}" />
+                                            </td>
+                                            <td>
+                                                <input class="list_reduce" type="text" name="give[]" value="{$vo['give']}" />
+                                            </td>
+                                            <td>
+                                                <input class="list_sort" type="text" name="sort[]" value="{$vo['sort']}" />
+                                            </td>
+                                            <td>
+                                                <a class="list_del" href="javascript:void(0);">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </empty>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 提交按钮 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <!-- <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确定提交"> -->
+                            <a class="opt_btn btn_submit" href="javascript:void(0);">确定提交</a>
+                            <input class="opt_btn" type="reset" value="重置表单">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+    <script type="text/javascript" src="__JS__/rechargerule.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/carousel.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/tips.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/apps_productdetail.css" />
+</head>
+<body>
+    <!-- 可视区域 开始 -->
+    <section>
+        <neq name="Think.get.appsign" value="1">
+            <notempty name="carousel">
+                <!-- 轮播 开始 -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <volist name="carousel" id="ca">
+                            <div class="swiper-slide"><a href="javascript:void(0);"><img src="{$ca}" width="100%" /></a></div>
+                        </volist>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- 轮播 结束 -->
+            </notempty>
+            <!-- 产品基本信息 开始 -->
+            <div class="basic_info">
+                <!-- 产品标题 -->
+                <p class="info_title">{$detail['title']}</p>
+                <!-- 产品描述 -->
+                <p class="info_desc">{$detail['short_title']}</p>
+                <!-- 产品价格 -->
+                <p class="info_price">{$detail['price']}</p>
+            </div>
+            <!-- 产品基本信息 结束 -->
+            <notempty name="detail['company_id']">
+                <!-- 公司信息 开始 -->
+                <a class="company_info" href="?g=app&m=apps&a=company_home&id={$detail['company_id']}">
+                    <img src="{$detail['logo']}" width="50" height="50" />
+                    <div class="info_wrap">
+                        <p class="info_title">{$detail['company_name']}</p>
+                        <p class="info_address">{$detail['business']}</p>
+                    </div>
+                    <div class="larger"></div>
+                </a>
+                <!-- 公司信息 结束 -->
+            </notempty>
+        </neq>
+        <!-- 图文详情 开始 -->
+        <div class="detail_info">
+            <p class="info_title">图文详情</p>
+            <article>{$detail['summary']}</article>
+        </div>
+        <!-- 图文详情 结束 -->
+        <neq name="Think.get.appsign" value="1">
+            <notempty name="recommend">
+                <!-- 为你推荐 开始 -->
+                <div class="groom_area">
+                    <!-- 顶部 -->
+                    <div class="groom_top">
+                        <p class="top_title">为你推荐</p>
+                        <p class="top_line"></p>
+                    </div>
+                    <!-- 产品列表 -->
+                    <div class="groom_wrap">
+                        <volist name="recommend" id="vo">
+                            <!-- 一条数据 开始 -->
+                            <a class="groom_list" href="?g=app&m=apps&a=product_detail&id={$vo['product_id']}">
+                                <div class="list_wrap">
+                                    <div class="list_img">
+                                        <img src="{$vo['img']}" />
+                                    </div>
+                                    <div class="list_info">
+                                        <p class="info_title">{$vo['title']}</p>
+                                        <p class="info_desc">{$vo['short_title']}</p>
+                                        <p class="info_price">{$vo['price']}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- 一条数据 结束 -->
+                        </volist>
+                    </div>
+                    <!-- 滑动到底部提示信息 -->
+                    <div class="loading">
+                        <img src="__STATIC__/images/loading.gif" width="20" height="20" />
+                    </div>
+                </div>
+                <!-- 为你推荐 结束 -->
+            </notempty>
+        </neq>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 提示信息请下载app 开始 -->
+    <include file="tips" />
+    <!-- 提示信息请下载app 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/tips.js"></script>
+    <script type="text/javascript">
+        var appsign = "{$Think.get.appsign|default=0}";
+    </script>
+    <script type="text/javascript" src="__JS__/apps_productdetail.js"></script>
+</body>
+</html>

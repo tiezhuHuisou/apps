@@ -1,0 +1,41 @@
+/* 顶部 */
+.member_wrapper .member_top{width:100%;position:relative;text-align:center;}
+.member_wrapper .member_top .member_top_pn{width:260px;display:block;overflow:hidden;position:absolute;top:50%;left:50%;margin:-46px 0 0 -130px;}
+.member_wrapper .member_top .member_top_pn .member_top_sculpture{width:60px;margin:0 auto;display:block;overflow:hidden;border:3px solid #fff;border-radius:50%;}
+.member_wrapper .member_top .member_top_pn .member_top_nickname{width:100%;text-align:center;color:#fff;margin-top:5px;}
+.member_wrapper .member_top .member_top_pn .member_top_nickname img{display:inline;margin-top:-3px;}
+/* 链接公共样式 */
+.member_link{width:100%;background:#fff;display:-webkit-box;border-bottom:1px solid #dcdcdc;}
+.member_link .member_link_title{-webkit-box-flex:1;text-indent:16px;}
+.member_link .member_link_title span{display:block;width:200px;padding:14px 0;background:url('../images/member_icons2.png') no-repeat left center;text-indent:40px;}
+.member_link .next_arrow{width:50px;display:-webkit-box;-webkit-box-align:center;}
+.member_link .next_arrow .gt{float:none;width:6px;height:12px;overflow:hidden;position:relative;top:0px;left:20px;}
+.member_link .next_arrow .gt div{height:7px;width:7px;border:2px solid #8a8a8a;-webkit-transform:rotate(45deg);position:absolute;top:0;left:-7px;}
+
+/*----------------------我的样式（tony）---------------------------*/
+/*统一信息头的样式*/
+.no_header{background: #f6fbf9;}
+.weui-cells__title{margin-bottom: 0; font-size: 16px; color: #999; background: white;} 
+.grid_block{background: white;}
+.weui-grid__label span{color: #333;}
+
+/*-------------------------------------------------------------*/
+
+/* 背景图标位置 */
+.member_collect_news .member_link_title span{background-position:-8px 2px;background-size:30%;}
+.member_collect_goods .member_link_title span{background-position:-8px -37px;background-size:30%;}
+.member_collect_company .member_link_title span{background-position:-8px -78px;background-size:30%;}
+.member_collect_need .member_link_title span{background-position:-9px -123px;background-size:30%;}
+.member_info_company .member_link_title span{background-position:-8px -171px;background-size:30%;}
+.member_info_merchant .member_link_title span{background-position:-8px -326px;background-size:30%;}
+.member_info_talking .member_link_title span{background-position:-8px -288px;background-size:30%;}
+.member_info_mailbox .member_link_title span{background-position:-9px -215px;background-size:30%;}
+.member_publish_need .member_link_title span{background-position:-9px -442px;background-size:30%;}
+.member_publish_supply .member_link_title span{background-position:-9px -486px;background-size:30%;}
+.member_more .member_link_title span{background-position:-9px -255px;background-size:30%;}
+.member_contact .member_link_title span{background-position:-9px -376px;background-size:31%;}
+.member_qq .member_link_title span{background:url('../images/qq_icon.png') no-repeat 10px 14px;background-size:10%;}
+/* 收藏模块 */
+.member_collect{margin-bottom:15px;}
+/* 企业、信箱 */
+.member_info{margin-bottom:15px;border-top:1px solid #dcdcdc;}

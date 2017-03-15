@@ -1,0 +1,23 @@
+/* 行 */
+.row{height:40px;line-height:40px;padding:0 15px;margin-top:20px;display:-webkit-box;background:#fff;}
+.row .title{width:50px;}
+.row .content{-webkit-box-flex:1;}
+.row .content input{border:none;width:100%;}
+.row .content label{margin-right:5px;}
+.row .content label input.radio_box{width:auto;-webkit-appearance:radio;position:relative;top:1px;left:0;}
+/* 链接按钮 */
+.link_btn{width:80%;height:40px;line-height:40px;margin:40px auto 0;background:#f15252;color:#fff;text-align:center;border-radius:5px;display:block;border:none;font-size:16px;}
+
+
+/*我的样式*/
+.exit{width: 80%; margin: 20px auto; margin-top: 50px; border: none; background: white; color: #333; box-shadow: 0 3px 10px #ccc;}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/member.css" />
+</head>
+<body>
+	<!-- 主体内容 -->
+	<section class="member_wrapper no_header">
+        <!-- 顶部 -->
+		<div class="member_top">
+            <!-- 顶部图片 开始 -->
+            <img src="__IMG__/member_top_bg.png" width="100%" height="auto" />
+            <!-- 顶部图片 结束 -->
+            <!-- 顶部图片 结束 -->
+            <!-- 顶部头像、昵称 结束 -->
+            <div class="member_top_pn">
+                <!-- 顶部头像 开始 -->
+                <a class="member_top_sculpture" href="?g=app&m=member&a=info">
+                    <img class="delay" src="__IMG__/pixel.gif" data-echo="{$member['head_pic']|default='__IMG__/member_default.png'}" width="60" height="60" />
+                <!-- 顶部头像 结束 -->
+                </a>
+                <!-- 顶部昵称 开始 -->
+                <p class="member_top_nickname">
+                <span><if condition="$member.nickname neq ''">{$member.nickname}<elseif condition="$member.name neq ''"/>{$member.name}<else/>{$member.mphone} </if></span>
+                <eq name="conf_arr['member_type']" value="1">
+                    <img src="__IMG__/vip.png" width="28" height="12" />
+                </eq>
+            </p>
+                <!-- 顶部昵称 结束 -->
+            </div>
+            <!-- 顶部头像、昵称 结束 -->
+        </div>
+        <!-- 顶部 -->
+        <!-- 收藏资讯、收藏产品、收藏企业、收藏求购 -->
+        <div class="member_collect">
+            <a class="member_collect_news member_link" href="?g=app&m=member&a=news_collect">
+                <p class="member_link_title"><span>收藏资讯</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+            <a class="member_collect_goods member_link" href="?g=app&m=member&a=product_collect">
+                <p class="member_link_title"><span>收藏产品</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+            <a class="member_collect_company member_link" href="?g=app&m=member&a=company_collect">
+                <p class="member_link_title"><span>收藏企业</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+            <a class="member_collect_need member_link" href="?g=app&m=member&a=need_collect">
+                <p class="member_link_title"><span>收藏求购</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+        </div>
+        <!-- 收藏资讯、收藏产品、收藏企业、收藏求购 -->
+        <!-- 企业、站内信箱 -->
+        <div class="member_info">
+        	<notempty name="company_info.id">
+            <a class="member_info_company member_link" href="?g=app&m=company&a=detail&id={$company_info.id}">
+                <p class="member_link_title"><span>我的企业</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+            </notempty>
+            <a class="member_info_mailbox member_link" href="?g=app&m=member&a=message">
+                <p class="member_link_title"><span>站内信箱</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+        </div>
+        <!-- 企业、站内信箱 -->
+        <!-- 关于APP -->
+        <div class="member_more">
+            <a class="member_more_about member_link" href="?g=app&m=more">
+                <p class="member_link_title"><span>关于APP</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+        </div>
+        <!-- 关于APP -->
+	</section>
+	<!-- 底部 开始 -->
+	<include file="Common/footer"/>
+	<!-- 底部 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/goods_collect.css" />
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+        <a class="header_left" href="javascript:history.go(-1);">
+            <div class="lt"><div></div></div>
+        </a>
+        <p class="header_title">{$site_title}</p>
+        <a class="header_right f15252" href="javascript:void(0);">编辑</a>
+    </header>
+    <!-- 头部 -->
+	<!-- 主体内容 -->
+	<section class="goods_collect_wrapper no_footer">
+	<input id="classify" type="hidden" value="2"/>
+        <!-- 一项产品数据 -->
+        <volist name="list" id="li">
+        <div class="goods_collect_list">
+            <!-- 筛选图标 -->
+            <div class="unselected_icon" data-id="{$li.id}"></div>
+            <!-- 产品图片 -->
+            <a href="?g=app&m=product&a=detail&id={$li.aid}">
+                <img class="delay" src="__IMG__/pixel.gif" data-echo="{$li.image}" width="130" height="130" />
+            </a>
+            <!-- 产品信息 -->
+            <div class="goods_collect_list_info">
+                <a href="?g=app&m=product&a=detail&id={$li.aid}">
+                    <p class="goods_info_title">{$li.title}</p>
+                </a>
+                <p class="goods_info_text">{$li.short_title}</p>
+                <p class="goods_info_price">
+                    <span class="price">￥{$li.price}</span>
+                    <!-- <a class="shopping_car" href="javascript:void(0);"><img class="delay" src="__IMG__/pixel.gif" data-echo="__IMG__/pro_car.png" width="100%" height="auto" /></a> -->
+                </p>
+            </div>
+        </div>
+        </volist>
+        <empty name="list">
+        <!-- 收藏为空时 -->
+        <div class="collect_empty_wrap">
+            <div class="common_empty">
+                <img src="__IMG__/collect_empty.png" width="120" height="120" />
+                <p>您的{$site_title}还是空的哦</p>
+                <a href="?g=app&m=product">去收藏</a>
+            </div>
+        </div>
+        </empty>
+	</section>
+	<!-- 主体内容 -->
+    <!-- 底部 -->
+    <footer>
+        <div class="unselected_icon allselected"></div>
+        <span>全选</span>
+        <button class="news_delete" href="javascript:void(0);">删除</button>
+    </footer>
+    <!-- 底部 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/product_collect.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* 资讯 */
+section .news_list{background:#fff;}
+section .news_list ul li{width:100%;padding: 5px 0;border-bottom:1px solid #dcdcdc;overflow:hidden;display:-webkit-box;}
+section .news_list ul li a{display:block;}
+section .news_list ul li .new_title{display:block;padding:0 16px 0 10px;overflow:hidden;-webkit-box-flex:1;}
+section .news_list ul li .new_title .new_title_main{line-height:1.8em;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+section .news_list ul li .new_title .new_title_sub{line-height:1.3em;margin-top:2px;font-size:12px;color:#8a8a8a;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;}
+/* 筛选 */
+.unselected_icon{width:46px;height:36px;margin-top:18px;background:url("../images/goods_unselected.png") no-repeat center;background-size:45%;display:none;}
+.selected_icon{background:url("../images/goods_selected.png") no-repeat center;background-size:45%;}
+/* 底部 */
+footer{display:none;}
+footer .allselected{margin-top:7px;}
+footer span{display:block;-webkit-box-flex:1;line-height:50px;}
+footer .news_delete{width:76px;height:36px;line-height:36px;display:block;border:none;margin-top:7px;margin-right:15px;background:#dcdcdc;text-align:center;color:#fff;border-radius:3px;}
+footer .news_delete_selected{background:#f15252;}
+
+
+/*-------------------------*/
+.header_right{color: white;} 
+.list_detail .desc{max-width: calc(100% - 60px); width: auto;}
+.list_detail span{color: #333; font-size: 16px; font-family: "微软雅黑"; display: block; height: 47px; overflow: hidden;}
+.list_detail p{color: #999; font-size: 14px;}
+.list_detail{display: flex; justify-content: flex-start;}

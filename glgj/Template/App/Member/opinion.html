@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+	<head>
+		<include file="Common/head" />
+		<link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css" />
+		<link rel="stylesheet" type="text/css" href="__CSS__/opinion.css" />
+	</head>
+
+	<body>
+		<!-- 头部 -->
+		<header>
+			<a class="header_left" href="javascript:history.go(-1);">
+				<div class="lt">
+					<div></div>
+				</div>
+			</a>
+			<p class="header_title">{$site_title}</p>
+			<a class="header_right f15252" href="javascript:void(0);">发送</a>
+		</header>
+		
+		<div class="content">
+			<p class="hint">您想咨询或留言的内容</p>
+			<div class="weui-cells weui-cells_form">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<textarea class="weui-textarea" placeholder="请输入您想告诉我们的信息" rows="8"></textarea>
+					</div>
+				</div>
+			</div>
+			<p class="hint">您的手机号、邮箱或QQ</p>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="text" placeholder="方便我们给您回复">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+		<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+		<script type="text/javascript" src="__JS__/opinion.js"></script>
+	</body>
+
+</html>

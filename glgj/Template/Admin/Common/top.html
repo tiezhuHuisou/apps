@@ -1,0 +1,41 @@
+<div class="top">
+	<table>
+		<tr>
+			<td width="200" rowspan="2" align="right" valign="middle">
+				<div class="logo">
+					<img src="__IMG__/logo.png" onerror="javascript:this.src='http://fe.huisouimg.com/appmanage/applogo/default/logo2.png'" width="160" height="auto" />
+				</div>
+			</td>
+			<td class="system">
+				<span class="yellow">[<span>{$Think.session.webname}</span>管理平台]</span>
+				<span class="welcome">欢迎：<strong class="username">{$Think.session.name}</strong>登陆</span>
+				<a class="exit ajax-get" href="javascript:void(0);">[退出]</a>
+				<a href="?g=admin&m=index">网站首页</a>
+				<span class="spe">|</span>
+				<a href="http://unionapp.org/" target="_blank">技术支持</a>
+				<span class="spe">|</span>
+				<a href="?g=admin&m=index&a=downfile">下载说明文档</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="nav">
+				<a <eq name="site" value="home">class="hover"</eq> href="?g=admin&m=index">核心管理</a>
+				<a <eq name="site" value="news">class="hover"</eq> href="?g=admin&m=news">资讯管理</a>
+				<!--<a <eq name="site" value="news">class="hover"</eq> href="?g=admin&m=news">发布</a>-->
+				<!--<a <eq name="site" value="product">class="hover"</eq> href="?g=admin&m=product">产品管理</a>-->
+				<a <eq name="site" value="product">class="hover"</eq> href="?g=admin&m=product&a=truck">网站产品</a>
+				<eq name="Think.config.FLASHFLAG" value="1">
+					<a <eq name="site" value="order">class="hover"</eq> href="?g=admin&m=order">订单管理</a>
+					<a <eq name="site" value="activity">class="hover"</eq> href="?g=admin&m=activity">活动管理</a>
+				</eq>
+				<eq name="distribution_flag" value="1">
+					<a <eq name="site" value="distribution">class="hover"</eq> href="?g=admin&m=distribution">分销管理</a>
+				</eq>
+				<a <eq name="site" value="more">class="hover"</eq> href="?g=admin&m=more">更多管理</a>
+				<a <eq name="site" value="member">class="hover"</eq> href="?g=admin&m=member">会员管理</a>
+				<a <eq name="site" value="user">class="hover"</eq> href="?g=admin&m=user">管理员管理</a>
+				<div class="clear"></div>
+			</td>
+		</tr>
+	</table>
+</div>

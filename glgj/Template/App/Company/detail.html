@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/company_detail.css" />
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <include file="Common/header_more"/>
+    <!-- 头部 结束 -->
+    <!-- 主体内容 -->
+    <section class="company_detail_wrapper <neq name='appsign' value='1'>no_footer</neq>">
+        <!-- 顶部 -->
+        <div class="company_detail_top">
+            <!-- 顶部图片 开始 -->
+            <img class="delay" src="__IMG__/pixel.gif" data-echo="__IMG__/company_top_bg.jpg" width="100%" height="auto" />
+            <!-- 顶部图片 结束 -->
+            <div class="company_detail_top_pn">
+                <!-- 顶部头像 开始 -->
+                <a class="company_detail_top_sculpture" href="javascript:void(0);">
+                    <img class="delay" src="__IMG__/pixel.gif" data-echo="{$company_info['logo']}" width="70" height="70" />
+                    <!-- 顶部头像 结束 -->
+                </a>
+                <!-- 顶部昵称 开始 -->
+                <p class="company_detail_top_nickname">{$company_info['name']}23424234</p>
+                <p class="company_detail_top_nickname">23424234</p>
+                <!-- 顶部昵称 结束 -->
+                <input id="nid" type="hidden" value="{$company_info.id}" />
+                <input id="uid" type="hidden" value="{$user_id}" />
+                <input id="uuid" type="hidden" value="{$Think.get.uuid}" />
+                <input id="sign" type="hidden" value="{$sign}" />
+                <!-- <div class="collect <eq name='sign' value='1'>collected</eq>"></div> -->
+            </div>
+        </div>
+        <!-- 顶部 -->
+        <!-- 头部导航 -->
+        <div class="weui-tab">
+            <div class="weui-navbar">
+                <a href="javascript:;" class="weui-tabbar__item">
+                    <div class="weui-tabbar__icon">
+                        <img src="__IMG__/gsxq_nomal.png" alt="">
+                    </div>
+                    <p class="weui-tabbar__label">公司详情</p>
+                </a>
+                <a href="javascript:;" class="weui-tabbar__item">
+                    <div class="weui-tabbar__icon">
+                        <img src="__IMG__/wd_nomal.png" alt="">
+                    </div>
+                    <p class="weui-tabbar__label">全部网点</p>
+                </a>
+                <a href="javascript:;" class="weui-tabbar__item">
+                    <div class="weui-tabbar__icon">
+                        <img src="__IMG__/lxwd_nomal.png" alt="">
+                    </div>
+                    <p class="weui-tabbar__label">联系网点</p>
+                </a>
+            </div>
+        </div>
+        <!-- 头部导航结束 -->
+        <!-- 公司信息、联系方式 -->
+        <div class="company_detail_ic">
+            <a class="company_detail_info company_detail_link" href="?g=app&m=company&a=info&id={$company_info['id']}<eq name='appsign' value='1'>&appsign=1</eq>">
+                <p class="company_detail_info_title company_detail_link_title">公司信息</p>
+            </a>
+            <div class="company_detail">        hdfjgjdklfgjdfklgjkldfsjklgjialjgklsdjgkldsjgklsdjgkldjfgkljdfkljgkldjgkldfjgkdlfjklgj
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+    <script type="text/javascript" src="__JS__/company_detail.js"></script>
+</body>
+</html>

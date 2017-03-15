@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>商家提现申请</h2>
+                <volist name="stateList" id="slv">
+                    <a <eq name="Think.get.status" value="$slv['id']">class="hover"</eq>href="?g=admin&m=order&a=withdrawals&status={$slv['id']}">{$slv['title']}</a>
+                </volist>
+            </div>
+            <!-- 主体数据 -->
+            <table class="data">
+                <!-- 数据头部 -->
+                <tr class="data_header">
+                    <th>ID</th>
+                    <th>提现商家</th>
+                    <th>提现金额</th>
+                    <th>提现方式</th>
+                    <th>收款信息</th>
+                    <th>申请时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                <!-- 一条数据开始 -->
+                <volist name="list" id="vo">
+                    <tr>
+                        <td>{$vo['id']}</td>
+                        <td>{$vo['cname']}</td>
+                        <td>{$vo['withdrawals']}元</td>
+                        <td><img src="{$accountList[$vo['account_id']]['img']|default='/Public/Apps/images/balancepay_icon.png'}" width="20" style="padding: 5px;" />{$typeList[$vo['type']]}</td>
+                        <td>{$vo['html']}</td>
+                        <td>{$vo['ctime']|date="Y-m-d H:i:s",###}</td>
+                        <td>{$statusList[$vo['status']]}</td>
+                        <td class="data_opt">
+                            <eq name="vo['status']" value="0">
+                                <a class="confirm ajax-get" href="index.php?g=admin&m=order&a=withdrawalsAgree&id={$vo['id']}">同意</a>
+                                <a class="confirm ajax-get" href="index.php?g=admin&m=order&a=withdrawalsRefuse&id={$vo['id']}">拒绝</a>
+                            </eq>
+                            <eq name="vo['status']" value="1">
+                                <a class="confirm ajax-get" href="index.php?g=admin&m=order&a=withdrawalsComplete&id={$vo['id']}">打款完成</a>
+                            </eq>
+                        </td>
+                    </tr>
+                </volist>
+            </table>
+            <!-- 分页 -->
+            <div class="page">{$_page}</div>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+</body>
+</html>

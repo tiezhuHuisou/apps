@@ -1,0 +1,14 @@
+body{background:url('../images/resetpwd_bg.jpg') no-repeat left top;background-size:cover;}
+/* logo */
+.logo{position:absolute;left:50px;top:34px;}
+/* 重置密码 */
+.resetpwd{width:246px;height:210px;padding:30px;background:rgba(255,255,255,.8);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c8ffffff,endColorstr=#c8ffffff);position:absolute;top:50%;left:50%;margin-top:-135px;margin-left:-153px;}
+.resetpwd .resetpwd_title{font-size:16px;font-weight:bold;}
+.resetpwd .resetpwd_con{position:relative;margin-top:20px;}
+/* 图标 */
+.resetpwd div i{width:20px;height:26px;position:absolute;left:10px;top:6px;background:url('../images/lry_icons.png') no-repeat left center;}
+.resetpwd .resetpwd_con .icon{background-position:0 -25px;}
+/* 输入框 */
+.resetpwd .resetpwd_con .resetpwd_input{font-size:14px;width:204px;padding:11px 0 11px 40px;border:1px solid #dcdcdc;}
+/* 确认按钮 */
+.resetpwd .resetpwd_btn{width:100%;height:40px;line-height:40px;font-size:16px;margin-top:20px;text-align:center;background:#08bdb7;color:#fff;border:none;}

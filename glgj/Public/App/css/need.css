@@ -1,0 +1,12 @@
+﻿/* 改写base */
+header .header_right{width:60px;font-size: 12px;color: #f15252;}
+/* 数据列表 */
+.list_wrap{border-top:1px solid #dcdcdc;background:#fff;font-size:12px;}
+.list_wrap .list{display:-webkit-box;border-bottom:1px solid #dcdcdc;}
+.list_wrap .list .list_icon{margin:12px 10px 12px 16px;display:block;}
+.list_wrap .list .list_info{margin:12px 10px 0 0;-webkit-box-flex:1;}
+.list_wrap .list .list_info h3{padding-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:normal;font-size:14px;color:#333;}
+.list_wrap .list .list_info p{color:#8a8a8a;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;}
+.list_wrap .list .list_right{width:50px;margin:12px 16px 0 0;}
+.list_wrap .list .list_right .text{padding-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center;display: block;width: 100%;}
+.list_wrap .list .list_right img{display:block;}

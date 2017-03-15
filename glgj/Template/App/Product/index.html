@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/find.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/product_index.css"/>
+</head>
+<body>
+<include file="Common/header_more"/>
+<!-- 可视区域 开始 -->
+<section class="viewport">
+    <!-- 头部公告开始 -->
+    <div class="header">
+        <div class="header_info">
+            <div class="info_title">公告信息</div>
+            <div class="info_content">
+                <ul class="list">
+                    <volist name="list" id="vo">
+                        <li>
+                            <a href="?g=app&m=product&a=announceDetail&id={$vo.id}">{$vo.desc}</a>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+            <div class="more_info"><a href="?g=app&m=product&a=announce"> 更多公告>></a></div>
+        </div>
+    </div>
+    <!-- 头部公告结束 -->
+    <!-- 中间分类选择 -->
+    <div class="weui-grids">
+        <a href="?g=app&m=product&a=comapnyList" class="weui-grid js_grid">
+            <div class="weui-grid__icon">
+                <img src="__IMG__/wlxx.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                物流信息
+            </p>
+        </a>
+        <a href="?g=app&m=product&a=truckList" class="weui-grid js_grid">
+            <div class="weui-grid__icon">
+                <img src="__IMG__/hcxx.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                货车信息
+            </p>
+        </a>
+        <a href="?g=app&m=product&a=goodsList" class="weui-grid js_grid">
+            <div class="weui-grid__icon">
+                <img src="__IMG__/hwxx.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                货物信息
+            </p>
+        </a>
+        <a href="?g=app&m=product&a=depotList" class="weui-grid js_grid">
+            <div class="weui-grid__icon">
+                <img src="__IMG__/ccxx.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                仓储信息
+            </p>
+        </a>
+    </div>
+    <!-- 中间分类选择 -->
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+</section>
+<script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+<script type="text/javascript" src="__JS__/product_index.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/order_detail.css" />
+<script type="text/javascript" src="__JS__/order_detail.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a class="hover" href="?g=member&m=buy&a=detail">订单详情</a>
+				<a href="?g=member&m=buy&a=logistics&id={$order.orderid}">物流跟踪</a>
+			</div>
+			<!-- 收货地址 -->
+			<div class="row">
+				<span>收货地址：</span>
+				<span>{$address.name}</span>
+				<span>{$address.phone}</span>
+				<span>{$regions['0']['name']} {$regions['1']['name']} {$regions['2']['name']}</span>
+				<span>{$address.zip}</span>
+			</div>
+			<!-- 当前状态 -->
+			<div class="row">
+				<span>当前状态：</span>
+				<span><eq name="order.state" value="0">待付款
+					</eq>
+					<eq name="order.state" value="7">订单关闭
+					</eq>
+					<eq name="order.state" value="8">订单完成
+					</eq>
+					<eq name="order.state" value="1">待发货
+					</eq>
+					<eq name="order.state" value="2">待收货
+					</eq>
+					<eq name="order.state" value="3">待评价
+					</eq>
+					<eq name="order.state" value="4">退款中
+					</eq>
+					<eq name="order.state" value="5">完成退款
+					</eq></span>
+			</div>
+			<!-- 订单编号 -->
+			<div class="row">
+				<span>订单编号：</span>
+				<span>{$order.orderid}</span>
+			</div>
+			<!-- 下单时间 -->
+			<div class="row">
+				<span>下单时间：</span>
+				<span>{$order.addtime|date="Y-m-d H:i",###}</span>
+			</div>
+			<!-- 订单商品列表 -->
+			<table class="data">
+				<!-- 标题 开始 -->
+				<tr class="data_title">
+					<td class="ti25">宝贝</td>
+					<td>数量</td>
+					<td>单价(元)</td>
+					<td>总价(元)</td>
+					<td>交易状态</td>
+				</tr>
+				<!-- 标题 结束 -->
+				<volist name="ordersub" id="or">
+				<!-- 一条数据 开始 -->
+				<tr>
+					<td align="left">
+						<img class="fl mgl20" src="{$or.gpic}" width="80" height="80" />
+						<div class="fl mgl20">
+							<p class="goods_name">{$or.goodname}</p>
+							<!--  <p class="gray"></p> -->
+						</div>
+					</td>
+					<td>{$or.nums}</td>
+					<td>{$or.unitprice}(元)</td>
+					<td>{$or.totalprice}(元)</td>
+					<td><eq name="order.state" value="0">待付款
+										</eq>
+										<eq name="order.state" value="7">订单关闭
+										</eq>
+										<eq name="order.state" value="8">订单完成
+										</eq>
+										<eq name="order.state" value="1">待发货
+										</eq>
+										<eq name="order.state" value="2">待收货
+										</eq>
+										<eq name="order.state" value="3">待评价
+										</eq>
+										<eq name="order.state" value="4">退款中
+										</eq>
+										<eq name="order.state" value="5">完成退款
+										</eq></td>
+				</tr>
+				<!-- 一条数据 结束 -->
+				</volist>
+			</table>
+			<!-- 关闭按钮 -->
+			<div class="tac">
+				<a class="base_back" href="?g=member&m=buy">关 闭</a>
+			</div>
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

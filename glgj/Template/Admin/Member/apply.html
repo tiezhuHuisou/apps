@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/company_apply.css" />
+	<script type="text/javascript" src="__JS__/alldel.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+	<input id="url" type="hidden" value="?g=admin&m=member&a=company_delall">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>企业申请管理中心</h2>
+			</div>
+			<!-- 主体数据 -->
+			<table class="data">
+				<!-- 数据头部 -->
+				<tr class="data_header">
+					<th><input id="check_all" type="checkbox" name="" value="" /></th>
+					<th>ID</th>
+					<th class="tl">公司名称</th>
+					<th class="tl">主营行业</th>
+					<th class="tl">企业logo</th>
+					<th>注册时间</th>
+					<th>操作</th>
+				</tr>
+				<volist name="list" id="li">
+				<!-- 一条数据开始 -->
+				<tr>
+					<td><input class="check_box" type="checkbox" name="items" value="{$li.id}" /></td>
+					<td>{$li.id}</td>
+					<td class="tl">{$li.name}</td>
+					<td class="tl max">{$li.business}</td>
+					<td class="tl"><notempty name="li.logo"><img src="{$li.logo}" width="80" height="80" /></notempty></td>
+					<td>{$li.issue_time|date="Y-m-d H:i",###}</td>
+					<td class="data_opt">
+                        <a href="?g=admin&m=member&a=applydetail&id={$li.id}">查看</a>
+						<a class="confirm ajax-get" href="?g=admin&m=member&a=pass&id={$li.id}">通过</a>
+						<a class="refuse" href="javascript:void(0);" data-id="{$li.id}">拒绝</a>
+						<a class="confirm ajax-get" href="index.php?g=admin&m=member&a=company_del&id={$li.id}">删除</a>
+					</td>
+				</tr>
+				</volist>
+			</table>
+			<!-- 操作 -->
+			<div class="opt">
+				<a class="opt_btn" attr="BatchDel" href="javascript:void(0);">删除所选</a>
+			</div>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+	<div class="mask"></div>
+	<div class="modal_wrap">
+        <form id="modal_form" action="" method="post">
+            <div class="modal_top">拒绝确认<span class="btn_close">×</span></div>
+            <div class="modal_content">
+                <!-- 拒绝理由 -->
+                <div class="modal_list">
+                    <div class="list_title">拒绝理由</div>
+                    <div class="list_textarea">
+                        <textarea id="reason" name="reason"></textarea>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="modal_opt">
+            	<input id="refuse_id" type="hidden" value="" />
+                <input id="modal_sure" type="submit" class="opt_btn btn_sure" value="确定" />
+                <a class="opt_btn btn_cancel" href="javascript:void(0);">取消</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="__JS__/company_apply.js"></script>
+</body>
+</html>

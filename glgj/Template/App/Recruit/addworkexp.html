@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/word_exp.css" />
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <include file="Common/header"/>
+    <!-- 头部 结束 -->
+    <!-- 可视区域 开始 -->
+    <section <neq name="appsign" value="1">class="no_footer"</neq>>
+        <form  action="" method="post">
+        <input type="hidden" name="id" value="{$detail.id}">
+        <input type="hidden" name="apply_id" value="<empty name='detail.apply_id'>{$uid}<else/>{$detail.apply_id}</empty>">
+            <!-- 工作经历 开始 -->
+            <div class="experience">
+                <!-- 标题 -->
+                <p class="title">工作经历</p>
+                <!-- 所在公司 -->
+                <div class="row">
+                    <p class="name">所在公司</p>
+                    <p class="content"><input class="company_name" type="text" name="company_name" value="{$detail['company_name']}" placeholder="请填写所在公司" /></p>
+                </div>
+                <!-- 职位名称 -->
+                <div class="row">
+                    <p class="name">职位名称</p>
+                    <p class="content"><input class="post" type="text" name="post" value="{$detail['post']}" placeholder="请填写职位名称" /></p>
+                </div>
+                <!-- 在职时间 -->
+                <div class="row">
+                    <p class="name">在职时间</p>
+                    <p class="content">
+                        <select id="begin_year"></select>
+                        <select id="begin_month"></select>
+                        <span>至</span>
+                        <select id="end_year"></select>
+                        <select id="end_month"></select>
+                        <input id="begin_time" type="hidden" name="begin_time" value="{$detail['begin_time']|default=time()|date='Y-m',###}" />
+                        <input id="end_time" type="hidden" name="end_time" value="{$detail['end_time']|default=time()|date='Y-m',###}" />
+                    </p>
+                </div>
+                <!-- 工作描述 -->
+                <div class="row">
+                    <p class="name">工作描述</p>
+                    <p class="content">
+                        <textarea class="exp" name="exp" placeholder="请填写工作描述">{$detail['exp']}</textarea>
+                    </p>
+                </div>
+            </div>
+            <!-- 工作经历 结束 -->
+            <input class="submit" type="button" value="保存" />
+        </form>
+    </section>
+    <!-- 可视区域 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/word_exp.js"></script>
+</body>
+</html>

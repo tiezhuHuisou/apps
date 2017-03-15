@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/publish.css" />
+</head>
+<body>
+    <include file="Common/header"/>
+    <!-- 主体内容 -->
+    <section <neq name="appsign" value="1">class="no_footer"</neq>>
+        <!-- 链接 开始 -->
+        <form action="" method="post">
+            <div class="pubs_wrap">
+                <!-- 标题 开始 -->
+                <div class="pubs_list">
+                    <div class="list_oneline">
+                        <span class="oneline_title">标题</span>
+                        <div class="oneline_input">
+                            <input id="name_long" type="text" name="title" placeholder="请输入标题" value="{$detail['title']}" />
+                        </div>
+                    </div>
+                </div>
+                <!-- 标题 结束 -->
+                <!-- 短标题 开始 -->
+                <div class="pubs_list">
+                    <div class="list_oneline">
+                        <span class="oneline_title">短标题</span>
+                        <div class="oneline_input">
+                            <input id="name_short" type="text" name="short_title" placeholder="请输入短标题" value="{$detail['short_title']}" />
+                        </div>
+                    </div>
+                </div>
+                <!-- 短标题 结束 -->
+                <!-- 求购价 开始 -->
+                <div class="pubs_list">
+                    <div class="list_oneline">
+                        <span class="oneline_title">求购价</span>
+                        <div class="oneline_input">
+                            <input id="money" type="text" name="price" placeholder="请输入求购价" value="{$detail['price']}" />
+                        </div>
+                        <span class="oneline_tips w92">元</span>
+                    </div>
+                </div>
+                <!-- 求购价 结束 -->
+                <!-- 数量 开始 -->
+                <div class="pubs_list">
+                    <div class="list_oneline">
+                        <span class="oneline_title">数量</span>
+                        <div class="oneline_input">
+                            <input id="number" type="text" name="num" placeholder="请输入数量，单位可选" value="{$detail['num']}" />
+                        </div>
+                        <select class="oneline_select" name="unit">
+                            <option value="1" <eq name="detail['unit']" value="1">selected</eq>>件</option>
+                            <option value="2" <eq name="detail['unit']" value="2">selected</eq>>批</option>
+                            <option value="3" <eq name="detail['unit']" value="3">selected</eq>>千克</option>
+                            <option value="4" <eq name="detail['unit']" value="4">selected</eq>>块</option>
+                            <option value="5" <eq name="detail['unit']" value="5">selected</eq>>台</option>
+                            <option value="6" <eq name="detail['unit']" value="6">selected</eq>>吨</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- 数量 结束 -->
+                <!-- 有效天数 开始 -->
+                <div class="pubs_list">
+                    <div class="list_oneline">
+                        <span class="oneline_title">有效天数</span>
+                        <div class="oneline_input">
+                            <input id="day" class="oneline_input_short" type="text" name="days" placeholder="30" maxlength="2" value="{$detail['days']}" />
+                        </div>
+                        <span class="oneline_tips">天&nbsp;范围为0~90天，0为永久有效</span>
+                    </div>
+                </div>
+                <!-- 有效天数 结束 -->
+                <!-- 分类 开始 -->
+                <div class="pubs_list">
+                    <div class="list_oneline">
+                        <span class="oneline_title">分类</span>
+                        <select class="list_type" name="buy_category_id">
+                            <option value="0">请选择分类</option>
+                            <volist name="category" id="vo">
+                                <option value="{$vo['id']}" <eq name="detail['buy_category_id']" value="$vo['id']">selected</eq>>{$vo['name']}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <!-- 分类 结束 -->
+                <!-- 图片 开始 -->
+                <div class="pubs_list pubs_covers">
+                    <div class="list_title">图片</div>
+                    <!-- 添加图片按钮 开始 -->
+                    <div class="covers_btn">
+                        <div id="covers_btn" class="covers_detail">
+                            <img id="covers_preview" src="{$detail['img']|default='__IMG__/plus_icon.png'}" width="40" height="40" />
+                        </div>
+                        <input id="covers_path" type="hidden" name="img" value="{$detail['img']|default='__STATIC__/images/default_icon.jpg'}" />
+                    </div>
+                    <!-- 添加图片按钮 结束 -->
+                </div>
+                <!-- 图片 结束 -->
+                <!-- 内容 开始 -->
+                <div class="pubs_list">
+                    <div class="list_title">内容</div>
+                    <textarea id="desc" class="list_desc" name="summary" placeholder="请输入内容">{$detail['summary']}</textarea>
+                </div>
+                <!-- 内容 结束 -->
+                <!-- 发布按钮 开始 -->
+                <div class="pubs_opt">
+                    <input class="btn_publish" type="submit" value="发&nbsp;布" />
+                    <input type="hidden" name="id" value="{$Think.get.id}" />
+                    <input id="uuid" type="hidden" name="uuid" value="{$Think.get.uuid}" />
+                    <input id="uid" type="hidden" name="company_id" value="{$user_id}" />
+                    <input id="static" type="hidden" value="__STATIC__/images" />
+                </div>
+                <!-- 发布按钮 结束 -->
+            </div>
+        </form>
+        <!-- 链接 结束 -->
+    </section>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/ajaxupload.3.5.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/publishneed.js"></script>
+</body>
+</html>

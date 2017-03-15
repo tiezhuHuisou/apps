@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/more.css" />
+</head>
+<body>
+	<!-- 头部 -->
+	<include file="Common/header"/>
+	<!-- 无底部区域 -->
+	<section class="more_wrapper <neq name='appsign' value='1'>no_footer</neq>">
+        <div class="more_logo">
+            <div class="more_logo_pic">
+                <img class="delay" src="__IMG__/pixel.gif" data-echo="__IMG__/logo.png" width="100" height="100" />
+            </div>
+        </div>
+        <div class="more_contact">
+            <p>
+                <span class="more_contact_title">客服电话</span>
+                <a class="more_contact_phone fc" href="tel:{$phone}">{$phone}</a>
+            </p>
+        </div>
+        <div class="more_btns">
+            <a class="more_btns_copr" href="?g=app&m=more&a=copyright<eq name='appsign' value='1'>&appsign=1</eq>">
+                <span>关于我们</span>
+                <div class="gt"><div></div></div>
+            </a>
+            <a class="more_btns_opinion" href="?g=app&m=more&a=opinion<eq name='appsign' value='1'>&appsign=1</eq>">
+                <span>意见反馈</span>
+                <div class="gt"><div></div></div>
+            </a>
+            <!-- <a class="more_btns_score" href="javascript:void(0);">
+                <span>给我们评分</span>
+                <div class="gt"><div></div></div>
+            </a> -->
+        </div>
+        <!--<div class="more_btns">
+            <a class="more_btns_clearcache" href="javascript:void(0);">
+                <span>清除缓存</span>
+                <div class="gt"><div></div></div>
+                <div class="cache fr">0M</div>
+            </a>
+        </div>-->
+        <neq name="appsign" value="1">
+            <a class="quit_login fc" href="?g=app&m=login&a=logout">退出登陆</a>
+        </neq>
+        <!-- 版权信息 开始 -->
+        <div class="copyright">
+            <p>{$other}</p>
+            <p>技术支持 中国APP行业应用中心 UnionApp.org</p>
+        </div>
+        <!-- 版权信息 结束 -->
+    </section>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/more.js"></script>
+</body>
+</html>

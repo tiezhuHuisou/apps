@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/company_applydetail.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <h3>企业申请</h3>
+            <!-- 添加企业表单 -->
+            <form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+                <input id="companyid" type="hidden" name="company[id]" value="{$detail.id}" />
+                <input type="hidden" name="companylink[id]" value="{$detail.linkid}" />
+                <input type="hidden" name="user_id" value="{$detail.user_id}" />
+                <input type="hidden" id="lng" value="{$detail.lng}" />
+                <input type="hidden" id="lat" value="{$detail.lat}" />
+                <table class="add_table">
+                    <div>
+                        <div id="allmap" class="allmap"></div>
+                    </div>
+                    <empty name="detail.user_id">
+                        <tr>
+                            <td class="w120">登陆账号：</td>
+                            <td>
+                                <input class="i400" type="text" name="company[mphone]" value="{$detail.mphone}" readonly />
+                            </td>
+                        </tr>
+                    </empty>
+                    <tr>
+                        <td class="w120">企业名称：</td>
+                        <td>
+                            <input class="i400 company_add_name" type="text" name="company[name]" value="{$detail.name}" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">企业分类：</td>
+                        <td>
+                            <input class="i400 company_add_name" type="text" name="company[name]" value="{$detail.company_category_id}" readonly />
+                        </td>
+                    </tr>
+                    <notempty name="detail.logo">
+                        <tr>
+                            <td class="w120">企业logo：</td>
+                            <td><img id="preview" src="{$detail.logo}" style="border:none;margin-top:10px;" width="100" height="100" /></td>
+                        </tr>
+                    </notempty>
+                    <notempty name="detail.bgimg">
+                        <tr>
+                            <td class="w120">企业主页背景图：</td>
+                            <td><img id="bgimg_preview" src="{$detail.bgimg}" style="border:none;margin-top:10px;" width="150" height="106" /></td>
+                        </tr>
+                    </notempty>
+                    <notempty name="detail.introduction_bgimg">
+                        <tr>
+                            <td class="w120">企业简介背景图预览：</td>
+                            <td><img id="introduction_bgimg_preview" src="{$detail.introduction_bgimg}" style="border:none;margin-top:10px;" width="150" height="241" /></td>
+                        </tr>
+                    </notempty>
+                    <!-- 企业资质 -->
+                    <notempty name="cert">
+                        <tr>
+                            <td class="w120">企业资质：</td>
+                            <td id="carousel_img">
+                                <volist name="cert" id="cert">
+                                    <p class="img_wrap">
+                                        <img class="delete_img" src="__IMG__/delete_img.png" width="20" height="20" />
+                                        <img src="{$cert}" width="100" height="100" />
+                                        <input value="{$cert}" name="cert[]" type="hidden" />
+                                    </p>
+                                </volist>
+                            </td>
+                        </tr>
+                    </notempty>
+                    <tr>
+                        <td class="w120">主营行业：</td>
+                        <td><textarea class="t400" name="company[business]" readonly>{$detail.business}</textarea></td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="w120">所在地：</td>
+                        <td>
+                            <select class="province" name="companylink[province_id]">
+                                <option value="">请选择所在省</option>
+                                <foreach name="region_arr[0]" item="val">
+                                    <option value="{$val['id']}" <eq name="detail['province_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+                                </foreach>
+
+                            </select>
+                            <select class="city" name="companylink[city_id]">
+                                <option value="">请选择所在市</option>
+                                <foreach name="region_arr[$detail['province_id']]" item="val">
+                                    <option value="{$val['id']}" <eq name="detail['city_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+                                </foreach>
+                            </select>
+                            <select class="towns" name="companylink[countyN]">
+                                <option value="">请选择所在区/县</option>
+                                <foreach name="region_arr[$detail['city_id']]" item="val">
+                                    <option value="{$val['id']}" <eq name="detail['countyn']" value="$val['id']">selected</eq>>{$val['name']}</option>
+                                </foreach>
+                            </select>
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td class="w120">详细地址：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[address]" value="{$detail.address}" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">联系人：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[contact_user]" value="{$detail.contact_user}" readonly />
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="w120">性别：</td>
+                        <td>
+                            <label>
+                                <input class="pt3" type="radio" name="companylink[sex]" value="1" checked="checked"<eq name="detail.sex" value="1"> checked="checked" </eq> />
+                                <span>男</span>
+                            </label>
+                            <label>
+                                <input class="company_add_radio" type="radio" name="companylink[sex]" value="2" <eq name="detail.sex" value="2"> checked="checked" </eq> />
+                                <span>女</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">职位：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[contact_office]" value="{$detail.contact_office}"/>
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td class="w120">官网：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[site]" value="{$detail.site}" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">官微：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[wechat]" value="{$detail.wechat}" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">电话1：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[subphone]" value="{$detail.subphone}" readonly />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">电话2：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[telephone]" value="{$detail.telephone}" readonly />
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="w120">传真：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[fax]" value="{$detail.fax}"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">联系邮箱：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[email]" value="{$detail.email}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">企业客服QQ：</td>
+                        <td>
+                            <input class="i400" type="text" name="companylink[qq]" value="{$detail.qq}"  />
+                        </td>
+                    </tr> -->
+                    <tr class="company_add_introduce">
+                        <td class="w120">企业简介：</td>
+                        <td>
+                            <textarea class="t400" name="company[summary]" readonly>{$detail.summary}</textarea>
+                        </td>
+                    </tr>
+                    <!-- 提交按钮 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <a class="opt_btn confirm ajax-get" href="?g=admin&m=member&a=pass&id={$detail.id}">通过</a>
+                            <a class="opt_btn refuse" href="javascript:void(0);">拒绝</a>
+                            <a class="opt_btn" href="javascript:history.go(-1);">返回</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <div class="mask"></div>
+    <div class="modal_wrap">
+        <form id="modal_form" action="" method="post">
+            <div class="modal_top">拒绝确认<span class="btn_close">×</span></div>
+            <div class="modal_content">
+                <!-- 拒绝理由 -->
+                <div class="modal_list">
+                    <div class="list_title">拒绝理由</div>
+                    <div class="list_textarea">
+                        <textarea id="reason" name="reason"></textarea>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="modal_opt">
+                <input id="refuse_id" type="hidden" value="" />
+                <input id="modal_sure" type="submit" class="opt_btn btn_sure" value="确定" />
+                <a class="opt_btn btn_cancel" href="javascript:void(0);">取消</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=B3d2693a283424c4fce1fe0a88cf94dc"></script>
+    <script type="text/javascript">
+        var lngVal = "{$detail.lng|default=''}";
+        var latVal = "{$detail.lat|default=''}";
+        if ( !lngVal ) {
+            lngVal = 120.071422;
+            latVal = 29.337053;
+        }
+        var map    = new BMap.Map("allmap");                        // 地图加载位置(html元素的id值)
+        var point  = new BMap.Point(lngVal, latVal);                // 根据经纬度在地图上创建一个点
+        var marker = new BMap.Marker(point);                        // 根据点创建一个标志(即地图上看到的那个小红点)
+        map.centerAndZoom(point, 18);                               // 设置地图中心点和缩放比列
+        map.addOverlay(marker);                                     // 将标志添加到地图上
+        map.enableScrollWheelZoom(true);                            // 允许缩放地图
+    </script>
+    <script type="text/javascript" src="__JS__/company_applydetail.js"></script>
+</body>
+</html>

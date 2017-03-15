@@ -1,0 +1,75 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/send.css" />
+<script type="text/javascript" src="__JS__/send.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=sale&a=detail&id={$order.orderid}">订单详情</a>
+				<a class="hover" href="?g=member&m=sale&a=send&id={$order.orderid}">发货</a>
+				<a href="?g=member&m=sale&a=logistics&id={$order.orderid}">物流跟踪</a>
+			</div>
+			<!-- 发货表单 开始 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<div class="add_form">
+					<!-- 订单编号 -->
+					<div class="add_row">
+						<div class="add_name">订单编号：</div>
+						<input class="t200" type="text" name="id" value="{$order.orderid}" readonly="readonly" />
+					</div>
+					<!-- 物流单号 -->
+					<div class="add_row">
+						<div class="add_name">物流单号：</div>
+						<input class="t400" type="text" name="express_number" value="{$order.express_number}" />
+						<span class="add_star">*</span>
+					</div>
+					<!-- 配送方式 -->
+					<div class="add_row">
+						<div class="add_name">配送方式：</div>
+							<select  name="expressid">
+								<option value="0">请选择</option>
+								<volist name="exress" id="ex">
+								<option value="{$ex.id}" <eq name="ex.id" value="$order.express_companyid">selected="selected"</eq> > {$ex.title}</option>
+								</volist>
+							</select>
+						<span class="add_star">*</span>
+					</div>
+					<!-- 物流运费 -->
+					<div class="add_row">
+						<div class="add_name">物流运费：</div>
+						<input class="t200" type="text" name="" value="￥{$order.expressprice}" readonly="readonly" />
+					</div>
+					<!-- 发货时间 -->
+					<div class="add_row">
+						<div class="add_name">发货时间：</div>
+						<input class="t200" type="text" name="" value="<notempty name="order.expresstime">{$order.expresstime|date="Y-m-d H:i",###}</notempty>" readonly="readonly" />
+					</div>
+					<!-- 发货按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="发 货" />
+					</div>
+				</div>
+			</form>
+			<!-- 发货表单 结束 -->
+			<!-- 关闭按钮 -->
+			<div class="tac">
+				<a class="base_back" href="?g=member&m=sale&a=order">关 闭</a>
+			</div>
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

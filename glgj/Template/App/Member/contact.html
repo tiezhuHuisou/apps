@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/member.css" />
+</head>
+<body>
+    <include file="Common/header"/>
+    <!-- 主体内容 -->
+    <section class="member_wrapper viewport">
+        <!-- 官方客服QQ 开始 -->
+        <div class="member_info">
+            <notempty name="qq">
+                <volist name="qq" id="vo">
+                    <a class="member_qq member_link" href="http://wpa.qq.com/msgrd?v=3&uin={$vo['qq']}&site=qq&menu=yes" target="_blank">
+                        <p class="member_link_title"><span><empty name="vo['name']">官方QQ客服{$i}<else />{$vo['name']}</empty></span></p>
+                        <div class="next_arrow"><div class="gt"><div></div></div></div>
+                    </a>
+                </volist>
+                <else />
+                <a class="member_qq member_link" href="javascript:void(0);">
+                    <p class="member_link_title"><span>暂无官方QQ客服</span></p>
+                    <div class="next_arrow"><div class="gt"><div></div></div></div>
+                </a>
+            </notempty>
+        </div>
+        <!-- 官方客服QQ 结束 -->
+    </section>
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+</body>
+</html>

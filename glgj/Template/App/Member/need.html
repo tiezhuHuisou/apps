@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/need.css" />
+</head>
+<body>
+    <neq name="appsign" value="1">
+        <!-- 顶部 开始 -->
+        <header>
+            <a class="header_left" href="?g=app&m=member">
+                <div class="lt"><div></div></div>
+            </a>
+            <p class="header_title">{$site_title}</p>
+            <a class="header_right" href="?g=app&m=member&a=publishneed<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">发布需求</a>
+        </header>
+        <!-- 顶部 结束 -->
+    </neq>
+    <!-- 可视区域 -->
+    <section <neq name="appsign" value="1">class="viewport"</neq>>
+        <notempty name="list">
+            <!-- 数据列表 开始 -->
+            <div class="list_wrap">
+                <!-- 一条数据 开始 -->
+                <foreach name="list" item="liv">
+                    <div class="list">               
+                        <!-- 图标 -->
+                        <div class="list_icon">
+                            <a href="?g=app&m=index&a=need_detail&id={$liv['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>"><img src="{$liv['img']|default='__STATIC__/images/default_icon.jpg'}" width="80" height="80" /></a>
+                        </div>
+                        <!-- 信息 -->
+                        <div class="list_info">
+                            <a href="?g=app&m=index&a=need_detail&id={$liv['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>"><h3>{$liv['title']}</h3></a>
+                            <p>{$liv['short_title']}</p>
+                        </div>
+                        <!-- 电话 -->
+                        <div class="list_right">
+                            <p class="text">{$liv['issue_time']|date="m-d",###}</p>
+                            <a class="text fc" href="?g=app&m=member&a=publishneed&id={$liv['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">编辑</a>
+                            <a class="text fc del" href="javascript:void(0);" data-id="{$liv['id']}">删除</a>
+                        </div>
+                    </div>
+                </foreach>
+                <!-- 一条数据 结束 -->
+            </div>
+            <!-- 数据列表 结束 -->
+            <else />
+            <!-- 数据为空时 -->
+            <div class="common_empty">
+                <img src="__IMG__/common_empty.png" width="120" height="120">
+                <p>您还没有发布过需求</p>
+                <neq name="appsign" value="1">
+                    <a href="?g=app&m=member">返回</a>
+                </neq>
+            </div>
+        </notempty>
+    </section>
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <input id="uuid" type="hidden" value="{$Think.get.uuid}" />
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/mine_need.js"></script>
+</body>
+</html>

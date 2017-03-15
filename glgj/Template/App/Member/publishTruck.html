@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/release_truck.css"/>
+</head>
+<body>
+<include file="Common/header"/>
+<!-- 可视区域 开始 -->
+<section class="viewport">
+    <!-- 发布表单 -->
+    <form action="#" method="post">
+        <input type="hidden" name="id" value="{$list['info']['id']}">
+        <input type="hidden" name="uid" value="{:UID}">
+        <!-- 地址 -->
+        <!--起始地省市-->
+        <input type="hidden" name="provincen" value="{$list['info']['provincen']}">
+        <input type="hidden" name="cityn" value="{$list['info']['city']}">
+        <!--目的地省市-->
+        <input type="hidden" name="provincen2" value="{$list['info']['provincen2']}">
+        <input type="hidden" name="cityn2" value="{$list['info']['city2']}">
+
+        <div class="address_wrap">
+            <input id='start_city' class="city_select" type="text" name="" value="{$list['info']['provincename']}{$list['info']['cityname']}"
+                   placeholder="请选择起始地"/> <span class="rotate_icon"></span>
+            <input id="end_city" class="city_select" type="text" name="" value="{$list['info']['provincename2']}{$list['info']['cityname2']}" placeholder="请选择目的地">
+        </div>
+        <!-- 联系信息 -->
+        <div class="weui-cells__title">联系信息</div>
+        <div class="weui-cells">
+            <!-- 姓名 -->
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">随车司机姓名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" name="driver" value="{$list['info']['driver']}">
+                </div>
+            </div>
+            <!-- 电话 -->
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">联系电话</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" name="driver_phone" value="{$list['info']['driver_phone']}"/>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__title">车辆信息</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">车源类型</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="source_type">
+                        <foreach name="list['source_type']" item="vo">
+                            <option <eq name="list['info']['source_type']" value="$val">selected</eq> value="{$vo}">{$vo}</option>
+                        </foreach>
+
+                    </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">车辆类型</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="truck_type">
+                        <foreach name="list['truck_type']" item="vo">
+                            <option <eq name="list['info']['truck_type']" value="$val">selected</eq> value="{$vo}">{$vo}</option>
+                        </foreach>
+
+                    </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">车辆数量</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="'truck_num'">
+                        <foreach name="list['truck_num']" item="vo">
+                            <option <eq name="list['info']['truck_num']" value="$val">selected</eq> value="{$vo}">{$vo}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">车身长度</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="truck_length">
+                        <foreach name="list['truck_length']" item="vo">
+                            <option <eq name="list['info']['truck_length']" value="$val">selected</eq> value="{$vo}">{$vo}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">车牌号码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" name="truck_no" value="{$list['info']['truck_no']}">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__title">载货信息</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">可载轻货</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" name="light" value="{$list['info']['light']}" placeholder="请填写数字">
+                </div>
+                <div class="weui-cell__ft">
+                    <p>方</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">可载重货</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" name="heavy" value="{$list['info']['heavy']}" placeholder="请填写数字">
+                </div>
+                <div class="weui-cell__ft">
+                    <label><input class="weight_select" type="radio" name="heavy_unit" value="吨" checked/>吨</label>
+                    <label><input class="weight_select" type="radio" name="heavy_unit" value="公斤"/>公斤</label>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">途经地区</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" name="approach" value="{$list['info']['approach']}">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">发车日期</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input type="text" id='start_time' name="departure_time" class="time_select"/>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">有效日期</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input type="text" id='end_time' name="end_time" class="time_select"/>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">备注</label></div>
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" name="content" placeholder="请输入备注" rows="3">{$list['info']['content']}</textarea>
+                    <div class="weui-textarea-counter"><span>0</span>/200</div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <button class="weui-btn weui-btn_primary">提交</button>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- 可视区域 结束 -->
+<!-- 底部 开始 -->
+<include file="Common/footer"/>
+<!-- 底部 结束 -->
+<script type="text/javascript">
+    var city_name = "{$city_name}";
+    var defaultImg = '__STATIC__/images/default_icon.jpg';
+    var imgUrl = '__IMG__';
+</script>
+<!-- 地址选择器 -->
+<script type="text/javascript" src="__JS__/city-picker.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/jquery-weui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/release_truck.js"></script>
+</body>
+</html>

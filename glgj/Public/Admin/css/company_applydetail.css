@@ -1,0 +1,17 @@
+/* 地图 */
+.allmap{width:520px;height:340px;border:1px solid gray;margin-left:40px;}
+/* 弹窗 */
+.mask{width:100%;height:100%;background:rgba(0,0,0,.5);position:fixed;bottom:0;left:0;z-index:2;display:none;}
+.modal_wrap{width:330px;border:1px solid #dcdcdc;background:#fff;position:fixed;top:50%;left:50%;margin-left:-166px;margin-top:-106px;z-index:3;display:none;}
+.modal_top{height:30px;line-height:30px;color:#333;border-bottom:1px solid #dcdcdc;text-indent:10px;}
+.modal_top .btn_close{width:30px;height:30px;float:right;margin-right:10px;font-size:16px;}
+.modal_top .btn_close:hover{cursor:pointer;background:rgba(0,0,0,.5);}
+.modal_content{padding:10px;}
+.modal_content .modal_list{padding:5px 0;}
+.modal_content .modal_list .list_title{width:100px;height:26px;line-height:26px;text-align:center;float:left;}
+.modal_content .modal_list .list_select{width:200px;padding:0 4px;border:1px solid #dcdcdc;float:left;}
+.modal_content .modal_list .list_select select{width:100%;height:24px;padding:3px 0;border:none;}
+.modal_content .modal_list .list_input{width:200px;padding:0 4px;border:1px solid #dcdcdc;float:left;}
+.modal_content .modal_list .list_input input{width:100%;height:18px;padding:3px 0;border:none;}
+.modal_content .modal_list .list_textarea textarea{width:200px;height:100px;padding:4px;border:1px solid #dcdcdc;}
+.modal_opt{height:36px;line-height:36px;text-align:center;border-top:1px solid #dcdcdc;}

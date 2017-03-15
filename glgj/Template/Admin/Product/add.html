@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/product_add.css" />
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>产品管理中心</h2>
+				<a href="?g=admin&m=product">产品列表</a>
+                <a class="hover" href="?g=admin&m=product&a=add">添加产品</a>
+            </div>
+            <h3>产品管理</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="id" value="{$detail.id}"/>
+                <table class="add_table">
+                    <!-- 产品名称输入框 -->
+                    <tr>
+                        <td class="w120">产品标题：</td>
+                        <td>
+                            <input class="i200" type="text" name="title" value="{$detail.title}" datatype="title" nullmsg="请填写产品名称" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写产品名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 产品简介输入框 -->
+                    <tr>
+                        <td class="w120">产品副标题：</td>
+                        <td>
+                            <input class="i400" type="text" name="short_title" value="{$detail.short_title}" datatype="title" nullmsg="请填写产品简介" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写产品简介</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 属性复选框 -->
+                    <tr>
+                        <td class="w120">属性：</td>
+                        <td class="lh22">
+                        	<volist name="flags" id="fl">
+                                <label class="mgr4">
+                                    <input class="pt3" name="flags[]" type="radio" value="{$fl.att}" <in name="fl.att" value="$detail.flags">checked</in> />{$fl.attname}
+                                </label>
+                            </volist>
+                        </td>
+                    </tr>
+                    <eq name="flashFlag" value="1">
+                        <!-- 活动设置 -->
+                        <tr>
+                            <td class="w120">活动设置：</td>
+                            <td>
+                                <label class="mgr">
+                                    <input class="pt3" type="radio" name="activity_type" value="0" checked />
+                                    <span>无</span>
+                                </label>
+                                <label>
+                                    <input class="pt3" type="radio" name="activity_type" value="1" <eq name="detail.activity_type" value="1">checked</eq> />
+                                    <span>限时抢购</span>
+                                </label>
+                            </td>
+                        </tr>
+                    </eq>
+                    <eq name="distribution_flag" value="1">
+                        <!-- 是否分销 -->
+                        <tr>
+                            <td class="w120">是否分销：</td>
+                            <td>
+                                <label class="mgr">
+                                    <input class="pt3" type="radio" name="distribution" value="1" checked />
+                                    <span>参与</span>
+                                </label>
+                                <label>
+                                    <input class="pt3" type="radio" name="distribution" value="0" <eq name="detail.distribution" value="0">checked</eq> />
+                                    <span>不参与</span>
+                                </label>
+                            </td>
+                        </tr>
+                    </eq>
+                    <!-- 所属分类 -->
+                    <tr>
+                        <td class="w120">所属分类：</td>
+                        <td>
+                            <div class="category_area">
+                                <a class="category_btn" href="javascript:void(0);">选择分类<span class="btn_down"></span></a>
+                                <ul class="category_wrap">
+                                    <li class="category_list">
+                                        <volist name="category" id="cl">
+                                            <label class="one_list"><input type="checkbox" name="sale_category_id[]" value="{$cl.id}" <in name="cl.id" value="$detail.sale_category_id">checked</in> />{$cl.sty}{$cl.name}</label>
+                                        </volist>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 发布企业下拉框 -->
+                    <tr>
+                        <td class="w120">发布企业：</td>
+                        <td>
+                            <select class="pl3" name="company_id">
+                                <option value="">请选择</option>
+                                <volist name="company" id="co">
+                                    <option value="{$co.id}" <eq name="co.id" value="$detail.company_id">selected</eq>>{$co.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 产品详情轮播图按钮 -->
+                    <tr>
+                        <td class="w120">产品详情轮播图：</td>
+                        <td>
+                            <a id="carousel_btn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <span class="pl3">建议尺寸：640*640</span>
+                        </td>
+                    </tr>
+                    <!-- 轮播图预览 -->
+                    <tr <empty name="allpic">class="no"</empty>>
+                        <td class="w120">产品详情轮播图预览：</td>
+                        <td id="carousel_img">
+                            <volist name="allpic" id="pic">
+                                <p class="img_wrap">
+                                    <img class="delete_img" src="__IMG__/delete_img.png" width="20" height="20" />
+                                    <img src="{$pic.pic_url}"  width="100" height="100" />
+                                    <input value="{$pic.pic_url}"  name="allpic[]" type="hidden" />
+                                </p>
+                            </volist>
+                        </td>
+                    </tr>
+                    <!-- 销售价 -->
+                    <tr>
+                        <td class="w120">销售价：</td>
+                        <td>
+                            <input id="price" class="i100" type="text" name="price" value="{$detail['price']}" />
+                            <span class="pl3">元</span>
+                        </td>
+                    </tr>
+                    <!-- 市场价 -->
+                    <tr>
+                        <td class="w120">市场价：</td>
+                        <td>
+                            <input id="oprice" class="i100" type="text" name="oprice" value="{$detail['oprice']}" />
+                            <span class="pl3">元</span>
+                        </td>
+                    </tr>
+                    <eq name="flashFlag" value="1">
+                        <!-- 活动价 -->
+                        <tr>
+                            <td class="w120">活动价：</td>
+                            <td>
+                                <input id="activity_price" class="i100" type="text" name="activity_price" value="{$detail['activity_price']}" />
+                                <span class="pl3">元</span>
+                            </td>
+                        </tr>
+                    </eq>
+                    <!-- 重量 -->
+                    <tr>
+                        <td class="w120">重量：</td>
+                        <td>
+                            <input id="weight" class="i100" type="text" name="weight" value="{$detail['weight']}" />
+                            <span class="pl3">千克</span>
+                        </td>
+                    </tr>
+                    <!-- 库存 -->
+                    <tr>
+                        <td class="w120">库存：</td>
+                        <td>
+                            <input class="i100" type="text" name="num" value="{$detail['num']|default=9999}" />
+                            <span class="pl3">件</span>
+                        </td>
+                    </tr>
+                    <!-- 最小购买数量 -->
+                    <tr>
+                        <td class="w120">最小购买数量：</td>
+                        <td>
+                            <input class="i100" type="text" name="buymin" value="{$detail['buymin']|default=1}" />
+                            <span class="pl3">件</span>
+                        </td>
+                    </tr>
+                    <!-- 优惠券最多可抵 -->
+                    <tr>
+                        <td class="w120">优惠券最多可抵：</td>
+                        <td>
+                            <input class="i100" type="text" name="preferential" value="{$detail['preferential']|default=1}" />
+                            <span class="pl3">元<span style="color: red;">(不填或填0 代表该商品使用优惠券可抵金额无上限 填-1代表该商品不可以使用优惠券)</span></span>
+                        </td>
+                    </tr>
+                    <eq name="distribution_flag" value="1">
+                        <!-- 本级佣金 -->
+                        <tr>
+                            <td class="w120">本级佣金：</td>
+                            <td>
+                                <input class="i100" type="text" name="commission1" value="{$detail['commission1']}" />
+                                <span class="pl3">元</span>
+                            </td>
+                        </tr>
+                        <!-- 上级佣金 -->
+                        <tr>
+                            <td class="w120">上级佣金：</td>
+                            <td>
+                                <input class="i100" type="text" name="commission2" value="{$detail['commission2']}" />
+                                <span class="pl3">元</span>
+                            </td>
+                        </tr>
+                        <!-- 上上级佣金 -->
+                        <tr>
+                            <td class="w120">上上级佣金：</td>
+                            <td>
+                                <input class="i100" type="text" name="commission3" value="{$detail['commission3']}" />
+                                <span class="pl3">元</span>
+                            </td>
+                        </tr>
+                    </eq>
+                    <!-- 规格 -->
+                    <input id="is_spec" type="hidden" name="is_spec" value="{$detail.is_spec|default=0}" />
+                    <tr>
+                        <td class="w120">规格：</td>
+                        <td>
+                            <a id="spec_on" class="opt_btn mgl0" href="javascript:void(0);">开启规格</a>
+                            <a id="spec_toggle" class="opt_btn <eq name="detail['is_spec']" value="0">no</eq> <empty name="detail['is_spec']">no</empty>" href="javascript:void(0);"><eq name="detail['is_spec']" value="0">展开<else />收起</eq>规格</a>
+                        </td>
+                    </tr>
+                    <tr id="spec_wrap" <eq name="detail['is_spec']" value="0">class="no"</eq> <empty name="detail['is_spec']">class="no"</empty>>
+                        <td class="w120"></td>
+                        <td>
+                            <!-- 规格表格 开始 -->
+                            <div class="spec_table">
+                                <!-- 规格表格头部 开始 -->
+                                <ul>
+                                    <li><input class="i70 spec_title1" type="text" name="spec[title1]" value="{$specTitle1}" placeholder="例：颜色" /></li>
+                                    <li><input class="i70 spec_title2" type="text" name="spec[title2]" value="{$specTitle2}" placeholder="例：尺寸" /></li>
+                                    <li>销售价</li>
+                                    <li>市场价</li>
+                                    <eq name="flashFlag" value="1">
+                                        <li>活动价</li>
+                                    </eq>
+                                    <li>重量</li>
+                                    <li>库存</li>
+                                    <li class="w80">最小购买数量</li>
+                                    <li>排序</li>
+                                    <li class="img_wrap">规格图片<span>(建议尺寸：300*300)</span></li>
+                                    <li>操作</li>
+                                </ul>
+                                <!-- 规格表格头部 结束 -->
+                                <!-- 规格表格列表 开始 -->
+                                <notempty name="specList">
+                                    <volist name="specList" id="vo">
+                                        <ul>
+                                            <li><input class="i70 spec_spec1" type="text" name="spec[spec1][]" value="{$vo['spec1']}" placeholder="例：红色" /></li>
+                                            <li><input class="i70 spec_spec2" type="text" name="spec[spec2][]" value="{$vo['spec2']}" placeholder="例：均码" /></li>
+                                            <li><input class="i50 spec_price" type="text" name="spec[price][]" value="{$vo['price']}" /></li>
+                                            <li><input class="i50" type="text" name="spec[oprice][]" value="{$vo['oprice']}" /></li>
+                                            <eq name="flashFlag" value="1">
+                                                <li><input class="i50" type="text" name="spec[activity_price][]" value="{$vo['activity_price']}" /></li>
+                                            </eq>
+                                            <li><input class="i50" type="text" name="spec[weight][]" value="{$vo['weight']}" /></li>
+                                            <li><input class="i50 spec_stock" type="text" name="spec[stock][]" value="{$vo['stock']}" /></li>
+                                            <li class="w80"><input class="i50 spec_buymin" type="text" name="spec[buymin][]" value="{$vo['buymin']}" /></li>
+                                            <li><input class="i50 spec_sort" type="text" name="spec[sort][]" value="{$vo['sort']}" /></li>
+                                            <li class="img_wrap">
+                                                <img class="spec_img" src="{$vo['img']|default='__STATIC__/images/default_icon.jpg'}" width="50" height="50" />
+                                                <input type="hidden" name="spec[img][]" value="{$vo['img']|default='__STATIC__/images/default_icon.jpg'}">
+                                            </li>
+                                            <li>
+                                                <a class="spec_up" href="javascript:void(0);">使用上图</a>
+                                                <a class="spec_copy" href="javascript:void(0);">复制</a>
+                                                <a class="spec_del" href="javascript:void(0);">删除</a>
+                                            </li>
+                                        </ul>
+                                    </volist>
+                                    <else />
+                                    <ul>
+                                        <li><input class="i70 spec_spec1" type="text" name="spec[spec1][]" value="" placeholder="例：红色" /></li>
+                                        <li><input class="i70 spec_spec2" type="text" name="spec[spec2][]" value="" placeholder="例：均码" /></li>
+                                        <li><input class="i50 spec_price" type="text" name="spec[price][]" value="" /></li>
+                                        <li><input class="i50" type="text" name="spec[oprice][]" value="" /></li>
+                                        <eq name="flashFlag" value="1">
+                                            <li><input class="i50" type="text" name="spec[activity_price][]" value="" /></li>
+                                        </eq>
+                                        <li><input class="i50" type="text" name="spec[weight][]" value="" /></li>
+                                        <li><input class="i50 spec_stock" type="text" name="spec[stock][]" value="9999" /></li>
+                                        <li class="w80"><input class="i50 spec_buymin" type="text" name="spec[buymin][]" value="1" /></li>
+                                        <li><input class="i50 spec_sort" type="text" name="spec[sort][]" value="0" /></li>
+                                        <li class="img_wrap">
+                                            <img class="spec_img" src="__STATIC__/images/default_icon.jpg" width="50" height="50" />
+                                            <input type="hidden" name="spec[img][]" value="__STATIC__/images/default_icon.jpg">
+                                        </li>
+                                        <li>
+                                            <a class="spec_up" href="javascript:void(0);">使用上图</a>
+                                            <a class="spec_copy" href="javascript:void(0);">复制</a>
+                                            <a class="spec_del" href="javascript:void(0);">删除</a>
+                                        </li>
+                                    </ul>
+                                </notempty>
+                                <!-- 规格表格列表 结束 -->
+                                <ul id="last_ul">
+                                    <a id="spec_add" class="opt_btn mgl0" href="javascript:void(0);">添加一行</a>
+                                    <a id="spec_off" class="opt_btn" href="javascript:void(0);">关闭规格</a>
+                                </ul>
+                            </div>
+                            <!-- 规格表格 结束 -->
+                        </td>
+                    </tr>
+                    <!-- 商品详情 -->
+                    <tr>
+                        <td class="w120">商品详情：</td>
+                        <td>
+                            <textarea id="supply_content" name="summary" datatype="*" nullmsg="请填写商品详情">{$detail.summary}</textarea>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写商品详情</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 排序 -->
+                    <tr>
+                        <td class="w120">排序：</td>
+                        <td>
+                            <input class="i50" type="text" name="sort" value="{$detail.sort|default='50'}" datatype="n" nullmsg="请填写数字" errormsg="请填写数字" />
+                            <span class="pl3">数字越大越靠前</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写数字</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 是否显示 -->
+                    <tr>
+                        <td class="w120">是否显示：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="status" value="1" checked />
+                                <span>显示</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="status" value="0" <eq name="detail.status" value="0">checked</eq> />
+                                <span>不显示</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript">
+        var imgUrl     = "__IMG__";
+        var staticPath = "__STATIC__";
+        var flashFlag = "{$flashFlag|default=0}";
+    </script>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+    <script type="text/javascript" src="__JS__/product_add.js"></script>
+</body>
+</html>

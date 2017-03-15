@@ -1,0 +1,8 @@
+/* 一块区域 */
+.area{padding:10px 16px;background:#fff;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;margin-bottom:16px;}
+.area:first-child{border-top:none;}
+.area h3{font-size:16px;color:#333;font-weight:normal;}
+.area p{font-size:12px;color:#666;}
+.area .contact{display:block;color:#666;font-size:12px;}
+.area article{width:100%;display:block;overflow:hidden;}
+.area article img,.area article embed,.area article table,.area article iframe{max-width:100%;}

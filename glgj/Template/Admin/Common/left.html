@@ -1,0 +1,81 @@
+<div class="left">
+	<ul>
+		<eq name="site" value="home">
+			<!-- 核心管理-左侧 -->
+			<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=index">管理首页</a></li>
+			<li <eq name="left" value="core">class="hover"</eq>><a href="?g=admin&m=index&a=core">核心设置</a></li>
+			<eq name="Think.config.FLASHFLAG" value="1">
+				<li <eq name="left" value="freight">class="hover"</eq>><a href="?g=admin&m=index&a=freight">运费模板管理</a></li>
+			</eq>
+			<li <eq name="left" value="regions">class="hover"</eq>><a href="?g=admin&m=index&a=regions">省市区管理</a></li>
+			<li><a  class="exit ajax-get" href="javascript:void(0);">退出登陆</a></li>
+		</eq>
+		<eq name="site" value="news">
+			<!-- 资讯管理-左侧 -->
+			<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=news">资讯列表</a></li>
+			<li <eq name="left" value="classify">class="hover"</eq>><a href="?g=admin&m=news&a=classify">资讯分类</a></li>
+			<!--<li <eq name="left" value="circle">class="hover"</eq>><a href="?g=admin&m=news&a=circle">行业圈管理</a></li>-->
+			<!--<li <eq name="left" value="circlecategory">class="hover"</eq>><a href="?g=admin&m=news&a=circlecategory">行业圈分类</a></li>-->
+			<li <eq name="left" value="notice">class="hover"</eq>><a href="?g=admin&m=news&a=notice">公告</a></li>
+		</eq>
+		<eq name="site" value="product">
+			<!-- 产品管理-左侧 -->
+			<!--<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=product">产品管理</a></li>-->
+			<!--<li <eq name="left" value="classify">class="hover"</eq>><a href="?g=admin&m=product&a=classify">产品分类</a></li>-->
+			<!--<li <eq name="left" value="need">class="hover"</eq>><a href="?g=admin&m=product&a=need">求购管理</a></li>-->
+			<li <eq name="left" value="truck">class="hover"</eq>><a href="?g=admin&m=product&a=truck">货车管理</a></li>
+			<li <eq name="left" value="depot">class="hover"</eq>><a href="?g=admin&m=product&a=depot">仓储管理</a></li>
+			<li <eq name="left" value="goods">class="hover"</eq>><a href="?g=admin&m=product&a=goods">货物管理</a></li>
+		</eq>
+		<eq name="site" value="activity">
+			<eq name="Think.config.FLASHFLAG" value="1">
+				<!-- 活动管理-左侧 -->
+				<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=activity">优惠券设置</a></li>
+				<li <eq name="left" value="coupon">class="hover"</eq>><a href="?g=admin&m=activity&a=coupon">优惠券管理</a></li>
+				<li <eq name="left" value="recharge">class="hover"</eq>><a href="?g=admin&m=activity&a=recharge">充值活动设置</a></li>
+				<li <eq name="left" value="rechargerule">class="hover"</eq>><a href="?g=admin&m=activity&a=rechargerule">充值规则设置</a></li>
+				<li <eq name="left" value="flash">class="hover"</eq>><a href="?g=admin&m=activity&a=flash">限时抢购设置</a></li>
+			</eq>
+		</eq>
+		<eq name="distribution_flag" value="1">
+			<eq name="site" value="distribution">
+				<!-- 产品管理-左侧 -->
+				<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=distribution">分销设置</a></li>
+				<li <eq name="left" value="financialmanagement">class="hover"</eq>><a href="?g=admin&m=distribution&a=financialmanagement">佣金提现管理</a></li>
+			</eq>
+		</eq>
+		<eq name="site" value="order">
+			<!-- 订单管理-左侧 -->
+			<li <eq name="left" value="order">class="hover"</eq>><a href="?g=admin&m=order">订单列表</a></li>
+			<li <eq name="left" value="recharge">class="hover"</eq>><a href="?g=admin&m=order&a=recharge">充值订单</a></li>
+			<eq name="Think.config.FLASHFLAG" value="1">
+				<li <eq name="left" value="withdrawals">class="hover"</eq>><a href="?g=admin&m=order&a=withdrawals">商家提款申请</a></li>
+			</eq>
+		</eq>
+		<eq name="site" value="more">
+			<!-- 更多管理-左侧 -->
+			<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=more">更多管理</a></li>
+			<li <eq name="left" value="comment">class="hover"</eq>><a href="?g=admin&m=comment">留言管理</a></li>
+			<li <eq name="left" value="banner">class="hover"</eq>><a href="?g=admin&m=banner">焦点图管理</a></li>
+			<li <eq name="left" value="push">class="hover"</eq>><a href="?g=admin&m=push">推送消息管理</a></li>
+		</eq>
+		<eq name="site" value="member">
+			<!-- 会员管理-左侧 -->
+			<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=member">会员列表</a></li>
+			<li <eq name="left" value="company">class="hover"</eq>><a href="?g=admin&m=member&a=company">企业列表</a></li>
+			<li <eq name="left" value="company_group">class="hover"</eq>><a href="?g=admin&m=member&a=company_group">企业分组</a></li>
+			<li <eq name="left" value="apply">class="hover"</eq>><a href="?g=admin&m=member&a=apply">企业申请</a></li>
+			<li <eq name="left" value="applyDepot">class="hover"</eq>><a href="?g=admin&m=member&a=applyDepot">仓储主</a></li>
+			<li <eq name="left" value="applyPerTruck">class="hover"</eq>><a href="?g=admin&m=member&a=applyPerTruck">个体车主</a></li>
+			<li <eq name="left" value="applyComTruck">class="hover"</eq>><a href="?g=admin&m=member&a=applyComTruck">公司车主</a></li>
+			<li <eq name="left" value="applyPerGoods">class="hover"</eq>><a href="?g=admin&m=member&a=applyPerGoods">个体货主</a></li>
+			<li <eq name="left" value="applyComGoods">class="hover"</eq>><a href="?g=admin&m=member&a=applyComGoods">公司货主</a></li>
+			<li <eq name="left" value="message">class="hover"</eq>><a href="?g=admin&m=member&a=message">系统消息</a></li>
+		</eq>
+		<eq name="site" value="user">
+			<!-- 管理员管理-左侧 -->
+			<li <eq name="left" value="index">class="hover"</eq>><a href="?g=admin&m=user">管理员列表</a></li>
+			<li <eq name="left" value="group">class="hover"</eq>><a href="?g=admin&m=user&a=group">管理员分组</a></li>
+		</eq>
+	</ul>
+</div>

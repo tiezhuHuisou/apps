@@ -1,0 +1,9 @@
+/* 主体内容 */
+.station_message_list{width:90%;margin:15px auto;}
+.station_message_list .station_message_list_time{text-align:center;color:#8a8a8a;font-size:12px;}
+.station_message_list .station_message_list_info{background:#fff;margin-top:6px;border:1px solid #dcdcdc;border-radius:5px;}
+.station_message_list .station_message_list_info .station_message_list_title{height:40px;line-height:40px;text-indent:20px;border-bottom:1px solid #dcdcdc;font-size:12px;}
+.station_message_list .station_message_list_info .station_message_list_con{font-size:12px;margin:10px 20px;word-wrap:break-word;word-break:break-all;}
+/*.station_message_list .station_message_list_info .station_message_list_look{font-size:12px;height:40px;line-height:40px;margin:0 20px;display:block;text-align:right;}
+.station_message_list .station_message_list_info .station_message_list_look span{padding-right:10px;color:#8a8a8a;}
+.station_message_list .station_message_list_info .station_message_list_look .gt{left:0;}*/

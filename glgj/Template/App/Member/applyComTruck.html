@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/applyComTruck.css" />
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header_submit">
+        <div class="header_left">
+            <a class="back_btn" href="javascript:void(0);"></a>
+        </div>
+        <div class="header_title">公司车主</div>
+        <div class="header_right">
+            <button class="submit_btn" type="button">提交</button>
+        </div>
+    </div>
+    <!-- 可视区域 开始 -->
+    <section class="viewport">
+        <!-- 发布表单 -->
+        <form action="" method="" enctype="multipart/form-data">
+            <!-- 联系信息 -->
+            <div class="weui-cells__title">联系信息</div>
+            <div class="weui-cells">
+                <!-- 公司名称 -->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><em class="red">*</em>公司名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" name="" value="">
+                    </div>
+                </div>
+                <!-- 法人姓名 -->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><em class="red">*</em>法人姓名</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" name="" value="">
+                    </div>
+                </div>
+                <!-- 身份证号 -->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><em class="red">*</em>身份证号</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" name="" value="">
+                    </div>
+                </div>
+                <!-- 联系电话 -->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><em class="red">*</em>联系电话</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" name="" value="">
+                    </div>
+                </div>
+                <!-- 公司地址 -->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><em class="red">*</em>公司地址</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" name="" value="">
+                    </div>
+                </div>
+                <!-- 公司简介 -->
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label"><em class="red">*</em>公司简介</label></div>
+                    <div class="weui-cell__bd">
+                        <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
+                        <div class="weui-textarea-counter"><span>0</span>/200</div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cells__title">照片上传</div>
+            <div class="weui-cells">
+                <div class="weui-grids">
+                    <div class="weui-grid">
+                        <p class="weui-grid__label">身份证(或驾驶证)</p>
+                        <div class="weui-uploader__input-box">
+                            <input class="upload_input weui-uploader__input" type="file" accept="image/gif,image/jpg,image/png" multiple="" name="" value="">
+                            <!-- 图片上传 -->
+                            <img class="upload_img" src="" />
+                        </div>
+                    </div>
+                    <div class="weui-grid">
+                        <p class="weui-grid__label">个人头像(生活照)</p>
+                        <div class="weui-uploader__input-box">
+                            <input class="upload_input weui-uploader__input" type="file" accept="image/gif,image/jpg,image/png" multiple="" name="" value="">
+                            <!-- 图片上传 -->
+                            <img class="upload_img" src="" />
+                        </div>
+                    </div>
+                    <div class="weui-grid">
+                        <p class="weui-grid__label">行驶证</p>
+                        <div class="weui-uploader__input-box">
+                            <input class="upload_input weui-uploader__input" type="file" accept="image/gif,image/jpg,image/png" multiple="" name="" value="">
+                            <!-- 图片上传 -->
+                            <img class="upload_img" src="" />
+                        </div>
+                    </div>
+                    <div class="weui-grid">
+                        <p class="weui-grid__label">从业资格证</p>
+                        <div class="weui-uploader__input-box">
+                            <input class="upload_input weui-uploader__input" type="file" accept="image/gif,image/jpg,image/png" multiple="" name="" value="">
+                            <!-- 图片上传 -->
+                            <img class="upload_img" src="" />
+                        </div>
+                    </div>
+                    <div class="weui-grid">
+                        <p class="weui-grid__label">道路运输经营许可证</p>
+                        <div class="weui-uploader__input-box">
+                            <input class="upload_input weui-uploader__input" type="file" accept="image/gif,image/jpg,image/png" multiple="" name="" value="">
+                            <!-- 图片上传 -->
+                            <img class="upload_img" src="" />
+                        </div>
+                    </div>
+                    <div class="weui-grid">
+                        <p class="weui-grid__label">公司门头照</p>
+                        <div class="weui-uploader__input-box">
+                            <input class="upload_input weui-uploader__input" type="file" accept="image/gif,image/jpg,image/png" multiple="" name="" value="">
+                            <!-- 图片上传 -->
+                            <img class="upload_img" src="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <script type="text/javascript">
+        var city_name  = "{$city_name}";
+        var defaultImg = '__STATIC__/images/default_icon.jpg';
+        var imgUrl     = '__IMG__';
+    </script>
+    <script type="text/javascript" src="__JS__/applyComTruck.js"></script>
+</body>
+</html>

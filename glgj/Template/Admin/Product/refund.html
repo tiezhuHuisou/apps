@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>申请返款</h2>
+			</div>
+			<!-- 主体数据 -->
+			<table class="data">
+				<!-- 数据头部 -->
+				<tr class="data_header">
+					<th class="tl ti20">公司名称</th>
+					<th class="tl">金额</th>
+					<th class="tl">卡号/打款方式/姓名</th>
+					<th>状态</th>
+					<th>申请时间</th>
+					<th>操作</th>
+				</tr>
+				<!-- 一条数据开始 -->
+				<volist name="list" id="li">
+				<tr>
+					<td class="tl ti20">{$li.cname}</td>
+					<td class="tl">￥<span>{$li.withdrawals}</span></td>
+					<td class="tl">
+						<span>{$li.task}</span>
+					</td>
+					<td><if condition="$li.starts eq 0">审核中
+						<elseif condition = "$li.starts eq 1"/>申请通过，待打款
+						<elseif condition = "$li.starts eq 2"/>已打款
+						<elseif condition = "$li.starts eq 3"/>申请未通过
+					</if></td>
+					<td>{$li.ctime|date="Y-m-d H:i",###}</td>
+					<td class="data_opt">
+					<eq name="li.starts" value="0">
+					<a class="confirm ajax-get" href="index.php?g=admin&m=product&a=refund_up&id={$li.id}&starts=1">通过</a>
+					</eq>
+					<eq name="li.starts" value="1">
+					<a class="confirm ajax-get" href="index.php?g=admin&m=product&a=refund_up&id={$li.id}&starts=2">确认已打款</a>
+					</eq>
+					</td>
+				</tr>
+				</volist>
+			</table>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

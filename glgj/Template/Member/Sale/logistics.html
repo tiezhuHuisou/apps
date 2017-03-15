@@ -1,0 +1,56 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/logistics.css"/>
+<script type="text/javascript" src="__JS__/logistics.js"></script>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <!-- 主体头部 -->
+    <include file="Common/header"/>
+    <!-- 主体内容 -->
+    <div class="wrapper">
+        <!-- 导航 -->
+        <include file="Sale/ordernav"/>
+        <!-- 收货地址 -->
+        <div class="row">
+            <span>运单编号：</span>
+            <span>{$order_info['express_no']}</span>
+        </div>
+        <!-- 当前状态 -->
+        <div class="row">
+            <span>快递名称：</span>
+            <span>{$title}</span>
+        </div>
+        <!-- 订单编号 -->
+        <div class="row">
+            <span></span>
+				<span>
+
+                </span>
+        </div>
+        <!-- 物流详情 开始 -->
+        <div class="row_title">
+            <span>物流跟踪</span>
+        </div>
+        <foreach name="detail['data']" item="val">
+            <div class="row">
+                <span>{$val['ftime']}}</span>
+                <span>{$val['context']}</span>
+            </div>
+        </foreach>
+        <!-- 物流详情 结束 -->
+        <!-- 关闭按钮 -->
+        <div class="tac">
+            <a class="base_back" href="?g=member&m=sale&a=order">关 闭</a>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+</div>
+</body>
+</html>

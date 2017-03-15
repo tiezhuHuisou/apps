@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/more.css" />
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <header>
+        <a class="header_left" href="javascript:history.go(-1);">
+            <div class="lt"><div></div></div>
+        </a>
+        <p class="header_title">意见反馈</p>
+        <a class="header_right f15252 ajax-post" id="sub" href="javascirpt:void()">发送</a>
+    </header>
+    <!-- 头部 结束 -->
+    <!-- 主体内容 开始 -->
+    <section class="more_opinion_wrapper no_footer">
+    	<form id="form" class="form-horizontal" name="" action="" method="post">
+            <div class="more_opinion_content">
+                <textarea class="more_opinion_textarea" id="content" name ="content" placeholder="请尽量详细描述反馈，我们会第一时间帮您解决"></textarea>
+                <input class="more_opinion_input" type="text" id="phone" name="phone" placeholder="请留下您的手机号" />
+            </div>
+        </form>
+    </section>
+    <!-- 主体内容 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+</body>
+<script>
+    $(function() {
+       $('#sub').click(function() {
+          url = "?g=app&m=more&a=opinion";
+          phone = $("#phone").val();
+          content = $("#content").val();
+          if(content == ''){
+             layer.open({
+               content   :  '请输入反馈内容'
+           });
+             false;
+         }
+         if (!$("#phone").val().match(/^(((13[0-9]{1})|159|153)+\d{8})$/)) { 
+             layer.open({
+               content   :  '请输入正确的手机号码'
+           });
+             return false;
+         }
+         $.ajax( {    
+    	    url: url,// 跳转到 action    
+    	    data:{    
+    	    	phone : phone,
+    	    	content : content
+    	    },    
+    	    type:'post',    
+    	    cache:false,    
+    	    dataType:'json',    
+    	    success:function(data) {    
+    	    	if (data.errno == 0) {
+                    layer.open({
+                      content   :  data.error
+                  });
+                    setTimeout(function () {location.reload()},1000)
+                } else {
+                    layer.open({
+                       content:data.error
+                   });
+                }
+            }
+        });
+         return false;
+     });
+});
+</script>
+</html>

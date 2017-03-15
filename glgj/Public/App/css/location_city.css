@@ -1,0 +1,16 @@
+/*------- 定位地址选择 开始 -------*/
+/* 顶部 */
+.header_left{text-align:center;color:#8a8a8a;-webkit-box-pack:center;}
+/* 主体内容 */
+.location_wrapper .location_message{width:100%;height:44px;line-height:44px;background:#fff;text-align:center;border-bottom:1px solid #dcdcdc;}
+.location_wrapper .location_address .now_address_title{height:25px;line-height:25px;padding:0 16px;}
+.location_wrapper .location_address .now_address{display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;background:#fff;height:50px;}
+.location_wrapper .location_address .now_address .now_address_text{display:block;-webkit-box-flex:1;text-indent:16px;}
+.location_wrapper .location_address .now_address .select_icon{display:block;width:50px;height:50px;background:url('../images/right.png')no-repeat;background-position:16px 19px; background-size:17px 13px;}
+/* 选择省 */
+.location_wrapper .location_address .select_city{height:27px;line-height:27px;border-top:1px solid #dcdcdc;padding:0 16px;}
+.location_wrapper .location_address .city{background:#fff;}
+.location_wrapper .location_address .city p{height:45px;line-height:45px;border-top:1px solid #dcdcdc;text-indent:16px;}
+/*------- 定位地址选择 结束 -------*/
+
+

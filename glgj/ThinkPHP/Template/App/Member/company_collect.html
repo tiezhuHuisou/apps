@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/company_collect.css" />
+</head>
+<body>
+	<!-- 头部 开始-->
+	<header>
+        <a class="header_left" href="javascript:history.go(-1);">
+            <div class="lt"><div></div></div>
+        </a>
+        <p class="header_title">{$site_title}</p>
+        <a class="header_right f15252" href="javascript:void(0);">编辑</a>
+    </header>
+    <!-- 头部 结束-->
+	<!-- 可视区域 开始 -->
+	<section class="company_collect_wrapper no_footer">
+        <!-- 收藏公司列表 -->
+		<div class="company_collect_list_wrap">
+            <input id="classify" type="hidden" value="3"/>
+            <!-- 一项公司列表 -->
+            <volist name="list" id="li">
+            <div class="company_collect_list">
+                <!-- 筛选图标 -->
+                <div class="unselected_icon" data-id='{$li.id}'></div>                    
+                <!-- 公司图标 -->
+                <a class="company_collect_list_icon" href="?g=app&m=company&a=detail&id={$li.aid}">
+                    <img class="delay" src="__IMG__/pixel.gif" data-echo="{$li.logo}" width="60" height="60" />
+                </a>
+                <!-- 公司图标 -->
+                <!-- 公司简述 -->
+                <a class="company_collect_list_info" href="?g=app&m=company&a=detail&id={$li.aid}">
+                    <p class="company_collect_list_info_title">{$li.name}</p>
+                    <p class="company_collect_list_info_bussiness">主营：{$li.business}</p>
+                </a>
+                <!-- 公司简述 -->
+            </div>
+            </volist>
+        </div>
+        <!-- 公司列表 -->
+        <empty name="list">
+        <!-- 收藏为空时 -->
+        <div class="collect_empty_wrap">
+            <div class="common_empty">
+                <img src="__IMG__/collect_empty.png" width="120" height="120" />
+                <p>您的{$site_title}还是空的哦</p>
+                <a href="?g=app&m=company">去收藏</a>
+            </div>
+        </div>
+        </empty>
+	</section>
+    <!-- 可视区域 结束 -->
+    <!-- 底部 开始 -->
+    <footer>
+        <div class="unselected_icon allselected"></div>
+        <span>全选</span>
+        <button class="news_delete" href="javascript:void(0);">删除</button>
+    </footer>
+    <!-- 底部 结束-->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/company_collect.js"></script>
+</body>
+</html>

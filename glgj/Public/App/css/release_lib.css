@@ -1,0 +1,13 @@
+/*城市选择*/
+.address_wrap{padding:35px 10px;background:#fff;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;}
+.city_select{display:block;-webkit-box-flex:1;border:0;outline:0;font-size:14px;color:#000;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rotate_icon{width:50px;height:30px;display:block;margin:0 15px;background:url('../images/rotate_icon.png') no-repeat;background-size:25px 15px;background-position:center center;}
+/*块头*/
+.block_title{padding:8px 0 8px 10px;font-size:12px;background-color:#f6fbf9;}
+.select_icon{width:10px;height:10px;border-top:1px solid #999;border-right:1px solid #999;-webkit-transform:rotate(45deg);}
+form .weui-input,form .weui-select{height:25px;line-height:25px;}
+form .weui-input,form .weui-textarea{font-size:12px;}
+.weight_select{width:15px;height:15px;-webkit-appearance:radio;}
+.weui-uploader__input-box{border-style:dashed;}
+.weui-uploader__input-box img{width:100%;height:100%;position:relative;z-index:3;display:none;}
+#uploaderInput{z-index:5;}

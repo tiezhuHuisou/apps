@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/need_collect.css" />
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+        <a class="header_left" href="javascript:history.go(-1);">
+            <div class="lt"><div></div></div>
+        </a>
+        <p class="header_title">{$site_title}</p>
+        <a class="header_right f15252" href="javascript:void(0);">编辑</a>
+    </header>
+	<!-- 主体内容 开始 -->
+	<section class="need_collect no_footer">
+		<input id="classify" type="hidden" value="4"/>
+		<volist name="list" id="li">
+			<div class="buy_wrap">
+				<div class="buy_time">
+					<img class="delay" src="__IMG__/pixel.gif" data-echo="{$li.logo|default='__STATIC__/images/default_img.png'}" width="40" height="40" />
+					<div class="buy_name">{$li.buy_name}</div>
+					<div class="time">{$li.modify_time}</div>
+				</div>
+				<a class="buy_list" href="?g=app&m=index&a=need_detail&id={$li.id}">
+					<div class="unselected_icon" data-id="{$li.id}"></div>
+					<img class="delay" src="__IMG__/pixel.gif" data-echo="{$li.img|default='__STATIC__/images/default_img.png'}" width="80" height='80' />
+					<div class="buy_info">
+						<p class="pro_title">{$li.title}</p>
+						<p class="pro_dis">{$li.short_title}</p>
+					</div>
+				</a>
+			</div>
+		</volist>
+		<empty name="list">
+        <!-- 收藏为空时 -->
+        <div class="collect_empty_wrap">
+            <div class="common_empty">
+                <img src="__IMG__/collect_empty.png" width="120" height="120" />
+                <p>您的{$site_title}还是空的哦</p>
+                <a href="?g=app&m=index&a=need">去收藏</a>
+            </div>
+        </div>
+        </empty>
+	</section>
+	<!-- 主体内容 结束 -->
+    <!-- 底部 -->
+    <footer>
+        <div class="unselected_icon allselected"></div>
+        <span>全选</span>
+        <button class="news_delete" href="javascript:void(0);">删除</button>
+    </footer>
+    <!-- 底部 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__JS__/need_collect.js"></script>
+</body>
+</html>

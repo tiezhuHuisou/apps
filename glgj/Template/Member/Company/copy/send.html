@@ -1,0 +1,78 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/send.css" />
+<script type="text/javascript" src="__JS__/send.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<include file="Sale/ordernav"/>
+			<!-- 发货表单 开始 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<div class="add_form">
+					<!-- 订单编号 -->
+					<div class="add_row">
+						<div class="add_name">订单编号：</div>
+						<input class="t400 noborder" type="text" name="id" value="{$order.id}" readonly="readonly" />
+					</div>
+					<!-- 物流单号 -->
+					<div class="add_row">
+						<div class="add_name">物流单号：</div>
+						<input class="t400" type="text" name="express_no" value="{$order.express_no}" <neq name="order['state']" value="1">readonly</neq> />
+						<empty name="order['express_no']">
+							<eq name="order['state']" value="1">
+								<span class="add_star">*</span>
+							</eq>
+						</empty>
+					</div>
+					<!-- 配送方式 -->
+					<div class="add_row">
+						<div class="add_name">配送方式：</div>
+						<eq name="order['freight_id']" value="1">
+							<select name="express_id">
+								<option value="0">请选择</option>
+								<volist name="expressList" id="ex">
+									<option value="{$ex.id}" <eq name="ex.id" value="$order.express_id">selected="selected"</eq> > {$ex.title}</option>
+								</volist>
+							</select>
+							<else />
+							<input class="t200" type="text" name="" value="{$freight}" readonly="readonly" />
+						</eq>
+						<span class="add_star">*</span>
+					</div>
+					<!-- 配送价钱 -->
+					<div class="add_row">
+						<div class="add_name">配送价钱：</div>
+						<span>{$order['freight_price']}元</span>
+					</div>
+					<empty name="order['express_no']">
+						<eq name="order['state']" value="1">
+							<!-- 发货按钮 -->
+							<div class="add_row">
+								<div class="add_name"></div>
+								<input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="发 货" />
+							</div>
+						</eq>
+					</empty>
+				</div>
+			</form>
+			<!-- 发货表单 结束 -->
+			<!-- 关闭按钮 -->
+			<!--<div class="tac">-->
+			<!--<a class="base_back" href="?g=member&m=sale&a=order">关 闭</a>-->
+			<!--</div>-->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

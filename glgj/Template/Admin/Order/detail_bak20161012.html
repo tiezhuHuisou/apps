@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/order_detail.css" />
+    <script type="text/javascript" src="__JS__/order_detail.js"></script>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>订单详情</h2>
+            </div>
+            <!-- 订单状态 -->
+            <div class="order_top">
+                <p class="nowstatus">当前状态：<span class="nowstatus_info">{$order.state_name}</span></p>
+            </div>
+            <!-- 主体数据 -->
+            <div class="order_info">
+                <ul class="order_info_btn">
+                    <li class="hover">订单信息</li>
+                    <li>发货</li>
+                    <li>日志</li>
+                    <li>退款</li>
+                </ul>
+                <div class="clear"></div>
+                <div class="order_info_wrapper">
+                    <p class="order_address">收货地址：<span class="order_address_detail">{$address.name}  {$address.phone} {$regions['0']['name']} {$regions['1']['name']} {$regions['2']['name']} {$address.zip}</span></p>
+                    <p class="order_ct">
+                        <strong>订单编号：</strong>
+                        <span class="order_ct_code">{$order.id}</span>
+                        <strong>成交时间：</strong>
+                        <span class="order_ct_time">{$order.ctime|date="Y-m-d H:i",###}</span>
+                    </p>
+                    <!-- 订单表格 -->
+                    <table class="order_table">
+                        <!-- 订单头部 -->
+                        <tr class="order_header">
+                            <th class="order_product">商品</th>
+                            <th class="order_singleprice">单价（元）</th>
+                            <th class="order_number">数量（件）</th>
+                            <!-- <th class="order_discount">优惠</th> -->
+                            <th class="order_totalprice">总价（元）</th>
+                            <!-- <th class="order_fee">运费（元）</th> -->
+                            <th class="order_status">状态</th>
+                        </tr>
+                        <!-- 订单列表 -->
+                        <volist name="ordersub" id="or">
+                            <if condition="$or.tmp neq 1">
+                             <td class="order_product" colspan="5" height="40">
+                              该商品不存在或已被删除
+                          </td>
+                          <else /><tr class="order_list">
+                          <!-- 订单信息 -->
+                          <td class="order_product">
+                             <p class="order_product_pic">
+                                 <img src="{$or.gpic}" width="66" height="66" />
+                             </p>
+                             <p class="order_product_name">{$or.goodname} <notempty name="or.spec_info">{$or.spec_info}</notempty></p>
+                         </td>
+                         <td class="order_singleprice">￥{$or.unitprice}</td>
+                         <td class="order_number">{$or.nums}</td>
+                         <!-- <td class="order_discount">省￥0.00</td> -->
+                         <td class="order_totalprice">￥{$or.totalprice}</td>
+                                <!-- <td class="order_fee">
+                                    <span class="fee">￥{$order.freight_price}</span>
+                                    <span class="express">（快递）</span>
+                                </td> -->
+                                <td class="order_status">
+                                 {$order.state_name}
+                             </td>
+                         </tr>
+                     </if>
+                 </volist>
+             </table>
+             <p class="realpay">实付款：<span class="realpay_money">￥{$order.pay_price}</span>元（含运费￥{$order.freight_price}）</p>
+         </div>
+         <div class="order_info_wrapper no">
+             <form class="form-horizontal" name="" action="?g=admin&m=product&a=sendOrder" method="post">
+              <input type="hidden" name="orderid" value="{$order.id}">
+              <table class="send_table">
+               <tr>
+                <td class="w120">订单编号：</td>
+                <td>{$order.id}</td>
+                <td class="w120">发货时间：</td>
+                <td><notempty name="order.send_time">{$order.send_time|date="Y-m-d H:i",###}<else />未发货</notempty></td>
+            </tr>
+            <tr>
+                <td class="w120">运费模版：</td>
+                <td>
+                                <!-- <select class="pl3" name="expressid">
+                                    <option value="0">请选择</option>
+                                    <volist name="exress" id="ex">
+                                    <option value="{$ex.id}" <eq name="ex.id" value="$order.freight_id">selected="selected"</eq> > {$ex.title}</option>
+                                    </volist>
+                                </select> -->
+                                {$exress.title}
+                                <input type="hidden" name="expressid" value="{$order['freight_id']}" />
+                            </td>
+                            <td class="w120">配送价钱：</td>
+                            <td class="send_price">￥{$order.freight_price}</td>
+                        </tr>
+                        <tr>
+                            <td class="w120">物流单号：</td>
+                            <td>
+                                <input class="i200" type="text" name="express_number" value="{$order.express_no}" />
+                            </td>
+                                <!-- <td class="w120">物流公司：</td>
+                                <td>天天快递</td> -->
+                            </tr>
+                          <!-- 操作 -->
+                          <tr class="add_opt">
+                              <td></td>
+                              <td>
+                                  <input class="opt_btn ajax-post mgl0" target-form="form-horizontal" type="submit" value="确认" />
+                              </td>
+                          </tr>        
+                      </table>
+                  </form>
+              </div>
+              <div class="order_info_wrapper no">
+                <table class="order_table">
+                    <!-- 头部 开始 -->
+                    <tr class="order_header">
+                        <th colspan="4">支付记录</th>
+                    </tr>
+                    <tr class="order_list">
+                        <td height="40">交易流水号</td>
+                        <td height="40">支付金额</td>
+                        <td height="40">支付方式</td>
+                        <td height="40">支付时间</td>
+                    </tr>
+                    <!-- 头部 结束 -->
+                    <!-- 一条数据 开始 -->
+                    <tr class="order_list">
+                        <td height="40">{$payLog['trade_no']}</td>
+                        <td height="40">￥{$payLog['pay_price']}</td>
+                        <td height="40">{$paymentList[$payLog['payment_id']]}</td>
+                        <td height="40">{$payLog['add_time']|date='Y-m-d H:i:s', ###}</td>
+                    </tr>
+                    <!-- 一条数据 结束 -->
+                </table>
+                <table class="order_table">
+                    <!-- 头部 开始 -->
+                    <tr class="order_header">
+                        <th colspan="4">操作日志</th>
+                    </tr>
+                        <!-- <tr class="order_list">
+                            <td>操作</td>
+                            <td>时间</td>
+                        </tr> -->
+                        <!-- 头部 结束 -->
+                        <volist name="clogList" id="vo">
+                            <!-- 一条数据 开始 -->
+                            <tr class="order_list">
+                                <td height="40"><span style="margin-right:30px;">{$vo['remark']}</span>{$vo['addtime']|date='Y-m-d H:i:s', ###}</td>
+                                <!-- <td></td> -->
+                            </tr>
+                            <!-- 一条数据 结束 -->
+                        </volist>
+                    </table>
+                </div>
+                <div class="order_info_wrapper no">
+                    <p class="order_tips">使用余额支付的订单会直接将钱退回用户钱包中，其他支付方式请自行完成退款流程再进行【打款完成】的操作</p>
+                    <div class="order_line">
+                        <div class="line_wrap">
+                            <div class="line_list">退款理由：{$order['reason']}</div>
+                        </div>
+                    </div>
+                    <empty name="order.unreason">
+                        <div class="order_line">
+                            <label for="line_text" class="line_label">若拒绝退款请填写理由:</label>
+                            <input id="line_text" class="" type="text"/>
+                        </div>
+                        <else />
+                        <div class="order_line">
+                            <label for="line_text" class="line_label">拒绝退款理由:{$order['reason']}</label>
+                            
+                        </div>
+                    </empty>
+                    <div class="order_opt">
+                        <eq name="order['state']" value="6">
+                            <a class="opt_btn refund_agree" href="javascript:void(0);">同意退款</a>
+                            <a class="opt_btn refund_refuse" href="javascript:void(0);">拒绝退款</a>
+                        </eq>
+                        <eq name="order['state']" value="4">
+                            <a class="opt_btn refund_confirm" href="javascript:void(0);">打款完成</a>
+                        </eq>
+                        <input id="refund_id" type="hidden" value="{$order['id']}" />
+                        <input id="refund_uid" type="hidden" value="{$order['uid']}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+</body>
+</html>

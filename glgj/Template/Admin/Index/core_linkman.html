@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>核心设置</h2>
+                <include file="Index/corenav" />
+			</div>
+            <h3>联系人信息</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <table class="add_table">
+                    <!-- 联系人输入框 -->
+                    <tr>
+                        <td class="w120">联系人：</td>
+                        <td>
+                            <input class="i400" name="linkman" type="text" value="{$info_arr['linkman']|default=''}" datatype="title" nullmsg="请填写联系人" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写应用全称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 职位输入框 -->
+                    <tr>
+                        <td class="w120">职位：</td>
+                        <td>
+                            <input class="i400" name="position" type="text" value="{$info_arr['position']|default=''}" datatype="title" nullmsg="请填写职位" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写职位</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 联系电话输入框 -->
+                    <tr>
+                        <td class="w120">联系电话：</td>
+                        <td>
+                            <input class="i400" name="linktel" type="text" value="{$info_arr['linktel']|default=''}" datatype="mobile" nullmsg="请填写联系电话" errormsg="请填写正确的联系电话" />
+                            <span class="pl3"></span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写联系电话</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 联系邮箱输入框 -->
+                    <tr>
+                        <td class="w120">联系邮箱：</td>
+                        <td>
+                            <input class="i400" name="linkemail" type="text" value="{$info_arr['linkemail']|default=''}" datatype="email" nullmsg="请填写联系邮箱" errormsg="请填写正确的联系邮箱" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写联系邮箱</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 ajax-post chkform" type="submit" target-form="form-horizontal" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

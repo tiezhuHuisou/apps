@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript">
+    var imgUrl = "__IMG__";
+    </script>
+	<script type="text/javascript" src="__JS__/product_add.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>产品管理中心</h2>
+				<a href="?g=admin&m=product">产品列表</a>
+                <a class="hover" href="?g=admin&m=product&a=add">添加产品</a>
+			</div>
+            <h3>添加供应</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="id" value="{$detail.id}"/>
+                <table class="add_table">
+                    <!-- 长标题输入框 -->
+                    <tr>
+                        <td class="w120">标题：</td>
+                        <td>
+                            <input class="i400" type="text" name="title" value="{$detail.title}" datatype="title" nullmsg="请填写标题" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 短标题输入框 -->
+                    <tr>
+                        <td class="w120">短标题：</td>
+                        <td>
+                            <input class="i200" type="text" name="short_title" value="{$detail.short_title}" datatype="title" nullmsg="请填写短标题" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写短标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 属性复选框 -->
+                    <tr>
+                        <td class="w120">属性：</td>
+                        <td class="lh22">
+                        	<volist name="flags" id="fl">
+                                <label class="mgr4">
+                                    <input class="pt3" name="flags[]" type="radio" value="{$fl.att}"   <in name="fl.att" value="$detail.flags">checked="checked"</in> />{$fl.attname}[{$fl.att}]
+                                </label>
+                        	</volist>
+                        </td>
+                    </tr>
+                    <!-- 分类下拉框 -->
+                    <tr>
+                        <td class="w120">分类：</td>
+                        <td>
+                            <select class="pl3" name="sale_category_id">
+                                <option value="0">请选择</option>
+                                <volist name="classify" id="cl">
+                                <option value="{$cl.id}" <eq name="cl.id" value="$detail.sale_category_id">selected="selected"</eq> > {$cl.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 发布企业下拉框 -->
+                    <tr>
+                        <td class="w120">发布企业：</td>
+                        <td>
+                            <select class="pl3" name="company_id">
+                                <option value="0">请选择</option>
+                                <volist name="company" id="co">
+                                <option value="{$co.id}" <eq name="co.id" value="$detail.company_id">selected="selected"</eq> > {$co.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 产品主图按钮 -->
+                    <tr>
+                        <td class="w120">产品主图：</td>
+                        <td>
+                            <a id="supply_mainthumbnail" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <input id="imgurl" name="img" type="hidden" value="{$detail.img}">
+                            <span class="pl3">建议尺寸：260*260</span>
+                        </td>
+                    </tr>
+                    <!-- 产品主图预览 -->
+                    <tr <empty name="detail.img">class="no"</empty>>
+                        <td class="w120">产品主图预览：</td>
+                        <td>
+                            <img id="imgId" src="{$detail.img}" width="130" height="130" />
+                        </td>
+                    </tr>
+                    <!-- 特荐/推荐图按钮 -->
+                    <tr>
+                        <td class="w120">特荐/推荐图：</td>
+                        <td>
+                            <a id="supply_minorthumbnail" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <input id="imgurl1" name="recommend_img" type="hidden" value="{$detail.recommend_img}">
+                            <span class="pl3">特荐图建议尺寸 640*400；推荐图建议尺寸：640*580</span>
+                        </td>
+                    </tr>
+                    <!-- 特荐/推荐图预览 -->
+                    <tr <empty name="detail.recommend_img">class="no"</empty>>
+                        <td class="w120">特荐/推荐图预览：</td>
+                        <td>
+                            <img id="imgId1" src="{$detail.recommend_img}" width="160" height="100" />
+                        </td>
+                    </tr>
+                    <!-- 轮播图按钮 -->
+                    <tr>
+                        <td class="w120">轮播图：</td>
+                        <td>
+                            <a id="carousel_btn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <span class="pl3">建议尺寸：1024*640</span>
+                        </td>
+                    </tr>
+                    <!-- 轮播图预览 -->
+                    <tr <empty name="allpic">class="no"</empty>>
+                        <td class="w120">轮播图预览：</td>
+                        <td id="carousel_img">
+                        <volist name="allpic" id="pic">
+                            <p class="img_wrap">
+                                <img class="delete_img" src="__IMG__/delete_img.png" width="20" height="20" />
+                                <img src="{$pic.pic_url}"  width="160" height="100" />
+                                <input value="{$pic.pic_url}"  name="allpic[]" type="hidden" />
+                            </p>
+                    	</volist>
+                        </td>
+                    </tr>
+                    <!-- 数量 -->
+                    <tr>
+                        <td class="w120">数量：</td>
+                        <td>
+                            <input class="i200" type="text" name="num" value="{$detail.num}" datatype="n" nullmsg="请填写数量" errormsg="请填写数字" />
+                            <select class="pl3" name="unit">
+                                <option value="1" <eq name="detail.unit" value="1">selected = "selected"</eq>>件</option>
+                                <option value="2" <eq name="detail.unit" value="2">selected = "selected"</eq>>批</option>
+                                <option value="3" <eq name="detail.unit" value="3">selected = "selected"</eq>>千克</option>
+                                <option value="4" <eq name="detail.unit" value="4">selected = "selected"</eq>>块</option>
+                                <option value="5" <eq name="detail.unit" value="5">selected = "selected"</eq>>台</option>
+                                <option value="6" <eq name="detail.unit" value="6">selected = "selected"</eq>>吨</option>
+                            </select>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写数量</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 单价 -->
+                    <tr>
+                        <td class="w120">单价：</td>
+                        <td>
+                            <input class="i200" type="text" name="price" value="{$detail.price}" datatype="price" nullmsg="请填写单价" errormsg="请填写正确的单价（整数或包含两位小数）" />
+                            <span>元</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写单价</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 关键词 -->
+                    <!-- <tr>
+                        <td class="w120">关键词：</td>
+                        <td>
+                            <input class="i400" name="seo_keywords" type="text" value="{$detail.seo_keywords}" />
+                        </td>
+                    </tr> -->
+                    <!-- 描述 -->
+                    <!-- <tr>
+                        <td class="w120">描述：</td>
+                        <td>
+                            <textarea class="t400" name="seo_description">{$detail.seo_description}</textarea>
+                        </td>
+                    </tr> -->
+                    <!-- 内容 -->
+                    <tr>
+                        <td class="w120">商品详情：</td>
+                        <td>
+                            <textarea id="supply_content" name="summary" datatype="*" nullmsg="请填写商品详情">{$detail.summary}</textarea>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写商品详情</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 是否显示 -->
+                    <tr>
+                        <td class="w120">是否显示：</td>
+                        <td>
+            				<label class="mgr">
+                                <input class="pt3" type="radio" name="status" value="1" checked="checked"<eq name="detail.status" value="1"> checked="checked" </eq> />
+                                <span>显示</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="status" value="0" <eq name="detail.status" value="0"> checked="checked" </eq> />
+                                <span>不显示</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

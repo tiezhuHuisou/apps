@@ -1,0 +1,14 @@
+/* 分享方式弹框 */
+.share_bomb_box{z-index:3;width:100%;background:#fff;position:fixed;bottom:0;text-align:center;}
+.share_bomb_box .share_bomb_box_title{height:60px;line-height:60px;border-bottom:1px solid #dcdcdc;}
+.share_bomb_box .share_bomb_box_line .line{height:93px;display:inline-block;float:left;}
+.share_bomb_box .share_bomb_box_line .line i{width:60px;height:60px;display:inline-block;background:url("../images/share_type_icon.png") no-repeat center;background-size:100%;}
+.share_bomb_box .share_bomb_box_line .line .line_weixin_friend{background-position:0 -2px;}
+.share_bomb_box .share_bomb_box_line .line .line_friend_circle{background-position:0 -60px;}
+.share_bomb_box .share_bomb_box_line .line .line_sina{background-position:0 -120px;}
+.share_bomb_box .share_bomb_box_line .line .line_qq{background-position:0 -180px;}
+.share_bomb_box .share_bomb_box_line .line .line_qzone{background-position:0 -240px;}
+.share_bomb_box .share_bomb_box_line .line .line_tencent_blog{background-position:0 -300px;}
+.share_bomb_box .share_bomb_box_cancel{display:inline-block;margin:15px 0 10px;border-radius:5px;width:80%;height:30px;line-height:30px;background:#f15252;color:#fff;text-align:center;}
+/* 遮罩层 */
+.mask{width:100%;height:100%;background:rgba(0,0,0,0.5);position:fixed;top:0;z-index:2;}

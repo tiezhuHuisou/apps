@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/carousel.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/news.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/classify.css" />
+</head>
+<body>
+	<!-- 头部 -->
+	<include file="Common/header_classify"/>
+	<!-- 可视区域 -->
+	<div class="viewport">
+	<notempty name="banner_list">
+			<!-- 轮播 -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<foreach name="banner_list" item="liv">
+						<div class="swiper-slide">
+							<a href="{$liv['url']|default='javascript:void(0);'}"><img src="{$liv['thumbnail']}"  width="100%" height="auto" /></a>
+						</div>
+					</foreach>	
+				</div>
+				<div class="swiper-pagination"></div>
+				<!-- <div class="swiper-mask">
+					<p></p>
+					<div class="swiper-pagination"></div>
+				</div> -->
+			</div>
+		</notempty>
+		<notempty name="article_list">
+			<!-- 资讯1 -->
+			<div class="news_wrap">
+				<!-- 资讯列表 -->
+				<div class="news_list">
+					<ul>
+						<foreach name="article_list" item="liv">
+							<li>
+								<a href="?g=app&m=news&a=detail&id={$liv['id']}">
+									<notempty name="liv.image">
+									<img class="fl mgl16 delay" src="{$liv['image']}" data-echo="{$liv['image']}" width="90" height="70" />
+									</notempty>
+									<div class="new_title">
+										<p class="new_title_main">{$liv['title']}</p>
+										<p class="new_title_sub">{$liv['short_title']}</p>
+									</div>
+									<div class="clear"></div>
+								</a>
+							</li>
+						</foreach>
+					</ul>
+				</div>
+			</div>
+			<!-- 滑屏至底部提示信息 -->
+			<div class="loading">
+				<img src="__STATIC__/images/loading.gif" width="20" height="20" />
+			</div>
+			<else />
+			<!-- 数据为空时 -->
+			<div class="common_empty">
+				<img src="__IMG__/common_empty.png" width="120" height="120">
+				<p>暂无资讯</p>
+				<a href="?g=app&m=index">返回首页</a>
+			</div>
+		</notempty>
+	</div>
+	<!-- 底部 -->
+	<include file="Common/footer"/>
+	<!-- 分类列表 开始 -->
+	<div class="classify_nav">
+		<div class="classify_one">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<notempty name="category_list[0]">
+				<foreach name="category_list[0]" item="val">
+					<notempty name="category_list[$val['cid']]">
+						<a class="classify_item" href="javascript:void(0);" data-cid="{$val['cid']}" data-flag="1">{$val['cname']}</a>
+						<else />
+						<a class="classify_item" href="?g=app&m=news&categoryid={$val['cid']}" data-cid="{$val['cid']}" data-flag="0">{$val['cname']}</a>
+					</notempty>
+				</foreach>
+				<else />
+				<a href="javascript:void(0);">暂无分类</a>
+			</notempty>
+		</div>
+		<div class="classify_two no">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<a class="back_one" href="javascript:void(0);">返回上级分类</a>
+		</div>
+		<div class="classify_three no">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<a class="back_two" href="javascript:void(0);">返回上级分类</a>
+		</div>
+	</div>
+	<!-- 遮罩层 -->
+	<div class="mask"></div>
+	<!-- 分类列表 结束 -->
+	<script type="text/javascript">
+		var data 		= {$category_arr};
+		var categoryid  = "{$categoryid}";
+		var ajaxFlag 	= false;
+	</script>
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+	<script type="text/javascript" src="__JS__/news.js"></script>
+	<script type="text/javascript" src="__JS__/classify.js"></script>
+	<script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

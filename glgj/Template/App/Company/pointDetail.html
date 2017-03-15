@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/find.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+    <link rel="stylesheet" type="text/css" href="__CSS__/pontDetail.css"/>
+</head>
+<body>
+    <include file="Common/header_more"/>
+    <!-- 可视区域 开始 -->
+    <section class="viewport">
+        <!-- 头部导航 -->
+        <div class="weui-tab">
+            <div class="weui-navbar">
+                <a href="javascript:;" class="weui-tabbar__item">
+                    <div class="weui-tabbar__icon">
+                        <img src="__IMG__/gsxq_nomal.png" alt="">
+                    </div>
+                    <p class="weui-tabbar__label">公司详情</p>
+                </a>
+                <a href="javascript:;" class="weui-tabbar__item">
+                    <div class="weui-tabbar__icon">
+                        <img src="__IMG__/wd_nomal.png" alt="">
+                    </div>
+                    <p class="weui-tabbar__label">全部网点</p>
+                </a>
+                <a href="javascript:;" class="weui-tabbar__item">
+                    <div class="weui-tabbar__icon">
+                        <img src="__IMG__/lxwd_nomal.png" alt="">
+                    </div>
+                    <p class="weui-tabbar__label">联系网点</p>
+                </a>
+            </div>
+        </div>
+        <!-- 头部导航结束 -->
+        <!-- 地图区域 -->
+        <div id="map"></div>
+        <!-- 地图区域 -->
+    </section>
+    <script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+    <script type="text/javascript" src="__JS__/pointDetail.js"></script>
+</body>
+</html>

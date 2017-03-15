@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<script type="text/javascript" src="__STATIC__/layer/laydate.js"></script>
+    <script type="text/javascript" src="__JS__/coupon_add.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>优惠券管理中心</h2>
+                <a href="?g=admin&m=more&a=coupon">优惠券列表</a>
+                <a class="hover" href="?g=admin&m=more&a=couponadd">添加优惠券</a>
+			</div>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <table class="add_table">
+                    <!-- 优惠券类型 -->
+                    <tr>
+                        <td class="w120">类型：</td>
+                        <td>
+                            <select name="coupon_type">
+                                <option value="1">通用类型</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 优惠券面值 -->
+                    <tr>
+                        <td class="w120">面值：</td>
+                        <td>
+                            <input class="i200" type="text" name="money" value="{$detail.money}" datatype="price" nullmsg="请填写优惠券面值" errormsg="请填写正确的优惠券面值" />
+                            <span class="pl3">元 （请保留2位小数,例如：100.00）</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写优惠券面值</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 优惠券使用条件 -->
+                    <tr>
+                        <td class="w120">使用条件：</td>
+                        <td>
+                            <input class="i200" type="text" name="condition" value="{$detail.condition|default='0'}" datatype="n" nullmsg="请填写优惠券使用条件" errormsg="请填写正确的优惠券使用条件" />
+                            <span class="pl3">元（即订单满多少元可用，0元代表无任何附加使用条件）</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写优惠券使用条件</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 优惠券使用期限 -->
+                    <tr>
+                        <td class="w120">使用期限：</td>
+                        <td>
+                            <input class="i200" type="text" name="effect_time" value="{$detail.effect_time}" datatype="n" nullmsg="请填写优惠券使用期限" errormsg="请填写正确的优惠券使用期限" />
+                            <span class="pl3">天</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写优惠券使用期限</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 优惠券活动开始日期 -->
+                    <tr>
+                        <td class="w120">活动开始日期：</td>
+                        <td>
+                            <input id="start_date" class="laydate-icon i200" type="text" name="start_time" value="{$detail.start_time|date='Y-m-d',###}" datatype="*" nullmsg="请选择活动开始日期" errormsg="请选择活动开始日期" />
+
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请选择活动开始日期</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 优惠券活动结束日期 -->
+                    <tr>
+                        <td class="w120">活动结束日期：</td>
+                        <td>
+
+                            <input id="end_date" class="laydate-icon i200" type="text" name="end_time" value="{$detail.end_time|date='Y-m-d',###}" datatype="*" nullmsg="请选择活动结束日期" error="请选择活动结束日期" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请选择活动结束日期</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 chksubmit ajax-post" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

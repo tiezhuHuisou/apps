@@ -1,0 +1,8 @@
+.list_table{width:700px;border:1px solid #dcdcdc;margin-top:10px;}
+.list_table .list_header{background:#f2f2f2;border-bottom:1px solid #dcdcdc;}
+.list_table .list_header th{padding:10px 0;}
+.list_table .list_items{border-bottom:1px solid #dcdcdc;}
+.list_table .list_items td{padding:10px 0;text-align:center;}
+.list_table .list_items td.tl{text-align:left;}
+.list_table .list_items td.tr{text-align:right;}
+.list_table .list_items td input[type="text"]{width:120px;padding:2px;text-align:center;}

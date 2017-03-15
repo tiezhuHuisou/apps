@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>优惠券管理中心</h2>
+                <a href="?g=admin&m=activity&a=coupon">优惠券列表</a>
+                <a class="hover" href="?g=admin&m=activity&a=couponadd">添加优惠券</a>
+            </div>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="id" value="{$detail['id']}" />
+                <table class="add_table">
+                    <!-- 优惠券名称 -->
+                    <tr>
+                        <td class="w120">优惠券名称：</td>
+                        <td>
+                            <input class="i200" type="text" name="title" value="{$detail.title}" />
+                            <span class="pl3">为了美观，限制最多十个字符</span>
+                        </td>
+                    </tr>
+                    <!-- 优惠券图片 -->
+                    <tr>
+                        <td class="w120">优惠券图片：</td>
+                        <td>
+                            <a id="logobtn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <input id="logourl" name="img" type="hidden" value="{$detail.img}" />
+                            <span class="pl3">建议尺寸：200*200</span>
+                        </td>
+                    </tr>
+                    <!-- 优惠券图片预览 -->
+                    <tr <empty name="detail.img">class="no"</empty>>
+                        <td class="w120">优惠券图片预览：</td>
+                        <td>
+                            <img id="logoId" src="{$detail.img}" width="100" height="100" />
+                        </td>
+                    </tr>
+                    <!-- 优惠券类型 -->
+                    <tr>
+                        <td class="w120">类型：</td>
+                        <td>
+                            <select id="coupon_type" name="coupon_type">
+                                <option value="1" selected>通用类型</option>
+                                <option value="2" <eq name="detail['coupon_type']" value="2">selected</eq>>指定商家</option>
+                                <option value="3" <eq name="detail['coupon_type']" value="3">selected</eq>>指定分类</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 指定商家 -->
+                    <tr <neq name="detail['coupon_type']" value="2">class="no"</neq>>
+                        <td class="w120">指定商家：</td>
+                        <td>
+                            <select id="company_id" name="company_id">
+                                <option value="">请选择指定商家</option>
+                                <volist name="companyList" id="cl">
+                                    <option value="{$cl['id']}" <eq name="detail['company_id']" value="$cl['id']">selected</eq>>{$cl['name']}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 指定分类 -->
+                    <tr <neq name="detail['coupon_type']" value="3">class="no"</neq>>
+                        <td class="w120">指定分类：</td>
+                        <td>
+                            <select id="category_id" name="product_category_id">
+                                <option value="">请选择指定分类</option>
+                                <volist name="categoryList" id="cl">
+                                    <option value="{$cl['id']}" <eq name="detail['product_category_id']" value="$cl['id']">selected</eq>>{$cl['sty']}{$cl['name']}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 优惠券面值 -->
+                    <tr>
+                        <td class="w120">面值：</td>
+                        <td>
+                            <input class="i50" type="text" name="money" value="{$detail.money}" datatype="price" nullmsg="请填写优惠券面值" errormsg="请填写正确的优惠券面值" />
+                            <span class="pl3">元 （请保留2位小数,例如：100.00）</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写优惠券面值</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 优惠券使用条件 -->
+                    <tr>
+                        <td class="w120">使用条件：</td>
+                        <td>
+                            <input class="i50" type="text" name="condition" value="{$detail.condition}" />
+                            <span class="pl3">元（即满多少元可用，<span class="red">填0代表无消费条件限制</span>）</span>
+                        </td>
+                    </tr>
+                    <!-- 优惠券发放数量 -->
+                    <tr>
+                        <td class="w120">发放数量：</td>
+                        <td>
+                            <input class="i50" type="text" name="issue_num" value="{$detail.issue_num}" />
+                            <span class="pl3">张,（<span class="red">填0代表不限制张数</span>）</span>
+                        </td>
+                    </tr>
+                    <!-- 使用时间 -->
+                    <tr>
+                        <td class="w120">使用时间限制：</td>
+                        <td>
+                            <input id="start_date" class="i200 laydate-icon" type="text" name="start_time" value="<notempty name='detail.start_time'>{$detail['start_time']|date='Y-m-d H:i:s',###}</notempty>" />
+                            <span> 至 </span>
+                            <input id="end_date" class="i200 laydate-icon" type="text" name="end_time" value="<notempty name='detail.end_time'>{$detail['end_time']|date='Y-m-d H:i:s',###}</notempty>" />
+                            <span>内可以用</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">使用时间限制说明：</td>
+                        <td>
+                            <p>1、使用时间限制2个时间都不设置代表无任何时间限制</p>
+                            <p>2、只设置第一个时间，代表在第一个时间之后的任何时间都可以使用</p>
+                            <p>3、只设置第二个时间，代表在第二个时间之前可以使用</p>
+                            <p>4、2个时间都设置，代表在2个时间区域内可以使用</p>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 chksubmit ajax-post" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/layer/laydate.js"></script>
+    <script type="text/javascript" src="__JS__/coupon_add.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>管理员分组管理中心</h2>
+				<a href="?g=admin&m=user&a=group">管理员分组列表</a>
+				<a class="hover" href="?g=admin&m=user&a=group_add">添加管理员分组</a>
+			</div>
+			<h3>添加分组</h3>
+			<!-- 添加管理员分组表单 -->
+			<form class="form-horizontal chkform" name="" action="" method="post" >
+				<input  type="hidden" name="gid" value="{$detail.gid}"/>
+				<table class="add_table">
+					<tr>
+						<td class="w120">组名：</td>
+						<td>
+							<input class="i400" type="text" name="gname" value="{$detail.gname}" datatype="title" nullmsg="请填写组名（2-50个字符）" errormsg="请填写组名（2-50个字符）"/>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写组名</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">权限：</td>
+						<td>
+							<foreach name="rule_list" item="val">
+							<label class="add_label">
+								<input type="checkbox" name="rule[]" <in name="val['id']" value="$detail['rule']">checked</in> value="{$val['id']}" />{$val['title']}
+							</label>
+							</foreach>
+							
+						</td>
+					</tr>
+					<!-- 提交按钮 -->
+					<tr class="add_opt">
+						<td></td>
+						<td>
+							<input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确定提交">
+							<input class="opt_btn" type="reset" value="重置表单">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

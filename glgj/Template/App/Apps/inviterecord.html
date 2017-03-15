@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/apps_inviterecord.css" />
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script src="__JS__/apps_inviterecord.js"></script>
+</head>
+<body>
+    <neq name="Think.get.appsign" value="1">
+        <!-- 顶部 开始 -->
+        <div class="header">
+            <a class="header_left" href="javascript:history.go(-1);"></a>
+            <p class="header_title">我的邀请记录</p>
+            <div class="header_right"></div>
+        </div>
+        <!-- 顶部 结束 -->
+    </neq>
+    <!-- 可视区域 开始 -->
+    <section <neq name="Think.get.appsign" value="1">class="no_footer"</neq>>
+        <notempty name="list">
+            <!-- 记录 开始 -->
+            <ul class="code_items">
+                <volist name="list" id="vo">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="{$vo['head_pic']|default='/Public/Apps/images/member_default.png'}" width="80" height="80" />
+                            <div class="items_wrap">
+                                <p class="items_title">用户名:{$vo['name']|default='佚名'}</p>
+                            </div>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+            <else />
+            <!-- 数据为空时 -->
+            <div class="common_empty">
+                <img src="__IMG__/common_empty.png" width="120" height="120">
+                <p>暂无邀请记录</p>
+                <a href="javascript:history.go(-1);">返回</a>
+            </div>
+            <!-- 记录 结束 -->
+        </notempty>
+    </section>
+    <!-- 可视区域 结束 -->
+</body>
+</html>

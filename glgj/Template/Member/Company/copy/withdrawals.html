@@ -1,0 +1,88 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/refund.css" />
+<script type="text/javascript" src="__JS__/refund.js"></script>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <include file="Sale/withdrawalsnav" />
+            <!-- 提现申请表单 开始 -->
+            <form class="chkform form-horizontal" name="" action="" method="post">
+                <input type="hidden" name="cid" value="{$user_info['company_id']}" />
+                <input type="hidden" name="cname" value="{$user_info['name']}" />
+                <div class="add_form">
+                    <div class="add_row">
+                        <div class="add_name">可提现销售利润：</div>
+                        {$withdrawals|default=0}元
+                        <input type="hidden" name="balance" value="{$withdrawals|default=0}" readonly />
+                    </div>
+                    <gt name="withdrawals" value="0">
+                        <!-- 提现金额 -->
+                        <div class="add_row">
+                            <div>
+                                <div class="add_name">提现金额：</div>
+                                <input class="t400" type="text" name="withdrawals" value="" placeholder="请输入提现金额" datatype="price" nullmsg="请输入提现金额" errormsg="请填写正确的提现金额" />
+                                <span class="add_star">*</span>
+                            </div>
+                            <!-- 表单验证提示信息 -->
+                            <div>
+                                <div class="info">
+                                    <span class="Validform_checktip">请输入提现金额</span>
+                                    <span class="dec">
+                                        <s class="dec1">&#9670;</s>
+                                        <s class="dec2">&#9670;</s>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 收款帐号 -->
+                        <div class="add_row">
+                            <div>
+                                <div class="add_name">收款帐号：</div>
+                                <input class="t400" type="text" name="task" value="" placeholder="请输入收款帐号" />
+                                <span class="add_star">*转入余额可不填</span>
+                            </div>
+                        </div>
+                        <!-- 收款人姓名 -->
+                        <div class="add_row">
+                            <div>
+                                <div class="add_name">收款人姓名：</div>
+                                <input class="t400" type="text" name="payee" value="" placeholder="请输入收款人姓名" />
+                                <span class="add_star">*转入余额可不填</span>
+                            </div>
+                        </div>
+                        <!-- 收款方式 -->
+                        <div class="add_row">
+                            <div class="add_name">收款方式：</div>
+                            <select name="type">
+                                <option value="1">支付宝</option>
+                                <option value="2">银联转账</option>
+                                <option value="3">转入余额</option>
+                            </select>
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 申请按钮 -->
+                        <div class="add_row">
+                            <div class="add_name"></div>
+                            <input class="form_btn ajax-post chksubmit" type="submit" target-form="form-horizontal" value="申 请" />
+                        </div>
+                    </gt>
+                </div>
+            </form>
+            <!-- 提现申请表单 结束 -->
+        </div>
+        <!-- 主体 结束 -->
+    </div>
+</body>
+</html>

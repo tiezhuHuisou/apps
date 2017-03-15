@@ -1,0 +1,19 @@
+/*头部样式*/
+header .vt{display: inline-block;margin-left: 5px; border:1px solid #fff;width: 10px;height: 10px;transform: rotate(45deg);border-left: 0px;border-top:0;margin-left: 7px;
+    margin-bottom: 3px}
+header .search_list{position: absolute;top: 55px;left: calc(50% - 75px); width: 150px;font-size: 14px;display: none;}
+header .search_list li{background: rgba(0,0,0,0.7);height: 40px;line-height: 40px;text-align: center;margin-bottom: 2px;}
+header .search_list li a{color: #f6fbf9;display: block}
+/*内容样式*/
+section input{background: #f6fbf9;border:1px solid #e5e5e5;}
+.address{margin: 30px 10px; height: 40px;line-height: 40px;display: flex;}
+.address div{flex:1;position: relative;}
+.address div span{position: absolute;top: -10px;left: 0;width: 100%;height: 100%;text-align: center;font-size: 19px;font-weight: 500;}
+.address .op0{opacity: 0;}
+.address input{position: absolute;top: -10px;left: 0;width: 100%;height: 100%; margin:5px 0;height: 30px;font-size: 15px;-webkit-box-sizing: border-box;text-align: center;}
+.address .cut{display: inline-block;width: 30px;height:20px;background: url("../images/qiehuan.png") center center no-repeat;color: #333;background-size: 15px 15px;}
+.company{padding: 0 30px;}
+.company .company_input{padding: 7px;font-size:15px;width: 85%;}
+/*按钮样式*/
+.btn_group{width: 90%;margin: 30px auto;}
+.btn_group .weui-btn_primary{background-color: #38d163;height: 40px;line-height: 40px;}

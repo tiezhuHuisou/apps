@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/find.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/announce.css"/>
+</head>
+<body>
+<include file="Common/header_more"/>
+<!-- 可视区域 开始 -->
+<section class="viewport">
+    <notempty name="list">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+                <volist name="list" id="vo">
+                    <a href="?g=app&m=product&a=announceDetail&id={$vo.id}">
+                        <div class="weui-media-box weui-media-box_text">
+                            <span class="doit green_38d163">•</span>
+                            <div class="content_desc">
+                                <p class="weui-media-box__desc read_aleady">{$vo.title}</p>
+                                <p class="weui-media-box__desc read_aleady">{$vo.addtime|date="Y-m-d",###}</p>
+                            </div>
+                        </div>
+                    </a>
+                </volist>
+            </div>
+        </div>
+        <!-- 滑屏至底部提示信息 -->
+        <div class="loading">
+            <img src="__STATIC__/images/loading.gif" width="20" height="20"/>
+        </div>
+        <else/>
+        <!--数据为空时-->
+        <div class="common_empty">
+            <img src="__IMG__/common_empty.png" width="120" height="120">
+            <p>暂无暂无公告信息</p>
+            <a href="?g=app&m=index">返回首页</a>
+        </div>
+    </notempty>
+    <input type="hidden" class="classify_nav" value="{'没有了'|default=0}">
+</section>
+<script type="text/javascript">
+    var title = "{$Think.get.title}";
+    var ajaxFlag = false;
+
+</script>
+<script type="text/javascript" src="__JS__/announce.js"></script>
+</body>
+</html>

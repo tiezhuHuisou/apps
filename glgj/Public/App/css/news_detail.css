@@ -1,0 +1,5 @@
+.detail_top{margin:10px 16px 10px;}
+.detail_top h3{margin-bottom:6px;}
+.detail_top .top_info{display:-webkit-box;margin-bottom:6px;}
+.detail_top .top_info span{max-width:50%;-webkit-box-flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;}
+.detail_top .top_info .info_time{color:#8a8a8a;text-align:right;}

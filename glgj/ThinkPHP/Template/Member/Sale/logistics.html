@@ -1,0 +1,67 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/logistics.css" />
+<script type="text/javascript" src="__JS__/logistics.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=sale&a=detail&id={$order_info.orderid}">订单详情</a>
+				<a href="?g=member&m=sale&a=send&id={$order_info.orderid}">发货</a>
+				<a class="hover" href="?g=member&m=sale&a=logistics&id={$order_info.orderid}">物流跟踪</a>
+			</div>
+			<!-- 收货地址 -->
+			<div class="row">
+				<span>运单编号：</span>
+				<span>{$order_info['express_number']}</span>
+			</div>
+			<!-- 当前状态 -->
+			<div class="row">
+				<span>快递名称：</span>
+				<span>{$exress_arr[$order_info['express_companyid']]}</span>
+			</div>
+			<!-- 订单编号 -->
+			<div class="row">
+				<span>物流状态：</span>
+				<span><switch name="detail.state">
+	                									    <case value="0">在途</case>
+															<case value="1">揽件</case>
+															<case value="2">疑难</case>
+															<case value="3">签收</case>
+															<case value="4">退签</case>
+															<case value="5">派件</case>
+															<case value="6">退回</case>
+															<default />
+                									  </switch></td></span>
+			</div>
+			<!-- 物流详情 开始 -->
+			<div class="row_title">
+				<span>物流跟踪</span>
+			</div>
+			<foreach name="detail['data']" item="val">
+			<div class="row">
+				<span>{$val['ftime']}}</span>
+				<span>{$val['context']}</span>
+			</div>
+			</foreach>
+			<!-- 物流详情 结束 -->
+			<!-- 关闭按钮 -->
+			<div class="tac">
+				<a class="base_back" href="?g=member&m=sale&a=order">关 闭</a>
+			</div>
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

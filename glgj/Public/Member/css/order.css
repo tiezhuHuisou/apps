@@ -1,0 +1,10 @@
+/* 表格 */
+.order{margin-top:20px;}
+.order tr{border:1px solid #dcdccd;}
+.order thead tr{height:46px;border:none;}
+.order tbody tr{height:100px;}
+.order tr.empty{height:20px;border:none;}
+.order tr.order_info{height:36px;text-indent:24px;}
+.order tr td.ti36{text-indent:36px;}
+.order .order_title{font-size:16px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.order .opt a:hover{text-decoration:underline;}

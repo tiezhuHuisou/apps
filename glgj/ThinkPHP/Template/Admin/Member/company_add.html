@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+	<script type="text/javascript" src="__JS__/company_add.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>企业管理中心</h2>
+				<a href="?g=admin&m=member&a=company">企业管理</a>
+				<a class="hover" href="?g=admin&m=member&a=company_add">添加企业</a>
+			</div>
+			<h3>添加企业</h3>
+			<!-- 添加企业表单 -->
+			<form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+				<!--<input type="hidden" name="id" value="{$detail.id}">-->
+				<!--<input type="hidden" id="lng" value="{$detail.lng}">-->
+				<!--<input type="hidden" id="lat" value="{$detail.lat}">-->
+				<table class="add_table">
+					<!--<div>-->
+						<!--<div style="width:520px;height:340px;border:1px solid gray;margin-left:40px;" id="container"></div>-->
+						<!--<tr id="r-result">-->
+							<!--<td class="w120">地址搜索：</td>-->
+							<!--<td>-->
+								<!--<input type="text" id="suggestId" size="20" value="输入地址搜素" onclick="if(this.value==this.defaultValue){this.value=''};" style="height:22px;line-height:22px;border:1px solid #3cf;width:180px;" />-->
+							<!--</td>-->
+						<!--</tr>-->
+						<!--<div id="searchResultPanel" style="display:none;border:1px solid #C0C0C0;width:150px;height:auto;"></div>-->
+						<!--<tr>-->
+					    	<!--<td class="w120">标注参数：</td>-->
+					    	<!--<td>-->
+						    	<!--<input name="p_area" style="height:22px;line-height:22px;border:1px solid #A9BCD6;"  type="text" id="area"  <if condition="$detail.lng neq ''" >value="{$detail.lng},{$detail.lat}"<else />value="120.265094,30.315726"</if> size="42" /> -->
+						    	<!--<a href="javascript:;" onclick="document.getElementById('area').value='120.265094,30.315726';">初始化</a> -->
+					    	<!--</td>-->
+				    	<!--</tr>-->
+					<!--</div>-->
+					<tr>
+						<td class="w120">登陆账号：</td>
+						<td>
+							<input class="i400" type="text" name="mphone" value="{$detail.mphone}" <notempty name="detail.user_id" datatype="mobile" nullmsg="请正确填写手机号" errormsg="请正确填写手机号">readOnly="true"</notempty>>
+							<span class="example">（登陆账号请填手机号码）</span>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请正确填写手机号</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<empty name="detail.user_id">
+						<tr>
+							<td class="w120">登录密码：</td>
+							<td>
+								<input class="i400" type="password" name="password" datatype="*" nullmsg="请填写登录密码" errormsg="请正确填写登录密码" />
+							</td>
+							<!-- 表单验证提示信息 -->
+	                        <td>
+	                            <div class="info">
+	                                <span class="Validform_checktip">请填写登录密码</span>
+	                                <span class="dec">
+	                                    <s class="dec1">&#9670;</s>
+	                                    <s class="dec2">&#9670;</s>
+	                                </span>
+	                            </div>
+	                        </td>
+						</tr>
+						<tr>
+							<td class="w120">确认密码：</td>
+							<td>
+								<input class="i400" type="password" name="password1" recheck="password" datatype="*" nullmsg="请再输入一次密码！" errormsg="您两次输入密码不一致！" />
+							</td>
+							<!-- 表单验证提示信息 -->
+	                        <td>
+	                            <div class="info">
+	                                <span class="Validform_checktip">请再输入一次密码！</span>
+	                                <span class="dec">
+	                                    <s class="dec1">&#9670;</s>
+	                                    <s class="dec2">&#9670;</s>
+	                                </span>
+	                            </div>
+	                        </td>
+						</tr>
+					</empty>
+					<tr>
+						<td class="w120">企业名称：</td>
+						<td>
+							<input class="i400 company_add_name" type="text" name="name" value="{$detail.name}" datatype="*" nullmsg="请填写企业名称" errormsg="请填写企业名称"/>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写企业名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">属性：</td>
+						<td class="lh22">
+							<volist name="flags" id="fl">
+	                            <label class="mgr4"><input class="pt3" name="flags[]" type="radio" value="{$fl.att}" <?php $array = explode(',',$detail['flags']); if(in_array($fl['att'],$array)){?> checked <?php } ?> />{$fl.attname}[{$fl.att}]</label>
+	                        </volist>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">企业分类：</td>
+						<td>
+							<select class="select_sort" name="type_id">
+								<option value="0">请选择</option>
+								<volist name="list" id="li">
+									<option value="{$li.id}" <eq name="li.id" value="$detail.company_category_id">selected="selected"</eq>>{$li.name}</option>
+								</volist>
+							</select>
+						</td>
+					</tr>
+					<input id="imgurl" type="hidden" name="logo" value="{$detail.logo}">
+					<tr>
+						<td class="w120">企业logo：</td>
+						<td>
+							<a id="thumbnail" class="opt_btn mgl0">选择图片</a>
+							<span class="pl3">推荐尺寸120*120</span>
+						</td>
+					</tr>
+					<tr <empty name="detail.logo">style="display:none;"</empty>>
+						<td class="w120">企业logo预览：</td>
+						<td><img id="preview" src="{$detail.logo}" style="border:none;margin-top:10px;" width="100" height="100" /></td>
+					</tr>
+					<tr>
+						<td class="w120">主营行业：</td>
+						<td><textarea class="t400" name="business" datatype="*" nullmsg="请填写主营行业" errormsg="请填写主营行业">{$detail.business}</textarea></td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写主营行业</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">地址：</td>
+						<td>
+							<select class="province" name="province_id">
+							<option value="">请选择所在省</option>
+							<foreach name="region_arr[0]" item="val">
+								<option value="{$val['id']}" <eq name="detail['province_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+							</foreach>
+							
+							</select>
+							<select class="city" name="city_id">
+								<option value="">请选择所在市</option>
+									<foreach name="region_arr[$detail['province_id']]" item="val">
+										<option value="{$val['id']}" <eq name="detail['city_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+									</foreach>
+							</select>
+							<select class="towns" name="countyN">
+								<option value="">请选择所在区/县</option>
+									<foreach name="region_arr[$detail['city_id']]" item="val">
+										<option value="{$val['id']}" <eq name="detail['countyn']" value="$val['id']">selected</eq>>{$val['name']}</option>
+									</foreach>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">详细地址：</td>
+						<td>
+							<input class="i400" type="text" name="address" value="{$detail.address}"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">联系人：</td>
+						<td>
+							<input class="i400" type="text" name="contact_user" value="{$detail.contact_user}"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">性别：</td>
+						<td>
+							<label>
+								<input class="pt3" type="radio" name="sex" value="1" checked="checked"<eq name="detail.sex" value="1"> checked="checked" </eq> />
+								<span>男</span>
+							</label>
+							<label>
+								<input class="company_add_radio" type="radio" name="sex" value="2" <eq name="detail.sex" value="2"> checked="checked" </eq> />
+								<span>女</span>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">职位：</td>
+						<td>
+							<input class="i400" type="text" name="contact_office" value="{$detail.contact_office}"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">网站：</td>
+						<td>
+							<input class="i400" type="text" name="site" value="{$detail.site}"/>
+							<span class="pl3">（例如：http://www.huisou.com）</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">固定电话：</td>
+						<td>
+							<input class="i400" type="text" name="telephone" value="{$detail.telephone}"/>
+							<span class="pl3">（例如：0571-5555555）</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">移动电话：</td>
+						<td>
+							<input class="i400" type="text" name="subphone" value="{$detail.subphone}"datatype="mobile" nullmsg="请正确输入电话号码" errormsg="请正确输入电话号码"/>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请正确输入电话号码</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">传真：</td>
+						 <td>
+						 	<input class="i400" type="text" name="fax" value="{$detail.fax}"  />
+						 </td>
+					</tr>
+					<tr>
+						<td class="w120">联系邮箱：</td>
+						<td>
+							<input class="i400" type="text" name="email" value="{$detail.email}" datatype="email" nullmsg="请正确输入邮箱" errormsg="请正确输入邮箱" />
+						</td>
+						 <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请正确输入邮箱</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr class="company_add_introduce">
+						<td class="w120">企业简介：</td>
+						<td>
+							<textarea class="t400" id="company_add_content" name="summary">{$detail.summary}</textarea>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="w120">是否显示：</td>
+						<td>
+							<label>
+								<input class="pt3" type="radio" name="status" value="1" checked="checked" <eq name="detail.status" value="1"> checked="checked" </eq>/>
+								<span>显示</span>
+							</label>
+							<label>
+								<input class="pt3" type="radio" name="status" value="0" <eq name="detail.status" value="0"> checked="checked" </eq>/>
+								<span>不显示</span>
+							</label>
+						</td>
+					</tr>
+					<!-- 提交按钮 -->
+					<tr class="add_opt">
+						<td></td>
+						<td>
+							<input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确定提交">
+							<input class="opt_btn" type="reset" value="重置表单">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+	<script type="text/javascript">
+		var data={$region_arr_json};
+	</script>
+<!--<script type="text/javascript">-->
+// 百度地图API功能
+<!--function G(id) {-->
+    <!--return document.getElementById(id);-->
+<!--}-->
+<!--var map = new BMap.Map("container");-->
+<!--map.centerAndZoom("北京",12);                   // 初始化地图,设置城市和地图级别。-->
+<!--var ac = new BMap.Autocomplete(    //建立一个自动完成的对象-->
+    <!--{"input" : "suggestId"-->
+    <!--,"location" : map-->
+<!--});-->
+<!--ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件-->
+	<!--var str = "";-->
+	<!--G("searchResultPanel").innerHTML = str;-->
+<!--});-->
+<!--var myValue;-->
+<!--ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件-->
+<!--var _value = e.item.value;-->
+    <!--myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;-->
+    <!--G("searchResultPanel").innerHTML = myValue;-->
+    <!--setPlace();-->
+<!--});-->
+<!--function setPlace(){-->
+    <!--map.clearOverlays();    //清除地图上所有覆盖物-->
+    <!--function myFun(){-->
+        <!--var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果-->
+        <!--map.centerAndZoom(pp, 18);-->
+        <!--map.addOverlay(new BMap.Marker(pp));    //添加标注-->
+    <!--}-->
+    <!--var local = new BMap.LocalSearch(map, { //智能搜索-->
+      <!--onSearchComplete: myFun-->
+    <!--});-->
+    <!--local.search(myValue);-->
+<!--}-->
+
+<!--</script>                    -->
+<!--<script type="text/javascript">-->
+	<!--lng = $("#lng").val();-->
+	<!--lat = $("#lat").val();-->
+	<!--if(lng != ""){-->
+		<!--var point = new BMap.Point(lng,lat);  // 创建点坐标-->
+	<!--}else{-->
+		<!--var point = new BMap.Point(120.265094,30.315726);  // 创建点坐标-->
+	<!--}-->
+	<!--var map = new BMap.Map("container");-->
+	<!--map.centerAndZoom(point, 16);-->
+	<!--map.enableScrollWheelZoom();-->
+	<!--var marker = new BMap.Marker(point);-->
+	<!--map.addOverlay(marker);-->
+	<!--map.addEventListener("click", function(e){-->
+	  <!--document.getElementById("area").value=e.point.lng + "," + e.point.lat;-->
+	  <!--var newpoint=new BMap.Point(e.point.lng,e.point.lat);-->
+	  <!--map.clearOverlays(marker);-->
+	  <!--marker = new BMap.Marker(newpoint);-->
+	  <!--map.addOverlay(marker);-->
+	<!--});-->
+
+<!--</script>-->
+</body>
+</html>

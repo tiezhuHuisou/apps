@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/info.css" />
+	<link rel="stylesheet" type="text/css" href="__STATIC__/check/check.css" />
+</head>
+<body>
+	<!-- 头部 开始 -->
+	<include file="Common/header"/>
+	<!-- 头部 结束 -->
+	<section class="no_footer">
+		<form class="chkform" action="?g=app&m=member&a=info" method="post">
+			<!-- 姓名 -->
+			<div class="row">
+				<div class="title">姓名：</div>
+				<div class="content">
+					<input type="text" name="name" value="{$user_info['name']|default=''}" datatype="title" nullmsg="请填写姓名" errormsg="请正确填写姓名" />
+				</div>
+				<!-- 表单验证提示信息 -->
+				<div>
+				    <div class="info">
+				        <span class="Validform_checktip">请填写姓名</span>
+				        <span class="dec">
+				            <s class="dec1">&#9670;</s>
+				            <s class="dec2">&#9670;</s>
+				        </span>
+				    </div>
+				</div>
+			</div>
+			<!-- 昵称 -->
+			<div class="row">
+				<div class="title">昵称：</div>
+				<div class="content">
+					<input type="text" name="nickname" value="{$user_info['nickname']|default=''}" datatype="title" nullmsg="请填写昵称" errormsg="请正确填写昵称" />
+				</div>
+				<!-- 表单验证提示信息 -->
+				<div>
+				    <div class="info">
+				        <span class="Validform_checktip">请填写昵称</span>
+				        <span class="dec">
+				            <s class="dec1">&#9670;</s>
+				            <s class="dec2">&#9670;</s>
+				        </span>
+				    </div>
+				</div>
+			</div>
+			<!-- 邮箱 -->
+			<div class="row">
+				<div class="title">邮箱：</div>
+				<div class="content">
+					<input type="text" name="email" value="{$user_info['email']|default=''}" placeholder="将会在找回密码时用到" datatype="email" nullmsg="请填写邮箱" errormsg="请正确填写邮箱" />
+				</div>
+				<!-- 表单验证提示信息 -->
+				<div>
+				    <div class="info">
+				        <span class="Validform_checktip">请填写邮箱</span>
+				        <span class="dec">
+				            <s class="dec1">&#9670;</s>
+				            <s class="dec2">&#9670;</s>
+				        </span>
+				    </div>
+				</div>
+			</div>
+			
+			<!-- 性别 -->
+			<div class="row">
+				<div class="title">性别：</div>
+				<div class="content">
+					<label>
+						<input class="radio_box" type="radio" name="sex" value="1" <neq name="user_info['sex']" value="2">checked="checked"</neq> />男
+					</label>
+					<label>
+						<input class="radio_box" type="radio" name="sex" value="2" <eq name="user_info['sex']" value="2">checked="checked"</eq>/>女
+					</label>
+				</div>
+			</div>
+			<input type="hidden" name="uid" value="{$user_info['uid']|default=''}">
+			<input class="link_btn" type="submit" value="提交" />
+		</form>
+	</section>
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__STATIC__/check/check.js"></script>
+	<script type="text/javascript" src="__JS__/info.js"></script>
+</body>
+</html>

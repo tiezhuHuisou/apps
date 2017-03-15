@@ -1,0 +1,90 @@
+
+/* 搜索区域 */
+/*.search_wrap{padding:10px 0px 0;}*/
+.search_wrap .search_list{display:-webkit-box;border-bottom:1px solid #ddd;padding-left:20px;height:44px;background:#fff;line-height: 44px;}
+.search_wrap .search_list .list_title{width:100px;font-size:14px;display:block;line-height:44px;}
+.search_wrap .search_list .choose{-webkit-flex: 1; font-size:14px;display:block;line-height:44px;color:#35a2da;}
+.search_wrap .search_list .area_contenter{width:auto;font-size:14px;line-height:44px;color:#35a2da;}
+.search_wrap .search_list .list_select .select_wrap{float:left;}
+.search_wrap .search_list .list_select .select_wrap.w33{width:33.3%;}
+.search_wrap .search_list .list_select .select_wrap.w100{width:100%;}
+.search_wrap .search_list .list_select .select_wrap select{width:100%;padding:3px 0;border:none;font-size:16px;}
+.search_wrap .search_list .list_select .select_wrap select.w95{width:95%;border:1px solid #9a9a9a;}
+.search_wrap .search_list .list_input{display:block;padding:4px;margin:0 2px;-webkit-box-flex:1;border:none;font-size:16px;}
+.search_wrap .search_list .list_textarea{display:block;margin:0 2px;-webkit-box-flex:1;}
+.search_wrap .search_list .list_textarea textarea{width:100%;height:60px;padding:3px 0;border:none;font-size:16px;}
+.search_wrap .search_btn{padding:10px 0;text-align:center;color:#fff;font-size:16px;background:#35a2da;display:block;margin-top: 30px;}
+/* 主体内容 */
+.main_loading{padding:8px 0;text-align:center;display:none;}
+.main_loading .loading_tip{width:150px;text-align:center;height:20px;line-height:20px;padding-left:20px;margin:0 auto;background:url('../images/loading.gif') no-repeat left center;background-size:20px;display:block;}
+/* 货车列表 */
+.goods_list{margin:0 10px;padding:10px 5px 0;display:block;background:-webkit-gradient(linear,0 0,0 100%,from(#f8f8f8),to(#E1E1E1));}
+.goods_list p{padding-bottom:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.goods_list .list_address{font-weight:bold;font-size:16px;}
+.goods_list .list_desc{color:#8a8a8a;}
+.goods_list .list_time{color:#8a8a8a;}
+/* 货车列表为空时 */
+.goods_empty{margin:0 10px;padding:10px 0;text-align:center;background:-webkit-gradient(linear,0 0,0 100%,from(#f8f8f8),to(#E1E1E1));}
+
+/*地址选择区域*/
+.area_ctrl{
+    display:none;
+}
+.area_btn {
+    color: #0575f2;
+    font-size: 1.2em;
+    line-height: 0.8em;
+    text-align: center;
+    padding: .8em 1em;
+}
+.area_roll_mask{
+    display:flex;
+}
+.area_roll_mask{
+    min-height:200px;
+}
+.area_roll_mask .provice{
+    height:200px;
+    overflow-y:auto;
+    width:50%;
+}
+.area_roll_mask .city{
+    height:200px;
+    overflow-y:auto;
+    width:50%;
+}
+.area_roll_mask .item{
+    min-height:30px;
+    text-align:center;
+}
+.area_ctrl {
+    position: fixed;
+}
+/*新样式*/
+.publish_nav{display: -webkit-flex;padding:5px 5px 8px;justify-content: space-around;}
+.publish_nav li{padding: 5px 0;border-bottom: 2px solid #fff;}
+.publish_nav .bd_co{border-color: #35a2da;}
+.search_wrap input{-webkit-flex: 1;border: none;}
+/*车厂选择*/
+.car_mask, .type_mask, .goods_mask, .carriage_mask{
+    display:block;
+    height:200px;
+    overflow-y:auto;
+}
+.carlist, .typelist, .goodslist, .carriagelist{
+    width:100%;
+    min-height:30px;
+    text-align:center;
+    line-height:30px;
+}
+/*目的地城市显示*/
+.end_area{display: -webkit-flex;align-items: center;}
+.citys{position: relative;margin-right: 5px;}
+.citys a{position: absolute;right: -7px;top: 10px;width: 13px;height: 13px;border-radius: 50%; background: rgba(0,0,0,0.5);color: #fff;text-align: center;line-height: 13px;font-size: 12px;}
+.add{display: none; margin-left: 10px; width: 30px;height: 30px;border: 1px dashed #ccc;color: #ccc;font-size: 14px;text-align: center;line-height: 30px;}
+.time{position: relative;width: 100%;height: 100%;}
+.time span{position: absolute;width: 100%;}
+.time input{position: absolute;opacity: 0;height: 100%;top: 0;left: 0;}
+input[type="date"]{
+    -webkit-appearance:push-button;
+}

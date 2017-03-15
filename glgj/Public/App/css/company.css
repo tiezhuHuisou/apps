@@ -1,0 +1,7 @@
+/* 主体内容 */
+.lt{opacity: 0;} 
+/*nav列表*/
+.weui-navbar{overflow-x: auto;}
+.weui-navbar .weui-navbar__item{min-width: 80px;}
+.weui-navbar .weui-navbar__item a{display: block;width: 100%;height: 100%;}
+.weui-navbar .active{background: #ddd;}

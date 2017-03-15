@@ -1,0 +1,50 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/result.css" />
+<script type="text/javascript" src="__JS__/result.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+            <include file="Sale/withdrawalsnav"/>
+			<!-- 返现申请数据 开始 -->
+			<table class="data mgt20">
+				<!-- 标题 开始 -->
+				<tr class="data_title">
+					<td class="ti25">ID</td>
+					<td>金额</td>
+					<td>状态</td>
+					<td>操作时间</td>
+					<td>说明</td>
+				</tr>
+				<!-- 标题 结束 -->
+				<!-- 一条数据 开始 -->
+				<volist name="list" id="vo">
+				<tr>
+					<td class="ti25">{$vo['id']}</td>
+					<td>￥{$vo['withdrawals']}元</td>
+					<td>{$vo['status']}</td>
+					<td>{$vo['etime']|date="Y-m-d H:i:s", ###}</td>
+					<td>{$vo['remark']}</td>
+				</tr>
+				</volist>
+				<!-- 一条数据 结束 -->
+			</table>
+			<!-- 返现申请数据 开始 -->
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

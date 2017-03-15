@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>核心设置</h2>
+                <include file="Index/corenav" />
+			</div>
+            <h3>支付宝账号设置</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <table class="add_table">
+                    <!-- 收款方名称输入框 -->
+                    <tr>
+                        <td class="w120">收款方名称：</td>
+                        <td>
+                            <input class="i400" name="alipay_name" type="text" value="{$info_arr['alipay_name']|default=''}" datatype="*" nullmsg="请填写收款方名称" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写收款方名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 支付宝收款帐号输入框 -->
+                    <tr>
+                        <td class="w120">支付宝收款帐号：</td>
+                        <td>
+                            <input class="i400" name="alipay_account" type="text" value="{$info_arr['alipay_account']|default=''}" datatype="mobile email" nullmsg="请填写支付宝帐号" errormsg="请填写正确的支付宝帐号" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写支付宝帐号</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 交易安全校验码输入框 -->
+                    <tr>
+                        <td class="w120">交易安全校验码：</td>
+                        <td>
+                            <input class="i400" name="alipay_code" type="text" value="{$info_arr['alipay_code']|default=''}" datatype="*" nullmsg="请填写交易安全校验码" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写交易安全校验码</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 合作者身份ID输入框 -->
+                    <tr>
+                        <td class="w120">合作者身份ID：</td>
+                        <td>
+                            <input class="i400" name="alipay_id" type="text" value="{$info_arr['alipay_id']|default=''}" datatype="*" nullmsg="请填写合作者身份ID" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写合作者身份ID</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 ajax-post chksubmit" type="submit" target-form="form-horizontal" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

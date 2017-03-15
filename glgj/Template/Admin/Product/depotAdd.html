@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/product_add.css" />
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>仓储管理中心</h2>
+				<a href="?g=admin&m=product&a=depot">仓储列表</a>
+                <a class="hover" href="?g=admin&m=product&a=depotAdd">添加仓储</a>
+            </div>
+            <h3>仓储添加</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="id" value="{$detail.id}"/>
+                <table class="add_table">
+                    <!--会员帐号*-->
+                    <tr>
+                        <td class="w120">发布者帐号：</td>
+                        <td>
+                            <input class="i200" type="text" name="mphone" value="{$detail.mphone}" datatype="mphone"
+                                   nullmsg="请填写发布者帐号" errormsg="请填写2-50位字符"/>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写发布者帐号</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--省市区*-->
+                    <!--始发地-->
+                    <tr>
+                        <td class="w120">所在地：</td>
+                        <td>
+                            <select class="province" name="province_id">
+                                <option value="">请选择所在省</option>
+                                <foreach name="region_arr[0]" item="val">
+                                    <option value="{$val['id']}" <eq name="detail['province_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+                                </foreach>
+                            </select>
+                            <select class="city" name="city_id">
+                                <option value="">请选择所在市</option>
+                                <foreach name="region_arr[$detail['province_id']]" item="val">
+                                    <option value="{$val['id']}" <eq name="detail['city_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+                                </foreach>
+                            </select>
+                            <select class="towns" name="country_id">
+                                <option value="">请选择所在区/县</option>
+                                <foreach name="region_arr[$detail['city_id']]" item="val">
+                                    <option value="{$val['id']}" <eq name="detail['country_id']" value="$val['id']">selected</eq>>{$val['name']}</option>
+                                </foreach>
+                            </select>&nbsp;&nbsp;*
+                        </td>
+                    </tr>
+                    <!--详细地址*-->
+                    <tr>
+                        <td class="w120">详细地址：</td>
+                        <td>
+                            <input class="i200" type="text" name="address" value="{$detail.address}"/>&nbsp;&nbsp;*
+                        </td>
+                    </tr>
+                    <!--库内地面 下-->
+                    <tr>
+                        <td class="w120">库内地面：</td>
+                        <td class="lh22">
+                            <select class="" name="ground">
+                                <option value="">请选择库内地面</option>
+                                <foreach name="list['depotGround']" item="val">
+                                    <option value="{$val}" <eq name="detail['ground']" value="$val">selected</eq>>{$val}</option>
+                                </foreach>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--仓储类型* 下-->
+                    <tr>
+                        <td class="w120">仓储类型：</td>
+                        <td class="lh22">
+                            <select class="" name="category_id">
+                                <option value="">请选择仓储类型</option>
+                                <foreach name="list['depotCategory']" item="val">
+                                    <option value="{$val}" <eq name="detail['category_id']" value="$val">selected</eq>>{$val}</option>
+                                </foreach>
+                            </select>&nbsp;&nbsp;*
+                        </td>
+                    </tr>
+                    <!--仓内高度*-->
+                    <tr>
+                        <td class="w120">仓内高度：</td>
+                        <td>
+                            <input class="i200" type="text" name="height" value="{$detail.height}"/>米&nbsp;&nbsp;*
+                        </td>
+                    </tr>
+                    <!--单价*-->
+                    <tr>
+                        <td class="w120">单价：</td>
+                        <td>
+                            <input class="i200" type="text" name="price" value="{$detail.price}"/>元/m²/天&nbsp;&nbsp;*
+                        </td>
+                    </tr>
+
+                    <!--总面积*-->
+                    <tr>
+                        <td class="w120">总面积：</td>
+                        <td>
+                            <input class="i200" type="text" name="area" value="{$detail.area}"/>平方米&nbsp;&nbsp;*
+                        </td>
+                    </tr>
+                    <!--可租面积-->
+                    <tr>
+                        <td class="w120">可租面积：</td>
+                        <td>
+                            <input class="i200" type="text" name="rent_area" value="{$detail.rent_area}"/>平方米
+                        </td>
+                    </tr>
+                    <!--仓内运营 下 单选-->
+                    <tr>
+                        <td class="w120">仓内运营：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="run" value="有代运营" checked />
+                                <span>有代运营</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="run" value="无代运营" <eq name="detail.run" value="无代运营">checked</eq> />
+                                <span>无代运营</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <!--可做分仓 下 单选-->
+                    <tr>
+                        <td class="w120">是否可做分仓库：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="issub" value="可做分仓库" checked />
+                                <span>可做分仓库</span>
+                            </label>
+                            <label>
+                            <input class="pt3" type="radio" name="issub" value="不可做分仓库" <eq name="detail.issub" value="不可做分仓库">checked</eq> />
+                            <span>无代运营</span>
+                        </label>
+                        </td>
+                    </tr>
+                    <!--主体结构 下-->
+                    <tr>
+                        <td class="w120">主体结构：</td>
+                        <td class="lh22">
+                            <select class="" name="structure">
+                                <option value="">请选择主体结构</option>
+                                <foreach name="list['depotStructure']" item="val">
+                                    <option value="{$val}" <eq name="detail['structure']" value="$val">selected</eq>>{$val}</option>
+                                </foreach>
+                            </select>
+                        </td>
+                    </tr>
+                    <!--建筑标准 下-->
+                    <tr>
+                        <td class="w120">建筑标准：</td>
+                        <td class="lh22">
+                            <select class="" name="standard">
+                                <option value="">请选择建筑标准</option>
+                                <foreach name="list['depotStandard']" item="val">
+                                    <option value="{$val}" <eq name="detail['standard']" value="$val">selected</eq>>{$val}</option>
+                                </foreach>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript">
+        var imgUrl     = "__IMG__";
+        var staticPath = "__STATIC__";
+        var flashFlag = "{$flashFlag|default=0}";
+    </script>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+    <script type="text/javascript" src="__JS__/product_add.js"></script>
+</body>
+</html>

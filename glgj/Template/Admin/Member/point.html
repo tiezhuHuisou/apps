@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css"/>
+    <script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__JS__/alldel.js"></script>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <input id="url" type="hidden" value="?g=admin&m=member&a=pointDel">
+    <div class="wrapper">
+        <!-- 主体头部 -->
+        <div class="header">
+            <h2>网点管理中心</h2>
+            <a class="hover" href="?g=admin&m=member&a=point&id={$Think.get.id}">网点管理</a>
+            <a href="?g=admin&m=member&a=pointAdd&cid={$Think.get.id}">添加网点</a>
+            <a href="javascript:void(0);" class="batch_upload">
+                <u>批量上传</u>
+            </a>
+        </div>
+        <!-- 主体搜索 -->
+        <table class="data">
+            <!-- 数据头部 -->
+            <tr class="data_header">
+                <th><input id="check_all" type="checkbox" name="" value=""/></th>
+                <th>ID</th>
+                <th>店名</th>
+                <th>联系人</th>
+                <th>号码</th>
+                <th>网点地址</th>
+                <th>上传时间</th>
+                <th>操作</th>
+            </tr>
+            <!-- 一条数据开始 -->
+            <volist name="list" id="li">
+                <tr>
+                    <td><input class="check_box" type="checkbox" name="items" value="{$li.p_id}"/></td>
+                    <td>{$li.p_id}</td>
+                    <td>{$li.p_title}</td>
+                    <td>{$li.p_name}</td>
+                    <td>{$li.p_mobile}</td>
+                    <td>{$li.address}</td>
+                    <td>{$li.p_addtime}</td>
+                    <td class="data_opt">
+                        <a href="?g=admin&m=member&a=pointAdd&pid={$li.p_id}">修改</a>
+                        <a class="confirm ajax-get" href="index.php?g=admin&m=member&a=pointDel&id={$li.p_id}">删除</a>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+        <!-- 操作 -->
+        <div class="opt">
+            <a class="opt_btn" href="?g=admin&m=member&a=pointAdd&ids={$Think.get.id}">添加</a>
+            <a class="opt_btn" attr="BatchDel" href="javascript:void(0);">删除所选</a>
+        </div>
+        <!-- 分页 -->
+        <div class="page">{$_page}</div>
+    </div>
+</div>
+<!-- 主体 结束 -->
+<script type="text/javascript">
+    $(function () {
+        $('#qrcode').click(function () {
+            var check = $("input[name='items']:checked");
+            if (check.length < 1) {
+                layer.open({
+                    content: '请选择生成项',
+                    time: 2000
+                });
+                return false;
+            }
+            layer.confirm('确定要生成二维码吗？', function (luxury) {
+                var id = new Array();
+                check.each(function (i) {
+                    id[i] = $(this).val();
+                });
+
+                $.post('?g=admin&m=member&a=qrcode', {id: id}, function (data) {
+                    var icon = 2;
+                    if (data.status == 1) {
+                        icon = 1;
+                    }
+                    layer.msg(data.info, {
+                        time: 2000,
+                        icon: icon
+                    }, function () {
+                        window.location.reload();
+                    });
+                });
+
+                layer.close(luxury);
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    KindEditor.ready(function (K) {
+        var editor = K.editor({
+            allowFileManager: true
+        });
+        K('.batch_upload').click(function () {
+            var _this = $(this);
+            editor.loadPlugin('insertfile', function () {
+                editor.plugin.fileDialog({
+                    clickFn: function (url, title) {
+                        editor.hideDialog();
+                        var data = {url: url};
+                        $.post('?g=admin&m=Point_company&a=batchupload', data, function (data) {
+                            // location.reload();
+                        });
+                    }
+                });
+            });
+        });
+
+    });
+</script>
+</body>
+</html>

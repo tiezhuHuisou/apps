@@ -1,0 +1,9 @@
+.header{background:#fff;padding:10px;position:relative;}
+.header_info{height:170px;background:url(../images/adv_info.png) no-repeat;background-size:100%;}
+.header_info .info_title{padding-top: 45px;text-align: center;}
+.header_info .info_content{height: 44px;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;word-break: break-all;padding:0 10px;}
+.header_info .info_content a{overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;word-break: break-all;padding:0 10px;height:44px;color:#333;}
+.header_info .more_info{position: absolute;bottom: 26px;right: 30px;font-size: 12px;color: #999;}
+
+/*中间导航区域*/
+.weui-grid {position: relative;float: left;padding: 20px 10px;width: 50%;box-sizing: border-box;}

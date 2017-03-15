@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/release_lib.css"/>
+</head>
+<body>
+<include file="Common/header"/>
+<!-- 可视区域 开始 -->
+<section class="viewport">
+    <!-- 发布表单 -->
+    <form>
+        <input type="hidden" name="id" value="{$list[unordered]['id']}">
+        <input type="hidden" name="uid" value="{:UID}">
+        <!-- 地址 -->
+        <div class="address_wrap">
+            <input type="hidden" name="province_id" value="{$list[unordered]['province_id']}">
+            <input type="hidden" name="city_id" value="{$list[unordered]['city_id']}">
+
+            <input id='lib_address' class="city_select" type="text" name=""
+                   value="{$list['unordered']['provincename']}{$list['unordered']['cityname']}"
+                   placeholder="请选择创库地址"/>
+        </div>
+        <!-- 联系信息 -->
+        <!--<div class="weui-cells__title">联系信息</div>-->
+        <!--<div class="weui-cells">-->
+        <!--&lt;!&ndash; 姓名 &ndash;&gt;-->
+        <!--&lt;!&ndash;id&ndash;&gt;-->
+        <!--<div class="weui-cell">-->
+        <!--<div class="weui-cell__hd"><label class="weui-label">联系人</label></div>-->
+        <!--<div class="weui-cell__bd">-->
+        <!--<input class="weui-input" type="text" name="" value="">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 电话 &ndash;&gt;-->
+        <!--<div class="weui-cell">-->
+        <!--<div class="weui-cell__hd">-->
+        <!--<label class="weui-label">联系电话</label>-->
+        <!--</div>-->
+        <!--<div class="weui-cell__bd">-->
+        <!--<input class="weui-input" type="number" name="" value="" />-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="weui-cells__title">仓库属性</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">仓储类型</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="category_id">
+                        <foreach name="list['depotCategory']" item="vo">
+                        <option <eq name="list['unordered']['category_id']" value="$key">selected</eq> value="{$key}">{$vo}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">建筑标准</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="standard">
+                        <foreach name="list['depotStandard']" item="vo">
+                        <option <eq name="list['unordered']['standard']" value="$vo">selected</eq> value="{$vo}">{$vo}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">仓内运营</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <label><input class="weight_select" type="radio" name="run" value="有代运营" />有代运营</label>
+                    <label><input class="weight_select" type="radio" name="run" value="无代运营" checked/>无代运营</label>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">库内面积</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" placeholder="请填写数字">
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">主体结构</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="structure">
+                        <foreach name="list['depotStructure']" item="vo">
+                        <option <eq name="list['unordered']['structure']" value="$vo">selected</eq> value="{$vo}">{$vo}</option>
+                        </foreach>
+                    </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">可做分仓</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <label><input class="weight_select" type="radio" name="issub" value="可做分仓" />可做分仓</label>
+                    <label><input class="weight_select" type="radio" name="issub" value="不可做分仓" checked/>不可做分仓</label>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="select_icon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__title">仓库信息</div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">价格</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" name="price" value="{$list['unorderod']['price']}" placeholder="请填写数字">
+                </div>
+                <div class="weui-cell__ft">
+                    <p>元/m&sup2;/天</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">舱内高度</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" name="height" value="{$list['unordered']['height']}" placeholder="请填写数字">
+                </div>
+                <div class="weui-cell__ft">
+                    <p>米</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">总面积</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" placeholder="请填写数字">
+                </div>
+                <div class="weui-cell__ft">
+                    <p>m&sup2;</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">可租面积</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" name="area" value="{$list['unordered']['area']}" placeholder="请填写数字">
+                </div>
+                <div class="weui-cell__ft">
+                    <p>m&sup2;</p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">详细地址</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" name="address" value="{$list['unordered']['address']}"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">图片上传</label></div>
+                <div class="weui-cell__bd">
+                    <div class="weui-uploader__input-box">
+                        <input id="uploaderInput" class="weui-uploader__input" type="file"
+                               accept="image/gif,image/jpg,image/png" multiple="" name="image">
+                        <!-- 图片上传 -->
+                        <foreach name="list['unordered']['image']" item="vo">
+                        <img class="upload_img" src="{$vo}"/>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <button type="button" class="weui-btn weui-btn_primary">提交</button>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- 可视区域 结束 -->
+<!-- 底部 开始 -->
+<include file="Common/footer"/>
+<!-- 底部 结束 -->
+<script type="text/javascript">
+    var city_name = "{$city_name}";
+    var defaultImg = '__STATIC__/images/default_icon.jpg';
+    var imgUrl = '__IMG__';
+</script>
+<!-- 地址选择器 -->
+<script type="text/javascript" src="__JS__/city-picker.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/jquery-weui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/release_lib.js"></script>
+</body>
+</html>

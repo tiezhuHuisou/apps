@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/carousel.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/index.css" />
+</head>
+<body>
+	<!-- 头部搜索 -->
+	<div class="header">
+		<a class="gps" href="?g=app&m=index&a=location">
+			<span class="fl"><empty name="city_name">全国<else />{$city_name}</empty></span>
+			<div class="down"><div></div></div>
+		</a>
+		<!-- <a class="search_index" href="?g=app&m=search">
+			<i class="search_icon fl"></i><p class="fl">搜索</p>
+		</a> -->
+	</div>
+	<!-- 可视区域 -->
+	<div class="viewport_index">
+		<!-- 轮播 -->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<foreach name="banner_list" item="liv">
+				<div class="swiper-slide"><a href="{$liv['url']|default='javascript:void(0);'}"><img src="{$liv['thumbnail']|default=''}" width="100%" height="auto" /></a></div>
+				</foreach>				
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<!-- 导航 -->
+		<nav>
+			<a href="?g=app&m=index&a=supply">
+				<img class="delay" src="__IMG__/supply.png" data-echo="__IMG__/supply.png" width="40%" height="auto" />
+				<p>供应</p>
+			</a>
+			<a href="?g=app&m=index&a=need">
+				<img class="delay" src="__IMG__/need.png" data-echo="__IMG__/need.png" width="40%" height="auto" />
+				<p>求购</p>
+			</a>
+			<a href="?g=app&m=index&a=near">
+				<img class="delay" src="__IMG__/near.png" data-echo="__IMG__/near.png" width="40%" height="auto" />
+				<p>周边</p>
+			</a>
+		</nav>
+		<!-- 热点资讯 -->
+		<div class="news_hot">
+			<!-- 热点资讯头部 -->
+			<div class="news_header">
+				<p class="fl mgl16">热点资讯</p>
+				<!-- <a class="fr mgr16 news_change" href="javascript:void(0);">换一换</a> -->
+			</div>
+			<!-- 热点资讯列表 -->
+			<div class="news_list">
+				<ul>
+					<foreach name="article_list" item="liv">
+					<li>
+						<a href="?g=app&m=news&a=detail&id={$liv['id']}">
+							<img class="fl mgl16 delay" src="{$liv['image']|default=''}" data-echo="{$liv['image']|default=''}" width="90" height="70" />
+							<div class="new_title">
+								<p class="new_title_main">{$liv['title']|default=''}</p>
+								<p class="new_title_sub">{$liv['short_title']|default=''}</p>
+							</div>
+							<div class="clear"></div>
+						</a>
+					</li>
+					</foreach>					
+				</ul>
+			</div>
+			<!-- 热点资讯底部 -->
+			<div class="news_footer">
+				<a class="fr mgr16 news_more" href="?g=app&m=news">更多<div class="gt"><div></div></div></a>
+			</div>
+		</div>
+		<!-- 热卖产品 -->
+		<div class="product_hot">
+			<!-- 热卖产品头部 -->
+			<div class="product_header">
+				<p class="fl mgl16">热卖产品</p>
+				<!-- <a class="fr mgr16 product_change" href="javascript:void(0);">换一换</a> -->
+			</div>
+			<!-- 热卖产品列表 -->
+			<div class="product_list">
+				<foreach name="product_arr" key="k" item="liv">
+					<switch name="k">
+						<case value="0">
+							<a class="product_big" href="?g=app&m=product&a=detail&id={$liv[0]['id']}">
+								<img class="mgl16 delay" src="{$liv[0]['img']}" data-echo="{$liv[0]['img']}" width="100%" height="auto" />
+								<div class="product_info">
+									<p class="product_name">{$liv[0]['title']}</p>
+									<p class="product_desc">{$liv[0]['short_title']}</p>
+									<p class="product_price">￥{$liv[0]['price']}</p>
+								</div>
+							</a>
+						</case>
+						<default />
+						<div class="product_row">
+						<foreach name="liv" item="val">					
+								<a href="?g=app&m=product&a=detail&id={$val['id']}">
+									<img class="delay" src="{$val['img']}" data-echo="{$val['img']}" width="100%" height="auto" />
+									<p class="product_name">{$val['title']}</p>
+									<p class="product_price">￥{$val['price']}</p>
+								</a>
+							</foreach>					
+							<div class="clear"></div>
+						</div>
+					</switch>
+				</foreach>
+			</div>
+			<!-- 热卖产品底部 -->
+			<div class="product_footer">
+				<a class="fr mgr16 product_more" href="?g=app&m=product">更多<div class="gt"><div></div></div></a>
+			</div>
+		</div>
+		<!-- 推荐企业 -->
+		<div class="company_hot">
+			<!-- 推荐企业头部 -->
+			<div class="company_header">
+				<p class="fl mgl16">推荐企业</p>
+				<!-- <a class="fr mgr16 company_change" href="javascript:void(0);">换一换</a> -->
+			</div>
+			<!-- 推荐企业列表 -->
+			<div class="company_list">
+				<foreach name="company_arr" key="k" item="liv">
+					<switch name="k">
+						<case value="0">
+							<a class="company_big" href="?g=app&m=company&a=detail&id={$liv[0]['id']}"><img class="delay" src="{$liv[0]['logo']}" data-echo="{$liv[0]['logo']}" width="100%" height="auto" /></a>
+						</case>
+						<default />
+						<div class="company_row">
+						<foreach name="liv" item="val">
+							<a href="?g=app&m=company&a=detail&id={$val['id']}"><img class="delay" src="{$val['logo']}" data-echo="{$val['logo']}" width="100%" height="auto" /></a>
+						</foreach>
+						</div>
+						
+					</switch>
+				</foreach>
+			</div>
+			<!-- 推荐企业底部 -->
+			<div class="company_footer">
+				<a class="fr mgr16 company_more" href="?g=app&m=company">更多<div class="gt"><div></div></div></a>
+			</div>
+		</div>
+			<!-- 版权信息 开始 -->
+			<div class="copyright">
+				<p>{$other}</p>
+				<p>技术支持 中国APP行业应用中心 UnionApp.org</p>
+			</div>
+			<!-- 版权信息 结束 -->
+	</div>
+	<div id="allmap"></div>
+	<!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		var city_name="{$city_name}";
+	</script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xA4XirsaKbnL1fnErmlvfk4I"></script>
+	<script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__JS__/index.js"></script>
+</body>
+</html>

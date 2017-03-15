@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/companySearch.css" />
+</head>
+<body>
+	<!-- 头部 开始 -->
+    <include file="Common/header_se"/>
+    <!-- 头部 结束 -->
+    <section>
+    	<form>
+    		<div class="address">
+                <div class="start">
+                    <span class="start_text">起始地</span>
+                    <input id='start_address' class="op0" type="text" name="start_address" />
+                </div>
+				<span class="cut"></span>
+                <div class="end">
+                    <span class="end_text">目的地</span>
+                    <input id='end_address' class="op0" type="text" name="end_address" />
+                </div>
+    		</div>
+            <div class="company">
+                或
+                <input class="company_input" type="text" name="company" placeholder="输入公司名称或网店名称" />
+            </div>
+            <div class="btn_group">
+                <a href="javascript:;" class="weui-btn weui-btn_primary">查询</a>
+            </div>
+    	</form>
+    </section>
+</body>
+<script type="text/javascript" src="__JS__/city-picker.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/jquery-weui.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/companySearch.js" charset="utf-8"></script>
+</html>

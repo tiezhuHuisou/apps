@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<script type="text/javascript" src="__JS__/alldel.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+	<input id="url" type="hidden" value="?g=admin&m=member&a=company_category_delall">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>企业分组管理中心</h2>
+				<a class="hover" href="?g=admin&m=member&a=company_group">企业分组列表</a>
+				<a href="?g=admin&m=member&a=company_group_add">添加企业分组</a>
+			</div>
+			<!-- 主体数据 -->
+			<table class="data">
+				<!-- 数据头部 -->
+				<tr class="data_header">
+					<th><input id="check_all" type="checkbox" name="" value="" /></th>
+					<th>分类ID</th>
+					<th>添加时间</th>
+					<th>操作</th>
+				</tr>
+				<!-- 一条数据开始 -->
+				<volist name="list" id="li">
+				<tr>
+					<td><input class="check_box" type="checkbox" name="items" value="{$li.id}" /></td>
+					<td>
+						<span>{$li.name}</span>
+						<span>(id:<span>{$li.id}</span>)</span>
+					</td>
+					<td>{$li.sort|date="Y-m-d H:i",###}</td>
+					<td class="data_opt">
+						<a href="?g=admin&m=member&a=company_group_add&id={$li.id}">修改</a>
+						<a class="confirm ajax-get" href="index.php?g=admin&m=member&a=company_category_del&id={$li.id}">删除</a>
+					</td>
+				</tr>
+				</volist>
+			</table>
+			<!-- 操作 -->
+			<div class="opt">
+				<a class="opt_btn" href="?g=admin&m=member&a=company_group_add">添加</a>
+				<a class="opt_btn" attr="BatchDel" href="javascript:void(0);">删除所选</a>
+			</div>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

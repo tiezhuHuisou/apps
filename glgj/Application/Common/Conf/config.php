@@ -1,0 +1,76 @@
+<?php
+return array(
+    /* Module related configuration */
+    'DEFAULT_MODULE' => 'App',
+    'MODULE_DENY_LIST' => array('Common', 'Runtime'),
+
+    'USER_ADMINISTRATOR' => 1,  // Administrator user ID
+
+    'DEFAULT_FILTER' => '', // Global filter function configuration
+
+    /* URL configuration */
+    'URL_CASE_INSENSITIVE' => true, // Default false, which means that URL is case sensitive, and true is not case sensitive
+    'URL_MODEL' => 3,    // URL pattern
+    'VAR_URL_PARAMS' => '',   // PATHINFO URL parameter variable
+    'URL_PATHINFO_DEPR' => '/',  // PATHINFO URL segmentation character
+
+    /* 数据库配置 */
+    'DB_TYPE' => 'mysql',         // Database type
+    'DB_HOST' => '127.0.0.1', // server address
+    'DB_NAME' => 'hscom_glgj',    // Database name
+    'DB_USER' => 'root',          // User name
+    'DB_PWD' => '',        // Password
+    'DB_PORT' => 3306,            // port
+    'DB_PREFIX' => 'lp_',           // Database table prefix
+
+//    config配置参数，用于开启memcache
+//    'SESSION_TYPE' => 'memcache',
+//    'SESSION_HOST' => 'localhost', //填写memcache服务器地址
+//    'SESSION_PORT' => 11211, //memcache端口,默认11211
+//    'SESSION_EXPIRE' => 604800, //session过期时间(秒)
+//    'SESSION_TIMEOUT' => 60, //memcache连接超时时间,默认60秒
+
+
+    'VAR_MODULE' => 'g',   // Default module access variable
+    'VAR_CONTROLLER' => 'm',   // Default controller access variable
+    'VAR_ACTION' => 'a',   // Default action access variable
+
+    'HTTP_ORIGIN' => 'https://glgj.m.huisou.com',  // Site prefix
+    'HTTP_APPS_IMG' => 'https://glgj.m.huisou.com/Public/Apps/images/',    // Client image path
+
+    /* 云通讯配置参数 */
+    'SMS_CONFIG' => array(
+        'isopen' => '1', // Whether to open the short message function 1-> has been opened, 0-> is not open
+        'accountSid' => '8aaf070855c4a7270155c962a8a10770',  // Developer master account accountSid
+        'accountToken' => '439ad79a48ec4f1e884ced811dd4d91a',  // Developer master account accountToken
+        'appId' => '8aaf070855ce465a0155d7ce26d502db',  // Developer master account appId
+        'serverIP' => 'app.cloopen.com',   // Request address, the format is as follows, do not need to write https://
+        'serverPort' => '8883',  // Request port
+        'SubAccountSid' => '87ec46a647ca11e6bb9bac853d9f54f2',  // Child account SubAccountSid
+        'SubAccountToken' => '985cfe7d97ad88d8b9843e7514016f27',  // Child account SubAccountToken
+        'VoIPAccount' => '8014741200000002',  // Child account VoIPAccount
+        'VoIPPassword' => '5owiIyuA',  // Child account VoIPPassword
+        'softVersion' => '2013-12-26',    // Version
+        'smsTemplateId' => '99933',  // SMS verification code template ID
+        'orderPayTemplateId' => '',  // Order payment reminder template ID
+        'orderSendTemplateId' => '',  // Order delivery reminder template ID
+        'orderRefundTemplateId' => '',  // Order Application form for refund template ID
+        'orderRemittanceTemplateId' => '',  // Order refund payment reminder template ID
+    ),
+
+    /* JPush configuration parameters */
+    'PUSH_APPKEY' => '1ef6904fa4b60018fdc652aa',
+    'PUSH_SECRET' => '49831c77d28e54f37201ca76',
+
+    /* RongCloud configuration parameters */
+    'RONGCLOUDAPPKEY' => '',
+    'RONGCLOUDAPPSECRET' => '',
+
+    'ALIPAY_PRIVATE_KEY' => '', // Alipay private key
+
+    'AMAP_APPKEY' => '', // amap key
+
+    'FLASHFLAG' => '3', // Timed buy event plug-in switch, which also represents the app version; because you want to return to the client, use the string type, 1 express open activity and Electric Business Version, 2 express close activity and Information Version
+
+    'AUTO_CONFIRM_RECEIVE_DAYS' => 15   // Confirm the delivery of the system automatically days counted starting order delivery time
+);

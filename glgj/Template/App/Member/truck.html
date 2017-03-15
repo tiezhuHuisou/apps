@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/list_truck.css" />
+</head>
+<body>
+    <include file="Common/header_editor"/>
+    <!-- 可视区域 开始 -->
+    <section class="viewport">
+       <!-- 列表 -->
+        <div class="list_wrap">
+
+            <volist name="list" id="vo">
+                <a href="?g=app&m=member&a=publishTruck&id={$vo.id}">
+                    <div class="mgt10 weui-form-preview">
+                        <div class="weui-form-preview__hd">
+                            <em class="weui-form-preview__value">{$vo['truck_type']}</em>
+                        </div>
+                        <div class="weui-form-preview__bd">
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">路线</label>
+                                <span class="weui-form-preview__value">{$vo.start}->{$vo.end}</span>
+                            </div>
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">货物重量</label>
+                                <span class="weui-form-preview__value">{$vo.heavy}{$vo.heavy_unit}</span>
+                            </div>
+                            <div class="weui-form-preview__item">
+                                <label class="weui-form-preview__label">货物体积</label>
+                                <span class="weui-form-preview__value">{$vo.light}{$vo.light_unit}</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </volist>
+
+        </div>
+        <div class="weui-loadmore">
+            <i class="weui-loading"></i>
+            <span class="weui-loadmore__tips">正在加载</span>
+        </div>
+        <!-- 为空 -->
+        <div class="weui-loadmore weui-loadmore_line">
+            <span class="weui-loadmore__tips">暂无数据</span>
+        </div>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 底部 开始 -->
+    <a class="editor_footer" href="?g=app&m=member&a=publishTruck">新增车源</a>
+    <!-- 底部 结束 -->
+    <script type="text/javascript">
+        var city_name  = "{$city_name}";
+        var defaultImg = '__STATIC__/images/default_icon.jpg';
+        var imgUrl     = '__IMG__';
+    </script>
+    <!-- 地址选择器 -->
+    <script type="text/javascript" src="__JS__/list_truck.js"></script>
+</body>
+</html>

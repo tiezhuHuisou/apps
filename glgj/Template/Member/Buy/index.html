@@ -1,0 +1,67 @@
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/buy.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <div class="nav">
+                <foreach name="statusList" item="vo">
+                    <a <eq name="state" value="$key">class="hover"</eq> href="?g=member&m=buy&a=index&state={$key}">{$vo}</a>
+                </foreach>
+            </div>
+            <!-- 数据 开始 -->
+            <table class="list_table">
+                <!-- 头部 -->
+                <tr class="list_header">
+                    <td class="ti25 tl">产品</td>
+                    <td>产品图片</td>
+                    <td>金额</td>
+                    <td class="tc">数量</td>
+                    <td class="tc">总价</td>
+                    <td>商家</td>
+                    <td align="center">交易操作</td>
+                </tr>
+                <volist name="list" id="li">
+                    <!-- 订单顶部 -->
+                    <tr class="list_top">
+                        <td class="ti25">订单号：{$li.id}</td>
+                        <td>下单时间：{$li.ctime|date="Y-m-d h:i",###}</td>
+                        <td colspan="4">运费：￥{$li.freight_price}</td>
+                        <td class="list_opt" align="center">
+                            <a class="cyan" href="?g=member&m=buy&a=detail&id={$li.id}">订单详情</a>
+                            <!-- <a class="cyan confirm ajax-get" href="?g=member&m=buy&a=delOrder&id={$li.id}">删除订单</a> -->
+                        </td>
+                    </tr>
+                    <!-- 订单产品 -->
+                    <volist name="li.productList" id="vo">
+                        <tr class="list_items">
+                            <td class="ti25">{$vo.goodname}</td>
+                            <td><img src="{$vo.gpic}" width="50" height="50" /></td>
+                            <td>￥{$vo.unitprice}</td>
+                            <td class="tc">{$vo.nums}</td>
+                            <td class="tc">￥{$vo.totalprice}</td>
+                            <td colspan="2">{$vo.seller}</td>
+                        </tr>
+                    </volist>
+                </volist>
+            </table>
+            <!-- 数据 结束 -->
+            <!-- 分页 开始 -->
+            <div class="page"></div>
+            <!-- 分页 结束 -->
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+</body>
+</html>

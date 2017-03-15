@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<script type="text/javascript" src="__JS__/classify.js"></script>
+	<script type="text/javascript" src="__JS__/alldel.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+	<input id="url" type="hidden" value="?g=admin&m=product&a=classify_delall">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>产品分类管理中心</h2>
+				<a class="hover" href="?g=admin&m=product&a=classify">分类列表</a>
+				<a href="?g=admin&m=product&a=classify_add">添加分类</a>
+			</div>
+			<!-- 主体数据 -->
+			<table class="data">
+				<!-- 数据头部 -->
+				<tr class="data_header">
+					<th><input id="check_all" type="checkbox" name="" value="" /></th>
+					<td id="classify" class="tl">ID</td>
+					<th class="tl">分类名称</th>
+					<th>状态</th>
+					<th>排序</th>
+					<th>操作</th>
+				</tr>
+				<!-- 一条数据开始 -->
+				<volist name="list" id="li">
+				<tr >
+					<td><input class="check_box" type="checkbox" name="items" value="{$li.id}" /></td>
+					<td class="tl">
+						<i class="flex"></i>
+						<span>{$li.id}</span>
+					</td>
+					<td class="tl">{$li.name}</td>
+					<td>{$li['status']?"显示":"不显示"}</td>
+					<!--<td><input class="sort" type="text" name="" value="{$li.sort}" /></td> -->
+					<td>{$li.sort}</td>
+					<td class="data_opt">
+						<a href="?g=admin&m=product&a=classify_add&id={$li.id}">修改</a>
+						<a class="confirm ajax-get" href="index.php?g=admin&m=product&a=classify_del&id={$li.id}">删除</a>
+					</td>
+				</tr>
+				<notempty name="li._child">
+					<volist name="li._child" id="lii">
+					<tr class="no {$li.id} p{$li.id}">
+						<td><input class="check_box" type="checkbox" name="items" value="{$lii.id}" /></td>
+						<td class="tl ti20">
+							<i class="flex"></i>
+							<span>{$lii.id}</span>
+						</td>
+						<td class="tl">{$lii.name}</td>
+						<td>{$lii['status']?"显示":"不显示"}</td>
+						<!--<td><input class="sort" type="text" name="" value="{$li.sort}" /></td> -->
+						<td>{$lii.sort}</td>
+						<td class="data_opt">
+							<a href="?g=admin&m=product&a=classify_add&id={$lii.id}">修改</a>
+							<a class="confirm ajax-get" href="index.php?g=admin&m=product&a=classify_del&id={$lii.id}">删除</a>
+						</td>
+					</tr>
+					<notempty name="lii._child">
+					<volist name="lii._child" id="liii">
+					<tr class="no {$lii.id} p{$li.id} p{$lii.id}">
+						<td><input class="check_box" type="checkbox" name="items" value="{$liii.id}" /></td>
+						<td class="tl ti40">
+							<i class="flex"></i>
+							<span>{$liii.id}</span>
+						</td>
+						<td class="tl">{$liii.name}</td>
+						<td>{$liii['status']?"显示":"不显示"}</td>
+						<!--<td><input class="sort" type="text" name="" value="{$li.sort}" /></td> -->
+						<td>{$liii.sort}</td>
+						<td class="data_opt">
+							<a href="?g=admin&m=product&a=classify_add&id={$liii.id}">修改</a>
+							<a class="confirm ajax-get" href="index.php?g=admin&m=product&a=classify_del&id={$liii.id}">删除</a>
+						</td>
+					</tr>
+					</volist>
+				</notempty>
+					</volist>
+				</notempty>
+				</volist>
+			</table>
+			<!-- 操作 -->
+			<div class="opt">
+				<a class="opt_btn" href="?g=admin&m=product&a=classify_add">添加</a>
+				<a class="opt_btn" attr="BatchDel" href="javascript:void(0);">删除所选</a>
+			</div>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

@@ -1,0 +1,20 @@
+body{background:url('../images/forget_bg.png') no-repeat left top;background-size:cover;}
+/* logo */
+.logo{position:absolute;left:50px;top:34px;}
+/* 重置密码 */
+.forget{width:246px;height:280px;padding:30px;background:rgba(255,255,255,.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);position:absolute;top:50%;left:50%;margin-top:-200px;margin-left:-153px;}
+.forget .forget_title{font-size:16px;font-weight:bold;}
+.forget .forget_info{width:100%;margin-top:20px;color:#8a8a8a;}
+.forget .forget_info p{line-height:20px;}
+.forget .forget_con{position:relative;margin-top:20px;}
+/* 图标 */
+.forget div i{width:20px;height:26px;position:absolute;left:10px;top:6px;background:url('../images/lry_icons.png') no-repeat left center;}
+.forget .forget_con .icon{background-position:0px 4px;}
+/* 输入框 */
+.forget .forget_con .forget_input{font-size:14px;width:204px;padding:11px 0 11px 40px;border:1px solid #dcdcdc;}
+/* 确认按钮 */
+.forget .forget_btn{width:100%;height:40px;line-height:40px;font-size:16px;margin-top:20px;text-align:center;background:#08bdb7;color:#fff;border:none;}
+/* 登录、注册链接 */
+.forget .forget_opt{margin-top:20px;}
+.forget .forget_opt a{color:#08bdb7;float:right;}
+.forget .forget_opt .login_btn{border-left:1px solid #08bdb7;padding-left:8px;margin-left:8px;}

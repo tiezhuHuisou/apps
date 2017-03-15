@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>限时抢购活动设置中心</h2>
+			</div>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="activity_type" value="1" />
+                <table class="add_table">
+                    <!-- 活动名称 -->
+                    <tr>
+                        <td class="w120">活动名称：</td>
+                        <td>
+                            <input class="i200" type="text" name="title" value="{$detail.title}" />
+                            <span class="pl3">不能超过10个字</span>
+                        </td>
+                    </tr>
+                    <!-- 活动开始时间输入框 -->
+                    <tr>
+                        <td class="w120">活动开始时间：</td>
+                        <td>
+                            <input id="start_time" class="i200 laydate-icon" type="text" name="start_time" value="<notempty name='detail.start_time'>{$detail['start_time']|date='Y-m-d H:i:s',###}</notempty>" datatype="*" nullmsg="请选择活动开始时间" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请选择活动开始时间</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 活动结束时间输入框 -->
+                    <tr>
+                        <td class="w120">活动结束时间：</td>
+                        <td>
+                            <input id="end_time" class="i200 laydate-icon" type="text" name="end_time" value="<notempty name='detail.end_time'>{$detail['end_time']|date='Y-m-d H:i:s',###}</notempty>" datatype="*" nullmsg="请选择活动结束时间" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写活动开始时间</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 活动图片按钮 -->
+                    <tr>
+                        <td class="w120">活动图片：</td>
+                        <td>
+                            <a id="logobtn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <input id="logourl" name="img" type="hidden" value="{$detail.img}" />
+                            <span class="pl3">建议尺寸：640*200</span>
+                        </td>
+                    </tr>
+                    <!-- 活动图片预览 -->
+                    <tr <empty name="detail.img">class="no"</empty>>
+                        <td class="w120">活动图片预览：</td>
+                        <td>
+                            <img id="logoId" src="{$detail.img}" width="320" height="100" />
+                        </td>
+                    </tr>
+                    <!-- 是否开启 -->
+                    <tr>
+                        <td class="w120">是否开启：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="status" value="1" checked />
+                                <span>开启</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="status" value="0" <eq name="detail.status" value="0">checked</eq> />
+                                <span>关闭</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__STATIC__/layer/laydate.js"></script>
+    <script type="text/javascript" src="__JS__/flashset.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/check/check.css" />
+	<style type="text/css">
+		.inp_grp{margin-top: 70px;}
+		.save{width: 90%; margin: 20px auto; margin-top: 50px;}
+	</style>
+</head>
+<body>
+	<!-- 头部 开始 -->
+	<include file="Common/header"/>
+	
+	<div class="weui-cells inp_grp">
+		<div class="weui-cell">
+			<div class="weui-cell__bd">
+				<input class="weui-input" type="text" placeholder="请输入内容">
+			</div>
+			<img id="del" src="__IMG__/矢量智能对象@3x.png"/ height="18" width="18">
+		</div>
+	</div>
+	<a href="javascript:;" class="weui-btn weui-btn_primary save">保存</a>
+	
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__STATIC__/check/check.js"></script>
+	<script type="text/javascript">
+		//删除输入信息；
+		$("#del").click(function(){
+			$(this).parents(".weui-cell").find("input").val("")
+		});
+		//保存触发事件；
+		$(".save").click(function(){
+			//处理代码放置处
+			//输入有内容的执行块；
+			if ($(".weui-input").val()!="") {
+				
+				
+				window.history.back(-1);
+			}else{
+				$.alert("输入不可为空")
+			}
+		})
+	</script>
+</body>
+</html>

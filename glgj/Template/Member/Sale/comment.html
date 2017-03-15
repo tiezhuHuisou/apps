@@ -1,0 +1,84 @@
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/comment.css" />
+    <script type="text/javascript" src="__JS__/classify.js"></script>
+    <script type="text/javascript" src="__JS__/comment.js"></script>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <include file="Sale/nav"/>
+            <!-- 主体数据 -->
+            <table class="data">
+                <!-- 数据头部 -->
+                <tr class="data_title">
+                    <td id="classify" class="tl ti25">ID</td>
+                    <th class="tl">用户</th>
+                    <th class="tl">评价内容</th>
+                    <th>评价时间</th>
+                    <!--<th>操作</th>-->
+                </tr>
+                <!-- 主评 -->
+                <volist name="list" id="li">
+                    <tr>
+                        <td class="tl ti20">
+                            <i class="flex"></i>
+                            <span>{$li.id}</span>
+                        </td>
+                        <td class="tl">{$li.uname}</td>
+                        <td class="tl">{$li.content}</td>
+                        <td>{$li.ctime|date="Y-m-d H:i",###}</td>
+                        <!--<td class="data_opt">-->
+                            <!--<a class="comment" href="javascript:void(0);">回复</a>-->
+                            <!--<a class="confirm ajax-get" href="?g=member&m=sale&a=comment_up&id={$li.id}&state={$li.state}"><if condition="$li.state eq 1">禁用<else />解禁</if></a>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <notempty name="li.reply">
+                        <!-- 追评 -->
+                        <volist name="li.reply" id="re">
+                            <tr class="no {$li.id}">
+                                <td class="tl ti40">
+                                    <!-- <i class="flex"></i> -->
+                                    <span>{$re.id}</span>
+                                </td>
+                                <td class="tl"><if condition="is_null($re.uid)">{$re.uname}<else />管理员</if></td>
+                                <td class="tl">{$re.content}</td>
+                                <td>{$re.addtime|date="Y-m-d H:i",###}</td>
+                                <td class="data_opt">
+                                    <a class="confirm ajax-get" href="?g=member&m=sale&a=comment_up&id={$re.id}&state={$re.state}"><if condition="$re.state eq 1">禁用<else />解禁</if></a>
+                                </td>
+                            </tr>
+                        </volist>
+                    </notempty>
+                </volist>
+            </table>
+            <!-- 分页 -->
+            <div class="page">{$_page}</div>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <!-- 回复弹出窗 开始 -->
+    <div id="reply">
+        <form class="form-horizontal" name="" action="?g=member&m=sale&a=comment_reply" method="post">
+            <textarea class="reply_content" name="content"></textarea>
+            <input class="comment_id" type="hidden" name="id" value="" />
+            <input type="hidden" name="type" value="{$Think.get.type}" />
+            <div class="reply_opt">
+                <input class="reply_submit ajax-post" target-form="form-horizontal" type="submit" value="回复" />
+                <a class="reply_cancel" href="javascript:void(0);">取消</a>
+            </div>
+        </form>
+    </div>
+    <!-- 回复弹出窗 结束 -->
+</body>
+</html>

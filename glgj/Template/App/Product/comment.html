@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/more.css" />
+</head>
+<body>
+	<neq name="appsign" value="1">
+		<!-- 头部 开始 -->
+		<header>
+			<a class="header_left" href="javascript:history.go(-1);">
+				<div class="lt"><div></div></div>
+			</a>
+			<p class="header_title">评价</p>
+			<a class="header_right f15252" id="sub" href="javascript:void(0);">发送</a>
+		</header>
+		<!-- 头部 结束 -->
+	</neq>
+	<!-- 主体内容 开始 -->
+	<section class="comment_main <neq name='appsign' value='1'>no_footer<else />no_head</neq>">
+		<!-- 评价文本域 -->
+		<form id="form" class="form-horizontal" name="" action="" method="post">
+			<textarea class="comment_textarea" id="content" placeholder="请输入评论内容"></textarea>
+			<input type="hidden" id="id" value="{$Think.get.id}">
+			<eq name="appsign" value="1">
+				<a id="sub" class="submit_btn" href="javascirpt:void(0);">发送</a>
+				<input id="uuid" type="hidden" name="uuid" value="{$Think.get.uuid}" />
+			</eq>
+		</form>
+		<!-- 商品评价 开始 -->
+		<div class="goods_comment">
+			<notempty name="list">
+				<h5>商品评价</h5>
+				<volist name="list" id="li">
+					<div class="goods_comment_list">
+						<div class="goods_comment_list_info">
+							<!-- 评论用户名 -->
+							<span class="goods_comment_list_idnum">{$li.uname}</span>
+							<!-- 评论时间 -->
+							<span class="goods_comment_list_time">{$li.addtime|date="Y-m-d H:i",###}</span>
+							<div class="clear"></div>
+						</div>
+						<!-- 评论内容 -->
+						<p class="goods_comment_list_con">{$li.content}</p>
+						<!-- 追评内容 -->
+						<notempty name="li.reply" >
+							<volist name="li.reply" id="re"> 
+								<p class="goods_comment_list_con additional">{$re.addtime|date="Y-m-d H:i",###}<if condition="$re.uid neq ''">追加：<else />回复：</if>{$re.content}</p>
+							</volist>
+						</notempty>
+					</div>
+				</volist>
+			</notempty>
+			<empty name="list">
+				<!-- 暂无评论 -->
+				<div class="goods_comment_list">
+					<p class="goods_comment_list_con">暂无评价</p>
+				</div>
+			</empty>
+		</div>
+	</section>
+	<!-- 主体内容 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__JS__/product_comment.js"></script>
+</body>
+</html>

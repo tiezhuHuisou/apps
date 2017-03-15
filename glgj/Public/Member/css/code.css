@@ -1,0 +1,16 @@
+body{background:url('../images/forget_bg.png') no-repeat left top;background-size:cover;}
+/* logo */
+.logo{position:absolute;left:50px;top:34px;}
+/* 验证码 */
+.code{width:246px;height:230px;padding:30px;background:rgba(255,255,255,.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);position:absolute;top:50%;left:50%;margin-top:-145px;margin-left:-153px;}
+.code .code_title{font-size:16px;font-weight:bold;}
+.code .code_info{width:100%;margin-top:20px;color:#8a8a8a;}
+.code .code_info p{line-height:20px;}
+.code .code_con{position:relative;margin-top:20px;}
+/* 图标 */
+.code div i{width:20px;height:26px;position:absolute;left:10px;top:6px;background:url('../images/lry_icons.png') no-repeat left center;}
+.code .code_con .icon{background-position:0px -53px;}
+/* 验证码输入框 */
+.code .code_con .code_input{font-size:14px;width:204px;padding:11px 0 11px 40px;border:1px solid #dcdcdc;}
+/* 确认按钮 */
+.code .code_btn{width:100%;height:40px;line-height:40px;font-size:16px;margin-top:20px;text-align:center;background:#08bdb7;color:#fff;border:none;}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/need.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/classify.css" />
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/header_classify"/>
+	<!-- 顶部 结束 -->
+	<!-- 求购页面 主体 -->
+	<section class="viewport">
+		<notempty name="list">
+			<div class="buy_list_wrap">
+				<volist name="list" id="li">
+					<div class="buy_wrap">
+						<div class="buy_time">
+							<img class="delay" src="{$li.logo|default='__STATIC__/images/default_img.png'}" data-echo="{$li.logo|default='__STATIC__/images/default_img.png'}" width="40" height="40" />
+							<div class="buy_name">{$li.buy_name}</div>
+							<div class="time">{$li.issue_time}</div>
+						</div>
+						<a class="buy_list" href="?g=app&m=index&a=need_detail&id={$li.id}">
+						<img class="delay" src="{$li.img|default='__STATIC__/images/default_img.png'}" data-echo="{$li.img|default='__STATIC__/images/default_img.png'}" width="80" height="80" />
+							<div class="buy_info">
+								<p class="pro_title">{$li.title}</p>
+								<p class="pro_dis">{$li.short_title}</p>
+							</div>
+							<div class="clear"></div>
+						</a>
+					</div>
+				</volist>
+			</div>
+			<!-- 滑屏至底部提示信息 -->
+			<div class="loading">
+				<img src="__STATIC__/images/loading.gif" width="20" height="20" />
+			</div>
+			<else />
+			<!-- 数据为空时 -->
+			<div class="common_empty">
+				<img src="__IMG__/common_empty.png" width="120" height="120">
+				<p>暂无求购</p>
+				<a href="?g=app&m=index">返回首页</a>
+			</div>
+		</notempty>
+	</section>
+	<!-- 主体内容 结束 -->
+	<!-- 分类列表 -->
+	<div class="classify_nav">
+		<div class="classify_one">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<foreach name="category_list[0]" item="val">
+				<notempty name="category_list[$val['cid']]">
+					<a class="classify_item" href="javascript:void(0);" data-cid="{$val['cid']}" data-flag="1">{$val['cname']}</a>
+					<else />
+					<a class="classify_item" href="?g=app&m=index&a=need&categoryid={$val['cid']}" data-cid="{$val['cid']}" data-flag="0">{$val['cname']}</a>
+				</notempty>
+			</foreach>
+		</div>
+		<div class="classify_two no">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<a class="back_one" href="javascript:void(0);">返回上级分类</a>
+		</div>
+		<div class="classify_three no">
+			<a class="classify_close" href="javascript:void(0);">取消</a>
+			<a class="back_two" href="javascript:void(0);">返回上级分类</a>
+		</div>
+	</div>
+	<!-- 遮罩层 -->
+	<div class="mask"></div>
+	<!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <script type="text/javascript">
+		var data 		  = {$category_arr};
+		var categoryid    = "{$categoryid}";
+		var ajaxFlag 	  = false;
+		var defaultImgUrl = "__STATIC__" + '/images/default_img.png';
+	</script>
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__JS__/classify.js"></script>
+	
+</body>
+</html>

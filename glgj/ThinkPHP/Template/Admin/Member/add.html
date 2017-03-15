@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>会员管理中心</h2>
+				<a href="?g=admin&m=member">会员列表</a>
+				<a class="hover" href="?g=admin&m=member&a=add">添加会员</a>
+			</div>
+			<h3>添加会员</h3>
+			<!-- 添加会员表单 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<input  type="hidden" name="id" value="{$detail.uid}"/>
+				<input  type="hidden" id="get_year" value="{$detail.j_year}"/>
+				<input  type="hidden" id="get_month" value="{$detail.j_month}"/>
+				<input  type="hidden" id="get_day" value="{$detail.j_date}"/>
+				<table class="add_table">
+					<tr>
+						<td class="w120">手机：</td>
+						<td>
+							<input class="i400" type="text" name="mphone" value="{$detail.mphone}"  datatype="mobile" nullmsg="请正确填写手机号码" errormsg="请正确填写手机号码"/>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请正确填写手机号码</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">姓名：</td>
+						<td>
+							<input class="i400" type="text" name="name" value="{$detail.name}"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">昵称：</td>
+						<td>
+							<input class="i400" type="text" name="nickname" value="{$detail.nickname}"datatype="*" nullmsg="请填写昵称" errormsg="请填写昵称"/>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写昵称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">会员组：</td>
+						<td>
+							<select class="select_sort">
+								<volist name="group" id="gr">
+									<option class="pl3" value="{$gr.gid}" <eq name="gr.gid" value="$detail.gid">selected="selected"</eq>>{$gr.gname}</option>
+								</volist>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">邮箱：</td>
+						<td>
+							<input class="i400" type="text" name="email" value="{$detail.email}"datatype="email" nullmsg="请正确填写邮箱" errormsg="请正确填写邮箱"/>
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请正确填写邮箱</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">密码：</td>
+						<td>
+							<input class="i400" type="password" name="password" value="{$detail.password}" datatype="*" nullmsg="请填写密码" />
+						</td>
+						<!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写密码</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+					</tr>
+					<tr>
+						<td class="w120">出生日期：</td>
+						<td>
+							<select name="J_Year" id="year">
+								<option class="pl3">请选择</option>
+								<volist name="year" id="ye">
+									<option class="pl3" value="{$ye.val}">{$ye.val}</option>
+								</volist>
+							</select>
+							<select name="J_Month" id="month">
+								<option class="pl3">请选择</option>
+								<foreach name="month" item="val">
+									<option class="pl3" value="{$val}">{$val}</option>
+								</foreach>							
+	                            
+							</select>
+							<select name="J_Date" id="day">
+								<option class="pl3">请选择</option>								
+									<foreach name="days" item="val">
+										<option class="pl3" value="{$val}">{$val}</option>
+									</foreach>                                
+	                                
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">性别：</td>
+						<td>
+							<label>
+								<input class="pt3" type="radio" name="sex" value="1" checked="checked"<eq name="detail.sex" value="1"> checked="checked" </eq> />
+								<span>男</span>
+							</label>
+							<label>
+								<input class="pt3" type="radio" name="sex" value="2" <eq name="detail.sex" value="2"> checked="checked" </eq> />
+								<span>女</span>
+							</label>
+						</td>
+					</tr>
+					<!-- 提交按钮 -->
+					<tr class="add_opt">
+						<td></td>
+						<td>
+							<input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确定提交">
+							<input class="opt_btn" type="reset" value="重置表单">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+<script>
+$('#year').val($('#get_year').val());
+$('#month').val($('#get_month').val());
+$('#day').val($('#get_day').val());
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/index.css" />
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>欢迎登陆<span>{$Think.session.webname}</span>管理中心！</h2>
+			</div>
+			<h3>系统信息</h3>
+			<div class="system_info">
+				<p class="fl">操作系统：<span>Linux</span></p>
+				<p class="fl">PHP 版本：<span>5.3.10</span></p>
+				<div class="clear"></div>
+			</div>
+			<div class="system_info">
+				<p class="fl">服务器软件：<span>nginx</span></p>
+				<p class="fl">MySQL 版本<span>5.2.0</span></p>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* 评论管理-回复弹窗 */
+#reply{overflow:hidden;display:none;}
+#reply textarea.reply_content{width:400px;height:150px;border:1px solid #dcdcdc;margin:22px auto;outline:none;resize:none;display:block;}
+#reply .reply_opt{width:500px;text-align:center;overflow:hidden;}
+#reply .reply_opt .reply_submit{width:100px;height:40px;line-height:40px;text-align:center;border:none;background:#f15252;color:#fff;display:inline-block;vertical-align:top;outline:none;cursor:pointer;font-size:14px;margin:0 10px;}
+#reply .reply_opt .reply_cancel{width:100px;height:40px;line-height:40px;text-align:center;border:none;background:#f2f2f2;color:#000;display:inline-block;text-decoration:none;font-size:14px;margin:0 10px;}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <script type="text/javascript" src="__JS__/alldel.js"></script>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <input id="url" type="hidden" value="?g=admin&m=member&a=company_delall">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>企业管理中心</h2>
+                <a class="hover" href="?g=admin&m=member&a=company">企业列表</a>
+                <a href="?g=admin&m=member&a=company_add">添加企业</a>
+            </div>
+            <!-- 主体搜索 -->
+            <div class="search">
+                <form class="form-horizontal" name="" action="?g=admin&m=member&a=company" method="post">
+                    <p>筛选：</p>
+                    <select name="flags">
+                        <option value="">全部</option>
+                        <volist name="flags" id="fl">
+                            <option value="{$fl.att}" <eq name="Think.get.flags" value="$fl.att">selected</eq>>{$fl.attname}</option>
+                        </volist>
+                    </select>
+                    <p>搜索：</p>
+                    <input class="search_input" type="text" name="search" value="{$search}"/>
+                    <input class="search_btn" type="submit" value="搜索" />
+                </form>
+            </div>
+            <!-- 主体数据 -->
+            <table class="data">
+                <!-- 数据头部 -->
+                <tr class="data_header">
+                    <th><input id="check_all" type="checkbox" name="" value="" /></th>
+                    <th>ID</th>
+                    <!--<th>二维码</th>-->
+                    <th>企业名称</th>
+                    <th>主要线路</th>
+                    <th>状态</th>
+                    <th>注册时间</th>
+                    <th>操作</th>
+                </tr>
+                <!-- 一条数据开始 -->
+                <volist name="list" id="li">
+                    <tr>
+                        <td><input class="check_box" type="checkbox" name="items" value="{$li.id}" /></td>
+                        <td>{$li.id}</td>
+                        <!--<td><empty name="li.qrcode">暂无<else /><a href="{$li.qrcode}" target="_blank"><img class="qrcode" src="{$li.qrcode}" width="60" height="60" /></a></empty></td>-->
+                        <td>{$li.name}</td>
+                        <td class="max">{$li.business}</td>
+                        <!-- <td>{$li.site}</td> -->
+                        <!-- <td>{$li.email}</td> -->
+                        <td><if condition="$li.status eq 1">显示<else />不显示</if><notempty name="li.flags">&nbsp<span class="red">({$li.flags})</notempty><eq name="li['proprietary']" value="1">&nbsp<span class="red">(自营)</eq></span></td>
+                        <td>{$li.issue_time|date="Y-m-d H:i",###}</td>
+                        <td class="data_opt">
+                            <a href="?g=admin&m=member&a=company_add&id={$li.id}">修改</a>
+                            <!-- <a href="?g=admin&m=member&a=comment&id={$li.id}">评价管理</a> -->
+                            <!--<a href="?g=admin&m=member&a=companyalbumadd&companyid={$li.id}">相册设置</a>-->
+                            <a href="?g=admin&m=member&a=point&id={$li.id}">网点</a>
+                            <a class="confirm ajax-get" href="index.php?g=admin&m=member&a=company_del&id={$li.id}">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+            </table>
+            <!-- 操作 -->
+            <div class="opt">
+                <a class="opt_btn" href="?g=admin&m=member&a=company_add">添加</a>
+                <a id="qrcode" class="opt_btn" href="javascript:void(0);">生成二维码</a>
+                <a class="opt_btn" attr="BatchDel" href="javascript:void(0);">删除所选</a>
+            </div>
+            <!-- 分页 -->
+            <div class="page">{$_page}</div>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript">
+        $(function() {
+            $('#qrcode').click(function() {
+                var check = $("input[name='items']:checked");
+                if (check.length < 1) {
+                    layer.open({
+                        content : '请选择生成项',
+                        time    : 2000
+                    });
+                    return false;
+                }
+                layer.confirm('确定要生成二维码吗？', function(luxury) {
+                    var id = new Array();
+                    check.each(function(i) {
+                        id[i] = $(this).val();
+                    });
+
+                    $.post('?g=admin&m=member&a=qrcode', {id: id}, function( data ) {
+                        var icon = 2;
+                        if ( data.status == 1 ) {
+                            icon = 1;
+                        }
+                        layer.msg(data.info, {
+                            time : 2000,
+                            icon : icon
+                        }, function() {
+                            window.location.reload();
+                        });
+                    });
+
+                    layer.close(luxury);
+                });  
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/ns_detail.css" />
+</head>
+<body>
+    <!-- 头部 -->
+    <include file="Common/header"/>
+    <!-- 无底部区域 -->
+    <section <neq name="appsign" value="1">class="viewport"</neq>>
+        <!-- 图片、长标题、短标题 开始 -->
+        <div class="detail_basic">
+            <span class="basic_img">
+                <img src="{$detail['img']|default='__STATIC__/images/default_icon.jpg'}" width="80" height="80" />
+            </span>
+            <div class="basic_info">
+                <p id="title" class="name_long">{$detail['title']}</p>
+                <p class="name_short">{$detail['short_title']}</p>
+            </div>
+        </div>
+        <!-- 图片、长标题、短标题 结束 -->
+        <!-- 单价、数量 开始 -->
+        <div class="detail_info">
+            <p class="info_list">供应价格：<span class="red">{$detail['price']}</span>元</p>
+            <p class="info_list txt_right">供应数量：<span class="red">{$detail['num']}</span><switch name="detail['unit']"><case value="1">件</case><case value="2">批</case><case value="3">千克</case><case value="4">块</case><case value="5">台</case><case value="6">吨</case></switch></p>
+        </div>
+        <!-- 单价、数量 结束 -->
+        <!-- 分类、有效天数 开始 -->
+        <div class="detail_info">
+            <span class="info_title">截止日期：</span>
+            <span class="info_name"><eq name="detail['days']" value="0">长期有效<else />{$detail['limit']|date='Y-m-d', ###}</eq></span>
+        </div>
+        <!-- 分类、有效天数 结束 -->
+        <!-- 发布人 开始 -->
+        <a class="detail_info" href="javascript:void(0);">
+            <span class="info_title">发布人：</span>
+            <span class="info_name">{$detail['issue_name']}</span>
+        </a>
+        <!-- 发布人 结束 -->
+        <notempty name="detail['qq']">
+            <!-- qq在线客服 开始 -->
+            <a class="detail_service" href="http://wpa.qq.com/msgrd?v=3&uin={$detail['qq']}&site=qq&menu=yes">
+                <i class="service_icon"></i>
+                <span class="service_qq">联系QQ</span>
+                <div class="larger"></div>
+            </a>
+            <!-- qq在线客服 结束 -->
+            <else />
+            <!-- qq在线客服 开始 -->
+            <a class="detail_service" href="javascript:void(0);">
+                <i class="service_icon"></i>
+                <span class="service_qq">暂无联系QQ</span>
+                <div class="larger"></div>
+            </a>
+            <!-- qq在线客服 结束 -->
+        </notempty>
+        <!-- 供应详情 开始 -->
+        <div class="detail_desc">
+            <h3>供应详情</h3>
+            <article>{$detail['summary']}</article>
+        </div>
+        <!-- 供应详情 结束 -->
+    </section>
+    <footer>      
+        <div class="footer_opt">
+            <a href="tel:{$detail['mobile']}">立即联系</a>
+        </div>
+        <!-- <div id="collect_wrap" class="footer_opt">
+            <a href="javascript:void(0);"><eq name="sign">收藏供应<else />取消收藏</eq></a>
+        </div>
+        <input id="nid" type="hidden" value="{$detail['id']}" />
+        <input id="uid" type="hidden" value="{$uid}" />
+        <input id="sign" type="hidden" value="{$sign}" /> -->
+    </footer>
+    <!-- <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/need_detail.js"></script> -->
+</body>
+</html>

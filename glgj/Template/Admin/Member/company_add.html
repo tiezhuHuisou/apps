@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css"/>
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript">
+        var imgUrl = "__IMG__";
+    </script>
+    <script type="text/javascript" src="__JS__/company_add.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2"></script>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <div class="wrapper">
+        <!-- 主体头部 -->
+        <div class="header">
+            <h2>企业管理中心</h2>
+            <a href="?g=admin&m=member&a=company">企业管理</a>
+            <a class="hover" href="?g=admin&m=member&a=company_add">添加企业</a>
+        </div>
+        <h3>添加企业</h3>
+        <!-- 添加企业表单 -->
+        <form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="company[id]" value="{$detail.id}"/>
+            <!--<input type="hidden" name="companylink[id]" value="{$detail.linkid}"/>-->
+            <input type="hidden" name="user_id" value="{$detail.user_id}"/>
+            <!--<input type="hidden" id="lng" value="{$detail.lng}"/>-->
+            <!--<input type="hidden" id="lat" value="{$detail.lat}"/>-->
+            <table class="add_table">
+                <empty name="detail.user_id">
+                    <tr>
+                        <td class="w120">登陆账号：</td>
+                        <td>
+                            <input class="i400" type="text" name="company[mphone]" value="{$detail.mphone}"
+                            <notempty name="detail.user_id" datatype="mobile" nullmsg="请正确填写手机号" errormsg="请正确填写手机号">
+                                readOnly="true"
+                            </notempty>
+                            >
+                            <span class="example">（登陆账号请填手机号码）</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请正确填写手机号</span>
+                                <span class="dec">
+                                        <s class="dec1">&#9670;</s>
+                                        <s class="dec2">&#9670;</s>
+                                    </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">登录密码：</td>
+                        <td>
+                            <input class="i400" type="password" name="company[password]" datatype="*" nullmsg="请填写登录密码"
+                                   errormsg="请正确填写登录密码"/>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写登录密码</span>
+                                <span class="dec">
+                                        <s class="dec1">&#9670;</s>
+                                        <s class="dec2">&#9670;</s>
+                                    </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">确认密码：</td>
+                        <td>
+                            <input class="i400" type="password" name="company[password1]" recheck="password"
+                                   datatype="*" nullmsg="请再输入一次密码！" errormsg="您两次输入密码不一致！"/>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请再输入一次密码！</span>
+                                <span class="dec">
+                                        <s class="dec1">&#9670;</s>
+                                        <s class="dec2">&#9670;</s>
+                                    </span>
+                            </div>
+                        </td>
+                    </tr>
+                </empty>
+                <tr>
+                    <td class="w120">企业名称：</td>
+                    <td>
+                        <input class="i400 company_add_name" type="text" name="company[name]" value="{$detail.name}"
+                               datatype="*" nullmsg="请填写企业名称" errormsg="请填写企业名称"/>
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写企业名称</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td class="w120">自营：</td>
+                    <td>
+                        <label>
+                            <input class="pt3" type="radio" name="company[proprietary]" value="0" checked />
+                            <span>否</span>
+                        </label>
+                        <label>
+                            <input class="pt3" type="radio" name="company[proprietary]" value="1" <eq name="detail.proprietary" value="1">checked</eq> />
+                            <span>是</span>
+                        </label>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td class="w120">属性：</td>
+                    <td class="lh22">
+                        <volist name="flags" id="fl">
+                            <label class="mgr4"><input class="pt3" name="company[flags]" type="radio" value="{$fl.att}"
+                                <eq name="detail.flags" value="$fl.att">checked</eq>
+                                />{$fl.attname}[{$fl.att}]</label>
+                        </volist>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">企业分类：</td>
+                    <td>
+                        <select class="select_sort" name="company[company_category_id]">
+                            <option value="0">请选择</option>
+                            <volist name="list" id="li">
+                                <option value="{$li.id}"
+                                <eq name="li.id" value="$detail.company_category_id">selected="selected"</eq>
+                                >{$li.name}</option>
+                            </volist>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">企业logo：</td>
+                    <td>
+                        <a id="thumbnail" class="opt_btn mgl0">选择图片</a>
+                        <span class="pl3">推荐尺寸180*180</span>
+                        <input id="imgurl" type="hidden" name="company[logo]"
+                               value="{$detail.logo|default='/Public/Apps/images/company_default.png'}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">企业logo预览：</td>
+                    <td><img id="preview" src="{$detail.logo|default='/Public/Apps/images/company_default.png'}"
+                             style="border:none;margin-top:10px;" width="100" height="100"/></td>
+                </tr>
+
+                <!--主题图片-->
+                <!--<tr>-->
+                <!--<td class="w120">主题图片：</td>-->
+                <!--<td>-->
+                <!--<a id="themebtn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>-->
+                <!--<span class="pl3">建议尺寸：700*350</span>-->
+                <!--<input id="themeurl" name="company[theme_img]" type="hidden" value="{$detail.theme_img}">-->
+                <!--</td>-->
+                <!--</tr>-->
+                <!--<tr <empty name="detail.theme_img">class="no"</empty>>-->
+                <!--<td class="w120">主题图片预览：</td>-->
+                <!--<td>-->
+                <!--<img id="themeId" src="{$detail.theme_img}" width="350" height="175" />-->
+                <!--</td>-->
+                <!--</tr>-->
+                <!--等级图标-->
+                <tr>
+                    <td class="w120">等级图标：</td>
+                    <td>
+                        <a id="introduction_bgimg_btn" class="opt_btn mgl0">选择图片</a>
+                        <!--<span class="pl3">推荐尺寸750*1206</span>-->
+                        <input id="introduction_bgimg_url" type="hidden" name="company[grade]"
+                               value="{$detail.grade|default=''}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">等级图标：</td>
+                    <td><img id="introduction_bgimg_preview"
+                             src="{$detail.grade|default='/Public/Apps/images/company_introduction_bgimg.png'}"
+                             style="border:none;margin-top:10px;" width="150" height="150"/></td>
+                </tr>
+                <!--企业主页背景图-->
+                <tr>
+                    <td class="w120">企业主页背景图：</td>
+                    <td>
+                        <a id="bgimg_btn" class="opt_btn mgl0">选择图片</a>
+                        <span class="pl3">推荐尺寸750*530</span>
+                        <input id="bgimg_url" type="hidden" name="company[bgimg]"
+                               value="{$detail.bgimg|default='/Public/Apps/images/company_bgimg.png'}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">企业主页背景图预览：</td>
+                    <td><img id="bgimg_preview" src="{$detail.bgimg|default='/Public/Apps/images/company_bgimg.png'}"
+                             style="border:none;margin-top:10px;" width="150" height="106"/></td>
+                </tr>
+
+
+                <!-- 企业资质按钮 -->
+                <!--<tr>-->
+                <!--<td class="w120">企业资质：</td>-->
+                <!--<td>-->
+                <!--<a id="carousel_btn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>-->
+                <!--<span class="pl3">建议尺寸：200*200</span>-->
+                <!--</td>-->
+                <!--</tr>-->
+                <!--&lt;!&ndash; 预览 &ndash;&gt;-->
+                <!--<tr <empty name="cert">class="no"</empty>>-->
+                <!--<td class="w120">企业资质预览：</td>-->
+                <!--<td id="carousel_img">-->
+                <!--<volist name="cert" id="cert">-->
+                <!--<p class="img_wrap">-->
+                <!--<img class="delete_img" src="__IMG__/delete_img.png" width="20" height="20" />-->
+                <!--<img src="{$cert}" width="100" height="100" />-->
+                <!--<input value="{$cert}" name="cert[]" type="hidden" />-->
+                <!--</p>-->
+                <!--</volist>-->
+                <!--</td>-->
+                <!--</tr>-->
+
+                <tr>
+                    <td class="w120">主要线路：</td>
+                    <td><textarea class="t400" name="company[business]" datatype="*" nullmsg="请填写主营行业"
+                                  errormsg="请填写主营行业">{$detail.business}</textarea></td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写主要线路</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">所在地：</td>
+                    <td>
+                        <select class="province" name="companylink[province_id]">
+                            <option value="">请选择所在省</option>
+                            <foreach name="region_arr[0]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['province_id']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+
+                        </select>
+                        <select class="city" name="companylink[city_id]">
+                            <option value="">请选择所在市</option>
+                            <foreach name="region_arr[$detail['province_id']]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['city_id']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>
+                        <select class="towns" name="companylink[countyN]">
+                            <option value="">请选择所在区/县</option>
+                            <foreach name="region_arr[$detail['city_id']]" item="val">
+                                <option value="{$val['id']}"
+                                <eq name="detail['countyn']" value="$val['id']">selected</eq>
+                                >{$val['name']}</option>
+                            </foreach>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">详细地址：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[address]" value="{$detail.address}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">联系人：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[contact_user]"
+                               value="{$detail.contact_user}"/>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td class="w120">性别：</td>
+                    <td>
+                        <label>
+                            <input class="pt3" type="radio" name="companylink[sex]" value="1" checked="checked"<eq name="detail.sex" value="1"> checked="checked" </eq> />
+                            <span>男</span>
+                        </label>
+                        <label>
+                            <input class="company_add_radio" type="radio" name="companylink[sex]" value="2" <eq name="detail.sex" value="2"> checked="checked" </eq> />
+                            <span>女</span>
+                        </label>
+                    </td>
+                </tr>
+                -->
+                <tr>
+                    <td class="w120">职位：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[contact_office]" value="{$detail.contact_office}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">官网：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[site]" value="{$detail.site}"/>
+                        <span class="pl3">（例如：http://www.huisou.com）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">微信：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[weixin_num]" value="{$detail.weixin_num}"/>
+                        <span class="pl3">（请填写微信号）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">联系手机：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[subphone]" value="{$detail.subphone}"/>
+                        <span class="pl3">（例如：0571-5555555或13555555555）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">公司电话：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[telephone]" value="{$detail.telephone}"/>
+                        <span class="pl3">（例如：0571-5555555或13555555555）</span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="w120">传真：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[fax]" value="{$detail.fax}"  />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">联系邮箱：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[email]" value="{$detail.email}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">企业客服QQ：</td>
+                    <td>
+                        <input class="i400" type="text" name="companylink[qq]" value="{$detail.qq}"  />
+                    </td>
+                </tr>
+                <tr class="company_add_introduce">
+                    <td class="w120">企业简介：</td>
+                    <td>
+                        <textarea class="t400" name="company[summary]">{$detail.summary}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">排序：</td>
+                    <td>
+                        <input class="i50" type="text" name="company[sort]" value="{$detail.sort|default='50'}"
+                               datatype="n" nullmsg="请填写数字" errormsg="请填写数字"/>
+                        <span class="pl3">数字越大越靠前</span>
+                    </td>
+                    <!-- 表单验证提示信息 -->
+                    <td>
+                        <div class="info">
+                            <span class="Validform_checktip">请填写数字</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="w120">是否显示：</td>
+                    <td>
+                        <label>
+                            <input class="pt3" type="radio" name="company[status]" value="1" checked/>
+                            <span>显示</span>
+                        </label>
+                        <label>
+                            <input class="pt3" type="radio" name="company[status]" value="0"
+                            <eq name="detail.status" value="0">checked</eq>
+                            />
+                            <span>不显示</span>
+                        </label>
+                    </td>
+                </tr>
+                <!-- 提交按钮 -->
+                <tr class="add_opt">
+                    <td></td>
+                    <td>
+                        <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit"
+                               value="确定提交">
+                        <input class="opt_btn" type="reset" value="重置表单">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- 主体 结束 -->
+<script type="text/javascript">
+    var data = {$region_arr_json};
+</script>
+
+</body>
+</html>

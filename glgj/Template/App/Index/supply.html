@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/supply.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/classify.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/header_classify"/>
+    <!-- 顶部 结束 -->
+    <!-- 可视区域 开始 -->
+    <section <neq name="appsign" value="1">class="viewport"</neq>>
+        <notempty name="list">
+            <!-- 数据列表 开始 -->
+            <div class="list_wrap">
+                <!-- 一条数据 开始 -->
+                <foreach name="list" item="liv">
+                    <div class="list">               
+                        <!-- 图标 -->
+                        <div class="list_icon">
+                            <a href="?g=app&m=index&a=supplydetail&id={$liv['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>"><img src="{$liv['img']|default='__STATIC__/images/default_icon.jpg'}" width="80" height="80" /></a>
+                        </div>
+                        <!-- 信息 -->
+                        <div class="list_info">
+                            <a href="?g=app&m=index&a=supplydetail&id={$liv['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>"><h3>{$liv['title']}</h3></a>
+                            <p>{$liv['short_title']}</p>
+                        </div>
+                        <!-- 电话 -->
+                        <div class="list_right">
+                            <p class="text">{$liv['issue_time']|date='m-d',###}</p>
+                            <a href="tel:{$liv['mobile']}"><img src="__IMG__/phone.png" width="50" height="50" /></a>
+                        </div>
+                    </div>
+                </foreach>
+                <!-- 一条数据 结束 -->
+            </div>
+            <!-- 数据列表 结束 -->
+            <!-- 滑屏至底部提示信息 -->
+            <div class="loading">
+                <img src="__STATIC__/images/loading.gif" width="20" height="20" />
+            </div>
+            <else />
+            <!-- 数据为空时 -->
+            <div class="common_empty">
+                <img src="__IMG__/common_empty.png" width="120" height="120">
+                <p>暂无供应信息</p>
+                <neq name="appsign" value="1">
+                    <a href="?g=app&m=index">返回首页</a>
+                </neq>
+            </div>
+        </notempty>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 分类列表 开始 -->
+    <div class="classify_nav">
+        <div class="classify_one">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <a class="classify_item" href="?g=app&m=index&a=supply<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">全部分类</a>
+            <foreach name="category_list[0]" item="val">
+                <notempty name="category_list[$val['cid']]">
+                    <a class="classify_item" href="javascript:void(0);" data-cid="{$val['cid']}" data-flag="1">{$val['cname']}</a>
+                    <else />
+                    <a class="classify_item" href="?g=app&m=index&a=supply&categoryid={$val['cid']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>" data-cid="{$val['cid']}" data-flag="0">{$val['cname']}</a>
+                </notempty>
+            </foreach>
+        </div>
+        <div class="classify_two no">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <a class="back_one" href="javascript:void(0);">返回上级分类</a>
+        </div>
+        <div class="classify_three no">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <a class="back_two" href="javascript:void(0);">返回上级分类</a>
+        </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <!-- 分类列表 结束 -->
+    <neq name="appsign" value="1">
+        <!-- 底部 开始 -->
+        <include file="Common/footer"/>
+        <!-- 底部 结束 -->
+    </neq>
+    <script type="text/javascript">
+        var data          = {$category_arr};
+        var categoryid    = "{$categoryid}";
+        var ajaxFlag      = false;
+        var defaultImgUrl = "__STATIC__" + '/images/default_img.png';
+        var uuid          = "{$Think.get.uuid}";
+    </script>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__JS__/supply.js"></script>
+    <script type="text/javascript" src="__JS__/classify.js"></script>
+    <script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

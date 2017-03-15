@@ -1,0 +1,16 @@
+/* 搜索页面顶部 */
+.search_top .search_sort{height:30px;background:#fff;position:relative;border:1px solid #dcdcdc;-webkit-box-flex:2;margin-left:20px}
+.search_top .search_sort .search_list{background:#fff;width:100%;height:30px;line-height:30px;font-size:12px;text-align:center;text-indent:-12px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;display:none;;}
+.search_top .search_sort img{position:absolute;right:5px;top:10px;}
+.search_top .search_sort .account_img_top{transform:rotate(180deg);}
+.search_top .search_sort_show{background:#fff;width:100%;height:30px;line-height:30px;font-size:12px;text-align:center;text-indent:-12px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.search{-webkit-box-flex:3;;display:-webkit-box;position:relative;}
+.search_top input{height:30px;font-size:12px;text-indent:10px;outline:none;border:1px solid #dcdcdc;border-left:0;background:#fff;-webkit-box-flex:1;display:block;}
+.search_top .search_img{display:-webkit-box;top:1px;right:0;-webkit-box-align:center;-webkit-box-pack:center;}
+.search_top .search_img img{margin:0;}
+.search_top .header_right{-webkit-box-pack:center;}
+.search_top .select_down{display:block;position:absolute;top:14px;width:10px;height:10px;right:14px;}
+.search_top .select_up{display:block;position:absolute;top:7px;width:10px;height:10px;right:14px;display:none;}
+/* 搜索页面主体 */
+.pro_title{height:45px;line-height:45px;font-size:14px;border-bottom:1px solid #dcdcdc;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding:0 16px;}
+.clear_search{width:108px;height:40px;line-height:40px;margin:20px auto 0;border:1px solid #f15252;text-align:center;-webkit-border-radius:4px;}

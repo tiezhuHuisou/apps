@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/recruit_apply.css" />
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <include file="Common/header"/>
+    <!-- 头部 结束 -->
+    <!-- 可视区域 开始 -->
+    <section class="no_footer">
+        <!-- 基本信息 开始 -->
+        <div class="base_info">
+            <!-- 标题 -->
+            <p class="title">基本信息</p>
+            <!-- 姓名 -->
+            <div class="row">
+                <p class="name">姓名</p>
+                <p class="content">{$detail['name']}</p>
+            </div>
+            <!-- 年龄 -->
+            <div class="row">
+                <p class="name">年龄</p>
+                <p class="content">{$detail['age']}</p>
+            </div>
+            <!-- 性别 -->
+            <div class="row">
+                <p class="name">性别</p>
+                <p class="content">{$detail['sex']}</p>
+            </div>
+            <!-- 学历 -->
+            <div class="row">
+                <p class="name">学历</p>
+                <p class="content">{$detail['degree']}</p>
+            </div>
+            <!-- 期望薪资 -->
+            <div class="row">
+                <p class="name">期望薪资</p>
+                <p class="content">{$detail['expect_wages']}</p>
+            </div>
+        </div>
+        <!-- 基本信息 结束 -->
+        <!-- 工作经历 开始 -->
+        <div class="experience">
+            <!-- 标题 -->
+            <p class="title">工作经历</p>
+            <!-- 遮住第一条记录的上半部分线条 -->
+            <div class="experience_mask"></div>
+            <notempty name="detail['work_exp']">
+                <volist name="detail['work_exp']" id="vo">
+                    <!-- 一个工作经历 开始 -->
+                    <div class="experience_row">
+                        <div class="experience_icon">
+                            <i></i>
+                            <span></span>
+                        </div>
+                        <a class="experience_info" href="?g=app&m=recruit&a=workexpdetail&id={$vo['id']}">
+                            <p class="experience_date">{$vo['begin_time']|date='Y-m',###} - {$vo['end_time']|date='Y-m',###}</p>
+                            <p class="experience_desc">{$vo['company_name']} - {$vo['post']}</p>
+                        </a>
+                    </div>
+                    <!-- 一个工作经历 结束 -->
+                </volist>
+                <else />
+                <!-- 未添加工作经历 开始 -->
+                <div class="experience_row">
+                    <div class="experience_icon">
+                        <i></i>
+                    </div>
+                    <div class="experience_info">
+                        <p class="experience_date">未添加工作经历</p>
+                    </div>
+                </div>
+                <!-- 未添加工作经历 结束 -->
+            </notempty>
+        </div>
+        <!-- 工作经历 结束 -->
+        <!-- 联系方式 开始 -->
+        <div class="contact">
+            <!-- 标题 -->
+            <p class="title">联系方式</p>
+            <!-- 联系电话 -->
+            <div class="row">
+                <p class="name">联系电话</p>
+                <p class="content">{$detail['phone']}</p>
+            </div>
+            <!-- 常用邮箱 -->
+            <div class="row">
+                <p class="name">常用邮箱</p>
+                <p class="content">{$detail['email']|default='暂无'}</p>
+            </div>
+            <!-- 家庭住址 -->
+            <div class="row">
+                <p class="name">家庭住址</p>
+                <p class="content">{$detail['address']|default='暂无'}</p>
+            </div>
+        </div>
+        <!-- 联系方式 结束 -->
+    </section>
+    <!-- 可视区域 结束 -->
+</body>
+</html>

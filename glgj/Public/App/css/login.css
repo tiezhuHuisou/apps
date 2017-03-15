@@ -1,0 +1,29 @@
+/*------- 登录页面 开始 -------*/
+header{z-index: 1;}
+/* 主体内容 */
+.login_wrapper .login_content{margin:15px 0 36px;}
+.login_wrapper .login_item{display:-webkit-box;border-bottom:1px solid #e5e5e5;}
+.login_wrapper .login_item:last-child{border-bottom:0;}
+/* 图标 */
+.login_wrapper .login_content p i{width:32px;display:block;}
+.login_wrapper .login_content .login_content_phone .login_content_phone_icon{background:url("../images/new_phone.png") no-repeat center #fff;background-size:70%;}
+.login_wrapper .login_content .login_content_password .login_content_password_icon{background:url("../images/suo.png") no-repeat center #fff;background-size:70%;}
+/* 输入框 */
+.login_wrapper .login_content p .login_content_phone_input{-webkit-box-flex:1;height:20px;display:block;padding:10px;border:none;}
+.login_wrapper .login_content p .login_content_password_input{-webkit-box-flex:1;height:20px;display:block;padding:10px;border:none;}
+.login_wrapper .login_content p .login_content_password_see{width:50px;display:block;;background:url("../images/eye.png") no-repeat center #fff;background-size:40%;}
+.login_wrapper .login_content p .nosee{background:url("../images/eyes.png") no-repeat center #fff;background-size:40%;}
+/* 登录、忘记密码 */
+.login_wrapper .login_btn_wrap{display:-webkit-box;}
+.login_wrapper .login_btn_wrap .login_btn{border-radius:5px;margin:0 12px 15px;display:block;height:40px;line-height:40px;font-size:16px;-webkit-box-flex:1;color:#fff;text-align:center;background: #38d163;}
+.login_wrapper .forget_btn_wrap a{margin:0 12px;color:#999;font-size:14px;} 
+.login_wrapper .forget_btn_wrap .register{float:right;}
+/*第三方登录*/
+.login_three{position: fixed;bottom: 60px;left: 20%; width: 60%;}
+.login_three .login_three_info{position: relative; border-top: 1px solid #e5e5e5;}
+.login_three .login_three_info p{position: absolute;top: -12px;left:20%;width: 60%;background: #f6fbf9;font-size: 14px;color: #999;text-align: center;min-width:120px;}
+.login_three .login_three_type{display: flex;margin-top: 50px;justify-content: space-between;}
+.login_three .login_three_type img{width: 50px;height: 50px;}
+/*------- 登录页面 结束 -------*/
+
+

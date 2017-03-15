@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>优惠券管理中心</h2>
+				<a class="hover" href="?g=admin&m=activity&a=coupon">优惠券列表</a>
+				<a href="?g=admin&m=activity&a=couponadd">添加优惠券</a>
+			</div>
+			<!-- 主体数据 -->
+			<table class="data">
+				<!-- 数据头部 -->
+				<tr class="data_header">
+					<th>ID</th>
+					<th>优惠券名称</th>
+					<th>优惠券类型</th>
+					<th>优惠券面值</th>
+					<th>使用条件</th>
+					<th>使用时间期限</th>
+					<th>操作</th>
+				</tr>
+				<!-- 一条数据开始 -->
+				<volist name="list" id="li">
+					<tr>
+						<td>{$li['id']}</td>
+						<td>{$li['title']}</td>
+						<td>{$li['coupon_type']}</td>
+						<td>￥{$li['money']}</td>
+						<td>{$li['condition']}</td>
+						<td>{$li['limit_time']}</td>
+						<td class="data_opt">
+							<a href="?g=admin&m=activity&a=couponadd&id={$li.id}">修改</a>
+							<a class="confirm ajax-get" href="?g=admin&m=activity&a=coupondel&id={$li.id}">删除</a>
+						</td>
+					</tr>
+				</volist>
+			</table>
+			<!-- 分页 -->
+			<div class="page">{$_page}</div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

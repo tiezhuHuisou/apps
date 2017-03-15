@@ -1,0 +1,6 @@
+.weui-media-box_text{display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;align-items:center;}
+.weui-media-box_text .content_desc{-webkit-box-flex: 1;-moz-box-flex: 1; -ms-flex: 1;flex: 1;padding-left:10px;}
+.weui-media-box_text .doit{font-size:18px;position:relative;top:-12px;}
+.weui-media-box__desc {color: #333;font-size: 13px;line-height: 1.2;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+.read_aleady{color:#999;}
+.green_38d163{color:#38d163;}

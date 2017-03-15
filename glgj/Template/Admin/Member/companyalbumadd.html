@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/companyalbumadd.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>相册管理中心</h2>
+                <!-- <a href="?g=admin&m=member&a=company">公司列表</a>
+                <a class="hover" href="?g=admin&m=member&a=companyalbumadd&companyid={$Think.get.companyid}">相册设置</a> -->
+            </div>
+            <h3>企业相册</h3>
+            <!-- 添加企业表单 -->
+            <form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+                <!-- <input type="hidden" name="id" value="{$detail.id}" /> -->
+                <!-- <input type="hidden" name="pid" value="{$Think.get.companyid}" /> -->
+                <table class="add_table">
+                    <!-- <tr>
+                        <td class="w120">相册名称：</td>
+                        <td>
+                            <input class="i200 albumtitle" type="text" name="title" value="{$detail.title}" />
+                        </td>
+                    </tr> -->
+                    <!-- 排序 -->
+                    <!-- <tr>
+                        <td class="w120">排序：</td>
+                        <td>
+                            <input class="i50 album_sort" type="text" name="album_sort" value="{$detail.sort|default='50'}" />
+                            <span class="pl3">数字越大越靠前</span>
+                        </td>
+                    </tr> -->
+                    <!-- 是否显示 -->
+                    <!-- <tr>
+                        <td class="w120">是否显示：</td>
+                        <td>
+                            <label class="mgr">
+                            <input class="pt3" type="radio" name="status" value="1" checked />
+                                <span>显示</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="status" value="0" <eq name="detail.status" value="0">checked</eq> />
+                                <span>不显示</span>
+                            </label>
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td class="w120">相册图片：</td>
+                        <td>
+                            <a id="addpic" class="opt_btn mgl0">添加图片</a>
+                            <table class="list_table">
+                                <tr class="list_header">
+                                    <th colspan="2">图片（建议尺寸：340*340）</th>
+                                    <th>排序</th>
+                                    <th>操作</th>
+                                </tr>
+                                <empty name="allpic">
+                                    <tr class="list_items">
+                                        <td class="tr preview_wrap">
+                                            <img class="pic_preview" src="" width="50" height="50" />
+                                        </td>
+                                        <td class="tl">
+                                            <input class="pic_url" type="hidden" name="img[]" value="" />
+                                            <a class="opt_btn pic_select" href="javascript:void(0);">选择图片</a>
+                                        </td>
+                                        <td>
+                                            <input class="list_sort" type="text" name="sort[]" value="50" />
+                                        </td>
+                                        <td>
+                                            <!-- <label class="mgr">
+                                                <input class="iscover_val" type="hidden" name="is_cover[]" value="1" />
+                                                <input class="pt3 iscover" type="radio" name="coverbtn" checked />
+                                                <span>设为封面</span>
+                                            </label> -->
+                                            <a class="list_del" href="javascript:void(0);">删除</a>
+                                        </td>
+                                    </tr>
+                                    <else />
+                                    <volist name="allpic" id="ap">
+                                        <tr class="list_items">
+                                            <td class="tr preview_wrap">
+                                                <img class="pic_preview" src="{$ap.img}" width="50" height="50" />
+                                            </td>
+                                            <td class="tl">
+                                                <input class="pic_url" type="hidden" name="img[]" value="{$ap.img}" />
+                                                <a class="opt_btn pic_select" href="javascript:void(0);">选择图片</a>
+                                            </td>
+                                            <td>
+                                                <input class="list_sort" type="text" name="sort[]" value="{$ap.sort}" />
+                                            </td>
+                                            <td>
+                                                <!-- <label class="mgr">
+                                                    <input class="iscover_val" type="hidden" name="is_cover[]" value="{$ap.is_cover}" />
+                                                    <input class="pt3 iscover" type="radio" name="coverbtn" <eq name="ap.is_cover" value="1">checked</eq> />
+                                                    <span>设为封面</span>
+                                                </label> -->
+                                                <a class="list_del" href="javascript:void(0);">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </empty>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 提交按钮 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <!-- <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确定提交"> -->
+                            <a class="opt_btn btn_submit" href="javascript:void(0);">确定提交</a>
+                            <input class="opt_btn" type="reset" value="重置表单">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+    <script type="text/javascript" src="__JS__/companyalbumadd.js"></script>
+</body>
+</html>

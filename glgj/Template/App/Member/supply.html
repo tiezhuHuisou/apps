@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/supply.css" />
+</head>
+<body>
+    <neq name="appsign" value="1">
+        <!-- 顶部 开始 -->
+        <header>
+            <a class="header_left" href="?g=app&m=member">
+                <div class="lt"><div></div></div>
+            </a>
+            <p class="header_title">{$site_title}</p>
+            <a class="header_right" href="?g=app&m=member&a=publishsupply<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">发布服务</a>
+        </header>
+        <!-- 顶部 结束 -->
+    </neq>
+    <!-- 可视区域 -->
+    <section <neq name="appsign" value="1">class="viewport"</neq>>
+        <notempty name="list">
+            <!-- 数据列表 开始 -->
+            <div class="list_wrap">
+                <!-- 一条数据 开始 -->
+                <volist name="list" id="vo">
+                    <div class="list">               
+                        <!-- 图标 -->
+                        <div class="list_icon">
+                            <a href="?g=app&m=index&a=supplydetail&id={$vo['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>"><img src="{$vo['img']|default='__STATIC__/images/default_icon.jpg'}" width="80" height="80" /></a>
+                        </div>
+                        <!-- 信息 -->
+                        <div class="list_info">
+                            <a href="?g=app&m=index&a=supplydetail&id={$vo['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>"><h3>{$vo['title']}</h3></a>
+                            <p>{$vo['short_title']}</p>
+                        </div>
+                        <!-- 电话 -->
+                        <div class="list_right">
+                            <p class="text">{$vo['issue_time']|date="m-d",###}</p>
+                            <a class="text fc" href="?g=app&m=member&a=publishsupply&id={$vo['id']}<eq name='appsign' value='1'>&appsign=1&uuid={$Think.get.uuid}</eq>">编辑</a>
+                            <a class="text fc del" href="javascript:void(0);" data-id="{$vo['id']}">删除</a>
+                        </div>
+                    </div>
+                </volist>
+                <!-- 一条数据 结束 -->
+            </div>
+            <!-- 数据列表 结束 -->
+            <else />
+            <!-- 数据为空时 -->
+            <div class="common_empty">
+                <img src="__IMG__/common_empty.png" width="120" height="120">
+                <p>您还没有发布过服务</p>
+                <neq name="appsign" value="1">
+                    <a href="?g=app&m=member">返回</a>
+                </neq>
+            </div>
+        </notempty>
+    </section>
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <input id="uuid" type="hidden" value="{$Think.get.uuid}" />
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/mine_supply.js"></script>
+</body>
+</html>

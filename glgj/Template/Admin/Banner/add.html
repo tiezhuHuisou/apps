@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__JS__/banner_add.js"></script>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>焦点图管理中心</h2>
+                <a href="?g=admin&m=banner">焦点图列表</a>
+                <a class="hover" href="?g=admin&m=banner&a=add">添加焦点图</a>
+            </div>
+            <h3>添加焦点图</h3>
+            <!-- 添加焦点图表单 -->
+            <form class="form-horizontal chkform" name="" action="" method="post" enctype="multipart/form-data">
+                <input  type="hidden" name="id" value="{$detail.id}"/>
+                <table class="add_table">
+                    <tr>
+                        <td class="w120">焦点图名称：</td>
+                        <td>
+                            <input class="i400" type="text" name="name" value="{$detail.name}" datatype="title" nullmsg="请填写焦点图名称" errormsg="请填写焦点图名称" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写焦点图名称</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">焦点图分类：</td>
+                        <td>
+                            <select name="tid">
+                                <volist name="list" id="li">
+                                    <option class="pl3" value="{$li.id}" <eq name="li.id" value="$detail.tid">selected</eq>>{$li.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">焦点图：</td>
+                        <td>
+                            <a id="thumbnail" class="opt_btn mgl0">选择焦点图</a>
+                            <input id="imgurl" name="thumbnail" type="hidden" value="{$detail.thumbnail}" />
+                            <span class="pl3">推荐尺寸：750*375</span>
+                        </td>   
+                    </tr>
+                    <tr id ="img" <empty name="detail.thumbnail">class="no"</empty>>
+                        <td class="w120">焦点图预览：</td>
+                        <td>
+                            <img id="preview" src="{$detail.thumbnail}" width="150" height="75" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">链接类型：</td>
+                        <td>
+                            <label class="mgr">
+                                <input id="outside" class="pt3" type="radio" name="href_type" value="1" checked />
+                                <span>外链</span>
+                            </label>
+                            <label>
+                                <input id="inside" class="pt3" type="radio" name="href_type" value="2" <eq name="detail.href_type" value="2">checked</eq> />
+                                <span>内链</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr <neq name="detail.href_type" value="2">class="no"</neq>>
+                        <td class="w120">关联模块：</td>
+                        <td>
+                            <select id="href_model" name="href_model">
+                                <!--<option class="pl3" value="product_detail" selected>产品</option>-->
+                                <option class="pl3" value="news_detail" <eq name="detail.href_model" value="news_detail">selected</eq>>资讯</option>
+                                <!--<option class="pl3" value="need_detail" <eq name="detail.href_model" value="need_detail">selected</eq>>求购</option>-->
+                                <option class="pl3" value="company_home" <eq name="detail.href_model" value="company_home">selected</eq>>企业</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr <neq name="detail.href_type" value="2">class="no"</neq>>
+                        <td class="w120">关联页面：</td>
+                        <td>
+                            <select id="data_id" name="data_id">
+                                <volist name="dataList" id="li">
+                                    <option class="pl3" value="{$li.id}" <eq name="li.id" value="$detail.data_id">selected</eq>>{$li.title}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="url" <eq name="detail.href_type" value="2">class="no"</eq>>
+                        <td class="w120">链接地址url：</td>
+                        <td>
+                            <input class="i400" type="text" name="url" value="<eq name='detail.href_type' value='1'>{$detail.url}</eq>" />
+                            <span class="pl3">例如：http://www.huisou.com</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w120">排序：</td>
+                        <td>
+                            <input class="i50" type="text" name="listorder" value="{$detail.listorder|default='50'}" datatype="n" nullmsg="请输入排序数值" errormsg="请输入正整数" />
+                            <span class="pl3">数字越大越靠前</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入正整数排序数值</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 提交按钮 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn mgl0 chksubmit ajax-post" target-form="form-horizontal" type="submit" value="确定提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+</body>
+</html>

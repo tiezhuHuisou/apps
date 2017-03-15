@@ -1,0 +1,24 @@
+<foreach name="city_arr" item="provincevo">                                                 
+<li class="province_left n{$provincevo['id']}">
+    <i class="province_icon">+</i>
+    <span class="province_name province{$provincevo['id']}">{$provincevo['name']}</span>
+    
+    <ul class="city_left">
+    <foreach name="provincevo['_child']" item="cityvo">
+        <li class="municipal_left n{$cityvo['id']}">
+            <i class="city_icon">+</i>
+            <span class="city_name">{$cityvo['name']}</span>
+            <ul class="area_left city{$cityvo['id']}">
+                    
+                <foreach name="cityvo['_child']" item="areavo">
+                    <li class="area_name n{$areavo['id']} _{$provincevo['id']}_{$cityvo['id']}_{$areavo['id']}">{$areavo['name']}</li>
+                </foreach>
+
+                
+            </ul>
+        </li>
+    </foreach>
+    </ul>
+    
+</li>
+</foreach>

@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/login.css" />
+</head>
+    <body>
+        <!-- 头部 开始 -->
+        <header>
+            <a class="header_left" href="javascript:history.go(-1);">
+                <div class="lt"><div></div></div>
+            </a>
+            <p class="header_title">登陆</p>
+            <a class="header_right" href="?g=app&m=register">注册</a>
+        </header>
+        <!-- 头部 结束 -->
+        <!-- 主体内容 开始 -->
+        <section class="login_wrapper no_footer">
+            <form>
+                <!-- 账号、密码输入框 -->
+                <div class="login_content">
+                    <!-- 账号 -->
+                    <p class="login_content_phone">
+                        <i class="login_content_phone_icon"></i>
+                        <input class="login_content_phone_input" type="text" name="mphone"  placeholder="请输入手机号码" />
+                    </p>
+                    <!-- 密码 -->
+                    <p class="login_content_password">
+                        <i class="login_content_password_icon"></i>
+                        <input class="login_content_password_input" type="password" name="password" placeholder="请输入密码" />
+                        <span class="login_content_password_see nosee"></span>
+                    </p>
+                </div>
+                <!-- 登陆按钮 -->
+                <div class="login_btn_wrap">
+                    <a class="login_btn bc" href="javascript:void(0);">登陆</a>
+                </div>
+            </form>
+            <!-- 忘记密码按钮 -->
+            <div class="forget_btn_wrap">
+                <a class="forget_btn" href="?g=app&m=register&a=forgotten">忘记密码？</a>
+            </div>
+        </section>
+        <!-- 主体内容 结束 -->
+        <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+        <script type="text/javascript" src="__JS__/login.js"></script>
+    </body>
+</html>

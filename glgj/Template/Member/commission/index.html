@@ -1,0 +1,286 @@
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/product_add.css" />
+    <link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css" />
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <!-- 主体头部 -->
+        <include file="Common/header"/>
+        <!-- 主体内容 -->
+        <div class="wrapper">
+            <!-- 导航 -->
+            <include file="Sale/nav"/>
+            <!-- 发布产品信息表单 开始 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input name="id" type="hidden" value="{$Think.get.id}"/>
+                <div class="add_form">
+                    <!-- 产品标题 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">产品标题：</div>
+                            <input class="t200" type="text" name="title" value="{$detail.title}" placeholder="请输入产品标题" datatype="title" nullmsg="请输入产品标题" errormsg="请输入2到50位字符" />
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入产品标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 产品副标题 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">产品副标题：</div>
+                            <input class="t400" type="text" name="short_title" value="{$detail.short_title}" placeholder="请输入产品副标题" datatype="title" nullmsg="请输入产品副标题" errormsg="请输入2到50位字符" />
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入产品副标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 产品分类 -->
+                    <div class="add_row">
+                        <div class="add_name">产品分类：</div>
+                        <!-- <select name="sale_category_id">
+                            <option value="0">请选择</option>
+                            <volist name="classify" id="cl">
+                                <option value="{$cl.id}" <eq name="cl.id" value="$detail.sale_category_id">selected="selected"</eq> > {$cl.name}</option>
+                            </volist>
+                        </select> -->
+                        <div class="category_area">
+                            <a class="category_btn" href="javascript:void(0);">选择分类<span class="btn_down"></span></a>
+                            <ul class="category_wrap">
+                                <li class="category_list">
+                                    <volist name="category" id="cl">
+                                        <label class="one_list"><input type="checkbox" name="sale_category_id[]" value="{$cl.id}" <in name="cl.id" value="$detail.sale_category_id">checked</in> />{$cl.sty}{$cl.name}</label>
+                                    </volist>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 是否分销 -->
+                    <!--<div class="add_row">-->
+                        <!--<div class="add_name">是否分销：</div>-->
+                        <!--<label><input type="radio" name="distribution" value="1" checked>参与</label>-->
+                        <!--<label><input type="radio" name="distribution" value="0" <eq name="detail.distribution" value="0">checked</eq>>不参与</label>-->
+                    <!--</div>-->
+                    <!-- 产品轮播图 -->
+                    <div class="add_row">
+                        <div class="add_name">产品轮播图：</div>
+                        <a id="carousel_upload" class="add_upload" href="javascript:void(0);">上传图片</a>
+                        <span class="add_desc">建议尺寸：640*640</span>
+                    </div>
+                    <!-- 产品轮播图预览 -->
+                    <div class="add_row <empty name="detail.img">no</empty>">
+                        <div class="add_name vat">产品轮播图预览：</div>
+                        <div id="carousel_preview">
+                            <volist name="allpic" id="pic">
+                                <img class="default_img" src="{$pic.pic_url}" width="100" height="100" />
+                                <input value="{$pic.pic_url}"  name="allpic[]" type="hidden" />
+                            </volist>
+                        </div>
+                    </div>
+                    <!-- 销售价 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">销售价：</div>
+                            <input class="t200" type="text" name="price" value="{$detail.price}" placeholder="请输入销售价" datatype="price" nullmsg="请输入销售价" errormsg="请输入数字（保留两位小数即可）" />
+                            <span class="add_desc">元</span>
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入销售价</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 市场价 -->
+                    <div class="add_row">
+                        <div class="add_name">市场价：</div>
+                        <input class="t200" type="text" name="oprice" value="{$detail.oprice}" placeholder="请输入市场价" />
+                        <span class="add_desc">元</span>
+                    </div>
+                    <!-- 活动价格 -->
+                    <div class="add_row">
+                        <div class="add_name">活动价格：</div>
+                        <input class="t200" type="text" name="activity_price" value="{$detail.activity_price}" placeholder="请输入活动价格" />
+                        <span class="add_desc">元</span>
+                    </div>
+                    <!-- 重量 -->
+                    <div class="add_row">
+                        <div class="add_name">重量：</div>
+                        <input class="t200" type="text" name="weight" value="{$detail.weight}" placeholder="请输入重量" />
+                        <span class="add_desc">千克</span>
+                    </div>
+                    <!-- 库存 -->
+                    <div class="add_row">
+                        <div>
+                            <div class="add_name">库存：</div>
+                            <input class="t200" type="text" name="num" value="{$detail.num}" placeholder="请输入库存" datatype="n" nullmsg="请输入库存" errormsg="请输入数字" />
+                            <span class="add_desc">件</span>
+                            <span class="add_star">*</span>
+                        </div>
+                        <!-- 表单验证提示信息 -->
+                        <div>
+                            <div class="info">
+                                <span class="Validform_checktip">请输入库存</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 最小购买数量 -->
+                    <div class="add_row">
+                        <div class="add_name">最小购买数量：</div>
+                        <input class="t200" type="text" name="buymin" value="{$detail.buymin|default='1'}" placeholder="请输入最小购买数量" />
+                        <span class="add_desc">件</span>
+                    </div>
+                    <!-- 本级佣金比例 -->
+                    <div class="add_row">
+                        <div class="add_name">本级佣金：</div>
+                        <input class="t200" type="text" name="commission1" value="{$detail.commission1}" />
+                        <span class="add_desc">元</span>
+                    </div>
+                    <!-- 下级佣金比例 -->
+                    <div class="add_row">
+                        <div class="add_name">上级佣金：</div>
+                        <input class="t200" type="text" name="commission2" value="{$detail.commission2}" />
+                        <span class="add_desc">元</span>
+                    </div>
+                    <!-- 下下级佣金比例 -->
+                    <div class="add_row">
+                        <div class="add_name">上上级佣金：</div>
+                        <input class="t200" type="text" name="commission3" value="{$detail.commission3}" />
+                        <span class="add_desc">元</span>
+                    </div>
+                    <div class="add_row">
+                        <div class="add_name">规格：</div>
+                        <a id="spec_on" class="add_upload" href="javascript:void(0);">开启规格</a>
+                        <a id="spec_toggle" class="add_upload <eq name="detail['is_spec']" value="0">no</eq> <empty name="detail['is_spec']">no</empty>" href="javascript:void(0);"><eq name="detail['is_spec']" value="0">展开<else />收起</eq>规格</a>
+                        <input id="is_spec" type="hidden" name="is_spec" value="{$detail.is_spec|default=0}" />
+                    </div>
+                    <div id="spec_wrap" class="add_row <eq name="detail['is_spec']" value="0">no</eq> <empty name="detail['is_spec']">no</empty>">
+                        <div class="add_name"></div>
+                        <div class="add_right">
+                            <!-- 规格表格 开始 -->
+                            <div class="spec_table">
+                                <!-- 规格表格头部 开始 -->
+                                <ul>
+                                    <li><input class="i70 spec_title1" type="text" name="spec[title1]" value="{$specTitle1}" placeholder="例：颜色" /></li>
+                                    <li><input class="i70 spec_title2" type="text" name="spec[title2]" value="{$specTitle2}" placeholder="例：尺寸" /></li>
+                                    <li>销售价</li>
+                                    <li>市场价</li>
+                                    <li>活动价</li>
+                                    <li>重量</li>
+                                    <li>库存</li>
+                                    <li class="w84">最小购买数量</li>
+                                    <li>排序</li>
+                                    <li class="img_wrap"><span>(建议尺寸：300*300)</span>规格图片</li>
+                                    <li>操作</li>
+                                </ul>
+                                <!-- 规格表格头部 结束 -->
+                                <!-- 规格表格列表 开始 -->
+                                <notempty name="specList">
+                                    <volist name="specList" id="vo">
+                                        <ul>
+                                            <li><input class="i70 spec_spec1" type="text" name="spec[spec1][]" value="{$vo['spec1']}" placeholder="例：红色" /></li>
+                                            <li><input class="i70 spec_spec2" type="text" name="spec[spec2][]" value="{$vo['spec2']}" placeholder="例：均码" /></li>
+                                            <li><input class="i50 spec_price" type="text" name="spec[price][]" value="{$vo['price']}" /></li>
+                                            <li><input class="i50" type="text" name="spec[oprice][]" value="{$vo['oprice']}" /></li>
+                                            <li><input class="i50" type="text" name="spec[activity_price][]" value="{$vo['activity_price']}" /></li>
+                                            <li><input class="i50" type="text" name="spec[weight][]" value="{$vo['weight']}" /></li>
+                                            <li><input class="i50 spec_stock" type="text" name="spec[stock][]" value="{$vo['stock']}" /></li>
+                                            <li class="w84"><input class="i50 spec_buymin" type="text" name="spec[buymin][]" value="{$vo['buymin']}" /></li>
+                                            <li><input class="i50 spec_sort" type="text" name="spec[sort][]" value="{$vo['sort']}" /></li>
+                                            <li class="img_wrap">
+                                                <img class="spec_img" src="{$vo['img']|default='__STATIC__/images/default_icon.jpg'}" width="50" height="50" />
+                                                <input type="hidden" name="spec[img][]" value="{$vo['img']|default='__STATIC__/images/default_icon.jpg'}">
+                                            </li>
+                                            <li>
+                                                <a class="spec_up" href="javascript:void(0);">使用上图</a>
+                                                <a class="spec_del" href="javascript:void(0);">删除</a>
+                                            </li>
+                                        </ul>
+                                    </volist>
+                                    <else />
+                                    <ul>
+                                        <li><input class="i70 spec_spec1" type="text" name="spec[spec1][]" value="" placeholder="例：红色" /></li>
+                                        <li><input class="i70 spec_spec2" type="text" name="spec[spec2][]" value="" placeholder="例：均码" /></li>
+                                        <li><input class="i50 spec_price" type="text" name="spec[price][]" value="" /></li>
+                                        <li><input class="i50" type="text" name="spec[oprice][]" value="" /></li>
+                                        <li><input class="i50" type="text" name="spec[activity_price][]" value="" /></li>
+                                        <li><input class="i50" type="text" name="spec[weight][]" value="" /></li>
+                                        <li><input class="i50 spec_stock" type="text" name="spec[stock][]" value="9999" /></li>
+                                        <li class="w84"><input class="i50 spec_buymin" type="text" name="spec[buymin][]" value="1" /></li>
+                                        <li><input class="i50 spec_sort" type="text" name="spec[sort][]" value="0" /></li>
+                                        <li class="img_wrap">
+                                            <img class="spec_img" src="__STATIC__/images/default_icon.jpg" width="50" height="50" />
+                                            <input type="hidden" name="spec[img][]" value="__STATIC__/images/default_icon.jpg">
+                                        </li>
+                                        <li>
+                                            <a class="spec_up" href="javascript:void(0);">使用上图</a>
+                                            <a class="spec_del" href="javascript:void(0);">删除</a>
+                                        </li>
+                                    </ul>
+                                </notempty>
+                                <!-- 规格表格列表 结束 -->
+                                <ul id="last_ul">
+                                    <a id="spec_add" class="add_upload mgl0" href="javascript:void(0);">添加一行</a>
+                                    <a id="spec_off" class="add_upload" href="javascript:void(0);">关闭规格</a>
+                                </ul>
+                            </div>
+                            <!-- 规格表格 结束 -->
+                        </div>
+                    </div>
+                    <!-- 产品详情 -->
+                    <div class="add_row">
+                        <div class="add_name vat">产品详情：</div>
+                        <textarea id="product_content" name="summary" >{$detail.summary}</textarea>
+                    </div>
+                    <!-- 发布按钮 -->
+                    <div class="add_row">
+                        <div class="add_name"></div>
+                        <input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="发 布" />
+                    </div>
+                </div>
+            </form>
+            <!-- 发布产品信息表单 结束 -->
+        </div>
+        <!-- 主体 结束 -->
+    </div>
+    <script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript">
+        var imgUrl = "__IMG__";
+        var staticPath = "__STATIC__";
+    </script>
+    <script type="text/javascript" src="__JS__/product_add.js"></script>
+</body>
+</html>

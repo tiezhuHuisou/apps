@@ -1,0 +1,179 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/release.css" />
+<link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css" />
+<script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="__JS__/release.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a href="?g=member&m=sale">发布产品信息</a>
+				<a href="?g=member&m=sale&a=product">产品管理</a>
+				<!-- <a href="?g=member&m=sale&a=order">订单管理</a> -->
+				<a class="hover" href="?g=member&m=sale&a=release">发布求购</a>
+				<a href="?g=member&m=sale&a=need">求购管理</a>
+				<!-- <a href="?g=member&m=sale&a=template">添加运费模版</a>
+				<a href="?g=member&m=sale&a=freight">运费管理</a> -->
+				<!-- <a href="?g=member&m=sale&a=refund">返现申请</a>
+				<a href="?g=member&m=sale&a=result">返现申请结果</a> -->
+			</div>
+			<!-- 发布求购表单 开始 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<input type="hidden" name="id" value="{$detail.id}"/>
+				<div class="add_form">
+					<!-- 标题 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">标题：</div>
+							<input class="t400" type="text" name="title" value="{$detail.title}" placeholder="请输入标题" datatype="title" nullmsg="请输入标题" errormsg="标题长度应为2-50位" />
+							<span class="add_star">*</span>
+						</div>
+						<!-- 表单验证提示信息 -->
+						<div>
+						    <div class="info">
+						        <span class="Validform_checktip">请输入标题</span>
+						        <span class="dec">
+						            <s class="dec1">&#9670;</s>
+						            <s class="dec2">&#9670;</s>
+						        </span>
+						    </div>
+						</div>
+					</div>					
+					<!-- 短标题 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">短标题：</div>
+							<input class="t400" type="text" name="short_title" value="{$detail.short_title}" placeholder="请输入短标题" datatype="title" nullmsg="请输入标题" errormsg="标题长度应为2-50位" />
+							<span class="add_star">*</span>
+						</div>
+						<!-- 表单验证提示信息 -->
+						<div>
+						    <div class="info">
+						        <span class="Validform_checktip">请输入标题</span>
+						        <span class="dec">
+						            <s class="dec1">&#9670;</s>
+						            <s class="dec2">&#9670;</s>
+						        </span>
+						    </div>
+						</div>
+					</div>	
+					<!-- 商品分类 -->
+					<div class="add_row">
+						<div class="add_name">商品分类：</div>
+							<select  name="buy_category_id">
+                                <option value="0">请选择</option>
+                                <volist name="classify" id="cl">
+                                <option value="{$cl.id}" <eq name="cl.id" value="$detail.buy_category_id">selected="selected"</eq> > {$cl.name}</option>
+                                </volist>
+                            </select>
+						<span class="add_star">*</span>
+					</div>
+					<!-- 数量 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">数量：</div>
+							<input class="t200" type="text" name="num" value="{$detail.num}" placeholder="请输入库存" datatype="n" nullmsg="请输入库存数量" errormsg="请输入库存数量" />
+							<select  name="unit">
+                                <option value="1" <eq name="detail.unit" value="1">selected = "selected"</eq>>件</option>
+                                <option value="2" <eq name="detail.unit" value="2">selected = "selected"</eq>>批</option>
+                                <option value="3" <eq name="detail.unit" value="3">selected = "selected"</eq>>千克</option>
+                                <option value="4" <eq name="detail.unit" value="4">selected = "selected"</eq>>块</option>
+                                <option value="5" <eq name="detail.unit" value="5">selected = "selected"</eq>>台</option>
+                                <option value="6" <eq name="detail.unit" value="6">selected = "selected"</eq>>吨</option>
+                            </select>
+							<span class="add_star">*</span>
+						</div>
+						<!-- 表单验证提示信息 -->
+						<div>
+						    <div class="info">
+						        <span class="Validform_checktip">请输入数量</span>
+						        <span class="dec">
+						            <s class="dec1">&#9670;</s>
+						            <s class="dec2">&#9670;</s>
+						        </span>
+						    </div>
+						</div>
+					</div>
+					<!-- 价格 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">价格：</div>
+							<input class="t200" type="text" name="price" value="{$detail.price}" placeholder="请输入价格" datatype="n" nullmsg="请输入价格" errormsg="请输入价格" />
+							<span class="add_desc">元</span>
+							<span class="add_star">*</span>
+						</div>
+						<!-- 表单验证提示信息 -->
+						<div>
+						    <div class="info">
+						        <span class="Validform_checktip">请输入价格</span>
+						        <span class="dec">
+						            <s class="dec1">&#9670;</s>
+						            <s class="dec2">&#9670;</s>
+						        </span>
+						    </div>
+						</div>
+					</div>
+					<!-- 有效期 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">有效期：</div>
+							<input class="t200" type="text" name="days" value="{$detail.days}" placeholder="请输入有效期" datatype="n" nullmsg="请输入有效期" errormsg="请输入有效期" />
+							<span class="add_desc">天</span>
+							<span class="add_star">*</span>
+							<span class="add_desc">(范围为0~90天,0为永久有效)</span>
+						</div>
+						<!-- 表单验证提示信息 -->
+						<div>
+						    <div class="info">
+						        <span class="Validform_checktip">请输入有效期</span>
+						        <span class="dec">
+						            <s class="dec1">&#9670;</s>
+						            <s class="dec2">&#9670;</s>
+						        </span>
+						    </div>
+						</div>
+					</div>
+					<!-- 求购主图 -->
+					<div class="add_row">
+						<div class="add_name">求购主图：</div>
+						<a id="main_upload" class="add_upload" href="javascript:void(0);">上传图片</a>
+						<input id="main_url" type="hidden" name="img" value="{detail.img}" />
+						<span class="add_star">*</span>
+						<span class="add_desc">建议尺寸：260*260</span>
+					</div>
+					<!-- 求购主图预览 -->
+					<div class="add_row <empty name="detail.img">no</empty>">
+						<div class="add_name vat">求购主图预览：</div>
+						<img id="main_preview" src="{$detail.img}" width="80" height="80" />
+					</div>
+					<!-- 求购详情 -->
+					<div class="add_row">
+						<div class="add_name vat">求购详情：</div>
+						<textarea id="need_content" name="summary">{$detail.summary}</textarea>
+					</div>
+					<!-- 保存按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="发 布" />
+					</div>
+				</div>
+			</form>
+			<!-- 发布求购表单 结束 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

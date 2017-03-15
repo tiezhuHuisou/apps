@@ -1,0 +1,6 @@
+.tc{text-align:center;}
+.list_table{margin-top:20px;border:1px solid #dcdcdc;text-align:left;}
+.list_table .list_header{height:46px;line-height:46px;background:#ebebeb;}
+.list_table .list_top{height:36px;line-height:36px;background:#ebebeb;border-top:1px solid #dcdcdc;}
+.list_table .list_items{border-top:1px solid #dcdcdc;}
+.list_table .list_items td{padding:10px 0;}

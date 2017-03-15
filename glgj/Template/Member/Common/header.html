@@ -1,0 +1,50 @@
+<div class="header">
+	<eq name="site" value="buy">
+		<a class="<eq name='header' value='index'>hover</eq>" href="?g=member&m=buy">订单管理</a>
+		<a class="<eq name='header' value='comment'>hover</eq>" href="?g=member&m=buy&a=comment">评价管理</a>
+		<a class="<eq name='header' value='address'>hover</eq>" href="?g=member&m=buy&a=address">收货地址管理</a>
+	</eq>
+	<eq name="site" value="sale">
+		<eq name="gid" value="2">
+			<a class="<eq name='header' value='index'>hover</eq>" href="?g=member&m=sale">商铺管理</a>
+			<a class="<eq name='header' value='company'>hover</eq>" href="?g=member&m=sale&a=contact">企业资料</a>
+			<a class="<eq name='header' value='order'>hover</eq>" href="?g=member&m=sale&a=order&state=0">订单管理</a>
+			<a class="<eq name='header' value='withdrawals'>hover</eq>" href="?g=member&m=sale&a=withdrawals">销售利润管理</a>
+			<else />
+			<a class="<eq name='header' value='company'>hover</eq>" href="?g=member&m=sale&a=contact">申请成为企业</a>
+		</eq>
+	</eq>
+	<eq name="site" value="company">
+		<eq name="gid" value="2">
+			<a class="<eq name='header' value='index'>hover</eq>" href="?g=member&m=company">网点管理</a>
+			<a class="<eq name='header' value='company'>hover</eq>" href="?g=member&m=company&a=contact">企业资料</a>
+			<!--<a class="<eq name='header' value='order'>hover</eq>" href="?g=member&m=company&a=order&state=0">网点管理</a>-->
+			<!--<a class="<eq name='header' value='withdrawals'>hover</eq>" href="?g=member&m=sale&a=withdrawals">销售利润管理</a>-->
+			<else />
+			<a class="<eq name='header' value='company'>hover</eq>" href="?g=member&m=sale&a=contact">申请成为企业</a>
+		</eq>
+	</eq>
+
+	<eq name="site" value="msg">
+		<a class="<eq name='header' value='index'>hover</eq>" href="?g=member&m=msg">系统消息</a>
+	</eq>
+	<eq name="site" value="collect">
+		<a class="<eq name='header' value='index'>hover</eq>" href="?g=member&m=collect">资讯收藏</a>
+		<a class="<eq name='header' value='product'>hover</eq>" href="?g=member&m=collect&a=product">产品收藏</a>
+		<a class="<eq name='header' value='company'>hover</eq>" href="?g=member&m=collect&a=company">企业收藏</a>
+		<a class="<eq name='header' value='need'>hover</eq>" href="?g=member&m=collect&a=need">求购收藏</a>
+		<a class="<eq name='header' value='circle'>hover</eq>" href="?g=member&m=collect&a=circle">行业圈收藏</a>
+	</eq>
+	<eq name="site" value="master">
+		<a class="<eq name='header' value='1'>hover</eq>" href="?g=member&m=master&a=index&type=1">仓储主</a>
+		<a class="<eq name='header' value='2'>hover</eq>" href="?g=member&m=master&a=index&type=2">个人货主</a>
+		<a class="<eq name='header' value='3'>hover</eq>" href="?g=member&m=master&a=index&type=3">企业货主</a>
+		<a class="<eq name='header' value='4'>hover</eq>" href="?g=member&m=master&a=index&type=4">个人车主</a>
+		<a class="<eq name='header' value='5'>hover</eq>" href="?g=member&m=master&a=index&type=5">企业车主</a>
+	</eq>
+
+	<eq name="site" value="setting">
+		<a class="<eq name='header' value='index'>hover</eq>" href="?g=member&m=setting">个人资料</a>
+		<a class="<eq name='header' value='resetpwd'>hover</eq>" href="?g=member&m=setting&a=resetpwd">修改密码</a>
+	</eq>
+</div>

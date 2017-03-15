@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/news_collect.css" />
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+        <a class="header_left" href="javascript:history.go(-1);">
+            <div class="lt"><div></div></div>
+        </a>
+        <p class="header_title">{$site_title}</p>
+        <a class="header_right f15252" href="javascript:void(0);">编辑</a>
+    </header>
+	<!-- 无底部区域 -->
+	<section class="no_footer">
+        <!-- 资讯列表 -->
+        <div class="news_list">
+        	<input id="classify" type="hidden" value="1"/>
+            <ul>
+            <volist name="list" id="li">
+                <li>
+                    <div class="unselected_icon" data-id="{$li.id}"></div>
+                    <a href="?g=app&m=news&a=detail&id={$li.aid}">
+                        <img class="fl mgl16 delay" src="__IMG__/pixel.gif" data-echo="{$li.img}" width="90" height="70" />
+                    </a>
+                    <a class="new_title" href="?g=app&m=news&a=detail&id={$li.aid}">
+                        <p class="new_title_main">{$li.title}</p>
+                        <p class="new_title_sub">{$li.short_title}</p>
+                    </a>
+                </li>
+            </volist>
+            </ul>
+        </div>
+        <empty name="list">
+        <!-- 收藏为空时 -->
+        <div class="collect_empty_wrap ">
+            <div class="common_empty">
+                <img src="__IMG__/collect_empty.png" width="120" height="120" />
+                <p>您的{$site_title}还是空的哦</p>
+                <a href="?g=app&m=news">去收藏</a>
+            </div>
+        </div>
+        </empty>
+	</section>
+    <footer>
+        <div class="unselected_icon allselected"></div>
+        <span>全选</span>
+        <button class="news_delete" href="javascript:void(0);">删除</button>
+    </footer>
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/news_collect.js"></script>
+</body>
+</html>

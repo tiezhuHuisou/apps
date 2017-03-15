@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/member.css"/>
+</head>
+<body>
+<!-- 主体内容 -->
+<section class="member_wrapper no_header">
+    <!-- 顶部 -->
+    <div class="member_top">
+        <!-- 顶部图片 开始 -->
+        <img src="__IMG__/member_top_bg.png" width="100%"/>
+        <!-- 顶部图片 结束 -->
+        <!-- 顶部图片 结束 -->
+        <!-- 顶部头像、昵称 结束 -->
+        <div class="member_top_pn">
+            <!-- 顶部头像 开始 -->
+            <a class="member_top_sculpture" href="?g=app&m=member&a=info">
+                <img class="delay" src="__IMG__/pixel.gif"
+                     data-echo="{$list.memberInfo.head_pic|default='__IMG__/member_default.png'}" width="60"
+                     height="60"/>
+                <!-- 顶部头像 结束 -->
+            </a>
+            <!-- 顶部昵称 开始 -->
+            <p class="member_top_nickname">{$list.memberInfo.name}</p>
+            <!-- 顶部昵称 结束 -->
+        </div>
+        <!-- 顶部头像、昵称 结束 -->
+    </div>
+    <!-- 顶部 -->
+    <!--我的发布-->
+    <div class="weui-cells__title">我的发布</div>
+    <div class="grid_block release">
+        <div class="weui-grids member_collect">
+            <a href="?g=app&m=member&a=truck" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/wdhc@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>我的车源</span></p>
+            </a>
+            <a href="?g=app&m=member&a=depot" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/wdck@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>我的仓储</span></p>
+            </a>
+            <a href="?g=app&m=member&a=goods" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/wdhw@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>我的货物</span></p>
+            </a>
+        </div>
+    </div>
+    <!--我的发布结束-->
+    <!--我的收藏-->
+    <div class="weui-cells__title">我的收藏</div>
+    <div class="grid_block collection">
+        <div class="weui-grids member_collect">
+            <a href="?g=app&m=member&a=company_collect" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/qysc@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>企业收藏</span></p>
+            </a>
+            <a href="?g=app&m=member&a=news_collect" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/zzxsc@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>资讯收藏</span></p>
+            </a>
+            <a href="?g=app&m=member&a=truckList" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/hcsc@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>车源收藏</span></p>
+            </a>
+            <a href="?g=app&m=member&a=goodsList" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/hwsc@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>货物收藏</span></p>
+            </a>
+            <a href="?g=app&m=member&a=depotList" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/ccsc@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>仓储收藏</span></p>
+            </a>
+        </div>
+    </div>
+    <!--我的收藏结束-->
+    <!--更多-->
+    <div class="weui-cells__title">更多</div>
+    <div class="grid_block more">
+        <div class="weui-grids member_collect">
+            <a href="?g=app&m=member&a=invite_friends" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/yqhy@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>邀请好友</span></p>
+            </a>
+            <a href="?g=app&m=product&a=announce" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/ggxx@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>公告信息</span></p>
+            </a>
+            <a href="?g=app&m=member&a=message" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/znxx@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>站内信箱</span></p>
+            </a>
+            <a href="?g=app&m=member&a=opinion" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/jyfk@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>建议反馈</span></p>
+            </a>
+            <a href="tel:{$list['companphone']}" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <img src="__IMG__/lxkf@2x.png" alt="">
+                </div>
+                <p class="weui-grid__label"><span>菜鸟客服</span></p>
+            </a>
+        </div>
+    </div>
+    <!--更多结束-->
+
+
+    <!-- 收藏资讯、收藏产品、收藏企业、收藏求购 -->
+    <!--<div class="member_collect">
+        <a class="member_collect_news member_link" href="?g=app&m=member&a=news_collect">
+            <p class="member_link_title"><span>收藏资讯</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+        <a class="member_collect_goods member_link" href="?g=app&m=member&a=product_collect">
+            <p class="member_link_title"><span>收藏产品</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+        <a class="member_collect_company member_link" href="?g=app&m=member&a=company_collect">
+            <p class="member_link_title"><span>收藏企业</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+         <a class="member_collect_need member_link" href="?g=app&m=member&a=need_collect">
+            <p class="member_link_title"><span>收藏求购</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+    </div>-->
+    <!-- 收藏资讯、收藏产品、收藏企业、收藏求购 -->
+
+    <!-- 发布求购、供应 开始 -->
+    <!--<div class="member_info">
+        <a class="member_publish_need member_link" href="?g=app&m=member&a=need">
+            <p class="member_link_title"><span>发布求购信息</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+        <a class="member_publish_supply member_link" href="?g=app&m=member&a=supply">
+            <p class="member_link_title"><span>发布供应信息</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+    </div>-->
+    <!-- 发布求购、供应 结束 -->
+    <!-- 企业、站内信箱 -->
+    <!--<div class="member_info">
+        <notempty name="company_info.id">
+            <a class="member_info_company member_link" href="?g=app&m=company&a=detail&id={$company_info.id}">
+                <p class="member_link_title"><span>我的企业</span></p>
+                <div class="next_arrow"><div class="gt"><div></div></div></div>
+            </a>
+        </notempty>
+        <a class="member_contact member_link" href="?g=app&m=member&a=contact">
+            <p class="member_link_title"><span>官方QQ客服</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+        <a class="member_info_merchant member_link" href="?g=app&m=more&a=merchant">
+            <p class="member_link_title"><span>商家管理说明</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>-->
+    <!--<a class="member_info_mailbox member_link" href="?g=app&m=member&a=message">
+        <p class="member_link_title"><span>站内信箱</span></p>
+        <div class="next_arrow"><div class="gt"><div></div></div></div>
+    </a>-->
+    <!--</div>-->
+    <!-- 企业、站内信箱 -->
+    <!-- 关于APP -->
+    <!--<div class="member_more">
+        <a class="member_more_about member_link" href="?g=app&m=more">
+            <p class="member_link_title"><span>关于APP</span></p>
+            <div class="next_arrow"><div class="gt"><div></div></div></div>
+        </a>
+    </div>-->
+    <!-- 关于APP -->
+</section>
+<!-- 底部 开始 -->
+<include file="Common/footer"/>
+<!-- 底部 结束 -->
+<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/delay.js"></script>
+</body>
+</html>

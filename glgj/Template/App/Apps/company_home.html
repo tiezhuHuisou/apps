@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/carousel.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/tips.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/apps_companyhome.css" />
+</head>
+<body>
+    <!-- 可视区域 开始 -->
+    <section>
+        <!-- 顶部 开始 -->
+        <div class="header">
+            <!-- 背景图片 -->
+            <img src="{$detail['bgimg']}" width="100%" />
+            <!-- 公司信息 -->
+            <div class="header_info">
+                <!-- 头像 -->
+                <a href="javascript:void(0);">
+                    <img class="info_headpic" src="{$detail['logo']}" width="70" height="70" />
+                </a>
+                <!-- 公司名称 -->
+                <p class="info_name">{$detail['name']}</p>
+            </div>
+        </div>
+        <!-- 顶部 结束 -->
+        <notempty name="productList">
+            <!-- 产品信息 开始 -->
+            <div class="product_area">
+                <!-- 顶部 -->
+                <div class="common_top tips_show">
+                    <i class="iproduct"></i>
+                    <span class="top_title">产品信息</span>
+                    <span class="top_more">更多</span>
+                </div>
+                <!-- 产品列表 -->
+                <div class="product_wrap">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <volist name="productList" id="vo">
+                                <div class="swiper-slide">
+                                    <a class="product_list" href="?g=app&m=apps&a=product_detail&id={$vo['product_id']}">
+                                        <div class="list_img">
+                                            <img src="{$vo['img']}" />
+                                        </div>
+                                        <p class="list_title">{$vo['title']}</p>
+                                    </a>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 产品信息 结束 -->
+        </notempty>
+        <!-- 公司简介 开始 -->
+        <div class="company_area">
+            <!-- 顶部 -->
+            <div class="common_top tips_show">
+                <i class="icompany"></i>
+                <span class="top_title">公司简介</span>
+                <span class="top_more">更多</span>
+            </div>
+            <!-- 公司简介 -->
+            <p class="company_desc">{$detail['summary']|default='暂无简介'}</p>
+        </div>
+        <!-- 公司简介 结束 -->
+        <!-- 联系我们 开始 -->
+        <div class="contact_area">
+            <!-- 顶部 -->
+            <div class="common_top tips_show">
+                <i class="icontact"></i>
+                <span class="top_title">联系我们</span>
+                <span class="top_more">更多</span>
+            </div>
+            <!-- 联系我们列表 -->
+            <div class="contact_wrap">
+                <p class="contact_list">地址：{$contact['address']}</p>
+                <p class="contact_list">电话：<span class="cblue tips_show">下载客户端APP之后方可查看</span></p>
+                <!-- <notempty name="contact['subphone']">
+                    <a class="contact_list" href="tel:{$contact['subphone']}">电话：<span class="cblue">{$contact['subphone']}</span></a>
+                </notempty> -->
+            </div>
+        </div>
+        <!-- 联系我们 结束 -->
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 提示信息请下载app 开始 -->
+    <include file="tips" />
+    <!-- 提示信息请下载app 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/carousel.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/tips.js"></script>
+    <script type="text/javascript" src="__JS__/apps_companyhome.js"></script>
+</body>
+</html>

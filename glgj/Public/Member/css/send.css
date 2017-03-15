@@ -1,0 +1,5 @@
+/*改写base*/
+.add_form .add_row .t200{border:none;}
+.add_form .add_row .t400.noborder{border:none;}
+/* 行 */
+.row{margin-bottom:30px;}

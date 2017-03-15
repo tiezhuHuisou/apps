@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/supply.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/classify.css" />
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/header_classify"/>
+    <!-- 顶部 结束 -->
+	<!-- 可视区域 -->
+	<section class="viewport">
+		<notempty name="list">
+            <!-- 供应列表 -->
+            <div class="product_list_wrap">
+                <volist name="list" id="li">
+                    <div class="product_list">
+                        <a href="?g=app&m=product&a=detail&id={$li.id}">
+                            <img class="delay" src="{$li.img}" data-echo="{$li.img}" width="130" height="130" />
+                        </a>
+                        <div class="product_list_info">
+                            <a href="?g=app&m=product&a=detail&id={$li.id}">
+                                <p class="product_info_title">{$li.title}</p>
+                            </a>
+                            <p class="product_info_text">{$li.short_title}</p>
+                            <p class="product_price">
+                                <span class="product_price_p">￥{$li.price}</span>
+                                <a class="shopping_car" href="javascript:void(0);" data-id="{$li.id}">
+                                    <img class="delay" src="__IMG__/pro_car.png" data-echo="__IMG__/pro_car.png" width="100%" height="auto" />
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+            <!-- 滑屏至底部提示信息 -->
+            <div class="loading">
+                <img src="__STATIC__/images/loading.gif" width="20" height="20" />
+            </div>
+            <else />
+            <!-- 数据为空时 -->
+            <div class="common_empty">
+                <img src="__IMG__/common_empty.png" width="120" height="120">
+                <p>暂无供应</p>
+                <a href="?g=app&m=index">返回首页</a>
+            </div>
+        </notempty>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 分类列表 开始 -->
+    <div class="classify_nav">
+        <div class="classify_one">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <foreach name="category_list[0]" item="val">
+                <notempty name="category_list[$val['cid']]">
+                    <a class="classify_item" href="javascript:void(0);" data-cid="{$val['cid']}" data-flag="1">{$val['cname']}</a>
+                    <else />
+                    <a class="classify_item" href="?g=app&m=index&a=supply&categoryid={$val['cid']}" data-cid="{$val['cid']}" data-flag="0">{$val['cname']}</a>
+                </notempty>
+            </foreach>
+        </div>
+        <div class="classify_two no">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <a class="back_one" href="javascript:void(0);">返回上级分类</a>
+        </div>
+        <div class="classify_three no">
+            <a class="classify_close" href="javascript:void(0);">取消</a>
+            <a class="back_two" href="javascript:void(0);">返回上级分类</a>
+        </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <!-- 分类列表 结束 -->
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <script type="text/javascript">
+        var data       = {$category_arr};
+        var categoryid = "{$categoryid}";
+        var ajaxFlag   = false;
+        var imgUrl     = "__IMG__";
+    </script>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/supply.js"></script>
+    <script type="text/javascript" src="__JS__/classify.js"></script>
+    <script type="text/javascript" src="__JS__/search.js"></script>
+</body>
+</html>

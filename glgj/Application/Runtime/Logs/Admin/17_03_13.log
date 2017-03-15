@@ -1,0 +1,2518 @@
+[ 2017-03-13T08:56:36+08:00 ] ::1 /glgj/?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+
+[ 2017-03-13T08:56:36+08:00 ] ::1 /glgj/?g=admin&m=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_conf` WHERE `name` = 'webname' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T08:56:38+08:00 ] ::1 /glgj/?g=admin&m=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_conf` WHERE `name` = 'webname' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_admin_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-03-13T08:56:42+08:00 ] ::1 /glgj/?g=admin&m=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_conf` WHERE `name` = 'webname' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `lp_admin_user` SET `last_ip`='::1',`last_login`='1489366602' WHERE `user_name` = 'admin' [ RunTime:0.0010s ]
+
+[ 2017-03-13T08:56:43+08:00 ] ::1 /glgj/?g=admin&m=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T08:56:47+08:00 ] ::1 /glgj/?g=admin&m=member
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `lp_member_group` ORDER BY addtime desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_member` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`gid`,`name`,`token_id`,`head_pic`,`nick_name`,`email`,`qq`,`sex`,`mphone`,`password`,`lin_salt`,`nickname`,`regdate`,`addtime`,`J_Year`,`J_Month`,`J_Date` FROM `lp_member` ORDER BY regdate desc LIMIT 0,10   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T08:56:49+08:00 ] ::1 /glgj/?g=admin&m=member&a=company
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company` WHERE `status` < 2 LIMIT 1   [ RunTime:0.0540s ]
+SQL: SELECT `id`,`user_id`,`company_category_id`,`name`,`logo`,`business`,`summary`,`issue_time`,`flags`,`status`,`review`,`grade`,`sort`,`modify_time`,`proprietary` FROM `lp_company` WHERE `status` < 2 ORDER BY proprietary DESC,id DESC LIMIT 0,10   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10638 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10637 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10636 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10635 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10634 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10633 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10632 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10631 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10630 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_flags` WHERE `att` <> ''  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: flags D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\ace951fa70c834c0eb872e9916a722e2.php 第 129 行.
+NOTIC: [8] Undefined variable: search D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\ace951fa70c834c0eb872e9916a722e2.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T08:56:50+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0000s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T09:02:39+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T09:03:50+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T09:03:52+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0000s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T09:07:11+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T09:07:14+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T09:07:14+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T09:07:14+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T10:35:48+08:00 ] ::1 /glgj/?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+
+[ 2017-03-13T10:35:48+08:00 ] ::1 /glgj/?g=admin&m=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_conf` WHERE `name` = 'webname' LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:35:50+08:00 ] ::1 /glgj/?g=admin&m=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_conf` WHERE `name` = 'webname' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `lp_admin_group` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-03-13T10:35:57+08:00 ] ::1 /glgj/?g=admin&m=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_conf` WHERE `name` = 'webname' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_name` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `lp_admin_user` SET `last_ip`='::1',`last_login`='1489372557' WHERE `user_name` = 'admin' [ RunTime:0.0080s ]
+
+[ 2017-03-13T10:35:59+08:00 ] ::1 /glgj/?g=admin&m=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0060s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T10:36:02+08:00 ] ::1 /glgj/?g=admin&m=product&a=truck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_truck` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `id`,`uid`,`truck_no`,`truck_length`,`truck_type`,`remark`,`provinceN`,`cityN`,`countryN`,`provinceN2`,`cityN2`,`countryN2`,`approach`,`source_type`,`content`,`create_time`,`update_time`,`status`,`truck_num`,`heavy`,`heavy_unit`,`light`,`light_unit`,`driver`,`driver_phone`,`master`,`departure_time`,`end_date` FROM `lp_truck` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0040s ]
+SQL: SELECT `uid`,`mphone` FROM `lp_member` WHERE `uid` IN ('24343','24430','24404','24396','24395','24387','24201')  [ RunTime:0.0030s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:02+08:00 ] ::1 /glgj/?g=admin&m=member
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `lp_member_group` ORDER BY addtime desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_member` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`gid`,`name`,`token_id`,`head_pic`,`nick_name`,`email`,`qq`,`sex`,`mphone`,`password`,`lin_salt`,`nickname`,`regdate`,`addtime`,`J_Year`,`J_Month`,`J_Date` FROM `lp_member` ORDER BY regdate desc LIMIT 0,10   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T10:36:03+08:00 ] ::1 /glgj/?g=admin&m=more
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_page` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_page` WHERE `id` IN ('2','3','4','5') LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_page` WHERE `id` IN ('2','3','4','5') ORDER BY inputtime desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:03+08:00 ] ::1 /glgj/?g=admin&m=member
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` ORDER BY addtime desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_member` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`gid`,`name`,`token_id`,`head_pic`,`nick_name`,`email`,`qq`,`sex`,`mphone`,`password`,`lin_salt`,`nickname`,`regdate`,`addtime`,`J_Year`,`J_Month`,`J_Date` FROM `lp_member` ORDER BY regdate desc LIMIT 0,10   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:04+08:00 ] ::1 /glgj/?g=admin&m=user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_admin_user` WHERE `user_id` > 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` > 1 ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: nickname D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\0648ff6f0dd243518b5e9e11225c8e24.php 第 139 行.
+NOTIC: [8] Undefined index: nickname D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\0648ff6f0dd243518b5e9e11225c8e24.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:04+08:00 ] ::1 /glgj/?g=admin&m=member
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` ORDER BY addtime desc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_member` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`gid`,`name`,`token_id`,`head_pic`,`nick_name`,`email`,`qq`,`sex`,`mphone`,`password`,`lin_salt`,`nickname`,`regdate`,`addtime`,`J_Year`,`J_Month`,`J_Date` FROM `lp_member` ORDER BY regdate desc LIMIT 0,10   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:05+08:00 ] ::1 /glgj/?g=admin&m=more
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0020s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_page` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_page` WHERE `id` IN ('2','3','4','5') LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_page` WHERE `id` IN ('2','3','4','5') ORDER BY inputtime desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:05+08:00 ] ::1 /glgj/?g=admin&m=product&a=truck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_truck` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`uid`,`truck_no`,`truck_length`,`truck_type`,`remark`,`provinceN`,`cityN`,`countryN`,`provinceN2`,`cityN2`,`countryN2`,`approach`,`source_type`,`content`,`create_time`,`update_time`,`status`,`truck_num`,`heavy`,`heavy_unit`,`light`,`light_unit`,`driver`,`driver_phone`,`master`,`departure_time`,`end_date` FROM `lp_truck` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0020s ]
+SQL: SELECT `uid`,`mphone` FROM `lp_member` WHERE `uid` IN ('24343','24430','24404','24396','24395','24387','24201')  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:05+08:00 ] ::1 /glgj/?g=admin&m=news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_article` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_article` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0210s ]
+SQL: SELECT `id`,`categoryid`,`title`,`image`,`is_display`,`flags`,`uptime` FROM `lp_article` WHERE `title` LIKE '%%' ORDER BY id DESC LIMIT 0,10   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_artcategory` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `lp_news_flags` [ RunTime:0.0030s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_news_flags` WHERE `flags` <> '' AND `status` = 1 ORDER BY sort DESC,id DESC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: f D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\c8e109386e283078858c1197f34e9151.php 第 129 行.
+NOTIC: [8] Undefined variable: f D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\c8e109386e283078858c1197f34e9151.php 第 129 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:06+08:00 ] ::1 /glgj/?g=admin&m=product&a=truck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_truck` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT `id`,`uid`,`truck_no`,`truck_length`,`truck_type`,`remark`,`provinceN`,`cityN`,`countryN`,`provinceN2`,`cityN2`,`countryN2`,`approach`,`source_type`,`content`,`create_time`,`update_time`,`status`,`truck_num`,`heavy`,`heavy_unit`,`light`,`light_unit`,`driver`,`driver_phone`,`master`,`departure_time`,`end_date` FROM `lp_truck` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`mphone` FROM `lp_member` WHERE `uid` IN ('24343','24430','24404','24396','24395','24387','24201')  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T10:36:06+08:00 ] ::1 /glgj/?g=admin&m=news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_article` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_article` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT `id`,`categoryid`,`title`,`image`,`is_display`,`flags`,`uptime` FROM `lp_article` WHERE `title` LIKE '%%' ORDER BY id DESC LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_artcategory` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_news_flags` [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_news_flags` WHERE `flags` <> '' AND `status` = 1 ORDER BY sort DESC,id DESC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: f D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\c8e109386e283078858c1197f34e9151.php 第 129 行.
+NOTIC: [8] Undefined variable: f D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\c8e109386e283078858c1197f34e9151.php 第 129 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:07+08:00 ] ::1 /glgj/?g=admin&m=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:08+08:00 ] ::1 /glgj/?g=admin&m=news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_article` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_article` WHERE `title` LIKE '%%' LIMIT 1   [ RunTime:0.0050s ]
+SQL: SELECT `id`,`categoryid`,`title`,`image`,`is_display`,`flags`,`uptime` FROM `lp_article` WHERE `title` LIKE '%%' ORDER BY id DESC LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_artcategory` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_news_flags` [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `cname` FROM `lp_artcategory` WHERE `cid` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `title` FROM `lp_news_flags` WHERE (  `flags` = '' ) AND (  `flags` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_news_flags` WHERE `flags` <> '' AND `status` = 1 ORDER BY sort DESC,id DESC  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: f D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\c8e109386e283078858c1197f34e9151.php 第 129 行.
+NOTIC: [8] Undefined variable: f D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\c8e109386e283078858c1197f34e9151.php 第 129 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:08+08:00 ] ::1 /glgj/?g=admin&m=product&a=truck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_truck` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`uid`,`truck_no`,`truck_length`,`truck_type`,`remark`,`provinceN`,`cityN`,`countryN`,`provinceN2`,`cityN2`,`countryN2`,`approach`,`source_type`,`content`,`create_time`,`update_time`,`status`,`truck_num`,`heavy`,`heavy_unit`,`light`,`light_unit`,`driver`,`driver_phone`,`master`,`departure_time`,`end_date` FROM `lp_truck` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`mphone` FROM `lp_member` WHERE `uid` IN ('24343','24430','24404','24396','24395','24387','24201')  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:08+08:00 ] ::1 /glgj/?g=admin&m=more
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_page` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_page` WHERE `id` IN ('2','3','4','5') LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_page` WHERE `id` IN ('2','3','4','5') ORDER BY inputtime desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:11+08:00 ] ::1 /glgj/?g=admin&m=product&a=truck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_truck` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`uid`,`truck_no`,`truck_length`,`truck_type`,`remark`,`provinceN`,`cityN`,`countryN`,`provinceN2`,`cityN2`,`countryN2`,`approach`,`source_type`,`content`,`create_time`,`update_time`,`status`,`truck_num`,`heavy`,`heavy_unit`,`light`,`light_unit`,`driver`,`driver_phone`,`master`,`departure_time`,`end_date` FROM `lp_truck` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`mphone` FROM `lp_member` WHERE `uid` IN ('24343','24430','24404','24396','24395','24387','24201')  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:12+08:00 ] ::1 /glgj/?g=admin&m=member
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` ORDER BY addtime desc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_member` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`gid`,`name`,`token_id`,`head_pic`,`nick_name`,`email`,`qq`,`sex`,`mphone`,`password`,`lin_salt`,`nickname`,`regdate`,`addtime`,`J_Year`,`J_Month`,`J_Date` FROM `lp_member` ORDER BY regdate desc LIMIT 0,10   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `lp_member_group` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_member_group` WHERE `gid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:36:14+08:00 ] ::1 /glgj/?g=admin&m=member&a=company
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company` WHERE `status` < 2 LIMIT 1   [ RunTime:0.0550s ]
+SQL: SELECT `id`,`user_id`,`company_category_id`,`name`,`logo`,`business`,`summary`,`issue_time`,`flags`,`status`,`review`,`grade`,`sort`,`modify_time`,`proprietary` FROM `lp_company` WHERE `status` < 2 ORDER BY proprietary DESC,id DESC LIMIT 0,10   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10638 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10637 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10636 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10635 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10634 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10633 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10632 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10631 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10630 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `attname` FROM `lp_flags` WHERE (  `att` = '' ) AND (  `att` <> '' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_flags` WHERE `att` <> ''  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: flags D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\ace951fa70c834c0eb872e9916a722e2.php 第 129 行.
+NOTIC: [8] Undefined variable: search D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\ace951fa70c834c0eb872e9916a722e2.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T10:36:16+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:50:29+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 287 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 293 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 341 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 378 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 384 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 432 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T10:52:01+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+ERR: syntax error, unexpected '>'
+
+[ 2017-03-13T10:52:57+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0000s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+ERR: syntax error, unexpected '>'
+
+[ 2017-03-13T10:55:14+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 288 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 294 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 342 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 379 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 385 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 433 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T10:56:59+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0000s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 288 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 294 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 342 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 379 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 385 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 433 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T11:09:11+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0000s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 261 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 267 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 315 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 352 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 358 行.
+NOTIC: [8] Undefined index: wechat D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 406 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:12:12+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add&id=10639
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0020s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `lp_company` WHERE `id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_company_link` WHERE `company_id` = 10639 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lnt D:\wamp64\www\glgj\Application\Admin\Controller\MemberController.class.php 第 319 行.
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 261 行.
+NOTIC: [8] Undefined index: theme_img D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 267 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 315 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 352 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 358 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:12:22+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_link` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `lp_company_category` ORDER BY sort DESC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_flags` [ RunTime:0.0010s ]
+SQL: SELECT `att`,`attname` FROM `lp_flags` ORDER BY cid DESC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 132 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 133 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 134 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 135 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 136 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 141 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 194 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 216 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 225 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 225 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 235 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 261 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 267 行.
+NOTIC: [8] Undefined variable: cert D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 315 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 328 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 346 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 352 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 352 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 358 行.
+NOTIC: [8] Undefined index:  D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 358 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 367 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 374 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 381 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 385 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 394 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 400 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 407 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 414 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 421 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 428 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 434 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 440 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 446 行.
+NOTIC: [8] Undefined variable: detail D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\1d24d69990bd5292efe4bb4744716bdf.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:19:22+08:00 ] ::1 /glgj/?g=admin&m=member&a=applyPerTruck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:19:49+08:00 ] ::1 /glgj/?g=admin&m=member&a=applyPerTruck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:19:54+08:00 ] ::1 /glgj/?g=admin&m=member&a=apply
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company` WHERE `status` = 2 LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `id`,`user_id`,`company_category_id`,`name`,`logo`,`business`,`summary`,`issue_time`,`flags`,`status`,`review`,`grade`,`sort`,`modify_time`,`proprietary` FROM `lp_company` WHERE `status` = 2 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0450s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:19:55+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_group
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company_category` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`name`,`desc`,`addtime`,`sort` FROM `lp_company_category` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:19:57+08:00 ] ::1 /glgj/?g=admin&m=member&a=apply
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company` WHERE `status` = 2 LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `id`,`user_id`,`company_category_id`,`name`,`logo`,`business`,`summary`,`issue_time`,`flags`,`status`,`review`,`grade`,`sort`,`modify_time`,`proprietary` FROM `lp_company` WHERE `status` = 2 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0340s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T11:19:59+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_group
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company_category` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`name`,`desc`,`addtime`,`sort` FROM `lp_company_category` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:20:00+08:00 ] ::1 /glgj/?g=admin&m=member&a=apply
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company` WHERE `status` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `id`,`user_id`,`company_category_id`,`name`,`logo`,`business`,`summary`,`issue_time`,`flags`,`status`,`review`,`grade`,`sort`,`modify_time`,`proprietary` FROM `lp_company` WHERE `status` = 2 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0300s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T11:20:01+08:00 ] ::1 /glgj/?g=admin&m=member&a=applyDepot
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:20:03+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_group
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company_category` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`name`,`desc`,`addtime`,`sort` FROM `lp_company_category` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2a35b693462dce0372c7d05a442fc70d.php 第 140 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:20:05+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_group_add&id=46
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_category` WHERE `id` = 46 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_category` WHERE `id` <> '46'  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 182 行.
+NOTIC: [8] Undefined index: status D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 193 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:21:14+08:00 ] ::1 /glgj/?g=admin&m=member&a=company_group_add&id=46
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_category` WHERE `id` = 46 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company_category` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_company_category` WHERE `id` <> '46'  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: parent_id D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 132 行.
+NOTIC: [8] Undefined index: logo D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 182 行.
+NOTIC: [8] Undefined index: status D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\2ed169356cf665222600bc221b7e526c.php 第 193 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:21:17+08:00 ] ::1 /glgj/?g=admin&m=member&a=apply
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company` WHERE `status` = 2 LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `id`,`user_id`,`company_category_id`,`name`,`logo`,`business`,`summary`,`issue_time`,`flags`,`status`,`review`,`grade`,`sort`,`modify_time`,`proprietary` FROM `lp_company` WHERE `status` = 2 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0510s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:21:18+08:00 ] ::1 /glgj/?g=admin&m=member&a=apply
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_company` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_company` WHERE `status` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `id`,`user_id`,`company_category_id`,`name`,`logo`,`business`,`summary`,`issue_time`,`flags`,`status`,`review`,`grade`,`sort`,`modify_time`,`proprietary` FROM `lp_company` WHERE `status` = 2 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0320s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T11:21:20+08:00 ] ::1 /glgj/?g=admin&m=member&a=applyDepot
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:21:23+08:00 ] ::1 /glgj/?g=admin&m=member&a=applyDepot
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:22:52+08:00 ] ::1 /glgj/?g=admin&m=user
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_admin_user` WHERE `user_id` > 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` > 1 ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: nickname D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\0648ff6f0dd243518b5e9e11225c8e24.php 第 139 行.
+NOTIC: [8] Undefined index: nickname D:\wamp64\www\glgj\Application\Runtime\Cache\Admin\0648ff6f0dd243518b5e9e11225c8e24.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T11:22:53+08:00 ] ::1 /glgj/?g=admin&m=user&a=group
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0010s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_group` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_admin_group` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_group` ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-03-13T11:22:58+08:00 ] ::1 /glgj/?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0000s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-03-13T15:20:26+08:00 ] ::1 /glgj/?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T15:20:28+08:00 ] ::1 /glgj/?g=admin&m=product&a=truck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_truck` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`uid`,`truck_no`,`truck_length`,`truck_type`,`remark`,`provinceN`,`cityN`,`countryN`,`provinceN2`,`cityN2`,`countryN2`,`approach`,`source_type`,`content`,`create_time`,`update_time`,`status`,`truck_num`,`heavy`,`heavy_unit`,`light`,`light_unit`,`driver`,`driver_phone`,`master`,`departure_time`,`end_date` FROM `lp_truck` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0005s ]
+SQL: SELECT `uid`,`mphone` FROM `lp_member` WHERE `uid` IN ('24343','24430','24404','24396','24395','24387','24201')  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T15:20:29+08:00 ] ::1 /glgj/?g=admin&m=more
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_page` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_page` WHERE `id` IN ('2','3','4','5') LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `lp_page` WHERE `id` IN ('2','3','4','5') ORDER BY inputtime desc LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T15:20:30+08:00 ] ::1 /glgj/?g=admin&m=product&a=truck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_truck` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`uid`,`truck_no`,`truck_length`,`truck_type`,`remark`,`provinceN`,`cityN`,`countryN`,`provinceN2`,`cityN2`,`countryN2`,`approach`,`source_type`,`content`,`create_time`,`update_time`,`status`,`truck_num`,`heavy`,`heavy_unit`,`light`,`light_unit`,`driver`,`driver_phone`,`master`,`departure_time`,`end_date` FROM `lp_truck` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`mphone` FROM `lp_member` WHERE `uid` IN ('24343','24430','24404','24396','24395','24387','24201')  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 969 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp64\www\glgj\Application\Admin\Controller\ProductController.class.php 第 972 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T15:20:32+08:00 ] ::1 /glgj/?g=admin&m=product&a=truckAdd&id=1712
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_truck` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_truck` WHERE `id` = 1712 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0005s ]
+SQL: SELECT `mphone` FROM `lp_member` WHERE `uid` = 24343 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T17:31:35+08:00 ] ::1 /glgj/?g=admin&m=product&a=depot
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_depot` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_depot` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`uid`,`mobile`,`province_id`,`city_id`,`country_id`,`address`,`area`,`category_id`,`content`,`create_time`,`update_time`,`price`,`standard`,`height`,`rent_area`,`run`,`ground`,`structure`,`issub` FROM `lp_depot` ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0005s ]
+SQL: SELECT `uid`,`name` FROM `lp_member` WHERE `uid` IN ('24387','23935','23898','23870','23575','23573','23319','23150')  [ RunTime:0.0070s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T17:31:37+08:00 ] ::1 /glgj/?g=admin&m=product&a=depotAdd&id=133
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_depot` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `lp_depot` WHERE `id` = 133 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0010s ]
+SQL: SELECT `mphone` FROM `lp_member` WHERE `uid` = 24387 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T21:02:29+08:00 ] ::1 /glgj/?g=admin&m=product&a=depot
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_depot` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lp_depot` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`uid`,`mobile`,`province_id`,`city_id`,`country_id`,`address`,`area`,`category_id`,`content`,`create_time`,`update_time`,`price`,`standard`,`height`,`rent_area`,`run`,`ground`,`structure`,`issub` FROM `lp_depot` ORDER BY create_time desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0005s ]
+SQL: SELECT `uid`,`name` FROM `lp_member` WHERE `uid` IN ('24387','23935','23898','23870','23575','23573','23319','23150')  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2017-03-13T21:02:31+08:00 ] ::1 /glgj/?g=admin&m=product&a=depotAdd&id=133
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' D:\wamp64\www\glgj\Application\Admin\Controller\AdminController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `lp_conf` [ RunTime:0.0005s ]
+SQL: SELECT `value` FROM `lp_conf` WHERE `name` = 'distribution' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_admin_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_admin_user` WHERE `user_id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_depot` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lp_depot` WHERE `id` = 133 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `lp_member` [ RunTime:0.0005s ]
+SQL: SELECT `mphone` FROM `lp_member` WHERE `uid` = 24387 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `lp_regions` [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

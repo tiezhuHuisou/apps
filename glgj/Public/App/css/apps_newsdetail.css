@@ -1,0 +1,55 @@
+body{background:#f5f5f5;}
+/* 图文详情 */
+.detail_info{background:#fff;padding:16px 12px;margin-bottom:10px;}
+.detail_info .info_title{margin-bottom:20px;font-size:20px;}
+.detail_info .info_more{margin-bottom:16px;display:-webkit-box;}
+.detail_info .info_more p{color:#8a8a8a;}
+.detail_info .info_more .more_author{-webkit-box-flex:1;}
+/* 评论区 */
+.comment_top{margin:10px 12px;text-align:center;position:relative;}
+.comment_top .top_title{padding:0 10px;font-size:16px;color:#8a8a8a;display:inline-block;background:#f5f5f5;position:relative;z-index:2;}
+.comment_top .top_line{width:100%;height:1px;background:#e6e6e6;position:absolute;top:50%;left:0;}
+.comment_wrap .comment_list{}
+.comment_wrap .comment_list .list_one{padding:10px 12px;display:-webkit-box;}
+.comment_wrap .comment_list .list_one img{margin-right:6px;}
+/* 一级评论 */
+.comment_wrap .comment_list .list_one .one_detail{-webkit-box-flex:1;}
+.comment_wrap .comment_list .list_one .one_detail .detail_top{display:-webkit-box;padding-bottom:10px;}
+.comment_wrap .comment_list .list_one .one_detail .detail_top span{display:block;}
+.comment_wrap .comment_list .list_one .one_detail .detail_top .top_line{color:#8a8a8a;margin:0 3px;}
+.comment_wrap .comment_list .list_one .one_detail .detail_top .top_company{margin-right:10px;color:#43d0fe;display:block;-webkit-box-flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.comment_wrap .comment_list .list_one .one_detail .detail_word{padding-bottom:6px;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more{padding-bottom:8px;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more:after{content:"";height:0;display:block;clear:both;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more p{display:inline-block;float:left;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more p span{display:inline-block;padding-left:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#8a8a8a;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more .more_time{width:38%;color:#8a8a8a;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more .more_comment{width:24%;text-align:right;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more .more_comment span{background:url('../images/funcs_bg.png') no-repeat left center;background-size:28px 56px;background-position:-4px -18px;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more .more_like{width:38%;text-align:right;}
+.comment_wrap .comment_list .list_one .one_detail .detail_more .more_like span{background:url('../images/funcs_bg.png') no-repeat left center;background-size:28px 56px;background-position:-4px 3px;}
+/* 二级评论 */
+.comment_wrap .comment_list .list_two{padding:10px 12px 10px 22px;background:#ebebed;position:relative;}
+.comment_wrap .comment_list .list_two:before{content:"";width:0;height:10px;border:10px solid transparent;border-bottom:10px solid #ebebed;position:absolute;top:-30px;left:60px;}
+.comment_wrap .comment_list .list_two .two_backs{display:-webkit-box;}
+.comment_wrap .comment_list .list_two .two_backs img{margin-right:6px;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail{-webkit-box-flex:1;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_top{display:-webkit-box;padding-bottom:10px;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_top span{display:block;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_top .top_name{}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_top .top_line{color:#8a8a8a;margin:0 3px;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_top .top_company{margin-right:10px;color:#43d0fe;display:block;-webkit-box-flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_top .top_time{color:#8a8a8a;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_word{padding-bottom:6px;}
+.comment_wrap .comment_list .list_two .two_backs .backs_detail .detail_word .word_user{color:#43d0fe;}
+/* 点击展开楼层 */
+.comment_wrap .comment_list .list_two .two_show{margin:10px 12px;text-align:center;position:relative;}
+.comment_wrap .comment_list .list_two .two_show .show_title{padding:0 10px;color:#8a8a8a;display:inline-block;background:#ebebed;position:relative;z-index:2;}
+.comment_wrap .comment_list .list_two .two_show .show_line{width:100%;height:1px;background:#e6e6e6;position:absolute;top:50%;left:0;}
+/* 提示信息 */
+.tips{width:100%;background:rgba(0,0,0,.5);position:fixed;bottom:0;left:0;z-index:5;}
+.tips .tips_wrap{padding:10px;display:-webkit-box;-webkit-box-align:center;position:relative;}
+.tips .tips_wrap img{margin-right:6px;}
+.tips .tips_wrap .tips_title{color:#fff;margin-right:10px;-webkit-box-flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tips .tips_wrap .tips_title a{color:#43d0fe;text-decoration:underline;}
+.tips .tips_wrap .tips_close{width:20px;height:20px;line-height:20px;display:block;color:#fff;font-size:20px;position:absolute;top:2px;right:0;}

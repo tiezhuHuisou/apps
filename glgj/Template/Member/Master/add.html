@@ -1,0 +1,49 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/news_collect.css" />
+<script type="text/javascript" src="__JS__/news_collect.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 资讯收藏数据 开始 -->
+			<table class="data">
+				<!-- 标题 开始 -->
+				<tr class="data_title">
+					<td class="ti25">标题</td>
+					<td>内容</td>
+					<td align="center">操作</td>
+				</tr>
+				<!-- 标题 结束 -->
+				<volist name="list" id="li">
+				<!-- 一条数据 开始 -->
+				<tr>
+					<td class="ti25">
+						<p>{$li.title}</p>
+						<p class="gray">[{$li.addtime|date="Y-m-d H:i",###}]</p>
+					</td>
+					<td>
+						<p>{$li.short_title}</p>
+					</td>
+					<td class="data_opt" align="center">
+						<a class="confirm ajax-get" href="?g=member&m=collect&a=del&classify=1&id={$li.id}">删除</a>
+					</td>
+				</tr>
+				<!-- 一条数据 结束 -->
+				</volist>
+			</table>
+			<!-- 资讯收藏数据 结束 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

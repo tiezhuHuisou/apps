@@ -1,0 +1,93 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/index.css"/>
+<script type="text/javascript" src="__JS__/index.js"></script>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <!-- 主体头部 -->
+    <div class="index_header">
+        <div class="user_info">
+            <!-- 用户头像 -->
+            <div class="user_portrait">
+                <img src="{$info['0']['logo']|default='__IMG__/member_default.png'}" width="158" height="158"/>
+            </div>
+            <div class="user_left fl">
+                <p class="user_name">{$info.0.name}</p>
+                <p class="gray">{$dateTime}</p>
+
+                <p>
+                    <a class="gray" href="?g=member&m=company&a=contact">我的企业</a>
+                    <a class="cyan mgl20" href="?g=member&m=company&a=contact">
+                        <if condition="$info['0']['status'] eq 0">立即开通
+                            <elseif condition="$info['0']['status'] eq 1"/>
+                            经营中
+                            <elseif condition="$info['0']['status'] eq 2"/>
+                            申请中
+                            <elseif condition="$info['0']['status'] eq 3"/>
+                            申请被拒
+                            <else/>
+                            立即开通
+                        </if>
+                    </a>
+                </p>
+            </div>
+            <div class="user_right fr">
+                <p>欢迎登入您的个人中心</p>
+                <p>中国APP行业应用注册中心</p>
+                <p>竭诚为您提供服务！</p>
+            </div>
+        </div>
+    </div>
+    <!-- 主体内容 -->
+    <div class="wrapper">
+        <!-- 站内信箱 -->
+        <!-- <div class="msg fl">
+            <div class="msg_header">
+                <i class="msg_icon"></i>
+                <span class="msg_title fl">站内信箱</span>
+                <a class="msg_more fr" href="?g=member&m=msg">更多 ></a>
+                <div class="clear"></div>
+            </div>
+            <div class="msg_content">
+                <a class="msg_col" href="javascript:void(0);">
+                    <div class="msg_name">客户询盘（条）</div>
+                    <div class="msg_num">0</div>
+                </a>
+                <a class="msg_col" href="?g=member&m=msg">
+                    <div class="msg_name">系统消息（条）</div>
+                    <div class="msg_num">{$system_num}</div>
+                </a>
+                <div class="clear"></div>
+            </div>
+        </div> -->
+        <!-- 我的收藏 -->
+        <div class="collect fr">
+            <div class="collect_header">
+                <i class="collect_icon"></i>
+                <span class="collect_title fl">我的权限</span>
+                <a class="collect_more fr" href="?g=member&m=collect">更多 ></a>
+                <div class="clear"></div>
+            </div>
+            <div class="collect_content">
+                <volist name="list['area']" id="vo">
+                    <a class="collect_col" href="{$vo.url}">
+                        <div class="collect_name">{$vo.name}</div>
+                        <div class="collect_num">{$vo.num}</div>
+                    </a>
+                </volist>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- 主体 结束 -->
+</body>
+</html>

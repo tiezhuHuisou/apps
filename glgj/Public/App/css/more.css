@@ -1,0 +1,50 @@
+/*------- 更多页面 开始 -------*/
+/* 主体内容 */
+.more_wrapper{padding-bottom:15px;}
+/* logo */
+.more_wrapper .more_logo{width:100%;margin-bottom:15px;height:200px;position:relative;background:#fff;border-bottom:1px solid #dcdcdc;}
+.more_wrapper .more_logo .more_logo_pic{position:absolute;left:50%;margin-left:-50px;top:50%;margin-top:-50px;border-radius:20%;overflow:hidden;}
+/* 联系方式 */
+.more_wrapper .more_contact{margin-bottom:15px;background:#fff;border-top:1px solid #dcdcdc;}
+.more_wrapper .more_contact p{height:40px;line-height:40px;display:-webkit-box;padding:0 20px 0 16px;border-bottom:1px solid #dcdcdc;}
+.more_wrapper .more_contact .more_contact_title{display:block;font-size:12px;}
+.more_wrapper .more_contact .more_contact_web{display:block;overflow:hidden;text-overflow:ellipsis;-webkit-box-flex:1;text-align:right;color:#8a8a8a;word-break:break-all;}
+.more_wrapper .more_contact .more_contact_phone{display:block;overflow:hidden;text-overflow:ellipsis;-webkit-box-flex:1;text-align:right;color:#f15252;}
+/* 链接 */
+.more_wrapper .more_btns{margin-bottom:15px;background:#fff;border-top:1px solid #dcdcdc;}
+.more_wrapper .more_btns a{color:#333;height:40px;line-height:40px;padding:0 16px;display:-webkit-box;border-bottom:1px solid #dcdcdc;}
+.more_wrapper .more_btns a span{display:block;-webkit-box-flex:1;font-size:12px;}
+.more_wrapper .more_btns a .gt{width:16px;height:30px;overflow:hidden;position:relative;top:5px;}
+.more_wrapper .more_btns a .gt div{height:10px;width:10px;border:1px solid #8a8a8a;top:9px;left:-8px;}
+.more_wrapper .more_btns a .cache{color:#8a8a8a;}
+/* 退出登录按钮 */
+.more_wrapper .quit_login{height:40px;line-height:40px;font-size:16px;color:#f15252;text-align:center;background:#fff;border:1px solid #dcdcdc;border-radius:5px;margin:0 30px;display:block;}
+/*------- 更多页面 结束 -------*/
+/*------- 版权信息页面 开始 -------*/
+.more_copyright_body{background:#fff;height:100%;}
+/* 主体内容 */
+.more_copyright_content{margin:16px;}
+.more_copyright_content img,.more_copyright_content table,.more_copyright_content embed,.more_copyright_content iframe{max-width:100%;}
+/*------- 版权信息页面 结束 -------*/
+/*------- 意见反馈页面 开始 -------*/
+/* 主体内容 */
+.more_opinion_wrapper .more_opinion_content{margin-top:15px;}
+.more_opinion_wrapper .more_opinion_content .more_opinion_textarea{width:86%;height:300px;display:block;margin:0 auto;padding:10px;border:1px solid #dcdcdc;border-radius:5px;}
+.more_opinion_wrapper .more_opinion_content .more_opinion_input{width:86%;display:block;margin:15px auto 0;padding:10px;border:1px solid #dcdcdc;border-radius:5px;}
+/*------- 意见反馈页面 结束 -------*/
+/*------- 评论页面 开始 -------*/
+.comment_main{width:100%;margin-top:15px;}
+/* 评价内容 */
+.goods_comment{margin-top:10px;padding:16px 16px 0;margin-bottom:15px;background:#fff;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;}
+.goods_comment h5{font-size:16px;font-weight:normal;padding-bottom:14px;border-bottom:1px solid #dcdcdc;}
+.goods_comment .goods_comment_list{padding:12px 0;border-bottom:1px solid #dcdcdc;}
+.goods_comment .goods_comment_list:last-child{border:none;}
+.goods_comment .goods_comment_list .goods_comment_list_info{margin-bottom:16px;display:-webkit-box;}
+.goods_comment .goods_comment_list .goods_comment_list_info .goods_comment_list_idnum{-webkit-box-flex:1;display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.goods_comment .goods_comment_list .goods_comment_list_info .goods_comment_list_time{color:#8a8a8a;font-size:14px;}
+.additional{background:#f2f2f2;border-bottom:1px solid #dcdcdc;padding:10px;}
+.additional:last-child{border-bottom:none;}
+/* 评价文本域 */
+.comment_textarea{width:86%;height:150px;display:block;margin:0 auto;padding:10px;border:1px solid #dcdcdc;border-radius:5px;}
+/*------- 评论页面 结束 -------*/
+.submit_btn{width: 86%;display: block;margin: 15px auto;background: #f15252;padding: 10px;border-radius:5px;text-align: center;color: #fff;}

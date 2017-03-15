@@ -1,0 +1,28 @@
+body{font-size:14px;}
+.items_title{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:normal;text-align:center;}
+.img_wrap{display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;}
+.img_wrap img{max-width:100%;max-height:100%;}
+.c_fff{color:#fff;}
+.mgt10{margin-top:10px;}
+.header{width:100%;color:#fff;text-align:center;background:#38d163;border-bottom:1px solid #dcdcdc;position:fixed;top:0;left:0;z-index:2;}
+.header .gps{width:80px;height:50px;background:url('../images/gps.png') no-repeat;background-size:18px 20px;background-position: 11px 13px;text-indent: 32px;overflow: hidden;text-overflow: ellipsis;white-space: normal;}
+.header_wrap{line-height:50px;}
+.space{width:80px;height:50px;}
+/*导航*/
+.nav_wrap{margin-top:46px;background:#fff;}
+.weui-grids.nav_wrap a{width: 25%;}
+.nav_wrap.weui-grids:before{border-top:0;}
+.nav_wrap.weui-grids:after{border-left:0;}
+.nav_wrap .weui-grid:before{border-right:0;}
+.nav_wrap .weui-grid:after{border-bottom:0;}
+/* 快讯 */
+.report_wrap{padding:6px 10px;background:#fff;display:-webkit-box;-webkit-box-align:center;}
+.report_wrap .report_line{width:1px;height:20px;background:#dcdcdc;margin:0 12px;display:block;}
+.report_wrap .report_title{height:21px;display:block;-webkit-box-flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.report_wrap .report_title ul li a{width:90%;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.report_wrap .report_title ul li a span{display:inline-block;border:1px solid #f00;color:#f00;font-size:12px;padding:0 2px;margin-right:5px;}
+.report_wrap .larger{}
+/*组件样式覆盖*/
+.weui-media-box__desc{color:#000;font-size:14px;}
+.weui-media-box__title{font-size:12px;color:#999;margin-top:15px;}
+.weui-cells .weui-cell{background-color:#fff;border-bottom:1px solid #dcdcdc;font-size:14px;margin-top:10px;}

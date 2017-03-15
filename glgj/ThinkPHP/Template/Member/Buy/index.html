@@ -1,0 +1,107 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/order.css" />
+<script type="text/javascript" src="__JS__/order.js"></script>
+<script type="text/javascript" src="__JS__/all_orders.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<!-- 导航 -->
+			<div class="nav">
+				<a <eq name="state" value="">class="hover"</eq>href="?g=member&m=buy&a=index">全部订单</a>
+				<a <eq name="state" value="1">class="hover"</eq>href="?g=member&m=buy&a=index&state=1">待付款</a>
+				<a <eq name="state" value="2">class="hover"</eq>href="?g=member&m=buy&a=index&state=2">待发货</a>
+				<a <eq name="state" value="3">class="hover"</eq>href="?g=member&m=buy&a=index&state=3">已发货</a>
+				<a <eq name="state" value="4">class="hover"</eq>href="?g=member&m=buy&a=index&state=4">待评价</a>
+				<a <eq name="state" value="8">class="hover"</eq>href="?g=member&m=buy&a=index&state=8">已完成</a>
+				<a <eq name="state" value="5">class="hover"</eq>href="?g=member&m=buy&a=index&state=5">已取消</a>
+			</div>
+			<!-- 订单表格 -->
+			<table class="order">
+				<thead>
+					<tr class="bgray">
+						<td class="ti25">收货人姓名</td>
+						<td>手机号</td>
+						<td>地址</td>
+						<td>总价(元)</td>
+						<td>交易状态</td>
+						<td align="center">交易操作</td>
+					</tr>
+				</thead>
+				<volist name="list" id="li">
+				<input type="hidden" class="order_id" value="{$li.orderid}"/>
+				<!-- 一条订单 开始 -->
+				<tbody>
+					<tr class="empty">
+						<td colspan="6"></td>
+					</tr>
+					<tr class="order_info bgray">
+						<td colspan="6">
+							<span>订单号：{$li.orderid}</span>
+							<span class="mgl20">下单时间：{$li.addtime|date="Y-m-d h:i",###}</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="ti25">{$li.address.name}</td>
+						<td>{$li.address.phone}</td>
+						<td>{$li.regions.0.name} {$li.regions.1.name} {$li.regions.2.name} {$li.address.address}</td>
+						<td>￥{$li.paymoney}<span>(含快递：{$li.expressprice})</span></td>
+						<td><eq name="li.state" value="0">待付款
+                        </eq>
+                        <eq name="li.state" value="7">订单关闭
+                        </eq>
+                        <eq name="li.state" value="8">订单完成
+                        </eq>
+                        <eq name="li.state" value="1">待发货
+                        </eq>
+                        <eq name="li.state" value="2">待收货
+                        </eq>
+                        <eq name="li.state" value="4">退款中
+                        </eq>
+                        <eq name="li.state" value="5">完成退款
+                        </eq>
+                        <eq name="li.state" value="6">换货
+                        </eq>
+                        <eq name="li.state" value="3">待评价
+                        </eq></td>
+						<td class="opt" align="center">
+						<a class="cyan" href="?g=member&m=buy&a=detail&id={$li.orderid}">订单详情</a>
+						<switch name="li['state']">
+								<case value="0">
+									<a class="cyan  del_order" href="javascript:void(0)">删除订单</a>
+								</case>
+								<case value="1">
+									<a class="cyan  order_refund" href="javascript:void(0)">申请退款</a>
+								</case>
+								<case value="2">
+									<a class="cyan  sure_goods" href="javascript:void(0);">确认收货</a>
+								</case>
+								<case value="4">
+									<a class="cyan  order_surerefund" href="javascript:void(0)">退款完成</a>
+									<a class="cyan  order_cancelrefund" href="javascript:void(0)">取消退款</a>
+								</case>
+								<default />
+							</switch>
+						</td>
+					</tr>
+				</tbody>
+				<!-- 一条订单 结束 -->
+				</volist>
+			</table>
+			<!-- 分页 -->
+			<div class="page"></div>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

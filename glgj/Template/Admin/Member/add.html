@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head"/>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<div class="wrapper">
+			<!-- 主体头部 -->
+			<div class="header">
+				<h2>会员管理中心</h2>
+				<a href="?g=admin&m=member">会员列表</a>
+				<a class="hover" href="?g=admin&m=member&a=add">添加会员</a>
+			</div>
+			<h3>添加会员</h3>
+			<!-- 添加会员表单 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<input  type="hidden" name="id" value="{$detail.uid}"/>
+				<table class="add_table">
+					<tr>
+						<td class="w120">手机：</td>
+						<td>
+							<input class="i400" type="text" name="mphone" value="{$detail.mphone}"  datatype="mobile" nullmsg="请正确填写手机号码" errormsg="请正确填写手机号码"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">真实姓名：</td>
+						<td>
+							<input class="i400" type="text" name="name" value="{$detail.name}"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="w120">密码：</td>
+						<td>
+							<input class="i400" type="password" name="password" value="{$detail.password}" />
+						</td>
+					</tr>
+					<!-- 提交按钮 -->
+					<tr class="add_opt">
+						<td></td>
+						<td>
+							<input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确定提交">
+							<input class="opt_btn" type="reset" value="重置表单">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<!-- 主体 结束 -->
+</body>
+</html>

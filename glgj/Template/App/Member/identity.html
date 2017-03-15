@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/identity.css" />
+</head>
+<body>
+    <include file="Common/header"/>
+    <!-- 可视区域 开始 -->
+    <section class="viewport">
+        <div class="weui-cells">
+            <a class="weui-cell" href="?g=app&m=member&a=identitySuccess">
+                <div class="weui-cell__hd"><img src="__IMG__/v1.png" width="35" height="35"></div>
+                <div class="weui-cell__bd">
+                    <p>成为个体货主</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <span class="blue_38f">审核成功</span>
+                    <div class="gt_btn"></div>
+                </div>
+            </a>
+            <a class="weui-cell" href="?g=app&m=member&a=identitySubmit">
+                <div class="weui-cell__hd"><img src="__IMG__/v2.png" width="35" height="35"></div>
+                <div class="weui-cell__bd">
+                    <p>成为公司货主</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <span class="gray_999">审核中</span>
+                    <div class="gt_btn"></div>
+                </div>
+            </a>
+            <a class="weui-cell" href="?g=app&m=member&a=identityLose">
+                <div class="weui-cell__hd"><img src="__IMG__/v3.png" width="35" height="35"></div>
+                <div class="weui-cell__bd">
+                    <p>个体车主</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <span class="gray_999">审核失败</span>
+                    <div class="gt_btn"></div>
+                </div>
+            </a>
+            <a class="weui-cell" href="?g=app&m=member&a=applyComTruck">
+                <div class="weui-cell__hd"><img src="__IMG__/v4.png" width="35" height="35"></div>
+                <div class="weui-cell__bd">
+                    <p>公司车主</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="gt_btn"></div>
+                </div>
+            </a>
+            <a class="weui-cell" href="?g=app&m=member&a=applyDepot">
+                <div class="weui-cell__hd"><img src="__IMG__/v5.png" width="35" height="35"></div>
+                <div class="weui-cell__bd">
+                    <p>仓储主</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <div class="gt_btn"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 底部 开始 -->
+    <include file="Common/footer"/>
+    <!-- 底部 结束 -->
+    <script type="text/javascript">
+        var city_name  = "{$city_name}";
+        var defaultImg = '__STATIC__/images/default_icon.jpg';
+        var imgUrl     = '__IMG__';
+    </script>
+</body>
+</html>

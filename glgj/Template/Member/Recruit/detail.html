@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/recruit_detail.css" />
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+</head>
+<body>
+    <!-- 头部 开始 -->
+    <header>
+        <a class="header_left" href="javascript:history.go(-1);">
+            <div class="lt"><div></div></div>
+        </a>
+        <p class="header_title">{$site_title}</p>
+        <a class="header_right" href="?g=app&m=recruit&a=addapply">填简历</a>
+    </header>
+    <!-- 头部 结束 -->
+    <!-- 可视区域 开始 -->
+    <section class="viewport">
+        <!-- 招聘详情 开始 -->
+        <div class="area">
+            <!-- 岗位名称 -->
+            <p class="fz14">{$detail['title']}</p>
+            <!-- 薪资待遇 -->
+            <p><eq name="detail['wages']" value="0">面议<else />{$detail['wages']}/月</eq></p>
+            <!-- 公司名称 -->
+            <p>{$detail['company_name']}</p>
+            <!-- 招聘人数 -->
+            <p class="mgt20">招聘人数：{$detail['num']}</p>
+            <!-- 联系人 -->
+            <p>联系人：{$detail['contact']}</p>
+            <!-- 联系电话 -->
+            <p>联系电话：{$detail['phone']}</p>
+            <!-- 上班地址 -->
+            <p>上班地址：{$detail['address']}</p>
+        </div>
+        <!-- 招聘详情 结束 -->
+        <!-- 岗位描述 开始 -->
+        <div class="desc">
+            <p class="title">岗位描述</p>
+            <div class="content">{$detail['desc']}</div>
+        </div>
+        <!-- 岗位描述 结束 -->
+        <!-- 投递岗位 开始 -->
+        <eq name="flag" value="0">
+            <a class="delivery" href="javascript:void(0);">投递岗位</a>
+            <else />
+            <a class="delivered" href="javascript:void(0);">已投递</a>
+        </eq>
+        <!-- 投递岗位 结束 -->
+    </section>
+    <!-- 可视区域 结束 -->
+    <!-- 投递弹窗蒙板 开始 -->
+    <div class="mask"></div>
+    <!-- 投递弹窗蒙板 结束 -->
+    <!-- 投递弹窗 开始 -->
+    <form action="?index.php&g=app&m=recruit&a=delivery" name="delivery" method="post">
+        <input type="hidden" name="id" value="{$detail.id}">
+        <div class="delivery_window">
+            <p class="delivery_title">推荐人</p>
+            <div class="delivery_item">
+                <input class="radio" type="radio" name="source" value="0" checked="checked" />
+                <span>无推荐人</span>
+            </div>
+            <div class="delivery_item">
+                <input class="radio" type="radio" name="source" value="1" />
+                <span>推荐人名称：</span>
+                <input class="source" type="text" name="recommond_name" value="" />
+            </div>
+            <input class="delivery_submit" type="submit" value="确认投递" />
+        </div>
+    </form>
+    <!-- 投递弹窗 结束 -->
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script type="text/javascript" src="__JS__/recruit_detail.js"></script>
+</body>
+</html>

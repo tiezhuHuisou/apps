@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/find.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/weui_rewrite.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/goodsList.css"/>
+</head>
+<body>
+<include file="Common/header"/>
+<!-- 可视区域 开始 -->
+<section class="viewport">
+    <!-- 列表页 -->
+    <div class="weui-panel weui-panel_access">
+
+        <volist name="list" id="vo">
+            <div class="weui-panel__bd">
+                <div href="?g=app&m=product&a=truckDetail&id={$vo.id}" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="{$vo.head_pic|default='__IMG__/member_default.png'}">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">{$vo.after}--{$vo.end}</h4>
+                        <p class="weui-media-box__desc">{$vo.name}</p>
+                    </div>
+
+                    <a href="tel:{$vo.phone}">
+                        <div class="tele">
+                            <img src="__IMG__/dh.png">
+                            <span>联系TA</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weui-panel__bd">
+                <a href="?g=app&m=product&a=truckDetail&id={$vo.id}">
+                    <div href="?g=app&m=product&a=truckDetail&id={$vo.id}" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__bd">
+                            <p class="weui-media-box__desc">
+                                <span class="phone">车牌号：{$vo.truck_no}</span>
+                            </p>
+                            <p class="weui-media-box__desc">车辆信息：{$vo.source_type}{$vo.truck_length}</p>
+                            <p class="weui-media-box__desc">车辆类型：{$vo.truck_type}</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="tl"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </volist>
+
+    </div>
+</section>
+</body>
+</html>

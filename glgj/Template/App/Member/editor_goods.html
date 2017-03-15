@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/editor_source.css"/>
+</head>
+<body>
+<include file="Common/header_save"/>
+<!-- 可视区域 开始 -->
+<section class="viewport">
+    <!-- 列表 -->
+    <notempty name="list">
+        <div class="list_wrap">
+            <volist name="list" id="vo">
+                <div class="mgt10 weui-cells weui-cells_checkbox">
+                    <label class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <input type="checkbox" class="js_check_single weui-check" name="checkbox1">
+                            <i class="weui-icon-checked"></i>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <div class="weui-form-preview__hd">
+                                <em class="weui-form-preview__value">{$vo.location}</em>
+                            </div>
+                            <div class="weui-form-preview__bd">
+                                <div class="weui-form-preview__item">
+                                    <label class="weui-form-preview__label">货物名称:</label>
+                                    <span class="weui-form-preview__value">{$vo.name}</span>
+                                </div>
+                                <div class="weui-form-preview__item">
+                                    <label class="weui-form-preview__label">货物信息：</label>
+                                    <span class="weui-form-preview__value">{$vo.category_id}</span>
+                                </div>
+                                <div class="weui-form-preview__item">
+                                    <label class="weui-form-preview__label">运输方式:</label>
+                                    <span class="weui-form-preview__value">{$vo.transport_id}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </volist>
+        </div>
+        <div class="loadding_wrap weui-loadmore">
+            <i class="weui-loading"></i>
+            <span class="weui-loadmore__tips">正在加载</span>
+        </div>
+        <else/>
+        <!-- 为空 -->
+        <div class="weui-loadmore weui-loadmore_line">
+            <span class="weui-loadmore__tips">暂无数据</span>
+        </div>
+    </notempty>
+</section>
+<!-- 可视区域 结束 -->
+<!-- 底部 开始 -->
+<div class="save_footer">
+    <div class="weui-cells weui-cells_checkbox">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <label class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <input type="checkbox" class="js_check_all weui-check" name="checkbox1">
+                        <i class="weui-icon-checked"></i>
+                    </div>
+                    <div class="weui-cell__hd">
+                        <p>全选</p>
+                    </div>
+                </label>
+            </div>
+            <div class="weui-cell__ft">
+                <a href="javascript:void(0);" class="del_btn weui-btn weui-btn_primary weui-btn_disabled">删除</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部 结束 -->
+<script type="text/javascript">
+    var city_name = "{$city_name}";
+    var defaultImg = '__STATIC__/images/default_icon.jpg';
+    var imgUrl = '__IMG__';
+</script>
+<!-- 地址选择器 -->
+<script type="text/javascript" src="__JS__/city-picker.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="__JS__/editor_source.js"></script>
+</body>
+</html>

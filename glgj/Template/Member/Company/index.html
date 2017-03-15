@@ -1,0 +1,181 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/product_add.css"/>
+<link rel="stylesheet" type="text/css" href="./Public/static/kindeditor/themes/default/default.css"/>
+</head>
+<body>
+<!-- 顶部 开始 -->
+<include file="Common/top"/>
+<!-- 顶部 结束 -->
+<!-- 左侧 开始 -->
+<include file="Common/left"/>
+<!-- 左侧 结束 -->
+<!-- 主体 开始 -->
+<div class="main">
+    <!-- 主体头部 -->
+    <include file="Common/header"/>
+    <!-- 主体内容 -->
+    <div class="wrapper">
+        <!-- 导航 -->
+        <include file="Company/companyNav"/>
+        <!-- 发布产品信息表单 开始 -->
+        <form class="form-horizontal chkform" name="" action="" method="post">
+            <!--网点id-->
+            <input name="p_id" type="hidden" value="{$Think.get.id}"/>
+            <!--企业id-->
+            <input name="c_id" type="hidden" value="{$info['c_id']}"/>
+            <input name="lng" type="hidden" value="{$info['lng']}"/>
+            <input name="lat" type="hidden" value="{$info['lat']}"/>
+            <div class="add_form">
+                <!-- 所属公司 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">所属公司：</div>
+                        <input class="t400" type="text" name="" value="{$info.companyName}"/>
+                        <span class="add_star">(不可更改)</span>
+                    </div>
+                </div>
+                <!-- 店名 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">店名：</div>
+                        <input class="t400" type="text" name="p_title" value="{$info.p_title}" placeholder="请输入店名"
+                               datatype="title" nullmsg="请输入店名" errormsg="请输入2到50位字符"/>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 表单验证提示信息 -->
+                    <div>
+                        <div class="info">
+                            <span class="Validform_checktip">请输入店名</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 联系人 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">联系人：</div>
+                        <input class="t400" type="text" name="p_name" value="{$info.p_name}" placeholder="请输入店名"
+                               datatype="title" nullmsg="请输入联系人" errormsg="请输入2到50位字符"/>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 表单验证提示信息 -->
+                    <div>
+                        <div class="info">
+                            <span class="Validform_checktip">请输入联系人</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 联系人 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">联系人：</div>
+                        <input class="t400" type="text" name="p_name" value="{$info.p_name}" placeholder="请输入店名"
+                               datatype="title" nullmsg="请输入联系人" errormsg="请输入2到50位字符"/>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 表单验证提示信息 -->
+                    <div>
+                        <div class="info">
+                            <span class="Validform_checktip">请输入联系人</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 电话号码 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">电话号码：</div>
+                        <input class="t400" type="text" name="p_phone" value="{$info.p_phone}" placeholder="请输入电话号码"
+                               datatype="title" nullmsg="请输入电话号码" errormsg="请输入2到50位字符"/>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 表单验证提示信息 -->
+                    <div>
+                        <div class="info">
+                            <span class="Validform_checktip">请输入电话号码</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 手机号 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">手机号：</div>
+                        <input class="t400" type="text" name="p_mobile" value="{$info.p_mobile}" placeholder="请输入手机号码"
+                               datatype="title" nullmsg="请输入手机号" errormsg="请输入2到50位字符"/>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 表单验证提示信息 -->
+                    <div>
+                        <div class="info">
+                            <span class="Validform_checktip">请输入手机号</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 所在地 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">所在地：</div>
+                        <input class="t400" type="text" name="province_id" value="{$info.province_id}" />
+                        <input class="t400" type="text" name="city_id" value="{$info.city_id}" />
+                        <input class="t400" type="text" name="county_id" value="{$info.county_id}" />
+                    </div>
+                </div>
+                <!-- 地址 -->
+                <div class="add_row">
+                    <div>
+                        <div class="add_name">地址：</div>
+                        <input class="t400" type="text" name="address" value="{$info.address}" placeholder="请输入地址" datatype="title" nullmsg="请输入地址" errormsg="请输入2到50位字符"/>
+                        <span class="add_star">*</span>
+                    </div>
+                    <!-- 表单验证提示信息 -->
+                    <div>
+                        <div class="info">
+                            <span class="Validform_checktip">请输入地址</span>
+                            <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 发布按钮 -->
+                <div class="add_row">
+                    <div class="add_name"></div>
+                    <input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit"
+                           value="发 布"/>
+                </div>
+            </div>
+        </form>
+        <!-- 发布产品信息表单 结束 -->
+    </div>
+    <!-- 主体 结束 -->
+</div>
+<script type="text/javascript" src="./Public/static/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="./Public/static/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript">
+    var imgUrl = "__IMG__";
+    var staticPath = "__STATIC__";
+    var flashFlag = "{$flashFlag|default=0}";
+</script>
+<script type="text/javascript" src="__JS__/product_add.js"></script>
+</body>
+</html>

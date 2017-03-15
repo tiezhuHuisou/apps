@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>佣金提现申请</h2>
+                <a <eq name="Think.get.state" value="">class="hover"</eq> href="?g=admin&m=order&a=commision">全部</a>
+                <a <eq name="Think.get.state" value="1">class="hover"</eq>href="?g=admin&m=order&a=commision&state=1">未打款</a>
+                <a <eq name="Think.get.state" value="2">class="hover"</eq>href="?g=admin&m=order&a=commision&state=2">待确认</a>
+                <a <eq name="Think.get.state" value="3">class="hover"</eq>href="?g=admin&m=order&a=commision&state=3">成功</a>
+                <a <eq name="Think.get.state" value="7">class="hover"</eq>href="?g=admin&m=order&a=commision&state=7">失败</a>
+            </div>
+            <!-- 主体搜索 -->
+            <div class="search">
+                <form class="form-horizontal" name="" action="" method="post">
+                    <p>筛选：</p>
+                    <select name="">
+                        <option value="1">提现编号</option>
+                        <option value="2">提现分销商</option>
+                    </select>
+                    <p>搜索：</p>
+                    <input class="search_input" type="text" name="search" value="{$search}"/>
+                    <input class="search_btn" type="submit" value="搜索" />
+                </form>
+            </div>
+            <!-- 主体数据 -->
+            <table class="data">
+                <!-- 数据头部 -->
+                <tr class="data_header">
+                    <th class="tl">提现编号</th>
+                    <th>提现分销商</th>
+                    <th>提现账号（支付方式|收款人）</th>
+                    <th>申请时间    </th>
+                    <th>提现金额</th>
+                    <th>状态</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td class="tl">111</td>
+                    <td><a class="red" href="index.php?g=admin&m=order&a=commisiondetail&id={$liv.id}">提现分销商</a></td>
+                    <td>15111011101（支付宝|你好）</td>
+                    <td>2016年06月13日 07:10:04</td>
+                    <td>1.00</td>
+                    <td>待打款</td>
+                    <td>备注</td>
+                    <td class="data_opt">
+                        <a class="confirm ajax-get" href="index.php?g=admin&m=order&a=payAgentCommission&id={$liv.id}">[&nbsp;打款&nbsp;]</a>
+                        <a href="javascript:void(0);" disabled>[&nbsp;待确认&nbsp;]</a>
+                        <a href="javascript:void(0);">[&nbsp;已完成&nbsp;]</a>
+                        <a class="confirm ajax-get" href="index.php?g=admin&m=order&a=payAgentCommission&id={$liv.id}">[&nbsp;重新打款&nbsp;]</a>
+                    </td>
+                </tr>
+            </table>
+            <!-- 分页 -->
+            <div class="page">{$_page}</div>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+</body>
+</html>

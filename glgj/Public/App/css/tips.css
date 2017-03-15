@@ -1,0 +1,7 @@
+﻿/* 提示信息 */
+.tips{width:100%;position:fixed;bottom:0;left:0;background:rgba(0,0,0,.5);z-index:999999;}
+.tips .tips_wrap{padding:10px;display:-webkit-box;-webkit-box-align:center;position:relative;}
+.tips .tips_wrap img{margin-right:6px;}
+.tips .tips_wrap .tips_title{color:#fff;margin-right:10px;-webkit-box-flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tips .tips_wrap .tips_title a{color:#43d0fe;text-decoration:underline;}
+.tips .tips_wrap .tips_close{width:20px;height:20px;line-height:20px;display:block;color:#fff;font-size:20px;position:absolute;top:2px;right:0;}

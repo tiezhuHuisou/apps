@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/carousel.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/news_detail.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/share_bomb_box.css" />
+</head>
+<body>
+	<!-- 头部 开始 -->
+	<include file="Common/header_share"/>
+	<!-- 头部 结束 -->
+	<section class="no_footer">
+		<h2 id="title" class="news_title">{$info['title']}</h2>
+		<p class="news_time">{$info['addtime']|time_format}</p>
+		<article>
+			{$info['content']}
+		</article>
+		<input id="content" value="" type="hidden">
+		<input id="nid" value="{$info.id}" type="hidden">
+		<input id="uid" value="{$_SESSION.app.user_auth.user_id}" type="hidden">
+		<input id="sign" value="{$sign}" type="hidden">
+		<div class=<if condition = "$sign eq 1">"collect collected"<else />"collect"</if>></div>
+        <notempty name="prev_info">
+            <a class="before" href="?g=app&m=news&a=detail&id={$prev_info['id']}">上一篇：{$prev_info['title']}</a>
+        </notempty>
+		<notempty name="next_info">
+            <a class="next" href="?g=app&m=news&a=detail&id={$next_info['id']}">下一篇：{$next_info['title']}</a>
+        </notempty>
+	</section>
+    <!-- 遮罩层 开始 -->
+    <!-- <div class="mask no"></div> -->
+    <!-- 遮罩层 结束 -->
+    <!-- 分享弹框 开始 -->
+    <!-- <div class="share_bomb_box no"> -->
+        <div class="-mob-share-ui" style="display: none">
+		    <ul class="-mob-share-list">
+		        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+		        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+		        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+		        <li class="-mob-share-qq"><p>QQ好友</p></li>
+		        
+		        <li class="-mob-share-douban"><p>豆瓣</p></li>
+		        
+		    </ul>
+		<div class="-mob-share-close">取消</div>
+		</div>
+   <!--  </div> -->
+    <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=a537fde044f0"></script>
+    <!-- 分享弹框 结束 -->
+	<script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__JS__/news_detail.js"></script>
+    <script type="text/javascript" src="__JS__/share.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/register.css" />
+<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+<script type="text/javascript" src="__JS__/register.js"></script>
+</head>
+<body>
+	<!-- logo 开始 -->
+	<img class="logo" src="__IMG__/logo.png" />
+	<!-- logo 结束 -->
+	<!-- 注册 开始 -->
+	<form class="register_content chkform" name="" action="" method="post">
+		<div class="register">
+			<p class="register_title">账号注册</p>
+			<!-- 账号 -->
+			<div class="register_con account_con">
+				<div>
+					<i class="icon"></i>
+					<input class="register_input" type="text" name="mphone" placeholder="请输入手机号" datatype="mobile" nullmsg="请输入手机号" errormsg="请输入手机号" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请输入手机号</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 验证码 -->
+			<!-- <div class="register_con code_con">
+				<div>
+					<i class="icon"></i>
+					<input class="register_input" type="text" name="" placeholder="请输入验证码" datatype="*" nullmsg="请输入验证码" errormsg="验证码输入有误" />
+					<input class="send" type="button" value="发送验证码" />
+				</div>
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请输入验证码</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div> -->
+			<!-- 密码 -->
+			<div class="register_con">
+				<div>
+					<i class="icon"></i>
+					<input class="register_input" type="password" name="password" placeholder="请输入密码" datatype="*" nullmsg="请输入密码" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请输入密码</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 确认密码 -->
+			<div class="register_con">
+				<div>
+					<i class="icon"></i>
+					<input class="register_input" type="password" name="password1" recheck="password" placeholder="请确认密码" datatype="*" nullmsg="请确认密码" errormsg="两次密码不一致" />
+				</div>
+	            <!-- 表单验证提示信息 -->
+	            <div>
+	                <div class="info">
+	                    <span class="Validform_checktip">请确认密码</span>
+	                    <span class="dec">
+	                        <s class="dec1">&#9670;</s>
+	                        <s class="dec2">&#9670;</s>
+	                    </span>
+	                </div>
+	            </div>
+			</div>
+			<!-- 注册按钮 -->
+			<input class="register_btn chksubmit"  type="submit" value="注&nbsp;册" />
+		</div>
+	</form>
+	<!-- 注册 结束 -->
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<include file="Common/head" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/apply.css" />
+</head>
+<body>
+	<!-- 头部 开始 -->
+	<include file="Common/header" />
+	<!-- 头部 结束 -->
+	<!-- 可视区域 开始 -->
+	<div class="no_footer">
+		<notempty name="list">
+			<!-- 求职 开始 -->
+			<div class="apply_wrap">
+				<!-- 求职列表 开始 -->
+				<div class="apply_list">
+					<volist name="list" id="vo">
+						<!-- 一条求职信息 开始 -->
+						<a class="apply_item" href="?g=app&m=recruit&a=applydetail&id={$vo['uid']}">
+							<p class="fz14">{$vo['name']}</p>
+							<p>投递岗位：{$vo['title']}</p>
+							<p>期望薪资：{$vo['expect_wages']}</p>
+							<p>联系电话：{$vo['phone']}</p>
+							<p>最高学历：{$vo['degree']}</p>
+							<p>投递时间：{$vo['ctime']|date="Y年m月",###}</p>
+						</a>
+						<!-- 一条求职信息 结束 -->
+					</volist>
+				</div>
+				<!-- 求职列表 结束 -->
+			</div>
+			<!-- 求职 结束 -->
+			<!-- 滑屏至底部提示信息 开始 -->
+			<div class="loading">
+				<img src="__STATIC__/images/loading.gif" width="20" height="20" />
+			</div>
+			<!-- 滑屏至底部提示信息 结束 -->
+			<else />
+			<!-- 数据为空时 开始 -->
+			<div class="common_empty">
+				<img src="__IMG__/common_empty.png" width="120" height="120" />
+				<p>暂无求职信息</p>
+				<a href="?g=app&m=index">返回首页</a>
+			</div>
+			<!-- 数据为空时 结束 -->
+		</notempty>
+	</div>
+	<!-- 可视区域 结束 -->
+	<!-- 底部 开始 -->
+	<include file="Common/footer" />
+	<!-- 底部 结束 -->
+</body>
+</html>

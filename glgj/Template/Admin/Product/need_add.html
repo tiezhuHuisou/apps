@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head"/>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" src="__JS__/need_add.js"></script>
+</head>
+<body>
+    <!-- 顶部 开始 -->
+    <include file="Common/top"/>
+    <!-- 顶部 结束 -->
+    <!-- 左侧 开始 -->
+    <include file="Common/left"/>
+    <!-- 左侧 结束 -->
+    <!-- 主体 开始 -->
+    <div class="main">
+        <div class="wrapper">
+            <!-- 主体头部 -->
+            <div class="header">
+                <h2>求购管理中心</h2>
+                <a href="?g=admin&m=product&a=need">求购列表</a>
+                <a class="hover" href="?g=admin&m=product&a=need_add">添加求购</a>
+            </div>
+            <h3>添加求购</h3>
+            <!-- 主体数据 -->
+            <form class="form-horizontal chkform" name="" action="" method="post">
+                <input type="hidden" name="id" value="{$detail.id}"/>
+                <input type="hidden" name="proid" value="{$Think.session.user_id}"/>
+                <table class="add_table">
+                    <!-- 长标题输入框 -->
+                    <tr>
+                        <td class="w120">标题：</td>
+                        <td>
+                            <input class="i200" type="text" name="title" value="{$detail.title}" datatype="title" nullmsg="请填写标题" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 短标题输入框 -->
+                    <tr>
+                        <td class="w120">副标题：</td>
+                        <td>
+                            <input class="i400" type="text" name="short_title" value="{$detail.short_title}" datatype="title" nullmsg="请填写短标题" errormsg="请填写2-50位字符" />
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写短标题</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 分类下拉框 -->
+                    <tr>
+                        <td class="w120">分类：</td>
+                        <td>
+                            <select class="pl3" name="buy_category_id">
+                                <option value="">请选择分类</option>
+                                <volist name="classify" id="cl">
+                                    <option value="{$cl.id}" <eq name="cl.id" value="$detail.buy_category_id">selected</eq>>{$cl.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 属性复选框 -->
+                    <tr>
+                        <td class="w120">属性：</td>
+                        <td class="lh22">
+                            <volist name="flags" id="fl">
+                                <label class="mgr4">
+                                    <input class="pt3" name="flags[]" type="radio" value="{$fl.att}"   <in name="fl.att" value="$detail.flags">checked="checked"</in> />{$fl.attname}<!-- [{$fl.att}] -->
+                                </label>
+                            </volist>
+                        </td>
+                    </tr>
+                    <!-- 发布人类型 -->
+                    <!-- <tr id="issue_type">
+                        <td class="w120">发布人类型：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="issue_type" value="2" checked />
+                                <span>企业</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="issue_type" value="1" <eq name="detail.issue_type" value="1">checked</eq> />
+                                <span>个人</span>
+                            </label>
+                        </td>
+                    </tr> -->
+                    <!-- 发布企业下拉框 -->
+                    <tr>
+                        <td class="w120">发布企业：</td>
+                        <td>
+                            <select id="issue_author" class="pl3" name="company_id">
+                                <option value="">请选择发布企业</option>
+                                <volist name="company" id="co">
+                                    <option value="{$co.id}" <eq name="co.id" value="$detail.company_id">selected</eq>>{$co.name}</option>
+                                </volist>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- 数量 -->
+                    <tr>
+                        <td class="w120">数量：</td>
+                        <td>
+                            <input class="i200" type="text" name="num" value="{$detail.num}" />
+                        </td>
+                    </tr>
+                    <!-- 单位 -->
+                    <!-- <tr>
+                        <td class="w120">单位：</td>
+                        <td>
+                            <input class="i200" type="text" name="unit" value="{$detail.unit}" />
+                        </td>
+                    </tr> -->
+                    <!-- 单价 -->
+                    <tr>
+                        <td class="w120">单价：</td>
+                        <td>
+                            <input class="i200" type="text" name="price" value="{$detail.price}" />
+                            <span>填写价格区间或单价，例如：50 或者 50,80</span>
+                        </td>
+                    </tr>
+                    <!-- 有效天数 -->
+                    <tr>
+                        <td class="w120">有效天数：</td>
+                        <td>
+                            <input class="i200" type="text" name="days" value="{$detail.days}" datatype="n" nullmsg="请填写有效天数" errormsg="请填写数字" />
+                            <span>天</span>
+                            <span class="pl3">范围为0~90天,0为永久有效</span>
+                        </td>
+                        <!-- 表单验证提示信息 -->
+                        <td>
+                            <div class="info">
+                                <span class="Validform_checktip">请填写有效天数</span>
+                                <span class="dec">
+                                    <s class="dec1">&#9670;</s>
+                                    <s class="dec2">&#9670;</s>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 求购图片按钮 -->
+                    <tr>
+                        <td class="w120">求购详情轮播图：</td>
+                        <td>
+                            <a id="carousel_btn" class="opt_btn mgl0" href="javascript:void(0);">选择文件</a>
+                            <span class="pl3">建议尺寸：640*640</span>
+                        </td>
+                    </tr>
+                    <!-- 求购图片预览 -->
+                    <tr <empty name="allpic">class="no"</empty>>
+                        <td class="w120">求购详情轮播图预览：</td>
+                        <td id="carousel_img">
+                            <volist name="allpic" id="pic">
+                                <p class="img_wrap">
+                                    <img class="delete_img" src="__IMG__/delete_img.png" width="20" height="20" />
+                                    <img src="{$pic.pic_url}"  width="100" height="100" />
+                                    <input value="{$pic.pic_url}"  name="allpic[]" type="hidden" />
+                                </p>
+                            </volist>
+                        </td>
+                    </tr><!-- 
+                    <tr <empty name="detail.img">class="no"</empty>>
+                        <td class="w120">求购图片预览：</td>
+                        <td><img id="img_preview" src="{$detail.img}" width="80" height="80" /></td>
+                    </tr> -->
+                    <!-- 关键词 -->
+                    <!-- <tr>
+                        <td class="w120">关键词：</td>
+                        <td>
+                            <input class="i400" type="text" name="seo_keywords" value="{$detail.seo_keywords}" />
+                        </td>
+                    </tr> -->
+                    <!-- 描述 -->
+                    <!-- <tr>
+                        <td class="w120">描述：</td>
+                        <td>
+                            <textarea class="t400" name="seo_description">{$detail.seo_description}</textarea>
+                        </td>
+                    </tr> -->
+                    <!-- 内容 -->
+                    <tr>
+                        <td class="w120">求购内容：</td>
+                        <td>
+                            <textarea id="need_content" name="summary">{$detail.summary}</textarea>
+                        </td>
+                    </tr>
+                    <!-- 是否显示 -->
+                    <tr>
+                        <td class="w120">是否显示：</td>
+                        <td>
+                            <label class="mgr">
+                                <input class="pt3" type="radio" name="status" value="1" checked="checked"<eq name="detail.status" value="1"> checked="checked" </eq> />
+                                <span>显示</span>
+                            </label>
+                            <label>
+                                <input class="pt3" type="radio" name="status" value="0" <eq name="detail.status" value="0"> checked="checked" </eq> />
+                                <span>不显示</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <!-- 操作 -->
+                    <tr class="add_opt">
+                        <td></td>
+                        <td>
+                            <input class="opt_btn ajax-post mgl0 chksubmit" target-form="form-horizontal" type="submit" value="确认提交" />
+                            <input class="opt_btn" type="reset" value="重置表单" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!-- 主体 结束 -->
+    <script type="text/javascript">
+        var imgUrl = "__IMG__";
+    </script>
+</body>
+</html>

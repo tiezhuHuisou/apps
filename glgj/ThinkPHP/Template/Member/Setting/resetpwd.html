@@ -1,0 +1,73 @@
+<include file="Common/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/change_pwd.css" />
+<script type="text/javascript" src="__JS__/change_pwd.js"></script>
+</head>
+<body>
+	<!-- 顶部 开始 -->
+	<include file="Common/top"/>
+	<!-- 顶部 结束 -->
+	<!-- 左侧 开始 -->
+	<include file="Common/left"/>
+	<!-- 左侧 结束 -->
+	<!-- 主体 开始 -->
+	<div class="main">
+		<!-- 主体头部 -->
+		<include file="Common/header"/>
+		<!-- 主体内容 -->
+		<div class="wrapper">
+			<h2 class="add_title">修改密码</h2>
+			<!-- 企业联系方式表单 开始 -->
+			<form class="form-horizontal chkform" name="" action="" method="post">
+				<div class="add_form">
+					<!-- 原始密码 -->
+					<div class="add_row">
+						<div class="add_name">原始密码：</div>
+						<input class="t400" type="password" name="pass" value="" placeholder="请输入原始密码" />
+					</div>
+					<!-- 新密码 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">新密码：</div>
+							<input class="t400" type="password" name="password" placeholder="请输入新密码" datatype="*" nullmsg="请输入新密码" />
+						</div>
+						<!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入新密码</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 确认密码 -->
+					<div class="add_row">
+						<div>
+							<div class="add_name">确认密码：</div>
+							<input class="t400"  type="password" name="password1" recheck="password" placeholder="请输入确认密码" datatype="*" nullmsg="请输入确认密码" errormsg="两次密码不一致" />
+						</div>
+						<!-- 表单验证提示信息 -->
+			            <div>
+			                <div class="info">
+			                    <span class="Validform_checktip">请输入确认密码</span>
+			                    <span class="dec">
+			                        <s class="dec1">&#9670;</s>
+			                        <s class="dec2">&#9670;</s>
+			                    </span>
+			                </div>
+			            </div>
+					</div>
+					<!-- 修改按钮 -->
+					<div class="add_row">
+						<div class="add_name"></div>
+						<input class="form_btn chksubmit ajax-post" target-form="form-horizontal" type="submit" value="修 改" />
+					</div>
+				</div>
+			</form>
+			<!-- 企业联系方式表单 开始 -->
+		</div>
+		<!-- 主体 结束 -->
+	</div>
+</body>
+</html>

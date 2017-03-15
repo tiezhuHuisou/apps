@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <include file="Common/head_apps"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/news_detail.css" />
+</head>
+<body>
+    <!-- 资讯标题、发布人、发布时间 -->
+    <div class="detail_top">
+        <h3>标题标题</h3>
+        <div class="top_info">
+            <span class="info_name">发布人</span>
+            <span class="info_time">发布时间</span>
+        </div>
+    </div>
+    <!-- 发布内容 -->
+    <article>{$info['content']}</article>
+    <script type="text/javascript" src="__STATIC__/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="__JS__/news_detail.js"></script>
+</body>
+</html>
